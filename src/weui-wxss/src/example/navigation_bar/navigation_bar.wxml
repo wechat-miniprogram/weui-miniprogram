@@ -1,0 +1,25 @@
+<view class="page">
+    <view class="page__bd">
+      <view class="weui-navigation-bar">
+        <view class="weui-navigation-bar__placeholder" style="padding-top:44px ;visible: hidden;"></view>
+        <view class="weui-navigation-bar__inner" style="padding-top:44px ;">
+
+          <view class='weui-navigation-bar__left'>
+              <view class="weui-navigation-bar__buttons">
+                <view bindtap="back" class="weui-navigation-bar__button weui-navigation-bar__btn_goback"></view>
+              </view>
+          </view>
+
+          <view class='weui-navigation-bar__center'>
+            <view class="weui-navigation-bar__loading">
+              <view class="weui-loading"></view>
+            </view>
+            <text>标题</text>
+          </view>
+
+          <view class='weui-navigation-bar__right'>
+          </view>
+        </view>
+      </view>
+    </view>
+</view>

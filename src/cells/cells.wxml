@@ -1,0 +1,8 @@
+<view class="{{extClass}}">
+    <view wx:if="{{title}}" class="weui-cells__title">{{title}}</view>
+    <view class="weui-cells weui-cells_after-title {{checkboxCount > 0 && checkboxIsMulti ? 'weui-cells_checkbox' : ''}}">
+        <slot></slot>
+    </view>
+    <view v-if="{{foot}}" class="weui-cells__tips">{{foot}}</view>
+    <template v-else><slot name="foot"></slot></template>
+</view>

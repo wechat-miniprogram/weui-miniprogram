@@ -1,0 +1,7 @@
+page{
+    background-color: #FFFFFF;
+}
+.weui-demo-dialog{
+}
+.weui-demo-dialog_show{
+}

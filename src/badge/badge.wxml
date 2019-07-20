@@ -1,0 +1,1 @@
+<view class="weui-badge {{extClass}} {{dot ? 'weui-badge_dot' : ''}}"><slot></slot></view>

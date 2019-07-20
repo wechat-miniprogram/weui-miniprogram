@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": false,
+        "removeComments": true,
+        "target": "es2017",
+        "lib": ["ES6", "ES7", "dom"],
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "allowSyntheticDefaultImports": true
+    },
+    "include": ["src/**/*.ts", "node_modules/miniprogram-api-typings/index.d.ts"]
+}

@@ -1,0 +1,4 @@
+Page({
+    openDialog: function () {
+    }
+});

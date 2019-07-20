@@ -1,0 +1,20 @@
+{
+  "usingComponents": {
+    "navigation-bar": "./navigation-bar/navigation-bar",
+    "form": "./form/form",
+    "cell": "./cell/cell",
+    "toptips": "./toptips/toptips",
+    "loading": "./loading/loading",
+    "tabbar": "./tabbar/tabbar",
+    "cells": "./cells/cells",
+    "slideview": "./slideview/slideview",
+    "msg": "./msg/msg",
+    "dialog": "./dialog/dialog",
+    "uploader": "./uploader/uploader",
+    "gallery": "./gallery/gallery",
+    "checkbox": "./checkbox/checkbox",
+    "badge": "./badge/badge",
+    "searchbar": "./searchbar/searchbar",
+    "checkbox-group": "./checkbox-group/checkbox-group"
+  }
+}

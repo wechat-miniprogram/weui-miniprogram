@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "example/index",
+
+    "example/button/button",
+    "example/cell/cell",
+    "example/form/form",
+    "example/slider/slider",
+    "example/uploader/uploader",
+
+    "example/article/article",
+    "example/badge/badge",
+    "example/flex/flex",
+    "example/footer/footer",
+    "example/gallery/gallery",
+    "example/grid/grid",
+    "example/icons/icons",
+    "example/loadmore/loadmore",
+    "example/loading/loading",
+    "example/panel/panel",
+    "example/preview/preview",
+    "example/progress/progress",
+
+    "example/actionsheet/actionsheet",
+    "example/dialog/dialog",
+    "example/msg/msg",
+    "example/msg/msg_text",
+    "example/msg/msg_text_primary",
+    "example/msg/msg_success",
+    "example/msg/msg_fail",
+    "example/picker/picker",
+    "example/toast/toast",
+
+    "example/navbar/navbar",
+    "example/navigation/navigation",
+    "example/tabbar/tabbar",
+
+    "example/searchbar/searchbar"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "小程序UI组件库",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "backgroundColor": "#f8f8f8"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

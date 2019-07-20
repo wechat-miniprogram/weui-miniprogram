@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "mp-cell": "../cell/cell",
+        "mp-gallery": "../gallery/gallery"
+    }
+}
