@@ -31,9 +31,9 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/wechat-miniprogram/weui-miniprogram"
   },
-  "author": "cunjinli,rockhou,xushengni",
+  "author": "cunjinli,rockhou,xushengni,tomylin",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.5.1",
