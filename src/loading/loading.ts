@@ -1,7 +1,6 @@
 Component({
     options: {
-        addGlobalClass: true,
-        multipleSlots: true
+        addGlobalClass: true
     },
     properties: {
         extClass: {
@@ -22,10 +21,10 @@ Component({
                 this._computedStyle(this.data.show, newValue)
             }
         },
-        // height: {
-        //     type: Number,
-        //     value: 50
-        // },
+        duration: { // 过渡动画时间
+            type: Number,
+            value: 350
+        },
         type: {
             type: String,
             value: 'dot-gray' // 取值dot-white、dot-gray、circle
@@ -39,7 +38,6 @@ Component({
         animationData: {},
         animationInstance: {},
         displayStyle: 'none',
-        height: 50
     },
     methods: {
         _computedStyle(show, animated) {
@@ -70,8 +68,9 @@ Component({
     },
     lifetimes: {
         attached() {
+            const data: any = this.data
             const animationInstance = wx.createAnimation({
-                duration: 350,
+                duration: data.duration,
                 timingFunction: 'ease',
             })
             this.setData({ animationInstance })

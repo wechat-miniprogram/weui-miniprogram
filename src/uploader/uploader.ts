@@ -43,6 +43,10 @@ Component({
         tips: {
             type: String,
             value: ''
+        },
+        extClass: {
+            type: String,
+            value: '',
         }
     },
     data: {
@@ -86,7 +90,7 @@ Component({
                         }
                     }
                     if (invalidIndex >= 0) {
-                        this.triggerEvent('error', {type: 1, errMsg: `chooseImage:fail size exceed ${this.data.maxSize}`, total: res.tempFilePaths.length, index: invalidIndex}, {})
+                        this.triggerEvent('fail', {type: 1, errMsg: `chooseImage:fail size exceed ${this.data.maxSize}`, total: res.tempFilePaths.length, index: invalidIndex}, {})
                         return
                     }
                     // 获取文件内容
@@ -119,7 +123,7 @@ Component({
                                 this.setData({files: oldFiles, currentFiles: newFiles})
                                 this.triggerEvent('success', json, {})
                             } else {
-                                this.triggerEvent('error', {type: 3, errMsg: 'upload file fail, urls not found'}, {})
+                                this.triggerEvent('fail', {type: 3, errMsg: 'upload file fail, urls not found'}, {})
                             }
                         }).catch(err => {
                             this.loading = false
@@ -129,7 +133,7 @@ Component({
                                 oldFiles[len + index].loading = false
                             })
                             this.setData({files: oldFiles, currentFiles: newFiles})
-                            this.triggerEvent('error', {type: 3, errMsg: 'upload file fail', error: err}, {})
+                            this.triggerEvent('fail', {type: 3, errMsg: 'upload file fail', error: err}, {})
                         })
                     }
                 },
@@ -139,18 +143,19 @@ Component({
                         return
                     }
                     fail.type = 2
-                    this.triggerEvent('error', fail, {})
+                    this.triggerEvent('fail', fail, {})
                 }
             })
         },
         deletePic(e) {
             const index = e.detail.index
             const files = this.data.files
-            files.splice(index, 1)
+            const file = files.splice(index, 1)
             this.setData({
                 files,
                 currentFiles: files
             })
+            this.triggerEvent('delete', {index, item: file[0]})
         }
     }
 })

@@ -2,7 +2,7 @@ Page({
     data: {
         loading: false,
         color: '#000',
-        background: '#fff',
+        background: '#f8f8f8',
         show: true,
         animated: false
     },
@@ -13,12 +13,12 @@ Page({
     },
     changeColor() {
         this.setData({
-            color: 'red'
+            color: '#07C160'
         })
     },
     changeBgColor() {
         this.setData({
-            background: '#5152c0'
+            background: '#ededed'
         })
     },
     toggleShow() {
@@ -28,7 +28,8 @@ Page({
     },
     toggleAnimated() {
         this.setData({
-            animated: !this.data.animated
+            animated: !this.data.animated,
+            show: !this.data.show
         })
     }
 })

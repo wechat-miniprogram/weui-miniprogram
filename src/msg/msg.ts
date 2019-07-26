@@ -30,6 +30,5 @@ Component({
     }
   },
   data: {
-    firstItem: null
   },
 })

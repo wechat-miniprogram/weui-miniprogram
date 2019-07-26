@@ -3,7 +3,7 @@ Page({
         dialogShow: false,
         showOneButtonDialog: false,
         buttons: [{text: '取消'}, {text: '确定'}],
-        oneButton: [{text: '取消'}],
+        oneButton: [{text: '确定'}],
     },
     openConfirm: function () {
         this.setData({

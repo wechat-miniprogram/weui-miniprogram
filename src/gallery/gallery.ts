@@ -1,4 +1,7 @@
 Component({
+    options: {
+        addGlobalClass: true
+    },
     properties: {
         imgUrls: {
             type: Array,
@@ -11,13 +14,13 @@ Component({
             type: Boolean,
             value: true
         },
-        current: {
-            type: Number,
-            value: 0
-        },
         show: {
             type: Boolean,
             value: true
+        },
+        current: {
+            type: Number,
+            value: 0
         },
         hideOnClick: {
             type: Boolean,
@@ -37,7 +40,6 @@ Component({
     },
     methods: {
         change(e) {
-            console.log('current', e.detail.current)
             this.setData({
                 current: e.detail.current
             })
@@ -47,7 +49,7 @@ Component({
             const data:any = this.data
             const imgs = data.currentImgs
             const url = imgs.splice(data.current, 1)
-            this.triggerEvent('delete', {img: url, index: data.current}, {})
+            this.triggerEvent('delete', {url: url[0], index: data.current}, {})
             if (imgs.length === 0) {
                 // @ts-ignore
                 this.hideGallery()
@@ -59,10 +61,13 @@ Component({
             })
         },
         hideGallery() {
-            this.setData({
-                show: false
-            })
-            this.triggerEvent('hide', {}, {})
+            const data:any = this.data
+            if(data.hideOnClick) {
+                this.setData({
+                    show: false
+                })
+                this.triggerEvent('hide', {}, {}) 
+            }
         }
     }
 })

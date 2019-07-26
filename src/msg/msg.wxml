@@ -18,7 +18,7 @@
   </view>
   <view class="weui-msg__extra-area">
     <view class="weui-footer">
-      <slot name="foot"></slot>
+      <slot name="footer"></slot>
     </view>
   </view>
 </view>

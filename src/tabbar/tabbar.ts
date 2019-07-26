@@ -3,11 +3,15 @@ Component({
         addGlobalClass: true,
     },
     properties: {
+        extClass: {
+          type: String,
+          value: ''
+        },
         list: {
             type: Array,
             value: []
         },
-        selected: {
+        current: {
             type: Number,
             value: 0
         }
@@ -15,11 +19,11 @@ Component({
     methods: {
         tabChange(e) {
             const {index} = e.currentTarget.dataset
-            if (index === this.data.selected) {
+            if (index === this.data.current) {
                 return
             }
             this.setData({
-                selected: index
+                current: index
             })
             this.triggerEvent('change', {index, item: this.data.list[index]})
         }

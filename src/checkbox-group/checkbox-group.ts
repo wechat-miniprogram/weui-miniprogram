@@ -8,6 +8,10 @@ Component({
         extClass: {
             type: String,
             value: '',
+        },
+        prop: {
+            type: String,
+            value: ''
         }
     },
     data: {

@@ -2,8 +2,9 @@
 <view wx:if="{{show}}" bindtap="close" class="weui-dialog__wrp {{extClass}}">
     <view class="weui-dialog" catchtap="stopEvent">
       <view class="weui-dialog__hd">
-        <view class="weui-dialog__title" wx:if="{{title}}">{{title}}</view>
-        <slot name="header" wx:else></slot>
+        <view class="weui-dialog__title">{{title}}
+          <slot name="title"></slot>
+        </view>
       </view>
       <view class="weui-dialog__bd">
         <slot></slot>

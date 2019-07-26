@@ -7,9 +7,9 @@ Component({
             type: String,
             value: ''
         },
-        dot: {
-            type: Boolean,
-            value: false,
+        content: {
+            type: String,
+            value: ''
         }
     }
 })

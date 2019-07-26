@@ -11,7 +11,7 @@ Page({
                 id: 'widget',
                 name: '基础组件',
                 open: false,
-                pages: ['article', 'badge', 'flex', 'footer', 'gallery', 'grid', 'icons', 'loadmore', 'loading', 'panel', 'preview']
+                pages: ['article', 'badge', 'flex', 'footer', 'gallery', 'grid', 'loadmore', 'loading', 'panel', 'preview']
             },
             {
                 id: 'feedback',

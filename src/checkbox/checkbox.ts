@@ -16,14 +16,14 @@ Component<any>({
             type: String,
             value: '',
         },
-        disabled: {
-            type: Boolean,
-            value: false,
-        },
-        color: {
-            type: String,
-            value: '#09BB07',
-        },
+        // disabled: {
+        //     type: Boolean,
+        //     value: false,
+        // },
+        // color: {
+        //     type: String,
+        //     value: '#09BB07',
+        // },
         label: {
             type: String,
             value: 'label',
@@ -64,15 +64,20 @@ Component<any>({
                 this.setData({
                     checked
                 })
-                this.data.group.checkedChange(checked, this)
+                if (this.data.group) {
+                    this.data.group.checkedChange(checked, this)
+                }
             } else {
                 const checked = this.data.checked
                 if (checked) return
                 this.setData({
                     checked: true
                 })
-                this.data.group.checkedChange(checked, this)
+                if (this.data.group) {
+                    this.data.group.checkedChange(checked, this)
+                }
             }
+            this.triggerEvent('change', {value: this.data.value, checked: this.data.checked})
         }
     }
 })

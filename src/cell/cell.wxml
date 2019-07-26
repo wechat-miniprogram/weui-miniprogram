@@ -1,6 +1,6 @@
 <block wx:if="{{link}}">
     <view bindtap="navigateTo" class="weui-cell weui-cell_access {{extClass}} {{outerClass}}{{inForm ? ' weui-cell-inform' : ''}}{{inline ? '' : ' .weui-cell_label-block'}}" hover-class="{{hover ? 'weui-cell_active' : ''}}">
-        <view class="weui-cell__hd">
+        <view class="weui-cell__hd {{iconClass}}">
             <block wx:if="{{icon}}">
                 <image src="{{icon}}" class="weui-cell__icon" mode="aspectFit"></image>
             </block>
@@ -26,10 +26,10 @@
                 <slot></slot>
             </block>
         </view>
-        <view class="weui-cell__ft weui-cell__ft_in-access">
-            <block wx:if="{{foot}}">{{foot}}</block>
+        <view class="weui-cell__ft weui-cell__ft_in-access {{footerClass}}">
+            <block wx:if="{{footer}}">{{footer}}</block>
             <block wx:else>
-                <slot name="foot"></slot>
+                <slot name="footer"></slot>
             </block>
         </view>
     </view>
@@ -56,16 +56,16 @@
                 </block>
             </block>
         </view>
-        <view class="weui-cell__bd {{valueClass}}">
+        <view class="weui-cell__bd">
             <block wx:if="{{value}}">{{value}}</block>
             <block wx:else>
                 <slot></slot>
             </block>
         </view>
-        <view class="weui-cell__ft {{footClass}}">
-            <block wx:if="{{foot}}">{{foot}}</block>
+        <view class="weui-cell__ft {{footerClass}}">
+            <block wx:if="{{footer}}">{{footer}}</block>
             <block wx:else>
-                <slot name="foot"></slot>
+                <slot name="footer"></slot>
             </block>
             <icon wx:if="{{showError && error}}" type="warn" size="23" color="#E64340"></icon>
         </view>

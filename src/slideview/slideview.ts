@@ -40,11 +40,11 @@ Component({
     this.updateRight()
     this.data.buttons.forEach(btn => {
       if (this.data.icon) {
-        btn.className = 'weui-slideview__btn_icon'
+        btn.className = ''
       } else if (btn.type === 'warn') {
-        btn.className = 'weui-slideview__btn_warn'
+        btn.className = 'weui-slideview__btn-group_warn'
       } else {
-        btn.className = 'weui-slideview__btn_default'
+        btn.className = 'weui-slideview__btn-group_default'
       }
     });
     this.setData({

@@ -3,6 +3,6 @@
     <view class="weui-cells weui-cells_after-title {{checkboxCount > 0 && checkboxIsMulti ? 'weui-cells_checkbox' : ''}}">
         <slot></slot>
     </view>
-    <view v-if="{{foot}}" class="weui-cells__tips">{{foot}}</view>
-    <template v-else><slot name="foot"></slot></template>
+    <view v-if="{{footer}}" class="weui-cells__tips">{{footer}}</view>
+    <template v-else><slot name="footer"></slot></template>
 </view>

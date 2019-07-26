@@ -16,11 +16,11 @@ Component({
             type: String,
             value: ''
         },
-        icon: {
-            type: String,
-            value: '',
-        },
         iconClass: {
+            type: String,
+            value: ''
+        },
+        icon: {
             type: String,
             value: '',
         },
@@ -31,10 +31,6 @@ Component({
         value: {
             type: String,
             value: '',
-        },
-        valueClass: {
-            type: String,
-            value: ''
         },
         showError: {
             type: Boolean,
@@ -48,11 +44,11 @@ Component({
             type: String,
             value: ''
         },
-        foot: {
+        footerClass: {
             type: String,
             value: ''
         },
-        footClass: {
+        footer: {
             type: String,
             value: ''
         },

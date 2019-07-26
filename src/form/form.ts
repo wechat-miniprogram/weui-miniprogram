@@ -33,10 +33,6 @@ Component({
             value: [],
             observer: '_rulesChange'
         },
-        showMessage: {
-            type: Boolean,
-            value: false
-        },
         extClass: {
             type: Boolean,
             value: ''
@@ -85,16 +81,18 @@ Component({
             const diffObj: any = diffObject(oldVal, newVal)
             if (diffObj) {
                 let isValid = true
-                const errors = {}
+                const errors = []
+                const errorMap = {}
                 for (const k in diffObj) {
                     this.formValidator.validateField(k, diffObj[k], function(isValided, error) {
                         if (error && error[k]) {
-                            errors[k] = error[k]
+                            errors.push(error[k])
+                            errorMap[k] = error[k]
                         }
                         isValid = isValided
                     })
                 }
-                this._showErrors(diffObj, errors)
+                this._showErrors(diffObj, errorMap)
                 this.triggerEvent(isValid ? 'success' : 'fail', isValid ? {trigger: 'change'} : {errors, trigger: 'change'})
             }
             return newVal

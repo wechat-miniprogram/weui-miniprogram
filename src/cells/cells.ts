@@ -12,7 +12,7 @@ Component({
           type: String,
           value: ''
         },
-        foot: {
+        footer: {
           type: String,
           value: ''
         }

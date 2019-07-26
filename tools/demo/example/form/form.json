@@ -1,7 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "mp-toptips": "../components/toptips/toptips",
+    "mp-toptips": "../../components/toptips/toptips",
     "mp-cells": "../../components/cells/cells",
     "mp-cell": "../../components/cell/cell",
     "mp-checkbox": "../../components/checkbox/checkbox",

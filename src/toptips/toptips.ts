@@ -5,7 +5,7 @@ Component({
     properties: {
         type: {
             type: String,
-            value: 'warn',
+            value: 'error',
             observer: '_typeChange'
         },
         show: {

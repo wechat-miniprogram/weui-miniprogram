@@ -36,3 +36,4 @@ page{
 .weui-cell_example:before{
     left:52px;
 }
+/* .weui-btn{width:184px;} */

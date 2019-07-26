@@ -5,36 +5,36 @@
     </view>
     <view class="page__bd">
         <mp-cells ext-class="my-cells" title="带说明的列表项">
-            <mp-cell value="标题文字" foot="说明文字"></mp-cell>
+            <mp-cell value="标题文字" footer="说明文字"></mp-cell>
             <mp-cell>
                 <view>标题文字（使用slot）</view>
-                <view slot="foot">说明文字</view>
+                <view slot="footer">说明文字</view>
             </mp-cell>
             <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
-                <mp-cell value="左滑可以删除" foot="说明文字"></mp-cell>
+                <mp-cell value="左滑可以删除" footer="说明文字"></mp-cell>
             </mp-slideview>
             <mp-slideview buttons="{{slideButtons}}" icon="{{true}}" bindbuttontap="slideButtonTap">
-                <mp-cell value="左滑可以删除（按钮Button）" foot="说明文字"></mp-cell>
+                <mp-cell value="左滑可以删除（按钮Button）" footer="说明文字"></mp-cell>
             </mp-slideview>
         </mp-cells>
 
-        <mp-cells title="带图标、说明的列表项">
-            <mp-cell value="标题文字" foot="说明文字">
+        <mp-cells title="带图标、说明的列表项" footer="底部说明文字">
+            <mp-cell value="标题文字" footer="说明文字">
                 <image slot="icon" src="{{icon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
             </mp-cell>
-            <mp-cell value="标题文字" foot="说明文字">
+            <mp-cell value="标题文字" footer="说明文字">
                 <image slot="icon" src="{{icon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
             </mp-cell>
         </mp-cells>
 
         <mp-cells title="带跳转的列表项">
-            <mp-cell link hover value="有hover效果" foot="说明文字">
+            <mp-cell link hover value="有hover效果" footer="说明文字">
                 <image slot="title" src="{{icon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
             </mp-cell>
-            <mp-cell link value="无hover效果" foot="说明文字">
+            <mp-cell link value="无hover效果" footer="说明文字">
                 <image slot="icon" src="{{icon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
             </mp-cell>
-            <mp-cell link url="../index" value="无hover效果，带跳转URL" foot="说明文字">
+            <mp-cell link url="../index" value="无hover效果，带跳转URL" footer="说明文字">
                 <image slot="icon" src="{{icon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
             </mp-cell>
         </mp-cells>

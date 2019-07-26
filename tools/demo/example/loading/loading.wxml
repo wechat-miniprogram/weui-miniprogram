@@ -5,7 +5,8 @@
     </view>
     <view class="page__bd">
         <mp-loading type="circle"></mp-loading>
-        <mp-loading type="dot-gray"></mp-loading>
-        <mp-loading type="dot-white"></mp-loading>
+        <!-- <mp-loading type="circle" tips="{{tips}}"></mp-loading> -->
+        <mp-loading duration="{{900}}" ext-class="demo0" type="dot-gray" show="{{show}}" animated="{{animated}}"></mp-loading>
+        <mp-loading type="dot-white" ext-class="demo1"></mp-loading>
     </view>
 </view>

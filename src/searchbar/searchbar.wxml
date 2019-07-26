@@ -14,7 +14,7 @@
     </view>
     <view wx:if="{{cancel && searchState}}" class="weui-search-bar__cancel-btn" bindtap="hideInput">{{cancelText}}</view>
 </view>
-<mp-cells class="searchbar-result" wx:if="{{searchState && result.length > 0}}">
+<mp-cells class="searchbar-result  {{extClass}}" wx:if="{{searchState && result.length > 0}}">
     <mp-cell bindtap="selectResult" data-index="{{index}}" wx:for="{{result}}" hover>
         <view>{{item.text}}</view>
     </mp-cell>

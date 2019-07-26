@@ -9,7 +9,7 @@
             <button class="weui-btn" type="primary">主要操作</button>
             <button class="weui-btn" type="default">辅助操作</button>
         </view>
-        <view slot="foot">
+        <view slot="footer">
             <view class="weui-footer__links">
                 <navigator url="" class="weui-footer__link">底部链接文本</navigator>
             </view>

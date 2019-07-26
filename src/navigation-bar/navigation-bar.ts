@@ -16,17 +16,13 @@ Component({
       type: String,
       value: ''
     },
-    loadingSize: {
-      type: Object,
-      value: { width: 50, height: 50 }
-    },
     background: {
       type: String,
-      value: '#ffffff',
+      value: '',
     },
     color: {
       type: String,
-      value: '#000'
+      value: ''
     },
     back: {
       type: Boolean,
@@ -36,16 +32,16 @@ Component({
       type: Boolean,
       value: false,
     },
-    animated: { // 显示隐藏的时候
+    animated: { // 显示隐藏的时候opacity动画效果
       type: Boolean,
       value: true,
     },
-    show: {
+    show: { // 显示隐藏导航，隐藏的时候navigation-bar的高度占位还在
       type: Boolean,
       value: true,
       observer: '_showChange'
     },
-    // 返回的深度
+    // back为true的时候，返回的页面深度
     delta: {
       type: Number,
       value: 1,
@@ -58,15 +54,18 @@ Component({
     displayStyle: ''
   },
   attached() {
+    const isSupport = !!wx.getMenuButtonBoundingClientRect
+    const rect = wx.getMenuButtonBoundingClientRect ? wx.getMenuButtonBoundingClientRect() : null
     wx.getSystemInfo({
         success: res => {
           const ios = !!(res.system.toLowerCase().search('ios') + 1)
-          /*
-          苹果产品型号符合字符串排序规则
-          ["iPhone 7 Plus", "iPhone X", "iPhone XS", "iPhone XS Max", "iPhone XR", "iPhone 6S", "iPhone 8 Plus"].sort() ->
-          ["iPhone 6S", "iPhone 7 Plus", "iPhone 8 Plus", "iPhone X", "iPhone XR", "iPhone XS", "iPhone XS Max"]
-          */
-          this.setData({ios, statusBarHeight: res.statusBarHeight})
+          this.setData({
+            ios,
+            statusBarHeight: res.statusBarHeight,
+            innerWidth: isSupport ? `width:${rect.left}px` : '',
+            innerPaddingRight: isSupport ? `padding-right:${res.windowWidth - rect.left}px` : '',
+            leftWidth: isSupport ? `width:${res.windowWidth - rect.left}px` : '',
+          })
       },
     })
   },

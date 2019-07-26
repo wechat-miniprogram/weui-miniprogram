@@ -1,4 +1,4 @@
-<view class="weui-uploader">
+<view class="weui-uploader {{extClass}}">
     <view class="weui-uploader__hd">
       <div class="weui-uploader__overview">
           <view class="weui-uploader__title">{{title}}</view>

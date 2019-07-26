@@ -73,13 +73,13 @@ var touchend = function(event, ownerInstance) {
     if (Math.abs(event.changedTouches[0].pageX - st.startX) < st.throttle || event.changedTouches[0].pageX - st.startX > 0) { // 方向也要控制
         st.out = false
         ins.setStyle({
-            'transform': 'translateX(0px)',
-            'transition': 'transform 0.8s easeOutElastic'
+            'transform': 'translate3d(0px, 0, 0)',
+            'transition': 'transform 0.4s'
         })
         for (;i >= 0; i--) {
             btns[i].setStyle({
-                'transform': 'translateX(0px)',
-                'transition': 'transform 0.8s easeOutElastic'
+                'transform': 'translate3d(0px, 0, 0)',
+                'transition': 'transform 0.4s'
             })
         }
         ownerInstance.callMethod('hide')
@@ -88,8 +88,8 @@ var touchend = function(event, ownerInstance) {
     var movex = st.max
     st.out = true
     ins.setStyle({
-        'transform': 'translateX(' + (-movex) + 'px)',
-        'transition': 'transform 0.8s easeOutElastic'
+        'transform': 'translate3d(' + (-movex) + 'px, 0, 0)',
+        'transition': 'transform 0.4s'
     })
     st.transformx = -movex
     var transformTotal = 0
@@ -97,8 +97,8 @@ var touchend = function(event, ownerInstance) {
         var transform = st.size.buttons[i].width / st.max * movex
         var transformx = (-(transform + transformTotal))
         btns[i].setStyle({
-            'transform': 'translateX(' + transformx + 'px)',
-            'transition': 'transform 0.8s easeOutElastic'
+            'transform': 'translate3d(' + transformx + 'px, 0, 0)',
+            'transition': 'transform 0.4s'
         })
         st.size.buttons[i].transformx = transformx
         transformTotal += transform
@@ -115,14 +115,14 @@ var hideButton = function(event, ownerInstance) {
     var i = len - 1
     // console.log('len size', len)
     ins.setStyle({
-        'transform': 'translateX(0px)',
-        'transition': 'transform 0.5s easeOutElastic'
+        'transform': 'translate3d(0px, 0, 0)',
+        'transition': 'transform 0.4s'
     })
     st.transformx = 0
     for (;i >= 0; i--) {
         btns[i].setStyle({
-            'transform': 'translateX(0px)',
-            'transition': 'transform 0.5s easeOutElastic'
+            'transform': 'translate3d(0px, 0, 0)',
+            'transition': 'transform 0.5s'
         })
         st.size.buttons[i].transformx = 0
     }

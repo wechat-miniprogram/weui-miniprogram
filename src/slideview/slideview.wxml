@@ -1,24 +1,17 @@
 <!-- slide-view/slide-view.wxml -->
 <wxs module="handler" src="./slideview.wxs"></wxs>
-<view class="weui-slideview weui-movable-view {{extClass}}" style="width: 100%;height: 100%;overflow:hidden;">
+<view class="weui-slideview weui-movable-view {{icon ? 'weui-slideview_icon' : ''}} {{extClass}}" style="width: 100%;height: 100%;overflow:hidden;">
     <view change:disable="{{handler.disableChange}}" disable="{{disable}}" change:prop="{{handler.sizeReady}}" prop="{{size}}" bindtouchstart="{{handler.touchstart}}" bindtouchmove="{{handler.touchmove}}" bindtouchend="{{handler.touchend}}" class="weui-slideview__left left" style="width:100%;">
       <slot></slot>
     </view>
     <view class="weui-slideview__right right">
       <view class="weui-slideview__buttons" style="height:100%;width:100%;" wx:if="{{buttons && buttons.length}}">
-        <!-- weui-slideview__btn_default -->
-        <!-- weui-slideview__btn_warn -->
-        <view wx:for="{{buttons}}" data-data="{{item.data}}" data-index="{{index}}" bindtap="{{handler.hideButton}}" class='btn weui-slideview__btn {{item.className}} {{item.extClass}}'>
-          <block wx:if="{{!icon}}">{{item.text}}</block>
-          <block wx:else><image class="weui-slideview__icon" src="{{item.src}}"></image></block>
+        <view wx:for="{{buttons}}" data-data="{{item.data}}" data-index="{{index}}" class='btn weui-slideview__btn__wrp {{item.className}} {{item.extClass}}'>
+          <view bindtap="{{handler.hideButton}}" class='weui-slideview__btn'>
+            <text wx:if="{{!icon}}">{{item.text}}</text>
+            <image class="weui-slideview__btn__icon" wx:else src="{{item.src}}"/>
+          </view>
         </view>
       </view>
-      <!-- 图标型
-      <view class="weui-slideview__buttons">
-        <view class="weui-slideview__btn weui-slideview__btn_icon">
-          <image class="weui-slideview__icon" src="xxxxxx"></image>
-        </view>
-      </view>
-      -->
     </view>
 </view>
