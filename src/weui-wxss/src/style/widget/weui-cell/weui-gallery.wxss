@@ -23,7 +23,6 @@
 @weuiGalleryInfoHeight: 60px;
 @weuiGalleryOprHeight: 60px;
 .weui-gallery {
-    display: none;
     position: fixed;
     top: 0;
     right: 0;
@@ -36,11 +35,16 @@
     flex-direction: column;
     -webkit-flex-wrap: nowrap;
     flex-wrap: nowrap;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .3s;
 }
 .weui-gallery_show {
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
+    visibility:visible;
+    opacity:1;
 }
 .weui-gallery__img__wrp {
     -webkit-box-flex: 1;
@@ -59,6 +63,9 @@
     background-color: #0D0D0D;
     color: #FFFFFF;
     line-height: @weuiGalleryOprHeight;
+    min-height: @weuiGalleryOprHeight;
+    padding-bottom:constant(safe-area-inset-bottom);
+    padding-bottom:env(safe-area-inset-bottom);
     text-align: center;
 }
 .weui-gallery__opr {

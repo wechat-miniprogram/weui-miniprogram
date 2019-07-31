@@ -22,6 +22,7 @@
     "example/progress/progress",
 
     "example/actionsheet/actionsheet",
+    "example/half-screen-dialog/half-screen-dialog",
     "example/dialog/dialog",
     "example/msg/msg",
     "example/msg/msg_text",
@@ -31,7 +32,7 @@
     "example/picker/picker",
     "example/toast/toast",
 
-    "example/navigation_bar/navigation_bar",
+    "example/navigation-bar/navigation-bar",
     "example/tabbar/tabbar",
 
     "example/searchbar/searchbar"

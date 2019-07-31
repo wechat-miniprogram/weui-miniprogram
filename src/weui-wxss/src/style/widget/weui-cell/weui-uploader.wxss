@@ -23,6 +23,7 @@
 .weui-uploader{}
 .weui-uploader__hd{
     padding-bottom: @weuiCellGapV;
+    padding-bottom: 16px;
 }
 .weui-uploader__overview{
     display: flex;

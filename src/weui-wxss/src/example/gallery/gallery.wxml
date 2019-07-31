@@ -4,7 +4,10 @@
         <view class="page__desc">画廊，模拟小程序原生的wx.previewImage。</view>
     </view>
     <view class="page__bd">
-      <view class="weui-gallery weui-gallery_show">
+      <view class="weui-btn-area">
+          <button class="weui-btn" type="default" bindtap="openGallery">Gallery</button>
+      </view>
+      <view class="weui-gallery {{istrue ? 'weui-gallery_show' : ''}}" bindtap="closeGallery">
         <view class="weui-gallery__info">1/17</view>
         <view class="weui-gallery__img__wrp">
               <image mode="aspectFit" class="weui-gallery__img" src="../images/pic_160.png"></image>

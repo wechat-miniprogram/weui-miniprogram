@@ -62,5 +62,6 @@
 
 @import "./widget/weui-tips/weui-mask.wxss";
 @import "./widget/weui-tips/weui-dialog.wxss";
+@import "./widget/weui-tips/weui-half-screen-dialog.wxss";
 @import "./widget/weui-tips/weui-toptips.wxss";
 @import "./widget/weui-navigation-bar/weui-navigation-bar.wxss";

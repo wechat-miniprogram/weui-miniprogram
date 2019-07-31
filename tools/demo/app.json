@@ -4,6 +4,7 @@
 
     "example/button/button",
     "example/cell/cell",
+    "example/slideview/slideview",
     "example/form/form",
     "example/slider/slider",
     "example/uploader/uploader",

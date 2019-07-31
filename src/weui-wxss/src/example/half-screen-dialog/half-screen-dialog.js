@@ -1,10 +1,13 @@
 Page({
-    openGallery: function () {
+    data: {
+        showDialog: false
+    },
+    openDialog: function () {
         this.setData({
             istrue: true
         })
     },
-    closeGallery: function () {
+    closeDialog: function () {
         this.setData({
             istrue: false
         })

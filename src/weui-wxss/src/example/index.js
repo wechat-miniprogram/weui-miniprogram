@@ -5,7 +5,7 @@ Page({
                 id: 'form',
                 name: '表单',
                 open: false,
-                pages: ['list', 'input', 'slider', 'uploader']
+                pages: ['button', 'list', 'input', 'slider', 'uploader']
             },
             {
                 id: 'widget',
@@ -17,13 +17,13 @@ Page({
                 id: 'feedback',
                 name: '操作反馈',
                 open: false,
-                pages: ['actionsheet', 'dialog', 'msg', 'picker', 'toast']
+                pages: ['actionsheet', 'dialog', 'half-screen-dialog', 'msg', 'picker', 'toast']
             },
             {
                 id: 'nav',
                 name: '导航相关',
                 open: false,
-                pages: ['navigation_bar', 'tabbar']
+                pages: ['navigation-bar', 'tabbar']
             },
             {
                 id: 'search',

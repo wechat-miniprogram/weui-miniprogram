@@ -5,7 +5,7 @@ Page({
                 id: 'form',
                 name: '表单',
                 open: false,
-                pages: ['cell', 'form', 'uploader']
+                pages: ['cell', 'slideview', 'form', 'uploader']
             },
             {
                 id: 'widget',
