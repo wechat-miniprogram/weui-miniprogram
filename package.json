@@ -4,7 +4,8 @@
   "description": "",
   "main": "miniprogram_dist/index.js",
   "scripts": {
-    "init": "npm i && cd src/weui-wxss && npm i && gulp build:style && cd ../../ && npm run dev",
+    "submodule": "git submodule init && git submodule update --init --remote",
+    "init": "npm run submodule && npm i && cd src/weui-wxss && npm i && gulp build:style && cd ../../ && npm run dev",
     "dev": "gulp dev --develop",
     "demo": "gulp demo --develop",
     "watch": "gulp watch --develop --watch",
