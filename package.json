@@ -1,6 +1,6 @@
 {
   "name": "weui-miniprogram",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "",
   "main": "miniprogram_dist/index.js",
   "scripts": {
@@ -36,7 +36,6 @@
   "author": "xushengni,tomylin,cunjinli,rockhou",
   "license": "MIT",
   "devDependencies": {
-    "@tencent/tslint-config-wxapp": "0.0.2",
     "autoprefixer": "^6.5.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
