@@ -2,10 +2,6 @@ Page({
     data: {
         files: [{
             url: 'http://mmbiz.qpic.cn/mmbiz_png/VUIF3v9blLsicfV8ysC76e9fZzWgy8YJ2bQO58p43Lib8ncGXmuyibLY7O3hia8sWv25KCibQb7MbJW3Q7xibNzfRN7A/0',
-        }, {
-            loading: true
-        }, {
-            error: true
         }]
     },
     onLoad() {

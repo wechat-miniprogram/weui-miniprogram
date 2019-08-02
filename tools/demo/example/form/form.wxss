@@ -1,1 +1,2 @@
 /* example/input/input.wxss */
+@import '../common.wxss';

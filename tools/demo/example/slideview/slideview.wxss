@@ -1,3 +1,5 @@
+@import '../common.wxss';
+
 page{background-color:#F7F7F7;}
 .weui-slidecells{
   margin:8px;

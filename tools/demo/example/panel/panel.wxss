@@ -1,1 +1,2 @@
 /* example/panel/panel.wxss */
+@import '../common.wxss';
