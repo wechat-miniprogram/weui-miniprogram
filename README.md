@@ -1,15 +1,15 @@
-## UI 组件库简介
-这是一套基于样式库[weui-wxss](https://github.com/Tencent/weui-wxss/)开发的小程序UI组件库，同微信原生视觉体验一致的UI组件库，由微信官方设计团队和小程序团队为微信小程序量身设计，令用户的使用感知更加统一。
+## WeUI组件库简介
+这是一套基于样式库[weui-wxss](https://github.com/Tencent/weui-wxss/)开发的小程序扩展组件库，同微信原生视觉体验一致的扩展组件库，由微信官方设计团队和小程序团队为微信小程序量身设计，令用户的使用感知更加统一。
 
 ## 如何使用
 详细使用参考[文档](https://developers.weixin.qq.com/miniprogram/dev/extended/weui)
 
 ## 开发
 
-1. 初始化：
+1. 安装依赖：
 
 ```
-npm run init
+npm install
 ```
 
 2. 执行命令：
