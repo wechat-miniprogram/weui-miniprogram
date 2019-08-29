@@ -1,4 +1,5 @@
 {
+    "component": true,
     "usingComponents": {
         "mp-cells": "../cells/cells",
         "mp-cell": "../cell/cell"
