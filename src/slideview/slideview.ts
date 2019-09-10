@@ -13,7 +13,10 @@ Component({
     },
     buttons: {
       type: Array,
-      value: [] // type, text, src
+      value: [], // type, text, src
+      observer: function(newVal) {
+        this.addClassNameForButton()
+      }
     },
     disable: {
       type: Boolean,
@@ -38,18 +41,7 @@ Component({
   ready() {
     //@ts-ignore
     this.updateRight()
-    this.data.buttons.forEach(btn => {
-      if (this.data.icon) {
-        btn.className = ''
-      } else if (btn.type === 'warn') {
-        btn.className = 'weui-slideview__btn-group_warn'
-      } else {
-        btn.className = 'weui-slideview__btn-group_default'
-      }
-    });
-    this.setData({
-      buttons: this.data.buttons
-    })
+    this.addClassNameForButton()
   },
   methods: {
     updateRight() {
@@ -70,7 +62,23 @@ Component({
         }).exec()
       }).exec()
     },
-      
+    addClassNameForButton() {
+      // @ts-ignore
+      const {buttons, icon} = this.data
+      buttons.forEach(btn => {
+        if (icon) {
+          btn.className = ''
+        } else if (btn.type === 'warn') {
+          btn.className = 'weui-slideview__btn-group_warn'
+        } else {
+          btn.className = 'weui-slideview__btn-group_default'
+        }
+      });
+      this.setData({
+        buttons: buttons
+      })
+
+    },
     buttonTapByWxs(data) {
       this.triggerEvent('buttontap', data, {})
     },

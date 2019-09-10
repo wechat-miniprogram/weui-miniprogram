@@ -8,7 +8,7 @@ const validateSingleRule = (rule: any, value:any, param:any = null, models = nul
         if (ruleKey === 'validator' || ruleKey === 'name' || ruleKey === 'message') continue
         const validateMethod = typeof rule.validator !== 'undefined' ? rule.validator : Validator[ruleKey]
         if (typeof validateMethod === 'function') {
-            message = validateMethod({name: rule.name, message: rule.message}, value, param, models)
+            message = validateMethod(rule, value, param, models)
             if (message) {
                 return message
             }

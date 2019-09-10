@@ -47,7 +47,11 @@ Component({
         extClass: {
             type: String,
             value: '',
-        }
+        },
+        delete: { // 是否显示delete按钮
+            type: Boolean,
+            value: true
+        },
     },
     data: {
         currentFiles: [],

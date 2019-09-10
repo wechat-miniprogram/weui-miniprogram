@@ -19,25 +19,31 @@ export default {
     required: (r, val, param, models) => {
         if (!val) return sprintf(r.message || defaultMessage.required, r.name)
     },
-    minlength: (r, val, minlen) => {
+    minlength: (r, val) => {
+        const minlen = r.minlength
         val = val || ''
         if (val.length < minlen) return sprintf(r.message || defaultMessage.minlength, minlen)
     },
-    maxlength: (r, val, maxlen) => {
+    maxlength: (r, val) => {
+        const maxlen = r.maxlength
         val = val || ''
         if (val.length > maxlen) return sprintf(r.message || defaultMessage.maxlength, maxlen)
     },
-    rangelength: (r, val, range) => {
+    rangelength: (r, val) => {
+        const range = r.range
         val = val || ''
         if (val.length > range[1] || val.length < range[0]) return sprintf(r.message || defaultMessage.rangelength, range[0], range[1])
     },
-    min: (r, val, min) => {
+    min: (r, val) => {
+        const min = r.min
         if (val < min) return sprintf(r.message || defaultMessage.min, min)
     },
-    max: (r, val, max) => {
+    max: (r, val) => {
+        const max = r.max
         if (val > max) return sprintf(r.message || defaultMessage.max, max)
     },
-    range: (r, val, range) => {
+    range: (r, val) => {
+        const range = r.range
         if (val < range[0] || val > range[1]) return sprintf(r.message || defaultMessage.range, range[0], range[1])
     },
     mobile: (r, val) => {
@@ -59,9 +65,11 @@ export default {
         }
     },
     equalTo: function(r, value, param, models) {
-        if (value !== models[param]) return sprintf(r.message || defaultMessage.equalTo, r.name)
+        const equalTo = r.equalTo
+        if (value !== models[equalTo]) return sprintf(r.message || defaultMessage.equalTo, r.name)
     },
     bytelength: function(r, value, param, models) {
+        param = r.param
         const len = value.replace(/[^\x00-\xff]/g, '**').length;
         if (len > param) return sprintf(r.message || defaultMessage.bytelength, param)
     }
