@@ -142,7 +142,7 @@ Component({
                 const newErrors = []
                 this.data.rules.forEach(rule => {
                     if (errors[rule.name]) {
-                        errors.name = rule.name
+                        errors[rule.name].name = rule.name
                         newErrors.push(errors[rule.name])
                     }
                 })

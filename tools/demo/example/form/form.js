@@ -42,6 +42,9 @@ Component({
             name: 'checkbox',
             rules: {required: true, message: '多选列表是必选项'},
         }, {
+            name: 'name',
+            rules: {required: true, message: '请输入姓名'},
+        }, {
             name: 'qq',
             rules: {required: true, message: 'qq必填'},
         }, {

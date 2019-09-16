@@ -19,6 +19,9 @@
             </mp-cells>
 
             <mp-cells title="表单" footer="底部说明文字底部说明文字">
+                <mp-cell prop="name" title="姓名" ext-class="">
+                    <input bindinput="formInputChange" data-field="name" class="weui-input" placeholder="请输入姓名"/>
+                </mp-cell>
                 <mp-cell prop="qq" title="qq" ext-class="">
                     <input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入qq"/>
                 </mp-cell>
