@@ -152,6 +152,9 @@ Component({
                     })
                 }
             })
+            // this.selectComponent('#form').validateField('mobile', (valid, errors) => {
+            //     console.log('valid', valid, errors)
+            // })
         }
 
     }

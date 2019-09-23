@@ -99,16 +99,18 @@ class FormValidator {
             rules.forEach(rule => {
                 rule.name = name // 字段名称
                 const resMessage = validateSingleRule(rule, value || models[name], rule.param, models)
-                if (resMessage) {
+                // 失败了直接中止
+                if (resMessage && !isFail) {
                     isFail = true
                     // errors[name] = {message: resMessage}
                     const error = resMessage ? {message: resMessage, rule} : undefined
                     cb(false, error)
-                    return false
                 }
-                return true
             })
-            cb(!isFail)
+            // 成功的回调
+            if (!isFail) {
+                cb(!isFail)
+            }
         } else {
             const rule = rules
             rule.name = name
