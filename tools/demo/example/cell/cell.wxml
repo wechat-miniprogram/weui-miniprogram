@@ -13,6 +13,7 @@
             <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
                 <mp-cell value="左滑可以删除" footer="说明文字"></mp-cell>
             </mp-slideview>
+            <view slot="footer" class="weui-cells__tips">自定义底部说明文字 footer</view>
         </mp-cells>
 
         <mp-cells title="带图标、说明的列表项" footer="底部说明文字">
