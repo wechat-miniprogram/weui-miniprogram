@@ -17,7 +17,7 @@ const defaultMessage = {
 }
 export default {
     required: (r, val, param, models) => {
-        if (!val) return sprintf(r.message || defaultMessage.required, r.name)
+        if (r.required && !val) return sprintf(r.message || defaultMessage.required, r.name)
     },
     minlength: (r, val) => {
         const minlen = r.minlength
