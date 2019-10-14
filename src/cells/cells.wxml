@@ -1,5 +1,6 @@
 <view class="{{extClass}}">
     <view wx:if="{{title}}" class="weui-cells__title">{{title}}</view>
+    <block wx:else><slot name="title"></slot></block>
     <view class="weui-cells weui-cells_after-title {{checkboxCount > 0 && checkboxIsMulti ? 'weui-cells_checkbox' : ''}}">
         <slot></slot>
     </view>
