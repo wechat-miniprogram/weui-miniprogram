@@ -7,7 +7,7 @@
       </swiper-item>
     </block>
   </swiper>
-  <view class="weui-gallery__opr" wx:if="{{delete}}">
+  <view class="weui-gallery__opr" wx:if="{{showDelete}}">
     <navigator href="javascript:" bindtap="deleteImg" class="weui-gallery__del">删除</navigator>
   </view>
 </view>

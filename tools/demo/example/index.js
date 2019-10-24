@@ -11,13 +11,13 @@ Page({
                 id: 'widget',
                 name: '基础组件',
                 open: false,
-                pages: ['article', 'badge', 'flex', 'footer', 'gallery', 'grid', 'loadmore', 'loading', 'panel', 'preview']
+                pages: ['article', 'icons', 'badge', 'flex', 'footer', 'gallery', 'grid', 'loadmore', 'loading', 'panel', 'preview']
             },
             {
                 id: 'feedback',
                 name: '操作反馈',
                 open: false,
-                pages: ['dialog', 'msg']
+                pages: ['dialog', 'msg', 'half-screen-dialog','actionsheet']
             },
             {
                 id: 'nav',

@@ -20,7 +20,9 @@ Component({
     data: {
         firstItem: null,
         checkboxCount: 0,
-        checkboxIsMulti: false
+        checkboxIsMulti: false,
+        outerClass: '',
+        childClass: '',
     },
     relations: {
         '../cell/cell': {
@@ -33,6 +35,9 @@ Component({
                     target.setOuterClass('weui-cell_wxss')
                 }
             },
+        },
+        '../form-page/form-page': {
+            type: 'ancestor',
         },
         '../checkbox-group/checkbox-group': {
             type: 'descendant',
@@ -55,6 +60,16 @@ Component({
             this.setData({
                 checkboxIsMulti: multi
             })
-        }
+        },
+        setCellsClass(className) {
+            this.setData({
+                childClass: className
+            })
+        },
+        setOuterClass(className) {
+            this.setData({
+                outerClass: className
+            })
+        },
     }
 })

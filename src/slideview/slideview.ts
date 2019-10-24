@@ -13,7 +13,7 @@ Component({
     },
     buttons: {
       type: Array,
-      value: [], // type, text, src
+      value: [], // type, data, text, src, extClass
       observer: function(newVal) {
         this.addClassNameForButton()
       }
@@ -25,6 +25,22 @@ Component({
     icon: { // 是否是icon
       type: Boolean,
       value: false
+    },
+    show: {
+      type: Boolean,
+      value: false
+    },
+    duration: {
+      type: Number,
+      value: 350, // 动画市场，单位ms
+    },
+    throttle: {
+      type: Number,
+      value: 40,
+    },
+    rebounce: {
+      type: Number,
+      value: 0, // 回弹距离
     },
   },
 
@@ -46,6 +62,7 @@ Component({
   methods: {
     updateRight() {
       // 获取右侧滑动显示区域的宽度
+      const data:any = this.data
       const query = wx.createSelectorQuery().in(this)
       query.select('.left').boundingClientRect((res) => {
         console.log('right res', res)
@@ -56,7 +73,10 @@ Component({
             size: {
               buttons: rects,
               button: res,
-              // disable: this.data.disable
+              show: data.show,
+              disable: data.disable,
+              throttle: data.throttle,
+              rebounce: data.rebounce
             }
           })
         }).exec()
@@ -87,6 +107,9 @@ Component({
     },
     show() {
       this.triggerEvent('show', {}, {})
+    },
+    transitionEnd() {
+      console.log('transitiion end')
     }
   }
 })

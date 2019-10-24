@@ -6,6 +6,7 @@
     "example/cell/cell",
     "example/slideview/slideview",
     "example/form/form",
+    "example/form-page/form-page",
     "example/slider/slider",
     "example/uploader/uploader",
 
@@ -50,5 +51,6 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-  "debug": true
+  "debug": true,
+  "style": "v2"
 }

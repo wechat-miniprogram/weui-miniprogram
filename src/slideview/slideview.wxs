@@ -8,6 +8,8 @@ var touchstart = function(event, ownerInstance) {
     // console.log('touchstart', JSON.stringify(event))
     st.isMoving = true
     st.startX = event.touches[0].pageX
+    st.startY = event.touches[0].pageY
+    st.firstAngle = 0
 }
 var touchmove = function(event, ownerInstance) {
     var ins = event.instance
@@ -15,6 +17,14 @@ var touchmove = function(event, ownerInstance) {
     if (!st.size || !st.isMoving) return
     // console.log('touchmove', JSON.stringify(event))
     var pagex = event.touches[0].pageX - st.startX
+    var pagey = event.touches[0].pageY - st.startY
+    // 左侧45度角为界限，大于45度则允许水平滑动
+    if (st.firstAngle === 0) {
+        st.firstAngle = Math.abs(pagex) - Math.abs(pagey)
+    }
+    if (st.firstAngle < 0) {
+        return
+    }
     var movex = pagex > 0 ? Math.min(st.max, pagex) : Math.max(-st.max, pagex)
     // 往回滑动的情况
     if (st.out) {
@@ -37,7 +47,7 @@ var touchmove = function(event, ownerInstance) {
             })
             transformTotal += transform
         }
-        return
+        return false
     }
     if (movex > 0) movex = 0
     ins.setStyle({
@@ -59,11 +69,17 @@ var touchmove = function(event, ownerInstance) {
         st.size.buttons[i].transformx = transformx
         transformTotal += transform
     }
+    return false // 禁止垂直方向的滑动
 }
 var touchend = function(event, ownerInstance) {
     var ins = event.instance
     var st = ins.getState()
     if (!st.size || !st.isMoving) return
+    // 左侧45度角为界限，大于45度则允许水平滑动
+    if (st.firstAngle < 0) {
+        return
+    }
+    var duration = st.duration / 1000
     st.isMoving = false
     // console.log('touchend', JSON.stringify(event))
     var btns = ownerInstance.selectAllComponents('.btn')
@@ -74,22 +90,34 @@ var touchend = function(event, ownerInstance) {
         st.out = false
         ins.setStyle({
             'transform': 'translate3d(0px, 0, 0)',
-            'transition': 'transform 0.4s'
+            'transition': 'transform ' + (duration) + 's'
         })
         for (;i >= 0; i--) {
             btns[i].setStyle({
                 'transform': 'translate3d(0px, 0, 0)',
-                'transition': 'transform 0.4s'
+                'transition': 'transform ' + (duration) + 's'
             })
         }
         ownerInstance.callMethod('hide')
         return
     }
+    showButtons(ins, ownerInstance, duration)
+    ownerInstance.callMethod('show')
+}
+var REBOUNCE_TIME = 0.2
+var showButtons = function(ins, ownerInstance, withDuration) {
+    var st = ins.getState()
+    if (!st.size) return
+    var rebounceTime = st.rebounce ? REBOUNCE_TIME : 0
     var movex = st.max
     st.out = true
+    var btns = ownerInstance.selectAllComponents('.btn')
+    var rebounce = st.rebounce || 0
+    var len = btns.length
+    var i = len - 1
     ins.setStyle({
-        'transform': 'translate3d(' + (-movex) + 'px, 0, 0)',
-        'transition': 'transform 0.4s'
+        'transform': 'translate3d(' + (-movex - rebounce) + 'px, 0, 0)',
+        'transition': 'transform ' + (withDuration) + 's'
     })
     st.transformx = -movex
     var transformTotal = 0
@@ -98,34 +126,35 @@ var touchend = function(event, ownerInstance) {
         var transformx = (-(transform + transformTotal))
         btns[i].setStyle({
             'transform': 'translate3d(' + transformx + 'px, 0, 0)',
-            'transition': 'transform 0.4s'
+            'transition': 'transform ' + (withDuration ? withDuration + rebounceTime : withDuration) + 's'
         })
         st.size.buttons[i].transformx = transformx
         transformTotal += transform
     }
-    ownerInstance.callMethod('show')
 }
-var hideButton = function(event, ownerInstance) {
+var innerHideButton = function(ownerInstance) {
     var ins = ownerInstance.selectComponent('.left')
     var st = ins.getState()
     if (!st.size) return
-    // console.log('hideButton', JSON.stringify(event))
+    var duration = st.duration ? st.duration / 1000 : 0
     var btns = ownerInstance.selectAllComponents('.btn')
     var len = btns.length
     var i = len - 1
-    // console.log('len size', len)
     ins.setStyle({
         'transform': 'translate3d(0px, 0, 0)',
-        'transition': 'transform 0.4s'
+        'transition': 'transform ' + (duration) + 's'
     })
     st.transformx = 0
     for (;i >= 0; i--) {
         btns[i].setStyle({
             'transform': 'translate3d(0px, 0, 0)',
-            'transition': 'transform 0.5s'
+            'transition': 'transform ' + (duration) + 's'
         })
         st.size.buttons[i].transformx = 0
     }
+}
+var hideButton = function(event, ownerInstance) {
+    innerHideButton(ownerInstance)
     ownerInstance.callMethod('buttonTapByWxs', {index: event.currentTarget.dataset.index, data: event.currentTarget.dataset.data})
     return false
 }
@@ -149,7 +178,8 @@ var sizeReady = function(newVal, oldVal, ownerInstance, ins) {
             newVal.buttons[i].max = total
             newVal.buttons[i].transformx = 0
         }
-        st.throttle = 40 // 固定值
+        st.throttle = st.size.throttle || 40 // 固定值
+        st.rebounce = st.size.rebounce
         st.max = max
         ownerInstance.selectComponent('.right').setStyle({
             'line-height': newVal.button.height + 'px',
@@ -157,11 +187,47 @@ var sizeReady = function(newVal, oldVal, ownerInstance, ins) {
             width: max + 'px'
         })
         // console.log('st size', JSON.stringify(newVal))
+        if (!st.size.disable && st.size.show) {
+            showButtons(ins, ownerInstance)
+        }
     }
 }
 var disableChange = function(newVal, oldVal, ownerInstance, ins) {
     var st = ins.getState()
     st.disable = newVal
+}
+var durationChange = function(newVal, oldVal, ownerInstance, ins) {
+    var st = ins.getState()
+    st.duration = newVal || 400
+}
+var showChange = function(newVal, oldVal, ownerInstance, ins) {
+    var st = ins.getState()
+    st.show = newVal
+    if (st.disable) return
+    // console.log('show change')
+    if (st.show) {
+        showButtons(ins, ownerInstance, st.duration)
+    } else {
+        innerHideButton(ownerInstance)
+    }
+}
+var rebounceChange = function(newVal, oldVal, ownerInstance, ins) {
+    var st = ins.getState()
+    // console.log('rebounce', st.rebounce)
+    st.rebounce = newVal
+}
+var transitionEnd = function(event, ownerInstance) {
+    // console.log('transition')
+    var ins = event.instance
+    var st = ins.getState()
+    // 回弹效果
+    if (st.out && st.rebounce) {
+        console.log('transition rebounce', st.rebounce)
+        ins.setStyle({
+            'transform': 'translate3d(' + (-st.max) + 'px, 0, 0)',
+            'transition': 'transform ' + REBOUNCE_TIME +'s'
+        })
+    }
 }
 module.exports = {
     touchstart: touchstart,
@@ -169,5 +235,9 @@ module.exports = {
     touchend: touchend,
     hideButton: hideButton,
     sizeReady: sizeReady,
-    disableChange: disableChange
+    disableChange: disableChange,
+    durationChange: durationChange,
+    showChange: showChange,
+    rebounceChange: rebounceChange,
+    transitionEnd: transitionEnd
 }

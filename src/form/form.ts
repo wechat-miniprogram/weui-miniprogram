@@ -34,7 +34,7 @@ Component({
             observer: '_rulesChange'
         },
         extClass: {
-            type: Boolean,
+            type: String,
             value: ''
         }
     },

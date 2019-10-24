@@ -33,4 +33,4 @@
         </view>
     </view>
 </view>
-<mp-gallery hide-on-click="{{true}}" delete="{{delete}}" show="{{showPreview}}" binddelete="deletePic" img-urls="{{previewImageUrls}}" current="{{previewCurrent}}"></mp-gallery>
+<mp-gallery hide-on-click="{{true}}" show-delete="{{showDelete}}" show="{{showPreview}}" binddelete="deletePic" img-urls="{{previewImageUrls}}" current="{{previewCurrent}}"></mp-gallery>

@@ -5,7 +5,7 @@ const toString = Object.prototype.toString
 const validateSingleRule = (rule: any, value:any, param:any = null, models = null) => {
     let message = ''
     for (const ruleKey in rule) {
-        if (ruleKey === 'validator' || ruleKey === 'name' || ruleKey === 'message') continue
+        if (ruleKey === 'name' || ruleKey === 'message') continue
         const validateMethod = typeof rule.validator !== 'undefined' ? rule.validator : Validator[ruleKey]
         if (typeof validateMethod === 'function') {
             message = validateMethod(rule, value, param, models)

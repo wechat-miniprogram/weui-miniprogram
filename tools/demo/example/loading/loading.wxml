@@ -4,6 +4,7 @@
         <view class="page__desc">加载中</view>
     </view>
     <view class="page__bd">
+        <!-- <button bindtap="close">关闭animateion</button> -->
         <mp-loading type="circle"></mp-loading>
         <!-- <mp-loading type="circle" tips="{{tips}}"></mp-loading> -->
         <mp-loading duration="{{900}}" ext-class="demo0" type="dot-gray" show="{{show}}" animated="{{animated}}"></mp-loading>

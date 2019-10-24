@@ -54,6 +54,7 @@ Component({
                 if (!this.data.parentCell) {
                     this.data.parentCell = target
                 }
+                this.setParentCellsClass()
             },
             unlinked(target) {
                 this.data.parentCell = null; // 方便内存回收
@@ -83,6 +84,12 @@ Component({
                     }
                 })
                 this.triggerEvent('change', {value: val}, {})
+            }
+        },
+        setParentCellsClass() {
+            const className = this.data.multi ? 'weui-cells_checkbox' : ''
+            if (this.data.parentCell) {
+                this.data.parentCell.setCellsClass(className)
             }
         },
         _multiChange(multi) {

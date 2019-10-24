@@ -20,6 +20,10 @@ Component({
             type: String,
             value: ''
         },
+        bodyClass: {
+            type: String,
+            value: ''
+        },
         icon: {
             type: String,
             value: '',
@@ -53,6 +57,18 @@ Component({
             value: ''
         },
         inline: { // 左右布局样式还是上下布局
+            type: Boolean,
+            value: true
+        },
+        hasHeader: {
+            type: Boolean,
+            value: true
+        },
+        hasFooter: {
+            type: Boolean,
+            value: true
+        },
+        hasBody: {
             type: Boolean,
             value: true
         }

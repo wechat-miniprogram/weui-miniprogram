@@ -37,7 +37,7 @@ Component({
         },
         rules: [{
             name: 'radio',
-            rules: {required: true, message: '单选列表是必选项'},
+            rules: {required: false, message: '单选列表是必选项'},
         }, {
             name: 'checkbox',
             rules: {required: true, message: '多选列表是必选项'},
@@ -55,7 +55,11 @@ Component({
             rules: {required: true, message: '验证码必填'},
         }, {
             name: 'idcard',
-            rules: {required: true, message: 'idcard必填'},
+            rules: {validator: function(rule, value, param, modeels) {
+                if (!value || value.length !== 18) {
+                    return 'idcard格式不正确'
+                }
+            }},
         }]
     },
     methods: {

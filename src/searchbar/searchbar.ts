@@ -42,7 +42,9 @@ Component({
     },
     lastSearch: Date.now(),
     lifetimes: {
+        // @ts-ignore
         attached() {
+        // @ts-ignore
             if (this.data.focus) {
                 this.setData({
                     searchState: true,
@@ -52,15 +54,22 @@ Component({
     },
     methods: {
         clearInput() {
+        // @ts-ignore
             this.setData({
                 value: '',
             })
+        // @ts-ignore
             this.triggerEvent('clear')
-            this.inputChange({detail: {value: ''}}, true)
         },
+        // @ts-ignore
         inputFocus(e) {
+            // this.setData({
+            //     searchState: true
+            // })
+        // @ts-ignore
             this.triggerEvent('focus', e.detail)
         },
+        // @ts-ignore
         inputBlur(e) {
             this.setData({
                 focus: false,
@@ -78,13 +87,12 @@ Component({
                 searchState: false,
             })
         },
-        inputChange(e, dontTriggerInput) {
+        // @ts-ignore
+        inputChange(e) {
             this.setData({
                 value: e.detail.value
             })
-            if (!dontTriggerInput) {
-                this.triggerEvent('input', e.detail)
-            }
+            this.triggerEvent('input', e.detail)
             if (Date.now() - this.lastSearch < this.data.throttle) {
                 return
             }
@@ -92,15 +100,18 @@ Component({
                 return
             }
             this.lastSearch = Date.now()
-            this.data.search(e.detail.value).then(json => {
-                this.setData({
-                    result: json
+            this.timerId = setTimeout(() => {
+                this.data.search(e.detail.value).then(json => {
+                    this.setData({
+                        result: json
+                    })
+                }).catch(err => {
+                    console.log('search error', err)
                 })
-            }).catch(err => {
-                console.log('search error', err)
-            })
+            }, this.data.throttle)
 
         },
+        // @ts-ignore
         selectResult(e) {
             const {index} = e.currentTarget.dataset
             const item = this.data.result[index]

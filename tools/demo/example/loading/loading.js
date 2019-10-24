@@ -11,6 +11,11 @@ Page({
       })
     }, 2000)
   },
+  close() {
+    this.setData({
+      animated: !this.data.animated
+    })
+  },
   onUnload() {
     clearInterval(this.timer)
   }

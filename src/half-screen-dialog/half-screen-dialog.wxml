@@ -1,27 +1,43 @@
-<view class="weui-mask"></view>
-<view class="weui-half-screen-dialog">
-  <view class="weui-half-screen-dialog__hd">
-    <view class="weui-half-screen-dialog__hd__side">
-      <view class="weui-icon-btn weui-icon-btn_close">关闭</view>
+<view class="{{show ? 'weui-show' :'weui-hidden'}}"> 
+  <view class="weui-mask init" wx:if="{{mask}}" bindtap="close" data-type="tap"></view>
+  <view class="weui-half-screen-dialog {{extClass}}">
+    <view class="weui-half-screen-dialog__hd">
+      <view wx:if="{{closabled}}" class="weui-half-screen-dialog__hd__side" bindtap="close" data-type="close">
+        <view class="weui-icon-btn weui-icon-btn_close">关闭</view>
+      </view>
+      <view class="weui-half-screen-dialog__hd__main">
+        <block wx:if="{{title}}">
+          <text class="weui-half-screen-dialog__title">{{title}}</text>
+          <text class="weui-half-screen-dialog__subtitle">{{subTitle}}</text>
+        </block>
+        <block wx:else>
+          <view class="weui-half-screen-dialog__title"><slot name="title"></slot></view>
+        </block>
+      </view>
+      <view class="weui-half-screen-dialog__hd__side">
+        <view class="weui-icon-btn weui-icon-btn_more">更多</view>
+      </view>
     </view>
-    <view class="weui-half-screen-dialog__hd__main">
-      <text class="weui-half-screen-dialog__title">标题</text>
-      <text class="weui-half-screen-dialog__subtitle">标题</text>
+    <view class="weui-half-screen-dialog__bd">
+      <block wx:if="{{title}}">
+        <view class="weui-half-screen-dialog__desc">{{desc}}</view>
+        <view class="weui-half-screen-dialog__tips">{{tips}}</view>
+      </block>
+      <slot name="desc" wx:else></slot>
     </view>
-    <view class="weui-half-screen-dialog__hd__side">
-      <view class="weui-icon-btn weui-icon-btn_more">更多</view>
+    <view class="weui-half-screen-dialog__ft">
+      <block wx:if="{{buttons && buttons.length}}">
+        <button 
+          wx:for="{{buttons}}" 
+          wx:key="{{item.text + item.index}}"
+          type="{{item.type}}" 
+          class="weui-btn {{item.className}}" 
+          data-index="{{index}}" 
+          bindtap="buttonTap"
+        >{{item.text}}</button>
+        <!-- <view wx:for="{{buttons}}" class="weui-dialog__btn {{}} {{item.extClass}}" ></view> -->
+      </block>
+      <slot name="footer" wx:else></slot>
     </view>
-  </view>
-  <view class="weui-half-screen-dialog__bd">
-    <view class="weui-half-screen-dialog__desc">
-      辅助描述内容，可根据实际需要安排
-    </view>
-    <view class="weui-half-screen-dialog__tips">
-      辅助提示内容，可根据实际需要安排
-    </view>
-  </view>
-  <view class="weui-half-screen-dialog__ft">
-      <button type="default" class="weui-btn">辅助操作</button>
-      <button type="primary" class="weui-btn">主操作</button>
   </view>
 </view>

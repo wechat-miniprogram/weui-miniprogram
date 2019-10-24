@@ -10,7 +10,7 @@ Component({
                 this.setData({currentImgs: newVal})
             }
         },
-        delete: { // 是否显示delete按钮
+        showDelete: { // 是否显示delete按钮
             type: Boolean,
             value: true
         },
