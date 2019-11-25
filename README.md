@@ -9,7 +9,7 @@
 1. 安装依赖：
 
 ```
-npm install
+npm install(安装依赖前请运行 npm run lint)
 ```
 
 2. 执行命令：
