@@ -54,18 +54,14 @@ Component({
     displayStyle: ''
   },
   attached() {
-    const isSupport = !!wx.getMenuButtonBoundingClientRect
-    const rect = wx.getMenuButtonBoundingClientRect ? wx.getMenuButtonBoundingClientRect() : null
     wx.getSystemInfo({
         success: res => {
           const ios = !!(res.system.toLowerCase().search('ios') + 1)
           this.setData({
-            ios,
-            statusBarHeight: res.statusBarHeight,
-            innerWidth: isSupport ? `width:${rect.left}px` : '',
-            innerPaddingRight: isSupport ? `padding-right:${res.windowWidth - rect.left}px` : '',
-            leftWidth: isSupport ? `width:${res.windowWidth - rect.left}px` : '',
+            ios: ios,
+            statusBarHeight: res.statusBarHeight
           })
+          this.setStyle(res)
       },
     })
   },
@@ -73,6 +69,28 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    setStyle(res) {
+      var isSupport = !!wx.getMenuButtonBoundingClientRect
+      if (isSupport) {
+        var rect = wx.getMenuButtonBoundingClientRect()
+        this.setData({
+          innerWidth: 'width:' + rect.left + 'px',
+          innerPaddingRight: 'padding-right:' + (res.windowWidth - rect.left) + 'px',
+          leftWidth: 'width:' + (res.windowWidth - rect.left) + 'px'
+        })
+        if (rect.left === 0) {
+          setTimeout(() => {
+            this.setStyle(res)
+          }, 100)
+        }
+      } else {
+        this.setData({
+          innerWidth: '',
+          innerPaddingRight: '',
+          leftWidth: ''
+        })
+      }
+    },
     _showChange(show) {
       const animated = this.data.animated
       let displayStyle = ''
