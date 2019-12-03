@@ -30,6 +30,12 @@ Page({
                 name: '搜索相关',
                 open: false,
                 pages: ['searchbar']
+            },
+            {
+                id: 'function',
+                name: '业务相关',
+                open: false,
+                pages: ['video-swiper']
             }
         ]
     },

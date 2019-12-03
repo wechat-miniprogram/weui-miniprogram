@@ -31,7 +31,14 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": -1,
+					"name": "example/video-swiper/video-swiper",
+					"pathName": "example/video-swiper/video-swiper",
+					"scene": null
+				}
+			]
 		}
 	}
 }
