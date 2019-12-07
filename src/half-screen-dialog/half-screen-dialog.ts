@@ -20,7 +20,7 @@ Component({
         type: String,
         value: ''
       },
-      desc: {
+      desc: { // 描述内容，也可以通过 slot 自定义
         type: String,
         value: ''
       },

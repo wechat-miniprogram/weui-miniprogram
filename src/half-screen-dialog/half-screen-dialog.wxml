@@ -19,7 +19,7 @@
       </view>
     </view>
     <view class="weui-half-screen-dialog__bd">
-      <block wx:if="{{title}}">
+      <block wx:if="{{desc}}">
         <view class="weui-half-screen-dialog__desc">{{desc}}</view>
         <view class="weui-half-screen-dialog__tips">{{tips}}</view>
       </block>
