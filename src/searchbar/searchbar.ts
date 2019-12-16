@@ -108,7 +108,7 @@ Component({
             this.lastSearch = Date.now()
             this.timerId = setTimeout(() => {
                 this.data
-                    .search(e.detail.value)
+                    .search(this.data.value)
                     .then((json) => {
                         this.setData({
                             result: json
