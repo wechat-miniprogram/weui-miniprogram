@@ -37,7 +37,8 @@
     "example/navigation/navigation",
     "example/tabbar/tabbar",
 
-    "example/searchbar/searchbar"
+    "example/searchbar/searchbar",
+    "example/video-swiper/video-swiper"
   ],
   "window": {
     "navigationBarTextStyle": "black",
