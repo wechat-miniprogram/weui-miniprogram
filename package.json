@@ -1,6 +1,6 @@
 {
   "name": "weui-miniprogram",
-  "version": "0.1.13",
+  "version": "0.2.1",
   "description": "",
   "main": "miniprogram_dist/index.js",
   "scripts": {
