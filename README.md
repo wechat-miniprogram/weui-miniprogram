@@ -5,11 +5,9 @@
 详细使用参考[文档](https://developers.weixin.qq.com/miniprogram/dev/extended/weui)
 
 ## 开发
-
-1. 安装依赖：
-
+1. 初始化
 ```
-npm install
+npm run init
 ```
 
 2. 执行命令：
