@@ -1,7 +1,7 @@
 {
   "name": "weui-miniprogram",
   "version": "0.2.2",
-  "description": "",
+  "description": "小程序 WeUI 组件库",
   "main": "miniprogram_dist/index.js",
   "scripts": {
     "submodule": "git submodule init && git submodule update --init",
