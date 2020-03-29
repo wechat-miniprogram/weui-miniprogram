@@ -37,18 +37,10 @@ module.exports = {
     externals: [nodeExternals()], // 忽略 node_modules
     module: {
       rules: [{
-        test: /\.js$/i,
+        test: /\.js|\.ts$/i,
         use: [
           'babel-loader',
           'eslint-loader'
-        ],
-        exclude: /node_modules/
-      }, {
-        test: /\.ts$/i,
-        use: [
-          'babel-loader',
-          'ts-loader',
-          'tslint-loader'
         ],
         exclude: /node_modules/
       }],

@@ -1,15 +1,15 @@
 Component({
     options: {
-      addGlobalClass: true,
+        addGlobalClass: true
     },
     properties: {
         extClass: {
-          type: String,
-          value: ''
+            type: String,
+            value: ''
         },
         focus: {
             type: Boolean,
-            value: false,
+            value: false
         },
         placeholder: {
             type: String,
@@ -19,12 +19,14 @@ Component({
             type: String,
             value: ''
         },
-        search: { // 返回Promise的函数
-        // @ts-ignore
+        search: {
+            // 返回Promise的函数
+            // @ts-ignore
             type: Function,
             value: null
         },
-        throttle: { // 500ms内只会调用一次search函数
+        throttle: {
+            // 500ms内只会调用一次search函数
             type: Number,
             value: 500
         },
@@ -44,78 +46,80 @@ Component({
     lifetimes: {
         // @ts-ignore
         attached() {
-        // @ts-ignore
+            // @ts-ignore
             if (this.data.focus) {
                 this.setData({
-                    searchState: true,
-                })
+                    searchState: true
+                });
             }
         }
     },
     methods: {
         clearInput() {
-        // @ts-ignore
+            // @ts-ignore
             this.setData({
-                value: '',
-            })
-        // @ts-ignore
-            this.triggerEvent('clear')
+                value: ''
+            });
+            // @ts-ignore
+            this.triggerEvent('clear');
         },
         // @ts-ignore
         inputFocus(e) {
             // this.setData({
             //     searchState: true
             // })
-        // @ts-ignore
-            this.triggerEvent('focus', e.detail)
+            // @ts-ignore
+            this.triggerEvent('focus', e.detail);
         },
         // @ts-ignore
         inputBlur(e) {
             this.setData({
-                focus: false,
-            })
-            this.triggerEvent('blur', e.detail)
+                focus: false
+            });
+            this.triggerEvent('blur', e.detail);
         },
         showInput() {
             this.setData({
                 focus: true,
-                searchState: true,
-            })
+                searchState: true
+            });
         },
         hideInput() {
             this.setData({
-                searchState: false,
-            })
+                searchState: false
+            });
         },
         // @ts-ignore
         inputChange(e) {
             this.setData({
                 value: e.detail.value
-            })
-            this.triggerEvent('input', e.detail)
+            });
+            this.triggerEvent('input', e.detail);
             if (Date.now() - this.lastSearch < this.data.throttle) {
-                return
+                return;
             }
             if (typeof this.data.search !== 'function') {
-                return
+                return;
             }
-            this.lastSearch = Date.now()
+            this.lastSearch = Date.now();
             this.timerId = setTimeout(() => {
-                this.data.search(e.detail.value).then(json => {
-                    this.setData({
-                        result: json
+                this.data
+                    .search(e.detail.value)
+                    .then((json) => {
+                        this.setData({
+                            result: json
+                        });
                     })
-                }).catch(err => {
-                    console.log('search error', err)
-                })
-            }, this.data.throttle)
-
+                    .catch((err) => {
+                        console.error('search error', err);
+                    });
+            }, this.data.throttle);
         },
         // @ts-ignore
         selectResult(e) {
-            const {index} = e.currentTarget.dataset
-            const item = this.data.result[index]
-            this.triggerEvent('selectresult', {index, item})
+            const { index } = e.currentTarget.dataset;
+            const item = this.data.result[index];
+            this.triggerEvent('selectresult', { index, item });
         }
     }
-})
+});

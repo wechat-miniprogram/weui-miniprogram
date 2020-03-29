@@ -1,23 +1,19 @@
 declare interface PropertyOption {
     /** 属性类型 */
     type:
-      | StringConstructor
-      | NumberConstructor
-      | BooleanConstructor
-      | ObjectConstructor
-      | ArrayConstructor
-      | null;
+        | StringConstructor
+        | NumberConstructor
+        | BooleanConstructor
+        | ObjectConstructor
+        | ArrayConstructor
+        | null;
     /** 属性初始值 */
     value: any;
     /** 属性值被更改时的响应函数 */
-    observer?(
-      newVal?: any,
-      oldVal?: any,
-      changedPath?: Array<string | number>,
-    ): void;
-  }
-  
-  declare interface TriggerEventOption {
+    observer?(newVal?: any, oldVal?: any, changedPath?: Array<string | number>): void;
+}
+
+declare interface TriggerEventOption {
     /** 事件是否冒泡
      *
      * 默认值： `false`
@@ -33,9 +29,9 @@ declare interface PropertyOption {
      * 默认值： `false`
      */
     capturePhase?: boolean;
-  }
-  
-  declare interface WxComponent extends BaseComponent {
+}
+
+declare interface WxComponent extends BaseComponent {
     /** 组件的文件路径 */
     is: string;
     /** 节点id */
@@ -46,20 +42,20 @@ declare interface PropertyOption {
     data: object;
     /** 组件数据，**包括内部数据和属性值**（与 `data` 一致） */
     properties: {
-      [propertyName: string]: PropertyOption;
+        [propertyName: string]: PropertyOption;
     };
-  
+
     /** 设置data并执行视图层渲染 */
     setData(
-      /** 这次要改变的数据
-       *
-       * 以 `key: value` 的形式表示，将 `this.data` 中的 `key` 对应的值改变成 `value`。
-       *
-       * 其中 `key` 可以以数据路径的形式给出，支持改变数组中的某一项或对象的某个属性，如 `array[2].message`，`a.b.c.d`，并且不需要在 this.data 中预先定义。
-       */
-      data: object,
-      /** setData引起的界面更新渲染完毕后的回调函数，最低基础库： `1.5.0` */
-      callback?: ((data: object) => void),
+        /** 这次要改变的数据
+         *
+         * 以 `key: value` 的形式表示，将 `this.data` 中的 `key` 对应的值改变成 `value`。
+         *
+         * 其中 `key` 可以以数据路径的形式给出，支持改变数组中的某一项或对象的某个属性，如 `array[2].message`，`a.b.c.d`，并且不需要在 this.data 中预先定义。
+         */
+        data: object,
+        /** setData引起的界面更新渲染完毕后的回调函数，最低基础库： `1.5.0` */
+        callback?: (data: object) => void
     );
     /** 检查组件是否具有 `behavior` （检查时会递归检查被直接或间接引入的所有behavior） */
     hasBehavior(behavior: object): void;
@@ -75,9 +71,9 @@ declare interface PropertyOption {
     selectAllComponents(selector: string): WxComponent[];
     /** 获取这个关系所对应的所有关联节点，参见 组件间关系 */
     getRelationNodes(relationKey: string): WxComponent[];
-  }
-  
-  declare interface ComponentLifetimes {
+}
+
+declare interface ComponentLifetimes {
     /** 组件生命周期函数，在组件实例进入页面节点树时执行，注意此时不能调用 `setData` */
     created?(this: WxComponent): void;
     /** 组件生命周期函数，在组件实例进入页面节点树时执行 */
@@ -88,9 +84,9 @@ declare interface PropertyOption {
     moved?(this: WxComponent): void;
     /** 组件生命周期函数，在组件实例被从页面节点树移除时执行 */
     detached?(this: WxComponent): void;
-  }
-  
-  declare interface PageLifetimes {
+}
+
+declare interface PageLifetimes {
     /** 页面生命周期回调—监听页面显示
      *
      * 页面显示/切入前台时触发。
@@ -101,9 +97,9 @@ declare interface PropertyOption {
      * 页面隐藏/切入后台时触发。 如 `navigateTo` 或底部 `tab` 切换到其他页面，小程序切入后台等。
      */
     hide?(this: WxPage): void;
-  }
-  
-  declare interface RelationOption {
+}
+
+declare interface RelationOption {
     /** 目标组件的相对关系 */
     type: 'parent' | 'child' | 'ancestor' | 'descendant';
     /** 关系生命周期函数，当关系被建立在页面节点树中时触发，触发时机在组件attached生命周期之后 */
@@ -114,34 +110,31 @@ declare interface PropertyOption {
     unlinked?(target: WxComponent): any;
     /** 如果这一项被设置，则它表示关联的目标节点所应具有的behavior，所有拥有这一behavior的组件节点都会被关联 */
     target?: string;
-  }
-  
-  type DefinitionFilter = (
-    defFields: WxComponent,
-    definitionFilterArr?: DefinitionFilter[],
-  ) => void;
-  
-  declare interface ComponentOptions {
+}
+
+type DefinitionFilter = (defFields: WxComponent, definitionFilterArr?: DefinitionFilter[]) => void;
+
+declare interface ComponentOptions {
     multipleSlots?: boolean;
     addGlobalClass?: boolean;
-  }
-  
-  declare interface BaseComponent<CustomComponent = object> extends ComponentLifetimes {
+}
+
+declare interface BaseComponent<CustomComponent = object> extends ComponentLifetimes {
     /** 组件的对外属性，是属性名到属性设置的映射表 */
     properties?: {
-      [propertyName: string]: PropertyOption;
+        [propertyName: string]: PropertyOption;
     };
     /** 组件的内部数据，和 `properties` 一同用于组件的模板渲染 */
     data?: object;
     /** object组件的方法，包括事件响应函数和任意的自定义方法，关于事件响应函数的使用，参见 [组件事件](events.md) */
     methods?: {
-      [methodName: string]: (this: WxComponent) => any;
+        [methodName: string]: (this: WxComponent) => any;
     };
     /** 类似于mixins和traits的组件间代码复用机制，参见 [behaviors](behaviors.md) */
     behaviors?: string[];
     /** 组件间关系定义，参见 [组件间关系](relations.md) */
     relations?: {
-      [componentName: string]: RelationOption;
+        [componentName: string]: RelationOption;
     };
     /** 组件接受的外部样式类，参见 [外部样式类](wxml-wxss.md) */
     externalClasses?: string[];
@@ -159,18 +152,17 @@ declare interface PropertyOption {
      *
      * 最低基础库： `2.2.3` */
     definitionFilter?: DefinitionFilter;
-  }
-  
-  /** Component构造器可用于定义组件，调用Component构造器时可以指定组件的属性、数据、方法等。
-   *
-   * * 使用 `this.data` 可以获取内部数据和属性值，但不要直接修改它们，应使用 `setData` 修改。
-   * * 生命周期函数无法在组件方法中通过 `this` 访问到。
-   * * 属性名应避免以 data 开头，即不要命名成 `dataXyz` 这样的形式，因为在 WXML 中， `data-xyz=""` 会被作为节点 dataset 来处理，而不是组件属性。
-   * * 在一个组件的定义和使用时，组件的属性名和 data 字段相互间都不能冲突（尽管它们位于不同的定义段中）。
-   * * 从基础库 `2.0.9` 开始，对象类型的属性和 data 字段中可以包含函数类型的子字段，即可以通过对象类型的属性字段来传递函数。低于这一版本的基础库不支持这一特性。
-   * * `bug` : 对于 type 为 Object 或 Array 的属性，如果通过该组件自身的 `this.setData` 来改变属性值的一个子字段，则依旧会触发属性 observer ，且 observer 接收到的 `newVal` 是变化的那个子字段的值， `oldVal` 为空， `changedPath` 包含子字段的字段名相关信息。
-   */
-  declare function Component<CustomComponent>(
-    /** 自定义组件注册参数 */ options: CustomComponent,
-  ): void;
-  
+}
+
+/** Component构造器可用于定义组件，调用Component构造器时可以指定组件的属性、数据、方法等。
+ *
+ * * 使用 `this.data` 可以获取内部数据和属性值，但不要直接修改它们，应使用 `setData` 修改。
+ * * 生命周期函数无法在组件方法中通过 `this` 访问到。
+ * * 属性名应避免以 data 开头，即不要命名成 `dataXyz` 这样的形式，因为在 WXML 中， `data-xyz=""` 会被作为节点 dataset 来处理，而不是组件属性。
+ * * 在一个组件的定义和使用时，组件的属性名和 data 字段相互间都不能冲突（尽管它们位于不同的定义段中）。
+ * * 从基础库 `2.0.9` 开始，对象类型的属性和 data 字段中可以包含函数类型的子字段，即可以通过对象类型的属性字段来传递函数。低于这一版本的基础库不支持这一特性。
+ * * `bug` : 对于 type 为 Object 或 Array 的属性，如果通过该组件自身的 `this.setData` 来改变属性值的一个子字段，则依旧会触发属性 observer ，且 observer 接收到的 `newVal` 是变化的那个子字段的值， `oldVal` 为空， `changedPath` 包含子字段的字段名相关信息。
+ */
+declare function Component<CustomComponent>(
+    /** 自定义组件注册参数 */ options: CustomComponent
+): void;
