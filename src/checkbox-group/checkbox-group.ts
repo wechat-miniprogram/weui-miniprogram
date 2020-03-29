@@ -1,4 +1,8 @@
 Component({
+    options: {
+        addGlobalClass: true,
+        multipleSlots: true,
+    },
     properties: {
         multi: {
             type: Boolean,
