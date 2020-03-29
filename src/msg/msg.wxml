@@ -16,6 +16,11 @@
       <slot name="handle"></slot>
     </view>
   </view>
+  <view class="weui-msg__tips-area">
+    <view class="weui-msg__tips">
+      <slot name="tips"></slot>
+    </view>
+  </view>
   <view class="weui-msg__extra-area">
     <view class="weui-footer">
       <slot name="footer"></slot>

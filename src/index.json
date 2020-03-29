@@ -16,6 +16,7 @@
     "dialog": "./dialog/dialog",
     "uploader": "./uploader/uploader",
     "gallery": "./gallery/gallery",
+    "grids": "./grids/grids",
     "checkbox": "./checkbox/checkbox",
     "badge": "./badge/badge",
     "searchbar": "./searchbar/searchbar",

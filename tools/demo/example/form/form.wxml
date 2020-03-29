@@ -82,14 +82,11 @@
     </mp-form>
 
     <checkbox-group slot="tips" bindchange="bindAgreeChange">
-        <label class="weui-agree" for="weuiAgree">
-            <view class="weui-agree__text">
-                <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
-                <view class="weui-agree__checkbox-icon">
-                    <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
-                </view>
-                阅读并同意<navigator url="" class="weui-agree__link">《相关条款》</navigator>
-            </view>
+        <label class="weui-agree">
+            <checkbox class="weui-agree__checkbox-check" />
+
+            <text class="weui-agree__checkbox"></text>
+            <view class="weui-agree__text">阅读并同意<navigator>《相关条款》</navigator></view>
         </label>
     </checkbox-group>
 
