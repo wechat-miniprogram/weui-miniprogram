@@ -12,7 +12,7 @@
 		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.6.6",
+	"libVersion": "2.10.3",
 	"appid": "wxe0b5580bba739b69",
 	"projectname": "小程序自定义组件",
 	"isGameTourist": false,
@@ -31,14 +31,7 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": [
-				{
-					"id": -1,
-					"name": "example/video-swiper/video-swiper",
-					"pathName": "example/video-swiper/video-swiper",
-					"scene": null
-				}
-			]
+			"list": []
 		}
 	}
 }

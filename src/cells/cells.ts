@@ -29,10 +29,10 @@ Component({
             type: 'descendant',
             linked(target) {
                 if (!this.data.firstItem) {
-                    this.data.firstItem = target;
+                    this.data.firstItem = target
                 }
                 if (target !== this.data.firstItem) {
-                    target.setOuterClass('weui-cell_wxss');
+                    target.setOuterClass('weui-cell_wxss')
                 }
             }
         },
@@ -45,13 +45,13 @@ Component({
                 this.setData({
                     checkboxCount: this.data.checkboxCount + 1,
                     checkboxIsMulti: target.data.multi
-                });
+                })
             },
             unlinked(target) {
                 this.setData({
                     checkboxCount: this.data.checkboxCount - 1,
                     checkboxIsMulti: target.data.multi
-                });
+                })
             }
         }
     },
@@ -59,17 +59,17 @@ Component({
         setCellMulti(multi) {
             this.setData({
                 checkboxIsMulti: multi
-            });
+            })
         },
         setCellsClass(className) {
             this.setData({
                 childClass: className
-            });
+            })
         },
         setOuterClass(className) {
             this.setData({
                 outerClass: className
-            });
+            })
         }
     }
-});
+})

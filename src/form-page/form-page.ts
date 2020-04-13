@@ -20,10 +20,13 @@ Component({
             type: 'descendant',
             linked(target) {
                 if (!this.data.firstItem) {
-                    this.data.firstItem = target;
+                    this.data.firstItem = target
                 }
+                target.setOuterClass('weui-cells__group weui-cells__group_form weui-cells_form')
                 if (target !== this.data.firstItem) {
-                    target.setOuterClass('weui-cells__group_wxss');
+                    target.setOuterClass(
+                        'weui-cells__group_wxss weui-cells__group weui-cells__group_form weui-cells_form'
+                    )
                 }
             }
         }
@@ -31,4 +34,4 @@ Component({
     data: {
         firstItem: null
     }
-});
+})

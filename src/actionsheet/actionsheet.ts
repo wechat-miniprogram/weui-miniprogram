@@ -58,23 +58,23 @@ Component({
             if (e.length > 0 && typeof e[0] !== 'string' && !(e[0] instanceof Array)) {
                 this.setData({
                     actions: [this.data.actions]
-                });
+                })
             }
         },
         buttonTap(e): void {
-            const { value, groupindex, index } = e.currentTarget.dataset;
-            this.triggerEvent('actiontap', { value, groupindex, index });
+            const { value, groupindex, index } = e.currentTarget.dataset
+            this.triggerEvent('actiontap', { value, groupindex, index })
         },
         closeActionSheet(e): void {
-            const { type } = e.currentTarget.dataset;
+            const { type } = e.currentTarget.dataset
             if (this.data.maskClosable || type) {
                 // 点击 action 里面的 取消
                 this.setData({
                     show: false
-                });
+                })
                 // 关闭回调事件
-                this.triggerEvent('close');
+                this.triggerEvent('close')
             }
         }
     }
-});
+})

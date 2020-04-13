@@ -1,4 +1,4 @@
-import { sprintf } from '../utils/string';
+import { sprintf } from '../utils/string'
 
 const defaultMessage = {
     required: '%s必填',
@@ -13,113 +13,113 @@ const defaultMessage = {
     email: '请输入正确的电子邮件',
     url: '请输入正确的URL地址',
     equalTo: '值和字段%s不相等'
-};
+}
 export default {
     required(r, val): string {
-        if (r.required === false) return '';
-        else if (!val) return sprintf(r.message || defaultMessage.required, r.name);
-        else return '';
+        if (r.required === false) return ''
+        else if (!val) return sprintf(r.message || defaultMessage.required, r.name)
+        else return ''
     },
     minlength(r, val) {
-        const minlen = r.minlength;
-        val = val || '';
-        if (val.length < minlen) return sprintf(r.message || defaultMessage.minlength, minlen);
-        else return '';
+        const minlen = r.minlength
+        val = val || ''
+        if (val.length < minlen) return sprintf(r.message || defaultMessage.minlength, minlen)
+        else return ''
     },
     maxlength(r, val) {
-        const maxlen = r.maxlength;
-        val = val || '';
+        const maxlen = r.maxlength
+        val = val || ''
         if (val.length > maxlen) {
-            return sprintf(r.message || defaultMessage.maxlength, maxlen);
+            return sprintf(r.message || defaultMessage.maxlength, maxlen)
         } else {
-            return '';
+            return ''
         }
     },
     rangelength(r, val) {
-        const range = r.range;
-        val = val || '';
+        const range = r.range
+        val = val || ''
         if (val.length > range[1] || val.length < range[0]) {
-            return sprintf(r.message || defaultMessage.rangelength, range[0], range[1]);
+            return sprintf(r.message || defaultMessage.rangelength, range[0], range[1])
         } else {
-            return '';
+            return ''
         }
     },
     min(r, val) {
-        const min = r.min;
+        const min = r.min
         if (val < min) {
-            return sprintf(r.message || defaultMessage.min, min);
+            return sprintf(r.message || defaultMessage.min, min)
         } else {
-            return '';
+            return ''
         }
     },
     max(r, val) {
-        const max = r.max;
+        const max = r.max
         if (val > max) {
-            return sprintf(r.message || defaultMessage.max, max);
+            return sprintf(r.message || defaultMessage.max, max)
         } else {
-            return '';
+            return ''
         }
     },
     range(r, val) {
-        const range = r.range;
+        const range = r.range
         if (val < range[0] || val > range[1]) {
-            return sprintf(r.message || defaultMessage.range, range[0], range[1]);
+            return sprintf(r.message || defaultMessage.range, range[0], range[1])
         } else {
-            return '';
+            return ''
         }
     },
     mobile(r, val) {
-        val = val || '';
+        val = val || ''
         if (r.mobile === false) {
-            return '';
+            return ''
         } else if (val.length !== 11) {
-            return sprintf(r.message || defaultMessage.mobile);
+            return sprintf(r.message || defaultMessage.mobile)
         } else {
-            return '';
+            return ''
         }
     },
     email(r, value) {
-        if (r.email === false) return '';
+        if (r.email === false) return ''
         // contributed by Scott Gonzalez: http://projects.scottsplayground.com/email_address_validation/
         // eslint-disable-next-line
     if (!/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i.test(value)) {
-            return sprintf(r.message || defaultMessage.email);
+            return sprintf(r.message || defaultMessage.email)
         } else {
-            return '';
+            return ''
         }
     },
 
     // http://docs.jquery.com/Plugins/Validation/Methods/url
     url(r, value) {
-        if (r.url === false) return '';
+        if (r.url === false) return ''
         // contributed by Scott Gonzalez: http://projects.scottsplayground.com/iri/
-        // eslint-disable-next-line no-useless-escape
         if (
+            // eslint-disable-next-line no-useless-escape
             !/^(https?|s?ftp|weixin):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(
                 value
             )
         ) {
-            return r.message || defaultMessage.url;
+            return r.message || defaultMessage.url
         } else {
-            return '';
+            return ''
         }
     },
     equalTo(r, value, param, models) {
-        const equalTo = r.equalTo;
+        const equalTo = r.equalTo
         if (value !== models[equalTo]) {
-            return sprintf(r.message || defaultMessage.equalTo, r.name);
+            return sprintf(r.message || defaultMessage.equalTo, r.name)
         } else {
-            return '';
+            return ''
         }
     },
     bytelength(r, value, param) {
-        param = r.param;
+        param = r.param
         // eslint-disable-next-line no-control-regex
-        const len = value.replace(/[^\x00-\xff]/g, '**').length;
+        const len = value.replace(/[^\x00-\xff]/g, '**').length
         if (len > param) {
-            return sprintf(r.message || defaultMessage.bytelength, param);
+            return sprintf(r.message || defaultMessage.bytelength, param)
         } else {
-            return '';
+            return ''
         }
     }
-};
+}

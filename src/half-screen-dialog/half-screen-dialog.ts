@@ -54,18 +54,18 @@ Component({
     },
     methods: {
         close(e) {
-            const { type } = e.currentTarget.dataset;
+            const { type } = e.currentTarget.dataset
             if (this.data.maskClosable || type === 'close') {
                 this.setData({
                     show: false
-                });
+                })
                 // 关闭弹窗回调事件
-                this.triggerEvent('close');
+                this.triggerEvent('close')
             }
         },
         buttonTap(e) {
-            const { index } = e.currentTarget.dataset;
-            this.triggerEvent('buttontap', { index, item: this.data.buttons[index] }, {});
+            const { index } = e.currentTarget.dataset
+            this.triggerEvent('buttontap', { index, item: this.data.buttons[index] }, {})
         }
     }
-});
+})

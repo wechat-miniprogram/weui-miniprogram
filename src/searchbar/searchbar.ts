@@ -50,7 +50,7 @@ Component({
             if (this.data.focus) {
                 this.setData({
                     searchState: true
-                });
+                })
             }
         }
     },
@@ -58,10 +58,12 @@ Component({
         clearInput() {
             // @ts-ignore
             this.setData({
-                value: ''
-            });
+                value: '',
+                focus: true,
+                result: []
+            })
             // @ts-ignore
-            this.triggerEvent('clear');
+            this.triggerEvent('clear')
         },
         // @ts-ignore
         inputFocus(e) {
@@ -69,57 +71,57 @@ Component({
             //     searchState: true
             // })
             // @ts-ignore
-            this.triggerEvent('focus', e.detail);
+            this.triggerEvent('focus', e.detail)
         },
         // @ts-ignore
         inputBlur(e) {
             this.setData({
                 focus: false
-            });
-            this.triggerEvent('blur', e.detail);
+            })
+            this.triggerEvent('blur', e.detail)
         },
         showInput() {
             this.setData({
                 focus: true,
                 searchState: true
-            });
+            })
         },
         hideInput() {
             this.setData({
                 searchState: false
-            });
+            })
         },
         // @ts-ignore
         inputChange(e) {
             this.setData({
                 value: e.detail.value
-            });
-            this.triggerEvent('input', e.detail);
+            })
+            this.triggerEvent('input', e.detail)
             if (Date.now() - this.lastSearch < this.data.throttle) {
-                return;
+                return
             }
             if (typeof this.data.search !== 'function') {
-                return;
+                return
             }
-            this.lastSearch = Date.now();
+            this.lastSearch = Date.now()
             this.timerId = setTimeout(() => {
                 this.data
                     .search(e.detail.value)
                     .then((json) => {
                         this.setData({
                             result: json
-                        });
+                        })
                     })
                     .catch((err) => {
-                        console.error('search error', err);
-                    });
-            }, this.data.throttle);
+                        console.error('search error', err)
+                    })
+            }, this.data.throttle)
         },
         // @ts-ignore
         selectResult(e) {
-            const { index } = e.currentTarget.dataset;
-            const item = this.data.result[index];
-            this.triggerEvent('selectresult', { index, item });
+            const { index } = e.currentTarget.dataset
+            const item = this.data.result[index]
+            this.triggerEvent('selectresult', { index, item })
         }
     }
-});
+})

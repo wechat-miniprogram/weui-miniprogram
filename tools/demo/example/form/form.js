@@ -1,4 +1,6 @@
-Component({
+import CustomPage from '../../base/CustomPage'
+
+CustomPage({
     data: {
         showTopTips: false,
 

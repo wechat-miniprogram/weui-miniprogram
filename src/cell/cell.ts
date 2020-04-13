@@ -92,31 +92,31 @@ Component({
         setError(error) {
             this.setData({
                 error: error || false
-            });
+            })
         },
         setInForm() {
             this.setData({
                 inForm: true
-            });
+            })
         },
         setOuterClass(className) {
             this.setData({
                 outerClass: className
-            });
+            })
         },
         navigateTo() {
-            const data: any = this.data;
+            const data: any = this.data
             if (data.url && data.link) {
                 wx.navigateTo({
                     url: data.url,
                     success: (res) => {
-                        this.triggerEvent('navigatesuccess', res, {});
+                        this.triggerEvent('navigatesuccess', res, {})
                     },
                     fail: (fail) => {
-                        this.triggerEvent('navigateerror', fail, {});
+                        this.triggerEvent('navigateerror', fail, {})
                     }
-                });
+                })
             }
         }
     }
-});
+})

@@ -15,7 +15,7 @@ Component({
             type: Array,
             value: [], // type, data, text, src, extClass
             observer() {
-                this.addClassNameForButton();
+                this.addClassNameForButton()
             }
         },
         disable: {
@@ -57,18 +57,18 @@ Component({
      */
     ready() {
         // @ts-ignore
-        this.updateRight();
-        this.addClassNameForButton();
+        this.updateRight()
+        this.addClassNameForButton()
     },
     methods: {
         updateRight() {
             // 获取右侧滑动显示区域的宽度
-            const data: any = this.data;
-            const query = wx.createSelectorQuery().in(this);
+            const data: any = this.data
+            const query = wx.createSelectorQuery().in(this)
             query
                 .select('.left')
                 .boundingClientRect((res) => {
-                    const btnQuery = wx.createSelectorQuery().in(this);
+                    const btnQuery = wx.createSelectorQuery().in(this)
                     btnQuery
                         .selectAll('.btn')
                         .boundingClientRect((rects) => {
@@ -81,37 +81,37 @@ Component({
                                     throttle: data.throttle,
                                     rebounce: data.rebounce
                                 }
-                            });
+                            })
                         })
-                        .exec();
+                        .exec()
                 })
-                .exec();
+                .exec()
         },
         addClassNameForButton() {
             // @ts-ignore
-            const { buttons, icon } = this.data;
+            const { buttons, icon } = this.data
             buttons.forEach((btn) => {
                 if (icon) {
-                    btn.className = '';
+                    btn.className = ''
                 } else if (btn.type === 'warn') {
-                    btn.className = 'weui-slideview__btn-group_warn';
+                    btn.className = 'weui-slideview__btn-group_warn'
                 } else {
-                    btn.className = 'weui-slideview__btn-group_default';
+                    btn.className = 'weui-slideview__btn-group_default'
                 }
-            });
+            })
             this.setData({
                 buttons
-            });
+            })
         },
         buttonTapByWxs(data) {
-            this.triggerEvent('buttontap', data, {});
+            this.triggerEvent('buttontap', data, {})
         },
         hide() {
-            this.triggerEvent('hide', {}, {});
+            this.triggerEvent('hide', {}, {})
         },
         show() {
-            this.triggerEvent('show', {}, {});
+            this.triggerEvent('show', {}, {})
         },
         transitionEnd() {}
     }
-});
+})

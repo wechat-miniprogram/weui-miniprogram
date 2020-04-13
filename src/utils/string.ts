@@ -6,33 +6,34 @@
  * "my name is %s  %s".sprintf("a","b")  =》"my name is a  b"
  */
 export const sprintf = (...args): string => {
-    let i;
-    let result = args[0] || '';
-    let para;
-    let reg;
-    const length = args.length - 1;
+    let i
+    let result = args[0] || ''
+    let para
+    let reg
+    const length = args.length - 1
 
     if (length < 1) {
-        return result;
+        return result
     }
 
-    i = 1;
+    i = 1
     while (i < length + 1) {
-        result = result.replace(/%s/, '{#' + i + '#}');
-        i++;
+        result = result.replace(/%s/, '{#' + i + '#}')
+        i++
     }
-    result.replace('%s', '');
+    result.replace('%s', '')
 
-    i = 1;
+    i = 1
+    // eslint-disable-next-line
     while (true) {
-        para = args[i];
+        para = args[i]
         if (para === undefined) {
             // 0 也是可能的替换数字
-            break;
+            break
         }
-        reg = new RegExp('{#' + i + '#}', 'g');
-        result = result.replace(reg, para);
-        i++;
+        reg = new RegExp('{#' + i + '#}', 'g')
+        result = result.replace(reg, para)
+        i++
     }
-    return result;
-};
+    return result
+}

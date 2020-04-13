@@ -1,8 +1,8 @@
-Page({
+import CustomPage from '../../base/CustomPage'
+
+CustomPage({
     data: {
         loading: false,
-        color: '#000',
-        background: '#f8f8f8',
         show: true,
         animated: false
     },

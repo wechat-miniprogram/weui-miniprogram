@@ -1,4 +1,6 @@
-Page({
+import CustomPage from '../../base/CustomPage'
+
+CustomPage({
     data: {
         inputShowed: false,
         inputVal: "",

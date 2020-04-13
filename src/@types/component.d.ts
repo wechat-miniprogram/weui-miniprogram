@@ -6,11 +6,11 @@ declare interface PropertyOption {
         | BooleanConstructor
         | ObjectConstructor
         | ArrayConstructor
-        | null;
+        | null
     /** 属性初始值 */
-    value: any;
+    value: any
     /** 属性值被更改时的响应函数 */
-    observer?(newVal?: any, oldVal?: any, changedPath?: Array<string | number>): void;
+    observer?(newVal?: any, oldVal?: any, changedPath?: Array<string | number>): void
 }
 
 declare interface TriggerEventOption {
@@ -18,32 +18,32 @@ declare interface TriggerEventOption {
      *
      * 默认值： `false`
      */
-    bubbles?: boolean;
+    bubbles?: boolean
     /** 事件是否可以穿越组件边界，为false时，事件将只能在引用组件的节点树上触发，不进入其他任何组件内部
      *
      * 默认值： `false`
      */
-    composed?: boolean;
+    composed?: boolean
     /** 事件是否拥有捕获阶段
      *
      * 默认值： `false`
      */
-    capturePhase?: boolean;
+    capturePhase?: boolean
 }
 
 declare interface WxComponent extends BaseComponent {
     /** 组件的文件路径 */
-    is: string;
+    is: string
     /** 节点id */
-    id: string;
+    id: string
     /** 节点dataset */
-    dataset: string;
+    dataset: string
     /** 组件数据，**包括内部数据和属性值** */
-    data: object;
+    data: object
     /** 组件数据，**包括内部数据和属性值**（与 `data` 一致） */
     properties: {
-        [propertyName: string]: PropertyOption;
-    };
+        [propertyName: string]: PropertyOption
+    }
 
     /** 设置data并执行视图层渲染 */
     setData(
@@ -56,34 +56,34 @@ declare interface WxComponent extends BaseComponent {
         data: object,
         /** setData引起的界面更新渲染完毕后的回调函数，最低基础库： `1.5.0` */
         callback?: (data: object) => void
-    );
+    )
     /** 检查组件是否具有 `behavior` （检查时会递归检查被直接或间接引入的所有behavior） */
-    hasBehavior(behavior: object): void;
+    hasBehavior(behavior: object): void
     /** 触发事件，参见组件事件 */
-    triggerEvent(name: string, detail: object, options: TriggerEventOption): void;
+    triggerEvent(name: string, detail: object, options: TriggerEventOption): void
     /** 创建一个 SelectorQuery 对象，选择器选取范围为这个组件实例内 */
-    createSelectorQuery(): SelectorQuery;
+    createSelectorQuery(): SelectorQuery
     /** 创建一个 IntersectionObserver 对象，选择器选取范围为这个组件实例内 */
-    createIntersectionObserver(): IntersectionObserver;
+    createIntersectionObserver(): IntersectionObserver
     /** 使用选择器选择组件实例节点，返回匹配到的第一个组件实例对象（会被 `wx://component-export` 影响） */
-    selectComponent(selector: string): WxComponent;
+    selectComponent(selector: string): WxComponent
     /** 使用选择器选择组件实例节点，返回匹配到的全部组件实例对象组成的数组 */
-    selectAllComponents(selector: string): WxComponent[];
+    selectAllComponents(selector: string): WxComponent[]
     /** 获取这个关系所对应的所有关联节点，参见 组件间关系 */
-    getRelationNodes(relationKey: string): WxComponent[];
+    getRelationNodes(relationKey: string): WxComponent[]
 }
 
 declare interface ComponentLifetimes {
     /** 组件生命周期函数，在组件实例进入页面节点树时执行，注意此时不能调用 `setData` */
-    created?(this: WxComponent): void;
+    created?(this: WxComponent): void
     /** 组件生命周期函数，在组件实例进入页面节点树时执行 */
-    attached?(this: WxComponent): void;
+    attached?(this: WxComponent): void
     /** 组件生命周期函数，在组件布局完成后执行，此时可以获取节点信息（使用 [SelectorQuery]((SelectorQuery))） */
-    ready?(this: WxComponent): void;
+    ready?(this: WxComponent): void
     /** 组件生命周期函数，在组件实例被移动到节点树另一个位置时执行 */
-    moved?(this: WxComponent): void;
+    moved?(this: WxComponent): void
     /** 组件生命周期函数，在组件实例被从页面节点树移除时执行 */
-    detached?(this: WxComponent): void;
+    detached?(this: WxComponent): void
 }
 
 declare interface PageLifetimes {
@@ -91,67 +91,67 @@ declare interface PageLifetimes {
      *
      * 页面显示/切入前台时触发。
      */
-    show?(this: WxPage): void;
+    show?(this: WxPage): void
     /** 页面生命周期回调—监听页面隐藏
      *
      * 页面隐藏/切入后台时触发。 如 `navigateTo` 或底部 `tab` 切换到其他页面，小程序切入后台等。
      */
-    hide?(this: WxPage): void;
+    hide?(this: WxPage): void
 }
 
 declare interface RelationOption {
     /** 目标组件的相对关系 */
-    type: 'parent' | 'child' | 'ancestor' | 'descendant';
+    type: 'parent' | 'child' | 'ancestor' | 'descendant'
     /** 关系生命周期函数，当关系被建立在页面节点树中时触发，触发时机在组件attached生命周期之后 */
-    linked?(target: WxComponent): any;
+    linked?(target: WxComponent): any
     /** 关系生命周期函数，当关系在页面节点树中发生改变时触发，触发时机在组件moved生命周期之后 */
-    linkChanged?(target: WxComponent): any;
+    linkChanged?(target: WxComponent): any
     /** 关系生命周期函数，当关系脱离页面节点树时触发，触发时机在组件detached生命周期之后 */
-    unlinked?(target: WxComponent): any;
+    unlinked?(target: WxComponent): any
     /** 如果这一项被设置，则它表示关联的目标节点所应具有的behavior，所有拥有这一behavior的组件节点都会被关联 */
-    target?: string;
+    target?: string
 }
 
-type DefinitionFilter = (defFields: WxComponent, definitionFilterArr?: DefinitionFilter[]) => void;
+type DefinitionFilter = (defFields: WxComponent, definitionFilterArr?: DefinitionFilter[]) => void
 
 declare interface ComponentOptions {
-    multipleSlots?: boolean;
-    addGlobalClass?: boolean;
+    multipleSlots?: boolean
+    addGlobalClass?: boolean
 }
 
 declare interface BaseComponent<CustomComponent = object> extends ComponentLifetimes {
     /** 组件的对外属性，是属性名到属性设置的映射表 */
     properties?: {
-        [propertyName: string]: PropertyOption;
-    };
+        [propertyName: string]: PropertyOption
+    }
     /** 组件的内部数据，和 `properties` 一同用于组件的模板渲染 */
-    data?: object;
+    data?: object
     /** object组件的方法，包括事件响应函数和任意的自定义方法，关于事件响应函数的使用，参见 [组件事件](events.md) */
     methods?: {
-        [methodName: string]: (this: WxComponent) => any;
-    };
+        [methodName: string]: (this: WxComponent) => any
+    }
     /** 类似于mixins和traits的组件间代码复用机制，参见 [behaviors](behaviors.md) */
-    behaviors?: string[];
+    behaviors?: string[]
     /** 组件间关系定义，参见 [组件间关系](relations.md) */
     relations?: {
-        [componentName: string]: RelationOption;
-    };
+        [componentName: string]: RelationOption
+    }
     /** 组件接受的外部样式类，参见 [外部样式类](wxml-wxss.md) */
-    externalClasses?: string[];
+    externalClasses?: string[]
     /** 一些选项（文档中介绍相关特性时会涉及具体的选项设置，这里暂不列举） */
-    options?: ComponentOptions;
+    options?: ComponentOptions
     /** 组件生命周期声明对象，组件的生命周期：`created`、`attached`、`ready`、`moved`、`detached` 将收归到 `lifetimes` 字段内进行声明，原有声明方式仍旧有效，如同时存在两种声明方式，则 `lifetimes` 字段内声明方式优先级最高
      *
      * 最低基础库： `2.2.3` */
-    lifetimes?: ComponentLifetimes;
+    lifetimes?: ComponentLifetimes
     /** 组件所在页面的生命周期声明对象，目前仅支持页面的 `show` 和 `hide` 两个生命周期
      *
      * 最低基础库： `2.2.3` */
-    pageLifetimes?: PageLifetimes;
+    pageLifetimes?: PageLifetimes
     /** 定义段过滤器，用于自定义组件扩展，参见 [自定义组件扩展](extend.md)
      *
      * 最低基础库： `2.2.3` */
-    definitionFilter?: DefinitionFilter;
+    definitionFilter?: DefinitionFilter
 }
 
 /** Component构造器可用于定义组件，调用Component构造器时可以指定组件的属性、数据、方法等。
@@ -165,4 +165,4 @@ declare interface BaseComponent<CustomComponent = object> extends ComponentLifet
  */
 declare function Component<CustomComponent>(
     /** 自定义组件注册参数 */ options: CustomComponent
-): void;
+): void

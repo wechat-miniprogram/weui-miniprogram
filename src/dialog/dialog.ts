@@ -38,34 +38,34 @@ Component({
         innerShow: false
     },
     ready() {
-        const buttons = this.data.buttons;
-        const len = buttons.length;
+        const buttons = this.data.buttons
+        const len = buttons.length
         buttons.forEach((btn, index) => {
             if (len === 1) {
-                btn.className = 'weui-dialog__btn_primary';
+                btn.className = 'weui-dialog__btn_primary'
             } else if (index === 0) {
-                btn.className = 'weui-dialog__btn_default';
+                btn.className = 'weui-dialog__btn_default'
             } else {
-                btn.className = 'weui-dialog__btn_primary';
+                btn.className = 'weui-dialog__btn_primary'
             }
-        });
+        })
         this.setData({
             buttons
-        });
+        })
     },
     methods: {
         buttonTap(e) {
-            const { index } = e.currentTarget.dataset;
-            this.triggerEvent('buttontap', { index, item: this.data.buttons[index] }, {});
+            const { index } = e.currentTarget.dataset
+            this.triggerEvent('buttontap', { index, item: this.data.buttons[index] }, {})
         },
         close() {
-            const data: any = this.data;
-            if (!data.maskClosable) return;
+            const data: any = this.data
+            if (!data.maskClosable) return
             this.setData({
                 show: false
-            });
-            this.triggerEvent('close', {}, {});
+            })
+            this.triggerEvent('close', {}, {})
         },
         stopEvent() {}
     }
-});
+})

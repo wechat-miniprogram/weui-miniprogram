@@ -20,7 +20,6 @@
     "checkbox": "./checkbox/checkbox",
     "badge": "./badge/badge",
     "searchbar": "./searchbar/searchbar",
-    "checkbox-group": "./checkbox-group/checkbox-group",
-    "video-swiper": "./video-swiper/video-swiper"
+    "checkbox-group": "./checkbox-group/checkbox-group"
   }
 }

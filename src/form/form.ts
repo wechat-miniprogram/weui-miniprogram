@@ -1,20 +1,20 @@
-import FormValidator from './form-validator';
-import { diffObject } from '../utils/object';
+import FormValidator from './form-validator'
+import { diffObject } from '../utils/object'
 
 function linked(target) {
     if (target.data.prop) {
-        this.data.formItems[target.data.prop] = target;
+        this.data.formItems[target.data.prop] = target
     }
     if (target.setInForm) {
-        target.setInForm();
+        target.setInForm()
     }
     if (!this.data.firstItem) {
-        this.data.firstItem = target;
+        this.data.firstItem = target
     }
 }
 function unlinked(target) {
     if (target.data.prop) {
-        delete this.data.formItems[target.data.prop];
+        delete this.data.formItems[target.data.prop]
     }
 }
 
@@ -54,112 +54,112 @@ Component({
         }
     },
     attached() {
-        this.initRules();
-        this.formValidator = new FormValidator(this.data.models, this.data.newRules);
+        this.initRules()
+        this.formValidator = new FormValidator(this.data.models, this.data.newRules)
     },
     methods: {
         initRules(rules) {
-            const newRules = {};
-            (rules || this.data.rules).forEach((rule) => {
+            const newRules = {}
+            ;(rules || this.data.rules).forEach((rule) => {
                 if (rule.name && rule.rules) {
-                    newRules[rule.name] = rule.rules || [];
+                    newRules[rule.name] = rule.rules || []
                 }
-            });
-            this.setData({ newRules });
-            return newRules;
+            })
+            this.setData({ newRules })
+            return newRules
         },
         _modelChange(newVal, oldVal) {
             if (!this.isInit) {
-                this.isInit = true;
-                return newVal;
+                this.isInit = true
+                return newVal
             }
             // 这个必须在前面
-            this.formValidator.setModel(newVal);
-            this.isInit = true;
-            const diffObj: any = diffObject(oldVal, newVal);
+            this.formValidator.setModel(newVal)
+            this.isInit = true
+            const diffObj: any = diffObject(oldVal, newVal)
             if (diffObj) {
-                let isValid = true;
-                const errors = [];
-                const errorMap = {};
+                let isValid = true
+                const errors = []
+                const errorMap = {}
                 Object.keys(diffObj).forEach((k) => {
                     this.formValidator.validateField(k, diffObj[k], function (isValided, error) {
                         if (error && error[k]) {
-                            errors.push(error[k]);
-                            errorMap[k] = error[k];
+                            errors.push(error[k])
+                            errorMap[k] = error[k]
                         }
-                        isValid = isValided;
-                    });
-                });
-                this._showErrors(diffObj, errorMap);
+                        isValid = isValided
+                    })
+                })
+                this._showErrors(diffObj, errorMap)
                 this.triggerEvent(
                     isValid ? 'success' : 'fail',
                     isValid ? { trigger: 'change' } : { errors, trigger: 'change' }
-                );
+                )
             }
-            return newVal;
+            return newVal
         },
         _rulesChange(newVal) {
-            const newRules = this.initRules(newVal);
+            const newRules = this.initRules(newVal)
             if (this.formValidator) {
-                this.formValidator.setRules(newRules);
+                this.formValidator.setRules(newRules)
             }
-            return newVal;
+            return newVal
         },
         _showAllErrors(errors) {
             Object.keys(this.data.newRules).forEach((k) => {
-                this._showError(k, errors && errors[k]);
-            });
+                this._showError(k, errors && errors[k])
+            })
         },
         _showErrors(objs, errors) {
             Object.keys(objs).forEach((k) => {
-                this._showError(k, errors && errors[k]);
-            });
+                this._showError(k, errors && errors[k])
+            })
         },
         _showError(prop, error) {
-            const formItem = this.data.formItems[prop];
+            const formItem = this.data.formItems[prop]
             if (formItem && formItem.data.showError) {
-                formItem.setError(error);
+                formItem.setError(error)
             }
         },
         validate(cb) {
             return this.formValidator.validate((isValid, errors) => {
-                this._showAllErrors(errors);
-                const handleError = this.handleErrors(errors);
+                this._showAllErrors(errors)
+                const handleError = this.handleErrors(errors)
                 this.triggerEvent(
                     isValid ? 'success' : 'fail',
                     isValid ? { trigger: 'validate' } : { errors: handleError, trigger: 'validate' }
-                );
-                cb && cb(isValid, handleError);
-            });
+                )
+                cb && cb(isValid, handleError)
+            })
         },
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         validateField(name, value, cb = (v, error = null) => {}) {
             return this.formValidator.validateField(name, value, (isValid, errors) => {
-                this._showError(name, errors);
-                const handleError = this.handleErrors(errors);
+                this._showError(name, errors)
+                const handleError = this.handleErrors(errors)
                 this.triggerEvent(
                     isValid ? 'success' : 'fail',
                     isValid ? { trigger: 'validate' } : { errors: handleError, trigger: 'validate' }
-                );
-                cb && cb(isValid, handleError);
-            });
+                )
+                cb && cb(isValid, handleError)
+            })
         },
         handleErrors(errors) {
             if (errors) {
-                const newErrors = [];
+                const newErrors = []
                 this.data.rules.forEach((rule) => {
                     if (errors[rule.name]) {
-                        errors[rule.name].name = rule.name;
-                        newErrors.push(errors[rule.name]);
+                        errors[rule.name].name = rule.name
+                        newErrors.push(errors[rule.name])
                     }
-                });
-                return newErrors;
+                })
+                return newErrors
             }
-            return errors;
+            return errors
         },
         addMethod(ruleName, method) {
-            return this.formValidator.addMethod(ruleName, method);
+            return this.formValidator.addMethod(ruleName, method)
         }
     }
-});
-export default FormValidator;
+})
+export default FormValidator

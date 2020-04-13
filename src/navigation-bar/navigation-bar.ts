@@ -55,13 +55,13 @@ Component({
         displayStyle: ''
     },
     attached() {
-        const isSupport = !!wx.getMenuButtonBoundingClientRect;
+        const isSupport = !!wx.getMenuButtonBoundingClientRect
         const rect = wx.getMenuButtonBoundingClientRect
             ? wx.getMenuButtonBoundingClientRect()
-            : null;
+            : null
         wx.getSystemInfo({
             success: (res) => {
-                const ios = !!(res.system.toLowerCase().search('ios') + 1);
+                const ios = !!(res.system.toLowerCase().search('ios') + 1)
                 this.setData({
                     ios,
                     statusBarHeight: res.statusBarHeight,
@@ -70,36 +70,36 @@ Component({
                         ? `padding-right:${res.windowWidth - rect.left}px`
                         : '',
                     leftWidth: isSupport ? `width:${res.windowWidth - rect.left}px` : ''
-                });
+                })
             }
-        });
+        })
     },
     /**
      * 组件的方法列表
      */
     methods: {
         _showChange(show) {
-            const animated = this.data.animated;
-            let displayStyle = '';
+            const animated = this.data.animated
+            let displayStyle = ''
             if (animated) {
                 displayStyle = `opacity: ${
                     show ? '1' : '0'
-                };-webkit-transition:opacity 0.5s;transition:opacity 0.5s;`;
+                };-webkit-transition:opacity 0.5s;transition:opacity 0.5s;`
             } else {
-                displayStyle = `display: ${show ? '' : 'none'}`;
+                displayStyle = `display: ${show ? '' : 'none'}`
             }
             this.setData({
                 displayStyle
-            });
+            })
         },
         back() {
-            const data: any = this.data;
+            const data: any = this.data
             if (data.delta) {
                 wx.navigateBack({
                     delta: data.delta
-                });
+                })
             }
-            this.triggerEvent('back', { delta: data.delta }, {});
+            this.triggerEvent('back', { delta: data.delta }, {})
         }
     }
-});
+})

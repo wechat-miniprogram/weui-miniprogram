@@ -10,17 +10,16 @@ Component({
         },
         grids: {
             type: Array,
-            value: [],
-            observer() {
-
-            }
+            value: []
         }
     },
     data: {
         innerGrids: [],
         _defaultGridProps: {
             target: 'self',
+            url: '',
             openType: 'navigate',
+            delta: 1,
             appId: '',
             path: '',
             extraData: '',
@@ -34,16 +33,15 @@ Component({
             bindcomplete() {}
         }
     },
-    ready() {
-
-    },
+    ready() {},
     lifetimes: {
         attached() {
             if (this.data.grids) {
                 this.setData({
-                    innerGrids: this.data.grids.map((grid) => Object.assign({}, this.data._defaultGridProps, grid))
+                    innerGrids: this.data.grids.map((grid) =>
+                        Object.assign({}, this.data._defaultGridProps, grid)
+                    )
                 })
-                console.log(this.data.innerGrids)
             }
         }
     }

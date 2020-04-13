@@ -12,14 +12,14 @@ Component({
             type: Boolean,
             value: true,
             observer(newValue) {
-                this._computedStyle(newValue, this.data.animated);
+                this._computedStyle(newValue, this.data.animated)
             }
         },
         animated: {
             type: Boolean,
             value: false,
             observer(newValue) {
-                this._computedStyle(this.data.show, newValue);
+                this._computedStyle(this.data.show, newValue)
             }
         },
         duration: {
@@ -48,36 +48,36 @@ Component({
                 if (!animated) {
                     this.setData({
                         displayStyle: 'none'
-                    });
+                    })
                 } else {
-                    this._startAnimation();
+                    this._startAnimation()
                 }
             } else {
                 this.setData({
                     displayStyle: ''
-                });
+                })
             }
         },
         _startAnimation() {
             setTimeout(() => {
-                const data: any = this.data;
-                const animation = data.animationInstance;
-                animation.height(0).step();
+                const data: any = this.data
+                const animation = data.animationInstance
+                animation.height(0).step()
                 this.setData({
                     animationData: animation.export()
-                });
-            }, 0);
+                })
+            }, 0)
         }
     },
     lifetimes: {
         attached() {
-            const data: any = this.data;
+            const data: any = this.data
             const animationInstance = wx.createAnimation({
                 duration: data.duration,
                 timingFunction: 'ease'
-            });
-            this.setData({ animationInstance });
-            this._computedStyle(this.data.show, this.data.animated);
+            })
+            this.setData({ animationInstance })
+            this._computedStyle(this.data.show, this.data.animated)
         }
     }
-});
+})
