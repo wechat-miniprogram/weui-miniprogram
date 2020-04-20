@@ -37,3 +37,13 @@ npm run clean
 ```
 npm run clean-dev
 ```
+
+## 适配 DarkMode
+
+在根结点（或组件的外层结点）增加属性 `data-weui-theme="dark"`，即把 WeUI 组件切换到 DarkMode 的表现，如:
+
+```html
+<view data-weui-theme="dark">
+    ...
+</view>
+```
