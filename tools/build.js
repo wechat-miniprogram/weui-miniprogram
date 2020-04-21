@@ -271,7 +271,8 @@ class BuildTask {
       const jsonFileList = this.componentListMap.jsonFileList
 
       if (jsonFileList && jsonFileList.length) {
-        return copy(this.componentListMap.jsonFileList)
+        // 去掉 index.json
+        return copy(this.componentListMap.jsonFileList.filter(file => (file !== 'index.json')))
       }
 
       return done()
