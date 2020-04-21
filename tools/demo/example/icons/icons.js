@@ -496,6 +496,9 @@ CustomPage({
     },
     onLoad() {
         this.setIconColor(this.data.theme)
+
+        const app = getApp()
+        app.watchThemeChange && app.watchThemeChange(this.setIconColor)
     },
     setIconColor(theme) {
         const color = theme === 'dark' ? colorDark : colorLight
