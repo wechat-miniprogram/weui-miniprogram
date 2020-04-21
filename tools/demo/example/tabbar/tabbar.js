@@ -1,45 +1,31 @@
 import CustomPage from '../../base/CustomPage'
 
+const app = getApp()
+
 CustomPage({
     data: {
         list: [
             {
                 text: '微信',
-                iconPath: global.isDemo
-                    ? '/page/weui/example/images/icon_tabbar.png'
-                    : '/example/images/icon_tabbar.png',
-                selectedIconPath: global.isDemo
-                    ? '/page/weui/example/images/icon_tabbar.png'
-                    : '/example/images/icon_tabbar.png',
+                iconPath: app.globalData.iconTabbar,
+                selectedIconPath: app.globalData.iconTabbar,
                 badge: '8'
             },
             {
                 text: '通讯录',
-                iconPath: global.isDemo
-                    ? '/page/weui/example/images/icon_tabbar.png'
-                    : '/example/images/icon_tabbar.png',
-                selectedIconPath: global.isDemo
-                    ? '/page/weui/example/images/icon_tabbar.png'
-                    : '/example/images/icon_tabbar.png'
+                iconPath: app.globalData.iconTabbar,
+                selectedIconPath: app.globalData.iconTabbar
             },
             {
                 text: '发现',
-                iconPath: global.isDemo
-                    ? '/page/weui/example/images/icon_tabbar.png'
-                    : '/example/images/icon_tabbar.png',
-                selectedIconPath: global.isDemo
-                    ? '/page/weui/example/images/icon_tabbar.png'
-                    : '/example/images/icon_tabbar.png',
+                iconPath: app.globalData.iconTabbar,
+                selectedIconPath: app.globalData.iconTabbar,
                 dot: true
             },
             {
                 text: '我',
-                iconPath: global.isDemo
-                    ? '/page/weui/example/images/icon_tabbar.png'
-                    : '/example/images/icon_tabbar.png',
-                selectedIconPath: global.isDemo
-                    ? '/page/weui/example/images/icon_tabbar.png'
-                    : '/example/images/icon_tabbar.png'
+                iconPath: app.globalData.iconTabbar,
+                selectedIconPath: app.globalData.iconTabbar
             }
         ]
     },

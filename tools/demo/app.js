@@ -30,6 +30,7 @@ App({
     globalData: {
         hasLogin: false,
         theme: 'light',
-        GRID_DEMO_URL: '/example/index'
+        GRID_DEMO_URL: '/example/index',
+        iconTabbar: '/example/images/icon_tabbar.png'
     }
 })
