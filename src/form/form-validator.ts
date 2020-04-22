@@ -7,7 +7,7 @@ const validateSingleRule = (rule: any, value: any, param: any = null, models = n
     const ruleKeys = Object.keys(rule)
 
     for (let i = 0, l = ruleKeys.length; i < l; ++i) {
-        const ruleKey = rule[i]
+        const ruleKey = ruleKeys[i]
         if (ruleKey === 'name' || ruleKey === 'message') continue
         const validateMethod =
             typeof rule.validator !== 'undefined' ? rule.validator : Validator[ruleKey]
