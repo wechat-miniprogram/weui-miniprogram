@@ -32,6 +32,7 @@
     "example/msg/msg_fail",
     "example/picker/picker",
     "example/toast/toast",
+    "example/toptips/toptips",
 
     "example/navbar/navbar",
     "example/navigation/navigation",

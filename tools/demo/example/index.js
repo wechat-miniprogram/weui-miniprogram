@@ -31,7 +31,7 @@ CustomPage({
                 id: 'feedback',
                 name: '操作反馈',
                 open: false,
-                pages: ['dialog', 'msg', 'half-screen-dialog', 'actionsheet']
+                pages: ['dialog', 'msg', 'half-screen-dialog', 'actionsheet', 'toptips']
             },
             {
                 id: 'nav',

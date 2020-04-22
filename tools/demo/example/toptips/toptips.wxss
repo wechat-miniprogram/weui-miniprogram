@@ -1,0 +1,10 @@
+@import '../common.wxss';
+.weui-toptips.top100 {
+    top: 100px;
+}
+.weui-toptips.top200 {
+    top: 200px;
+}
+.weui-toptips.top300 {
+    top: 300px;
+}

@@ -1,0 +1,12 @@
+<view class="page" data-weui-theme="{{theme}}">
+    <view class="page__hd">
+        <view class="page__title">Toptips</view>
+    </view>
+    <view class="page__bd">
+        <button type="primary" disabled="{{disabled}}" bindtap="showToptips">显示Toptips</button>
+
+        <mp-toptips ext-class="top100" msg="距离顶部100px" type="error" show="{{show}}"></mp-toptips>
+        <mp-toptips ext-class="top200" msg="距离顶部200px" type="info" show="{{show}}"></mp-toptips>
+        <mp-toptips ext-class="top300" msg="距离顶部300px" type="success" show="{{show}}"></mp-toptips>
+    </view>
+</view>
