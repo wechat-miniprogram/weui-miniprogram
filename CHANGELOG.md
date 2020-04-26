@@ -1,5 +1,10 @@
 # 更新日志
 
+## 1.0.3
+
+- fix: `required` 判断 (#93)
+- fix: dialog 未居中 (#94)
+
 ## 1.0.2
 
 - fix: Toptips 不展示的bug
