@@ -14,10 +14,16 @@ const defaultMessage = {
     url: '请输入正确的URL地址',
     equalTo: '值和字段%s不相等'
 }
+
+const isEmpty = function (val): boolean {
+    if (val === 0 || val === false) return false
+    return !val
+}
+
 export default {
     required(r, val): string {
         if (r.required === false) return ''
-        else if (!val) return sprintf(r.message || defaultMessage.required, r.name)
+        else if (isEmpty(val)) return sprintf(r.message || defaultMessage.required, r.name)
         else return ''
     },
     minlength(r, val) {
