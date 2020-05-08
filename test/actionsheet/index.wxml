@@ -1,0 +1,14 @@
+<mp-actionsheet
+    class="comp"
+    title="actionsheet title"
+    show-cancel="{{true}}"
+    cancel-text="actionsheet cancel text"
+    show="{{true}}"
+    mask-class="customer-mask-class"
+    actions="{{actions}}"
+    bindactiontap="actiontap"
+    bindclose="close"
+>
+</mp-actionsheet>
+<view class="tapvalue">{{tapValue}}</view>
+<view class="close">{{close}}</view>

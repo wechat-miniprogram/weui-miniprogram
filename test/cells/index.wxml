@@ -1,0 +1,4 @@
+<mp-cells class="cells" title="带图标、说明的列表项" footer="底部说明文字">
+    <mp-cell class="cell1" value="标题文字" footer="说明文字" icon="success"></mp-cell>
+    <mp-cell class="cell2" value="标题文字" footer="说明文字"></mp-cell>
+</mp-cells>
