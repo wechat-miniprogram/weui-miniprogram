@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`badge badge with content 1`] = `
+<wx-view
+  class="weui-badge  "
+>
+  badge content
+</wx-view>
+`;
+
+exports[`badge badge without content 1`] = `
+<wx-view
+  class="weui-badge  weui-badge_dot"
+>
+  
+</wx-view>
+`;

@@ -1,7 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "mp-cells": "../../miniprogram_dist/cells/cells",
-        "mp-cell": "../../miniprogram_dist/cell/cell"
-    }
-}

@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`checkbox-group & checkbox basic checkbox 1`] = `
+<mp-cells
+  title="单选列表项"
+>
+  <mp-checkbox-group
+    class="radio-group"
+    bind:change="radioChange"
+  >
+    <radio-group
+      class=""
+      bind:change="checkedChange"
+    >
+      <mp-checkbox
+        class="test-radio"
+      >
+        <mp-cell
+          bind:tap="checkedChange"
+        >
+          <wx-view
+            class="weui-cell   weui-check__label   ^weui-cell_checkbox "
+            hoverClass=""
+            bind:tap="navigateTo"
+          >
+            <wx-view
+              class="weui-cell__hd "
+            >
+              <wx-view
+                slot="icon"
+              >
+                <wx-checkbox
+                  checked=""
+                  class="weui-check"
+                  color=""
+                  disabled=""
+                  value="0"
+                />
+                <wx-icon
+                  class="weui-icon-checked"
+                />
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="weui-cell__bd "
+            >
+              <wx-view>
+                cell standard
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </mp-cell>
+      </mp-checkbox>
+      <mp-checkbox
+        class="test-radio"
+      >
+        <mp-cell
+          bind:tap="checkedChange"
+        >
+          <wx-view
+            class="weui-cell   weui-check__label   ^weui-cell_checkbox "
+            hoverClass=""
+            bind:tap="navigateTo"
+          >
+            <wx-view
+              class="weui-cell__hd "
+            >
+              <wx-view
+                slot="icon"
+              >
+                <wx-checkbox
+                  checked=""
+                  class="weui-check"
+                  color=""
+                  disabled=""
+                  value="1"
+                />
+                <wx-icon
+                  class="weui-icon-checked"
+                />
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="weui-cell__bd "
+            >
+              <wx-view>
+                cell standard
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </mp-cell>
+      </mp-checkbox>
+    </radio-group>
+  </mp-checkbox-group>
+</mp-cells>
+`;

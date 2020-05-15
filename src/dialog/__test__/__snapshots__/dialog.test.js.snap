@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dialog basic dialog 1`] = `
+<mp-dialog
+  class="dialog"
+  bind:buttontap="buttontap"
+  bind:close="close"
+>
+  <wx-view
+    class="weui-mask "
+    bind:tap="close"
+  />
+  <wx-view
+    class="weui-dialog__wrp "
+    bind:tap="close"
+  >
+    <wx-view
+      class="weui-dialog"
+      catch:tap="stopEvent"
+    >
+      <wx-view
+        class="weui-dialog__hd"
+      >
+        <wx-view
+          class="weui-dialog__title"
+        >
+          dialog title
+          
+        </wx-view>
+      </wx-view>
+      <wx-view
+        class="weui-dialog__bd"
+      />
+      <wx-view
+        class="weui-dialog__ft"
+      >
+        <wx-view
+          class="weui-dialog__btn weui-dialog__btn_default "
+          data-index="{{0}}"
+          bind:tap="buttonTap"
+        >
+          取消
+        </wx-view>
+        <wx-view
+          class="weui-dialog__btn weui-dialog__btn_primary "
+          data-index="{{1}}"
+          bind:tap="buttonTap"
+        >
+          确定
+        </wx-view>
+      </wx-view>
+    </wx-view>
+  </wx-view>
+</mp-dialog>
+`;
+
+exports[`dialog close 1`] = `
+<mp-dialog
+  class="dialog"
+  bind:buttontap="buttontap"
+  bind:close="close"
+>
+  <wx-view
+    class="weui-mask weui-mask_hidden"
+    bind:tap="close"
+  />
+</mp-dialog>
+`;

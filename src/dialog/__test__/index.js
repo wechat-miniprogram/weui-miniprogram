@@ -1,7 +1,7 @@
 Component({
     data: {
         buttonValue: '',
-        closed: '',
+        closed: false,
         buttons: [{ text: '取消' }, { text: '确定' }]
     },
     methods: {
@@ -12,7 +12,7 @@ Component({
         },
         close(e) {
             this.setData({
-                closed: 'true'
+                closed: true
             })
         }
     }

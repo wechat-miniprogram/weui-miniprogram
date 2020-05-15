@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cells & cell basic cells & cell 1`] = `
+<mp-cells
+  class="cells"
+>
+  <wx-view
+    class=" weui-cells__group  "
+  >
+    <wx-view
+      class="weui-cells__title"
+    >
+      带图标、说明的列表项
+    </wx-view>
+    <wx-view
+      class="weui-cells weui-cells_after-title "
+    >
+      <mp-cell
+        class="cell1"
+      >
+        <wx-view
+          class="weui-cell    "
+          hoverClass=""
+          bind:tap="navigateTo"
+        >
+          <wx-view
+            class="weui-cell__hd "
+          >
+            <wx-image
+              class="weui-cell__icon"
+              mode="aspectFit"
+              src="success"
+            />
+          </wx-view>
+          <wx-view
+            class="weui-cell__bd "
+          >
+            标题文字
+          </wx-view>
+          <wx-view
+            class="weui-cell__ft "
+          >
+            说明文字
+          </wx-view>
+        </wx-view>
+      </mp-cell>
+      <mp-cell
+        class="cell2"
+      >
+        <wx-view
+          class="weui-cell    "
+          hoverClass=""
+          bind:tap="navigateTo"
+        >
+          <wx-view
+            class="weui-cell__hd "
+          />
+          <wx-view
+            class="weui-cell__bd "
+          >
+            标题文字
+          </wx-view>
+          <wx-view
+            class="weui-cell__ft "
+          >
+            说明文字
+          </wx-view>
+        </wx-view>
+      </mp-cell>
+    </wx-view>
+    <wx-view
+      class="weui-cells__tips"
+    >
+      底部说明文字
+    </wx-view>
+  </wx-view>
+</mp-cells>
+`;

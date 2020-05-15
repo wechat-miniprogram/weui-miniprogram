@@ -1,11 +1,9 @@
 <mp-dialog
     class="dialog"
     title="dialog title"
-    show="{{true}}"
+    show="{{!closed}}"
     buttons="{{buttons}}"
     bindbuttontap="buttontap"
     bindclose="close"
 >
 </mp-dialog>
-<view class="button-value">{{buttonValue}}</view>
-<view class="close">{{closed}}</view>

@@ -3,10 +3,8 @@
         <mp-checkbox class="test-radio" wx:for="{{radioItems}}" wx:key="value" label="{{item.name}}" value="{{item.value}}" checked="{{item.checked}}"></mp-checkbox>
     </mp-checkbox-group>
 </mp-cells>
-<view class="radio-value">{{radioValue}}</view>
 <mp-cells title="复选列表项">
     <mp-checkbox-group class="checkbox-group" prop="checkbox" multi="{{true}}" bindchange="checkboxChange">
         <mp-checkbox class="test-checkbox" wx:for="{{checkboxItems}}" wx:key="value" label="{{item.name}}" value="{{item.value}}" checked="{{item.checked}}"></mp-checkbox>
     </mp-checkbox-group>
 </mp-cells>
-<view class="checkbox-value">{{checkboxValue}}</view>

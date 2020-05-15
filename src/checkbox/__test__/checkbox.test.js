@@ -2,13 +2,23 @@ import path from 'path'
 import simulate from 'miniprogram-simulate'
 
 describe('checkbox-group & checkbox', () => {
-    const id = simulate.load(path.join(__dirname, './index'))
+    let id
+
+    beforeAll(() => {
+        id = simulate.load(path.resolve(__dirname, './index'), { less: true })
+    })
+
     test('basic checkbox', async () => {
+        const container = simulate.render(id)
+        container.attach(document.createElement('parent-wrapper'))
+        expect(container.toJSON()).toMatchSnapshot()
+    })
+
+    test('radio value', async () => {
         const container = simulate.render(id)
         container.attach(document.createElement('parent-wrapper'))
 
         const radioGroup = container.querySelector('.radio-group')
-        const checkboxGroup = container.querySelector('.checkbox-group')
 
         radioGroup.dispatchEvent('change', {
             detail: {
@@ -16,7 +26,7 @@ describe('checkbox-group & checkbox', () => {
             }
         })
         await simulate.sleep(10)
-        expect(container.querySelector('.radio-value').dom.innerHTML).toBe('0')
+        expect(container.data.radioValue).toBe('0')
 
         radioGroup.dispatchEvent('change', {
             detail: {
@@ -24,7 +34,14 @@ describe('checkbox-group & checkbox', () => {
             }
         })
         await simulate.sleep(10)
-        expect(container.querySelector('.radio-value').dom.innerHTML).toBe('1')
+        expect(container.data.radioValue).toBe('1')
+    })
+
+    test('checkbox value', async () => {
+        const container = simulate.render(id)
+        container.attach(document.createElement('parent-wrapper'))
+
+        const checkboxGroup = container.querySelector('.checkbox-group')
 
         checkboxGroup.dispatchEvent('change', {
             detail: {
@@ -32,7 +49,7 @@ describe('checkbox-group & checkbox', () => {
             }
         })
         await simulate.sleep(10)
-        expect(container.querySelector('.checkbox-value').dom.innerHTML).toBe('0,1')
+        expect(container.data.checkboxValue).toBe('0,1')
 
         checkboxGroup.dispatchEvent('change', {
             detail: {
@@ -40,6 +57,6 @@ describe('checkbox-group & checkbox', () => {
             }
         })
         await simulate.sleep(10)
-        expect(container.querySelector('.checkbox-value').dom.innerHTML).toBe('1')
+        expect(container.data.checkboxValue).toBe('1')
     })
 })

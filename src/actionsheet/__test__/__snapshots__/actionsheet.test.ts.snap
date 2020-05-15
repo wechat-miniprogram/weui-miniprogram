@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`actionsheet basic actionsheet 1`] = `
+<mp-actionsheet
+  class="comp"
+  bind:actiontap="actiontap"
+  bind:close="close"
+>
+  <wx-view
+    class="weui-mask  customer-mask-class"
+    bind:tap="closeActionSheet"
+  />
+  <wx-view
+    class="weui-actionsheet weui-actionsheet_toggle "
+  >
+    <wx-view
+      class="weui-actionsheet__title"
+    >
+      <wx-view
+        class="weui-actionsheet__title-text"
+      >
+        actionsheet title
+      </wx-view>
+    </wx-view>
+    <wx-view
+      class="weui-actionsheet__menu"
+    >
+      <wx-view
+        class="weui-actionsheet__cell "
+        data-groupindex="{{0}}"
+        data-index="{{0}}"
+        data-value="{{1}}"
+        bind:tap="buttonTap"
+      >
+        
+                item 1
+            
+      </wx-view>
+      <wx-view
+        class="weui-actionsheet__cell "
+        data-groupindex="{{0}}"
+        data-index="{{1}}"
+        data-value="{{2}}"
+        bind:tap="buttonTap"
+      >
+        
+                item 2
+            
+      </wx-view>
+      <wx-view
+        class="weui-actionsheet__cell weui-actionsheet__cell_warn"
+        data-groupindex="{{0}}"
+        data-index="{{2}}"
+        data-value="{{3}}"
+        bind:tap="buttonTap"
+      >
+        
+                item 3
+            
+      </wx-view>
+    </wx-view>
+    <wx-view
+      class="weui-actionsheet__action"
+    >
+      <wx-view
+        class="weui-actionsheet__cell"
+        data-type="close"
+        id="iosActionsheetCancel"
+        bind:tap="closeActionSheet"
+      >
+        actionsheet cancel text
+      </wx-view>
+    </wx-view>
+  </wx-view>
+</mp-actionsheet>
+`;
+
+exports[`actionsheet no cancel 1`] = `
+<mp-actionsheet
+  class="comp"
+  bind:actiontap="actiontap"
+  bind:close="close"
+>
+  <wx-view
+    class="weui-mask  customer-mask-class"
+    bind:tap="closeActionSheet"
+  />
+  <wx-view
+    class="weui-actionsheet weui-actionsheet_toggle "
+  >
+    <wx-view
+      class="weui-actionsheet__title"
+    >
+      <wx-view
+        class="weui-actionsheet__title-text"
+      >
+        actionsheet title
+      </wx-view>
+    </wx-view>
+    <wx-view
+      class="weui-actionsheet__action"
+    >
+      <wx-view
+        class="weui-actionsheet__cell "
+        data-groupindex="{{0}}"
+        data-index="{{0}}"
+        data-value="{{1}}"
+        bind:tap="buttonTap"
+      >
+        
+                item 1
+            
+      </wx-view>
+      <wx-view
+        class="weui-actionsheet__cell "
+        data-groupindex="{{0}}"
+        data-index="{{1}}"
+        data-value="{{2}}"
+        bind:tap="buttonTap"
+      >
+        
+                item 2
+            
+      </wx-view>
+      <wx-view
+        class="weui-actionsheet__cell weui-actionsheet__cell_warn"
+        data-groupindex="{{0}}"
+        data-index="{{2}}"
+        data-value="{{3}}"
+        bind:tap="buttonTap"
+      >
+        
+                item 3
+            
+      </wx-view>
+    </wx-view>
+  </wx-view>
+</mp-actionsheet>
+`;

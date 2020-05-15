@@ -1,7 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "mp-checkbox-group": "../../miniprogram_dist/checkbox-group/checkbox-group",
-        "mp-checkbox": "../../miniprogram_dist/checkbox/checkbox"
-    }
-}

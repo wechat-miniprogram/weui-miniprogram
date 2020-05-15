@@ -1,6 +1,13 @@
 Component({
+    properties: {
+        showCancel: {
+            type: Boolean,
+            value: true
+        }
+    },
     data: {
         tapValue: 0,
+        show: true,
         actions: [
             { text: 'item 1', value: 1 },
             { text: 'item 2', value: 2 },
@@ -8,14 +15,14 @@ Component({
         ]
     },
     methods: {
-        actiontap(event) {
+        actiontap(event): void {
             this.setData({
                 tapValue: event.detail.value
             })
         },
-        close() {
+        close(): void {
             this.setData({
-                close: 'true'
+                show: false
             })
         }
     }

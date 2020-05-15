@@ -14,7 +14,8 @@
     "clean-dev": "gulp clean --develop",
     "clean": "gulp clean",
     "lint": "eslint \"src/**/*.js\"",
-    "lint-tools": "eslint \"tools/**/*.js\" --rule \"import/no-extraneous-dependencies: false\""
+    "lint-tools": "eslint \"tools/**/*.js\" --rule \"import/no-extraneous-dependencies: false\"",
+    "test": "jest"
   },
   "miniprogram": "miniprogram_dist",
   "repository": {
@@ -31,6 +32,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-typescript": "^7.8.3",
+    "@types/jest": "^25.2.2",
     "@typescript-eslint/eslint-plugin": "^2.23.0",
     "@typescript-eslint/parser": "^2.23.0",
     "autoprefixer": "^6.5.1",
@@ -53,9 +55,10 @@
     "gulp-less": "^4.0.1",
     "gulp-rename": "^1.4.0",
     "gulp-sourcemaps": "^2.6.5",
-    "jest": "^25.1.0",
+    "jest": "^25.5.4",
+    "jsdom": "^16.2.2",
     "miniprogram-api-typings": "^2.6.5",
-    "miniprogram-simulate": "^1.1.5",
+    "miniprogram-simulate": "^1.2.2",
     "prettier": "2.0.1",
     "through2": "^2.0.3",
     "ts-loader": "^5.3.3",
