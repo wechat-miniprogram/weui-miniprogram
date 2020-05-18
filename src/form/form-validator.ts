@@ -33,7 +33,9 @@ class FormValidator {
         this.errors = {}
     }
 
-    validate(cb) {
+    validate(): Promise<{ isValid: boolean; errors: any }>
+    validate(cb: (isValid: boolean, errors: any) => void): void
+    validate(cb?: any) {
         return new Promise((resolve) => {
             let failCount = 0
             const errors = this.errors
@@ -59,13 +61,15 @@ class FormValidator {
         })
     }
 
-    validateField(name, value, cb) {
+    validateField(name: string, value: any): Promise<{ valid: boolean; error: any }>
+    validateField(name: string, value: any, cb: (isValid: boolean, errors: any[]) => void): void
+    validateField(name, value, cb?) {
         return new Promise((resolve) => {
             this._innerValidateField(name, value, (valid, error) => {
                 const errObj = {}
                 errObj[name] = error
                 resolve({ valid, error: valid ? undefined : error })
-                cb(valid, valid ? undefined : errObj)
+                cb && cb(valid, valid ? undefined : errObj)
                 const oldError = this.errors[name]
                 const errorChanged = diff(oldError, error)
                 if (errorChanged) {

@@ -48,7 +48,7 @@ exports[`cells & cell basic cells & cell 1`] = `
         class="cell2"
       >
         <wx-view
-          class="weui-cell    "
+          class="weui-cell    weui-cell_wxss"
           hoverClass=""
           bind:tap="navigateTo"
         >

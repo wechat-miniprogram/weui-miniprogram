@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`form-page basic 1`] = `
+<main>
+  <wx-view
+    class="weui-form"
+  >
+    <wx-view
+      class="weui-form__text-area"
+    >
+      <wx-view
+        class="weui-form__title"
+      >
+        表单结构
+      </wx-view>
+    </wx-view>
+    <wx-view
+      class="weui-form__control-area"
+    >
+      阅读并同意
+      <wx-navigator>
+        《相关条款》
+      </wx-navigator>
+    </wx-view>
+    <wx-view
+      class="weui-form__tips-area"
+    />
+    <wx-view
+      class="weui-form__opr-area"
+    >
+      <wx-view
+        slot="button"
+      >
+        <wx-button
+          class="weui-btn"
+          type="primary"
+          bind:tap="submitForm"
+        >
+          确定
+        </wx-button>
+      </wx-view>
+    </wx-view>
+    <wx-view
+      class="weui-form__tips-area"
+    />
+    <wx-view
+      class="weui-form__extra-area"
+    >
+      <wx-view
+        class="weui-footer"
+      />
+    </wx-view>
+  </wx-view>
+</main>
+`;

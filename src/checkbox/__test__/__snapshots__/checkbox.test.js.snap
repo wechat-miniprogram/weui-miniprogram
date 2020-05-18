@@ -19,17 +19,24 @@ exports[`checkbox-group & checkbox basic checkbox 1`] = `
           bind:tap="checkedChange"
         >
           <wx-view
-            class="weui-cell   weui-check__label   ^weui-cell_checkbox "
+            class="weui-cell   weui-check__label   ^weui-cell_radio "
             hoverClass=""
             bind:tap="navigateTo"
           >
             <wx-view
-              class="weui-cell__hd "
+              class="weui-cell__bd "
+            >
+              <wx-view>
+                cell standard
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="weui-cell__ft "
             >
               <wx-view
-                slot="icon"
+                slot="footer"
               >
-                <wx-checkbox
+                <wx-radio
                   checked=""
                   class="weui-check"
                   color=""
@@ -39,13 +46,6 @@ exports[`checkbox-group & checkbox basic checkbox 1`] = `
                 <wx-icon
                   class="weui-icon-checked"
                 />
-              </wx-view>
-            </wx-view>
-            <wx-view
-              class="weui-cell__bd "
-            >
-              <wx-view>
-                cell standard
               </wx-view>
             </wx-view>
           </wx-view>
@@ -58,17 +58,24 @@ exports[`checkbox-group & checkbox basic checkbox 1`] = `
           bind:tap="checkedChange"
         >
           <wx-view
-            class="weui-cell   weui-check__label   ^weui-cell_checkbox "
+            class="weui-cell   weui-check__label weui-cell_wxss  ^weui-cell_radio "
             hoverClass=""
             bind:tap="navigateTo"
           >
             <wx-view
-              class="weui-cell__hd "
+              class="weui-cell__bd "
+            >
+              <wx-view>
+                cell standard
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="weui-cell__ft "
             >
               <wx-view
-                slot="icon"
+                slot="footer"
               >
-                <wx-checkbox
+                <wx-radio
                   checked=""
                   class="weui-check"
                   color=""
@@ -78,13 +85,6 @@ exports[`checkbox-group & checkbox basic checkbox 1`] = `
                 <wx-icon
                   class="weui-icon-checked"
                 />
-              </wx-view>
-            </wx-view>
-            <wx-view
-              class="weui-cell__bd "
-            >
-              <wx-view>
-                cell standard
               </wx-view>
             </wx-view>
           </wx-view>

@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gallery basic 1`] = `
+<main
+  delete="{{undefined}}"
+  delete="{{undefined}}"
+  bind:change="change"
+  bind:delete="delete"
+  bind:hide="hide"
+>
+  <wx-view
+    class="weui-gallery weui-gallery_show "
+  >
+    <wx-view
+      class="weui-gallery__info"
+    >
+      11/3
+    </wx-view>
+    <wx-swiper
+      autoplay="{{false}}"
+      class="weui-gallery__img__wrp"
+      current="1"
+      duration="{{500}}"
+      indicatorDots="{{false}}"
+      bind:change="change"
+      bind:tap="hideGallery"
+    >
+      <swiper-item>
+        <wx-image
+          class="weui-gallery__img"
+          mode="aspectFit"
+          src="http://desk-fd.zol-img.com.cn/g5/M00/02/05/ChMkJ1bKyZmIWCwZABEwe5zfvyMAALIQABa1z4AETCT730.jpg"
+        />
+      </swiper-item>
+      <swiper-item>
+        <wx-image
+          class="weui-gallery__img"
+          mode="aspectFit"
+          src="http://desk-fd.zol-img.com.cn/g5/M00/02/05/ChMkJ1bKyZmIWCwZABEwe5zfvyMAALIQABa1z4AETCT730.jpg"
+        />
+      </swiper-item>
+      <swiper-item>
+        <wx-image
+          class="weui-gallery__img"
+          mode="aspectFit"
+          src="http://desk-fd.zol-img.com.cn/g5/M00/02/05/ChMkJ1bKyZmIWCwZABEwe5zfvyMAALIQABa1z4AETCT730.jpg"
+        />
+      </swiper-item>
+    </wx-swiper>
+    <wx-view
+      class="weui-gallery__opr"
+    >
+      <wx-navigator
+        class="weui-gallery__del"
+        bind:tap="deleteImg"
+      >
+        删除
+      </wx-navigator>
+    </wx-view>
+  </wx-view>
+</main>
+`;
