@@ -2,8 +2,6 @@ import path from 'path'
 import simulate from 'miniprogram-simulate'
 
 describe('form-page', () => {
-    const formPage = simulate.load(path.resolve(__dirname, '../form-page'))
-
     const id = simulate.load({
         compiler: 'official',
         rootPath: __dirname,
@@ -16,7 +14,10 @@ describe('form-page', () => {
             </mp-form-page>
         `,
         usingComponents: {
-            'mp-form-page': formPage
+            'mp-form-page': simulate.load(path.resolve(__dirname, '../form-page')),
+            'mp-cells': simulate.load(path.resolve(__dirname, '../../cells/cells')),
+            'mp-cell': simulate.load(path.resolve(__dirname, '../../cell/cell')),
+            'mp-checkbox': simulate.load(path.resolve(__dirname, '../../checkbox/checkbox'))
         }
     })
 

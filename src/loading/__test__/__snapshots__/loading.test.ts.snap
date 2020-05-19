@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loading basic 1`] = `
+<wx-view
+  animation="{{Object {}}}"
+  class="wx_loading_view "
+  id="wx_loading_view"
+  style="display:none;"
+>
+  <wx-view
+    class="weui-loadmore"
+  />
+</wx-view>
+`;
+
+exports[`loading duration 1`] = `
+<wx-view
+  animation="{{Object {}}}"
+  class="wx_loading_view "
+  id="wx_loading_view"
+  style="display:;"
+>
+  <wx-view
+    class="loading wx_dot_loading"
+  />
+</wx-view>
+`;
+
+exports[`loading duration 2`] = `
+<wx-view
+  animation="{{Object {}}}"
+  class="wx_loading_view "
+  id="wx_loading_view"
+  style="display:none;"
+>
+  <wx-view
+    class="loading wx_dot_loading"
+  />
+</wx-view>
+`;

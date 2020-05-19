@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`slideview basic 1`] = `
+<main
+  bind:buttontap="slideButtonTap"
+>
+  <wx-view
+    class="weui-slideview weui-movable-view  "
+    style="width: 100%;height: 100%;"
+  >
+    <wx-view
+      $gdc="{{[Function]}}"
+      $wxs:bindtouchend="{{[Function]}}"
+      $wxs:bindtouchmove="{{[Function]}}"
+      $wxs:bindtouchstart="{{[Function]}}"
+      $wxs:bindtransitionend="{{[Function]}}"
+      $wxs:change:disable="{{[Function]}}"
+      $wxs:change:duration="{{[Function]}}"
+      $wxs:change:prop="{{[Function]}}"
+      $wxs:change:rebounce="{{[Function]}}"
+      $wxs:change:show="{{[Function]}}"
+      class="weui-slideview__left left"
+      disable="{{false}}"
+      duration="{{350}}"
+      prop="{{
+        Object {
+          "button": Object {
+            "bottom": 0,
+            "dataset": Object {},
+            "height": 0,
+            "id": "",
+            "left": 0,
+            "right": 0,
+            "top": 0,
+            "width": 0,
+          },
+          "buttons": Array [
+            Object {
+              "bottom": 0,
+              "dataset": Object {},
+              "height": 0,
+              "id": "",
+              "left": 0,
+              "right": 0,
+              "top": 0,
+              "width": 0,
+            },
+            Object {
+              "bottom": 0,
+              "dataset": Object {},
+              "height": 0,
+              "id": "",
+              "left": 0,
+              "right": 0,
+              "top": 0,
+              "width": 0,
+            },
+            Object {
+              "bottom": 0,
+              "dataset": Object {},
+              "height": 0,
+              "id": "",
+              "left": 0,
+              "right": 0,
+              "top": 0,
+              "width": 0,
+            },
+          ],
+          "disable": false,
+          "rebounce": 0,
+          "show": true,
+          "throttle": 40,
+        }
+      }}"
+      rebounce="{{0}}"
+      show="{{true}}"
+      style="width:100%;"
+    >
+      <main>
+        <wx-view
+          class="weui-cell    "
+          hoverClass=""
+          bind:tap="navigateTo"
+        >
+          <wx-view
+            class="weui-cell__hd "
+          />
+          <wx-view
+            class="weui-cell__bd "
+          >
+            左滑可以删除
+          </wx-view>
+          <wx-view
+            class="weui-cell__ft "
+          >
+            说明文字
+          </wx-view>
+        </wx-view>
+      </main>
+    </wx-view>
+    <wx-view
+      class="weui-slideview__right right"
+    >
+      <wx-view
+        class="weui-slideview__buttons"
+        style="height:100%;width:100%;"
+      >
+        <wx-view
+          class="btn weui-slideview__btn__wrp weui-slideview__btn-group_default "
+        >
+          <wx-view
+            $gdc="{{[Function]}}"
+            $wxs:bindtap="{{[Function]}}"
+            class="weui-slideview__btn"
+            data-data=""
+            data-index="{{0}}"
+          >
+            <wx-text>
+              普通
+            </wx-text>
+          </wx-view>
+        </wx-view>
+        <wx-view
+          class="btn weui-slideview__btn__wrp weui-slideview__btn-group_default "
+        >
+          <wx-view
+            $gdc="{{[Function]}}"
+            $wxs:bindtap="{{[Function]}}"
+            class="weui-slideview__btn"
+            data-data=""
+            data-index="{{1}}"
+          >
+            <wx-text>
+              普通
+            </wx-text>
+          </wx-view>
+        </wx-view>
+        <wx-view
+          class="btn weui-slideview__btn__wrp weui-slideview__btn-group_warn "
+        >
+          <wx-view
+            $gdc="{{[Function]}}"
+            $wxs:bindtap="{{[Function]}}"
+            class="weui-slideview__btn"
+            data-data=""
+            data-index="{{2}}"
+          >
+            <wx-text>
+              警示
+            </wx-text>
+          </wx-view>
+        </wx-view>
+      </wx-view>
+    </wx-view>
+  </wx-view>
+</main>
+`;
