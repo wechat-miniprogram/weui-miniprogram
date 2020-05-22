@@ -222,7 +222,7 @@ var transitionEnd = function(event, ownerInstance) {
     var st = ins.getState()
     // 回弹效果
     if (st.out && st.rebounce) {
-        console.log('transition rebounce', st.rebounce)
+        // console.log('transition rebounce', st.rebounce)
         ins.setStyle({
             'transform': 'translate3d(' + (-st.max) + 'px, 0, 0)',
             'transition': 'transform ' + REBOUNCE_TIME +'s'
