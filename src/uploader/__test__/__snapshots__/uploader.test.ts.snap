@@ -1,0 +1,479 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`uploader basic 1`] = `
+<main>
+  <mp-uploader
+    id="uploader"
+  >
+    <wx-view
+      class="weui-uploader "
+    >
+      <wx-view
+        class="weui-uploader__hd"
+      >
+        <wx-view
+          class="weui-uploader__overview"
+        >
+          <wx-view
+            class="weui-uploader__title"
+          >
+            图片上传
+          </wx-view>
+          <wx-view
+            class="weui-uploader__info"
+          >
+            0/5
+          </wx-view>
+        </wx-view>
+        <wx-view
+          class="weui-uploader__tips"
+        >
+          图片上传提示
+        </wx-view>
+      </wx-view>
+      <wx-view
+        class="weui-uploader__bd"
+      >
+        <wx-view
+          class="weui-uploader__files"
+        />
+        <wx-view
+          class="weui-uploader__input-box"
+        >
+          <wx-view
+            class="weui-uploader__input"
+            bind:tap="chooseImage"
+          />
+        </wx-view>
+      </wx-view>
+    </wx-view>
+    <mp-gallery
+      class="gallery"
+      current=""
+      hideOnClick="{{true}}"
+      imgUrls="{{Array []}}"
+      show="{{false}}"
+      showDelete="{{true}}"
+      bind:delete="deletePic"
+    />
+  </mp-uploader>
+</main>
+`;
+
+exports[`uploader basic 2`] = `
+<main>
+  <mp-uploader
+    id="uploader"
+  >
+    <wx-view
+      class="weui-uploader "
+    >
+      <wx-view
+        class="weui-uploader__hd"
+      >
+        <wx-view
+          class="weui-uploader__overview"
+        >
+          <wx-view
+            class="weui-uploader__title"
+          >
+            图片上传
+          </wx-view>
+          <wx-view
+            class="weui-uploader__info"
+          >
+            1/5
+          </wx-view>
+        </wx-view>
+        <wx-view
+          class="weui-uploader__tips"
+        >
+          图片上传提示
+        </wx-view>
+      </wx-view>
+      <wx-view
+        class="weui-uploader__bd"
+      >
+        <wx-view
+          class="weui-uploader__files"
+        >
+          <wx-view
+            class="weui-uploader__file weui-uploader__file_status"
+            data-index="{{0}}"
+            bind:tap="previewImage"
+          >
+            <wx-image
+              class="weui-uploader__img"
+              mode="aspectFill"
+              src="data:image/jpg;base64,AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            />
+            <wx-view
+              class="weui-uploader__file-content"
+            >
+              <wx-view
+                class="weui-loading"
+              />
+            </wx-view>
+          </wx-view>
+        </wx-view>
+        <wx-view
+          class="weui-uploader__input-box"
+        >
+          <wx-view
+            class="weui-uploader__input"
+            bind:tap="chooseImage"
+          />
+        </wx-view>
+      </wx-view>
+    </wx-view>
+    <mp-gallery
+      class="gallery"
+      current=""
+      hideOnClick="{{true}}"
+      imgUrls="{{Array []}}"
+      show="{{false}}"
+      showDelete="{{true}}"
+      bind:delete="deletePic"
+    />
+  </mp-uploader>
+</main>
+`;
+
+exports[`uploader preview 1`] = `
+<mp-uploader>
+  <wx-view
+    class="weui-uploader "
+  >
+    <wx-view
+      class="weui-uploader__hd"
+    >
+      <wx-view
+        class="weui-uploader__overview"
+      >
+        <wx-view
+          class="weui-uploader__title"
+        >
+          图片上传
+        </wx-view>
+        <wx-view
+          class="weui-uploader__info"
+        >
+          1/5
+        </wx-view>
+      </wx-view>
+      <wx-view
+        class="weui-uploader__tips"
+      >
+        图片上传提示
+      </wx-view>
+    </wx-view>
+    <wx-view
+      class="weui-uploader__bd"
+    >
+      <wx-view
+        class="weui-uploader__files"
+      >
+        <wx-view
+          class="weui-uploader__file"
+          data-index="{{0}}"
+          bind:tap="previewImage"
+        >
+          <wx-image
+            class="weui-uploader__img"
+            mode="aspectFill"
+            src="http://qq.com/image.png"
+          />
+        </wx-view>
+      </wx-view>
+      <wx-view
+        class="weui-uploader__input-box"
+      >
+        <wx-view
+          class="weui-uploader__input"
+          bind:tap="chooseImage"
+        />
+      </wx-view>
+    </wx-view>
+  </wx-view>
+  <mp-gallery
+    class="gallery"
+    current=""
+    hideOnClick="{{true}}"
+    imgUrls="{{Array []}}"
+    show="{{false}}"
+    showDelete="{{true}}"
+    bind:delete="deletePic"
+  />
+</mp-uploader>
+`;
+
+exports[`uploader preview 2`] = `
+<mp-uploader>
+  <wx-view
+    class="weui-uploader "
+  >
+    <wx-view
+      class="weui-uploader__hd"
+    >
+      <wx-view
+        class="weui-uploader__overview"
+      >
+        <wx-view
+          class="weui-uploader__title"
+        >
+          图片上传
+        </wx-view>
+        <wx-view
+          class="weui-uploader__info"
+        >
+          1/5
+        </wx-view>
+      </wx-view>
+      <wx-view
+        class="weui-uploader__tips"
+      >
+        图片上传提示
+      </wx-view>
+    </wx-view>
+    <wx-view
+      class="weui-uploader__bd"
+    >
+      <wx-view
+        class="weui-uploader__files"
+      >
+        <wx-view
+          class="weui-uploader__file"
+          data-index="{{0}}"
+          bind:tap="previewImage"
+        >
+          <wx-image
+            class="weui-uploader__img"
+            mode="aspectFill"
+            src="http://qq.com/image.png"
+          />
+        </wx-view>
+      </wx-view>
+      <wx-view
+        class="weui-uploader__input-box"
+      >
+        <wx-view
+          class="weui-uploader__input"
+          bind:tap="chooseImage"
+        />
+      </wx-view>
+    </wx-view>
+  </wx-view>
+  <mp-gallery
+    class="gallery"
+    current="{{0}}"
+    hideOnClick="{{true}}"
+    imgUrls="{{
+      Array [
+        "http://qq.com/image.png",
+      ]
+    }}"
+    show="{{true}}"
+    showDelete="{{true}}"
+    bind:delete="deletePic"
+  />
+</mp-uploader>
+`;
+
+exports[`uploader preview 3`] = `
+<mp-uploader>
+  <wx-view
+    class="weui-uploader "
+  >
+    <wx-view
+      class="weui-uploader__hd"
+    >
+      <wx-view
+        class="weui-uploader__overview"
+      >
+        <wx-view
+          class="weui-uploader__title"
+        >
+          图片上传
+        </wx-view>
+        <wx-view
+          class="weui-uploader__info"
+        >
+          0/5
+        </wx-view>
+      </wx-view>
+      <wx-view
+        class="weui-uploader__tips"
+      >
+        图片上传提示
+      </wx-view>
+    </wx-view>
+    <wx-view
+      class="weui-uploader__bd"
+    >
+      <wx-view
+        class="weui-uploader__files"
+      />
+      <wx-view
+        class="weui-uploader__input-box"
+      >
+        <wx-view
+          class="weui-uploader__input"
+          bind:tap="chooseImage"
+        />
+      </wx-view>
+    </wx-view>
+  </wx-view>
+  <mp-gallery
+    class="gallery"
+    current="{{0}}"
+    hideOnClick="{{true}}"
+    imgUrls="{{
+      Array [
+        "http://qq.com/image.png",
+      ]
+    }}"
+    show="{{true}}"
+    showDelete="{{true}}"
+    bind:delete="deletePic"
+  />
+</mp-uploader>
+`;
+
+exports[`uploader upload fail 1`] = `
+<main>
+  <mp-uploader
+    id="uploader"
+  >
+    <wx-view
+      class="weui-uploader "
+    >
+      <wx-view
+        class="weui-uploader__hd"
+      >
+        <wx-view
+          class="weui-uploader__overview"
+        >
+          <wx-view
+            class="weui-uploader__title"
+          >
+            图片上传
+          </wx-view>
+          <wx-view
+            class="weui-uploader__info"
+          >
+            0/5
+          </wx-view>
+        </wx-view>
+        <wx-view
+          class="weui-uploader__tips"
+        >
+          图片上传提示
+        </wx-view>
+      </wx-view>
+      <wx-view
+        class="weui-uploader__bd"
+      >
+        <wx-view
+          class="weui-uploader__files"
+        />
+        <wx-view
+          class="weui-uploader__input-box"
+        >
+          <wx-view
+            class="weui-uploader__input"
+            bind:tap="chooseImage"
+          />
+        </wx-view>
+      </wx-view>
+    </wx-view>
+    <mp-gallery
+      class="gallery"
+      current=""
+      hideOnClick="{{true}}"
+      imgUrls="{{Array []}}"
+      show="{{false}}"
+      showDelete="{{true}}"
+      bind:delete="deletePic"
+    />
+  </mp-uploader>
+</main>
+`;
+
+exports[`uploader upload fail 2`] = `
+<main>
+  <mp-uploader
+    id="uploader"
+  >
+    <wx-view
+      class="weui-uploader "
+    >
+      <wx-view
+        class="weui-uploader__hd"
+      >
+        <wx-view
+          class="weui-uploader__overview"
+        >
+          <wx-view
+            class="weui-uploader__title"
+          >
+            图片上传
+          </wx-view>
+          <wx-view
+            class="weui-uploader__info"
+          >
+            1/5
+          </wx-view>
+        </wx-view>
+        <wx-view
+          class="weui-uploader__tips"
+        >
+          图片上传提示
+        </wx-view>
+      </wx-view>
+      <wx-view
+        class="weui-uploader__bd"
+      >
+        <wx-view
+          class="weui-uploader__files"
+        >
+          <wx-view
+            class="weui-uploader__file weui-uploader__file_status"
+            data-index="{{0}}"
+            bind:tap="previewImage"
+          >
+            <wx-image
+              class="weui-uploader__img"
+              mode="aspectFill"
+              src="data:image/jpg;base64,AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            />
+            <wx-view
+              class="weui-uploader__file-content"
+            >
+              <wx-view
+                class="weui-loading"
+              />
+            </wx-view>
+          </wx-view>
+        </wx-view>
+        <wx-view
+          class="weui-uploader__input-box"
+        >
+          <wx-view
+            class="weui-uploader__input"
+            bind:tap="chooseImage"
+          />
+        </wx-view>
+      </wx-view>
+    </wx-view>
+    <mp-gallery
+      class="gallery"
+      current=""
+      hideOnClick="{{true}}"
+      imgUrls="{{Array []}}"
+      show="{{false}}"
+      showDelete="{{true}}"
+      bind:delete="deletePic"
+    />
+  </mp-uploader>
+</main>
+`;

@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`grids basic 1`] = `
-<main>
+<mp-half-screen-dialog
+  id="dialog"
+  bind:buttontap="onButtonTap"
+  bind:close="onClose"
+>
   <wx-view
     class="weui-hidden"
   >
@@ -62,30 +66,34 @@ exports[`grids basic 1`] = `
       <wx-view
         class="weui-half-screen-dialog__ft"
       >
-        <wx-view
-          slot="footer"
+        <wx-button
+          class="weui-btn "
+          data-index="{{0}}"
+          type="default"
+          bind:tap="buttonTap"
         >
-          <wx-button
-            class="weui-btn"
-            type="default"
-          >
-            按钮A
-          </wx-button>
-          <wx-button
-            class="weui-btn"
-            type="primary"
-          >
-            按钮B
-          </wx-button>
-        </wx-view>
+          按钮A
+        </wx-button>
+        <wx-button
+          class="weui-btn "
+          data-index="{{1}}"
+          type="primary"
+          bind:tap="buttonTap"
+        >
+          按钮B
+        </wx-button>
       </wx-view>
     </wx-view>
   </wx-view>
-</main>
+</mp-half-screen-dialog>
 `;
 
 exports[`grids basic 2`] = `
-<main>
+<mp-half-screen-dialog
+  id="dialog"
+  bind:buttontap="onButtonTap"
+  bind:close="onClose"
+>
   <wx-view
     class="weui-show"
   >
@@ -146,24 +154,24 @@ exports[`grids basic 2`] = `
       <wx-view
         class="weui-half-screen-dialog__ft"
       >
-        <wx-view
-          slot="footer"
+        <wx-button
+          class="weui-btn "
+          data-index="{{0}}"
+          type="default"
+          bind:tap="buttonTap"
         >
-          <wx-button
-            class="weui-btn"
-            type="default"
-          >
-            按钮A
-          </wx-button>
-          <wx-button
-            class="weui-btn"
-            type="primary"
-          >
-            按钮B
-          </wx-button>
-        </wx-view>
+          按钮A
+        </wx-button>
+        <wx-button
+          class="weui-btn "
+          data-index="{{1}}"
+          type="primary"
+          bind:tap="buttonTap"
+        >
+          按钮B
+        </wx-button>
       </wx-view>
     </wx-view>
   </wx-view>
-</main>
+</mp-half-screen-dialog>
 `;

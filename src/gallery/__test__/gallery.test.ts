@@ -2,51 +2,80 @@ import path from 'path'
 import simulate from 'miniprogram-simulate'
 
 describe('gallery', () => {
-    const gallery = simulate.load(path.resolve(__dirname, '../gallery'))
+    const gallery = simulate.load(path.resolve(__dirname, '../gallery'), 'mp-gallery')
+
+    const onChange = jest.fn(function (e) {
+        this.setData({
+            current: e.detail.current
+        })
+    })
+
+    const onDelete = jest.fn(function (e) {
+        this.setData({
+            imgUrls: e.detail.currentImgs
+        })
+    })
+
+    const onHide = jest.fn(function () {
+        this.setData({
+            show: false
+        })
+    })
 
     const id = simulate.load({
-        compiler: 'official',
-        rootPath: __dirname,
         template: `
-            <mp-gallery show="{{show}}" bindchange="change" binddelete="delete" bindhide="hide" img-urls="{{imgUrls}}" delete hide-on-click="{{true}}" current="1"></mp-gallery>
+            <mp-gallery
+                id="gallery"
+                show="{{show}}"
+                bindchange="onChange"
+                binddelete="onDelete"
+                bindhide="onHide"
+                img-urls="{{imgUrls}}"
+                delete
+                hide-on-click="{{true}}"
+                current="{{current}}"
+            ></mp-gallery>
         `,
         usingComponents: {
             'mp-gallery': gallery
         },
         data: {
-            imgUrls: [
-                'http://desk-fd.zol-img.com.cn/g5/M00/02/05/ChMkJ1bKyZmIWCwZABEwe5zfvyMAALIQABa1z4AETCT730.jpg',
-                'http://desk-fd.zol-img.com.cn/g5/M00/02/05/ChMkJ1bKyZmIWCwZABEwe5zfvyMAALIQABa1z4AETCT730.jpg',
-                'http://desk-fd.zol-img.com.cn/g5/M00/02/05/ChMkJ1bKyZmIWCwZABEwe5zfvyMAALIQABa1z4AETCT730.jpg'
-            ],
-            show: true
+            imgUrls: ['http://qq.com/1.jpg', 'http://qq.com/2.jpg', 'http://qq.com/3.jpg'],
+            current: 0,
+            show: false
         },
         methods: {
-            change(e) {
-                // console.log('current index has changed', e.detail)
-            },
-            delete(e) {
-                // console.log('delete', e.detail)
-            },
-            hide() {
-                // console.log('component hide')
-                // this.setData({
-                //     show: true
-                // })
-                // setTimeout(() => {
-                //     // console.log('component show')
-                //     this.setData({
-                //         show: true
-                //     })
-                // }, 1000)
-            }
+            onChange,
+            onDelete,
+            onHide
         }
     })
 
     test('basic', async () => {
-        const comp = simulate.render(id)
-        comp.attach(document.createElement('parent-wrapper'))
+        const wrapper = simulate.render(id)
+        wrapper.attach(document.createElement('parent-wrapper'))
+        const comp = wrapper.querySelector('#gallery')
         await simulate.sleep(0)
         expect(comp.toJSON()).toMatchSnapshot()
+
+        wrapper.setData({ show: true })
+        await simulate.sleep(0)
+        expect(comp.toJSON()).toMatchSnapshot()
+
+        wrapper.setData({ current: 1 })
+        await simulate.sleep(0)
+        expect(comp.toJSON()).toMatchSnapshot()
+
+        const deleteBtn = comp.querySelector('.weui-gallery__del')
+        deleteBtn.dispatchEvent('tap')
+        await simulate.sleep(0)
+        expect(comp.toJSON()).toMatchSnapshot()
+        expect(onDelete).toBeCalledTimes(1)
+
+        const imgWrap = comp.querySelector('.weui-gallery__img__wrp')
+        imgWrap.dispatchEvent('tap')
+        await simulate.sleep(0)
+        expect(comp.toJSON()).toMatchSnapshot()
+        expect(onDelete).toBeCalledTimes(1)
     })
 })

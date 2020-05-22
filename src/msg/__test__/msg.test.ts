@@ -2,13 +2,11 @@ import path from 'path'
 import simulate from 'miniprogram-simulate'
 
 describe('msg', () => {
-    const msg = simulate.load(path.resolve(__dirname, '../msg'))
+    const msg = simulate.load(path.resolve(__dirname, '../msg'), 'mp-msg')
 
     test('basic', async () => {
         const comp = simulate.render(
             simulate.load({
-                compiler: 'official',
-                rootPath: __dirname,
                 usingComponents: {
                     'mp-msg': msg
                 },

@@ -15,7 +15,8 @@
     "clean": "gulp clean",
     "lint": "eslint \"src/**/*.js\"",
     "lint-tools": "eslint \"tools/**/*.js\" --rule \"import/no-extraneous-dependencies: false\"",
-    "test": "jest"
+    "test": "jest",
+    "test-debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --verbose"
   },
   "miniprogram": "miniprogram_dist",
   "repository": {

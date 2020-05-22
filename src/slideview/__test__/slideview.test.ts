@@ -6,13 +6,11 @@ import simulate from 'miniprogram-simulate'
  */
 describe.skip('slideview', () => {
     test('basic', async () => {
-        const slideview = simulate.load(path.resolve(__dirname, '../slideview'))
-        const cell = simulate.load(path.resolve(__dirname, '../../cell/cell'))
+        const slideview = simulate.load(path.resolve(__dirname, '../slideview'), 'mp-slideview')
+        const cell = simulate.load(path.resolve(__dirname, '../../cell/cell'), 'mp-cell')
 
         const comp = simulate.render(
             simulate.load({
-                compiler: 'official',
-                rootPath: __dirname,
                 usingComponents: {
                     'mp-slideview': slideview,
                     'mp-cell': cell

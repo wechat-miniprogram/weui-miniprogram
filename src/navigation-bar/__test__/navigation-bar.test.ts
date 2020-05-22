@@ -2,13 +2,14 @@ import path from 'path'
 import simulate from 'miniprogram-simulate'
 
 describe('navigation-bar', () => {
-    const navigationBar = simulate.load(path.resolve(__dirname, '../navigation-bar'))
+    const navigationBar = simulate.load(
+        path.resolve(__dirname, '../navigation-bar'),
+        'mp-navigation-bar'
+    )
 
     test('basic', async () => {
         const comp = simulate.render(
             simulate.load({
-                compiler: 'official',
-                rootPath: __dirname,
                 usingComponents: {
                     'mp-navigation-bar': navigationBar
                 },

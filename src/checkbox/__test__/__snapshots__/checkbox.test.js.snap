@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`checkbox-group & checkbox basic checkbox 1`] = `
-Array [
+<main>
   <mp-cells
     title="单选列表项"
   >
@@ -93,7 +93,7 @@ Array [
         </mp-checkbox>
       </radio-group>
     </mp-checkbox-group>
-  </mp-cells>,
+  </mp-cells>
   <mp-cells
     title="复选列表项"
   >
@@ -189,6 +189,6 @@ Array [
         bind:change="checkedChange"
       />
     </mp-checkbox-group>
-  </mp-cells>,
-]
+  </mp-cells>
+</main>
 `;

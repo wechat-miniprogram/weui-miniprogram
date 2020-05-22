@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "mp-form-page": "../form-page",
+        "mp-cells": "../../cells/cells"
+    }
+}

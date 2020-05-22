@@ -2,11 +2,9 @@ import path from 'path'
 import simulate from 'miniprogram-simulate'
 
 describe('grids', () => {
-    const grids = simulate.load(path.resolve(__dirname, '../grids'))
+    const grids = simulate.load(path.resolve(__dirname, '../grids'), 'mp-grids')
 
     const id = simulate.load({
-        compiler: 'official',
-        rootPath: __dirname,
         template: `
             <mp-grids grids="{{grids}}"></mp-grids>
         `,
@@ -21,7 +19,7 @@ describe('grids', () => {
                     url: `/${i}`,
                     text: `Grid${i}`
                 }))
-        },
+        }
     })
 
     test('basic', async () => {
