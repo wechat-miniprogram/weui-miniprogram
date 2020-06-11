@@ -13,6 +13,7 @@ exports[`grids basic 1`] = `
       class="weui-mask init"
       data-type="tap"
       bind:tap="close"
+      catch:touchmove="onMaskMouseMove"
     />
     <wx-view
       class="weui-half-screen-dialog "
@@ -101,6 +102,7 @@ exports[`grids basic 2`] = `
       class="weui-mask init"
       data-type="tap"
       bind:tap="close"
+      catch:touchmove="onMaskMouseMove"
     />
     <wx-view
       class="weui-half-screen-dialog "

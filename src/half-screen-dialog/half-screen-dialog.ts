@@ -66,6 +66,9 @@ Component({
         buttonTap(e) {
             const { index } = e.currentTarget.dataset
             this.triggerEvent('buttontap', { index, item: this.data.buttons[index] }, {})
+        },
+        onMaskMouseMove(e) {
+            // do nothing
         }
     }
 })

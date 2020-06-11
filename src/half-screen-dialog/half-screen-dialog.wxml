@@ -1,5 +1,5 @@
-<view class="{{show ? 'weui-show' :'weui-hidden'}}"> 
-  <view class="weui-mask init" wx:if="{{mask}}" bindtap="close" data-type="tap"></view>
+<view class="{{show ? 'weui-show' :'weui-hidden'}}">
+  <view class="weui-mask init" wx:if="{{mask}}" bindtap="close" catch:touchmove="onMaskMouseMove" data-type="tap"></view>
   <view class="weui-half-screen-dialog {{extClass}}">
     <view class="weui-half-screen-dialog__hd">
       <view wx:if="{{closabled}}" class="weui-half-screen-dialog__hd__side" bindtap="close" data-type="close">
@@ -27,12 +27,12 @@
     </view>
     <view class="weui-half-screen-dialog__ft">
       <block wx:if="{{buttons && buttons.length}}">
-        <button 
-          wx:for="{{buttons}}" 
+        <button
+          wx:for="{{buttons}}"
           wx:key="index"
-          type="{{item.type}}" 
-          class="weui-btn {{item.className}}" 
-          data-index="{{index}}" 
+          type="{{item.type}}"
+          class="weui-btn {{item.className}}"
+          data-index="{{index}}"
           bindtap="buttonTap"
         >{{item.text}}</button>
       </block>
