@@ -10,7 +10,7 @@ Component({
                 buttonValue: e.detail.item.text
             })
         },
-        close(e) {
+        close() {
             this.setData({
                 closed: true
             })

@@ -12,10 +12,7 @@ module.exports = {
         commonjs: true,
         node: true
     },
-    plugins: [
-      '@typescript-eslint',
-      'prettier'
-    ],
+    plugins: ['@typescript-eslint', 'prettier'],
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/eslint-recommended',
@@ -30,8 +27,9 @@ module.exports = {
     },
     rules: {
         'prettier/prettier': 'error',
-        'no-console': ["error", { allow: ["warn", "error"] } ],
+        'no-console': ['error', { allow: ['warn', 'error'] }],
         '@typescript-eslint/ban-ts-ignore': 'off',
-        '@typescript-eslint/no-empty-function': 'off'
+        '@typescript-eslint/no-empty-function': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off'
     }
 }
