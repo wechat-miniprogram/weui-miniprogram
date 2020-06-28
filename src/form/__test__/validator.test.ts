@@ -41,12 +41,14 @@ describe('maxlength', () => {
 
 describe('rangelength', () => {
     test('success', () => {
-        expect(Validators.rangelength({ name: '姓名', range: [2, 3] }, '张三')).toBe('')
+        expect(Validators.rangelength({ name: '姓名', rangelength: [2, 3] }, '张三')).toBe('')
     })
 
     test('fail', () => {
-        expect(Validators.rangelength({ name: '姓名', range: [2, 3] }, '张')).toBe('长度在2和3之间')
-        expect(Validators.rangelength({ name: '姓名', range: [2, 3] }, '张三张三')).toBe(
+        expect(Validators.rangelength({ name: '姓名', rangelength: [2, 3] }, '张')).toBe(
+            '长度在2和3之间'
+        )
+        expect(Validators.rangelength({ name: '姓名', rangelength: [2, 3] }, '张三张三')).toBe(
             '长度在2和3之间'
         )
     })

@@ -42,7 +42,7 @@ export default {
         }
     },
     rangelength(r, val) {
-        const range = r.range
+        const range = r.rangelength
         val = val || ''
         if (val.length > range[1] || val.length < range[0]) {
             return sprintf(r.message || defaultMessage.rangelength, range[0], range[1])
