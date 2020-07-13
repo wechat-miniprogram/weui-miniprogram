@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "baseUrl": ".",
         "module": "commonjs",
         "noImplicitAny": false,
         "removeComments": true,
