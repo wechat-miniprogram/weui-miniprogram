@@ -1,5 +1,10 @@
 # 更新日志
 
+## 1.0.4
+
+- fix: 修复 rangelength 校验
+- feat: 支持自适应 tabbar
+
 ## 1.0.3
 
 - fix: `required` 判断 (#93)
