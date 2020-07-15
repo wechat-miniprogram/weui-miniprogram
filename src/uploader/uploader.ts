@@ -81,6 +81,8 @@ Component({
             if (this.uploading) return
             wx.chooseImage({
                 count: this.data.maxCount - this.data.files.length,
+                sizeType: this.data.sizeType,
+                sourceType: this.data.sourceType,
                 success: (res) => {
                     // console.log('chooseImage resp', res)
                     // 首先检查文件大小
