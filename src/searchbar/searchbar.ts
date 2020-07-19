@@ -91,6 +91,7 @@ Component({
             this.setData({
                 searchState: false
             })
+            this.triggerEvent('hide', e.detail)
         },
         // @ts-ignore
         inputChange(e) {
