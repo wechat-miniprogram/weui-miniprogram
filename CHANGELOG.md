@@ -1,5 +1,10 @@
 # 更新日志
 
+## 1.0.5
+
+- updata: 升级 weui-wxss
+- update：使用 `hover-class` 代替 `:active`
+
 ## 1.0.4
 
 - fix: 修复 rangelength 校验
