@@ -2,7 +2,8 @@
   has-footer="{{!multi}}"
   has-header="{{multi}}"
   bindtap="checkedChange"
-  ext-class="weui-check__label {{outerClass}} {{extClass}} {{!multi ? '^weui-cell_radio' : '^weui-cell_checkbox'}}">
+  ext-class="weui-check__label {{outerClass}} {{extClass}} {{!multi ? '^weui-cell_radio' : '^weui-cell_checkbox'}}"
+  ext-hover-class="weui-active">
 
   <view slot="icon" wx:if="{{multi}}">
     <checkbox value="{{value}}" checked="{{checked}}" disabled="{{disabled}}" color="{{color}}" class="weui-check">

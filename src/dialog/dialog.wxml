@@ -11,7 +11,7 @@
       </view>
       <view class="weui-dialog__ft">
         <block wx:if="{{buttons && buttons.length}}">
-          <view wx:for="{{buttons}}" wx:key="index" class="weui-dialog__btn {{item.className}} {{item.extClass}}" data-index="{{index}}" bindtap="buttonTap">{{item.text}}</view>
+          <view wx:for="{{buttons}}" wx:key="index" class="weui-dialog__btn {{item.className}} {{item.extClass}}" hover-class="weui-active" data-index="{{index}}" bindtap="buttonTap">{{item.text}}</view>
         </block>
         <slot name="footer" wx:else></slot>
       </view>

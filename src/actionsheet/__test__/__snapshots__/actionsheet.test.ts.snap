@@ -31,6 +31,7 @@ exports[`actionsheet basic actionsheet 1`] = `
           data-groupindex="{{0}}"
           data-index="{{0}}"
           data-value="{{1}}"
+          hoverClass="weui-active"
           bind:tap="buttonTap"
         >
           
@@ -42,6 +43,7 @@ exports[`actionsheet basic actionsheet 1`] = `
           data-groupindex="{{0}}"
           data-index="{{1}}"
           data-value="{{2}}"
+          hoverClass="weui-active"
           bind:tap="buttonTap"
         >
           
@@ -53,6 +55,7 @@ exports[`actionsheet basic actionsheet 1`] = `
           data-groupindex="{{0}}"
           data-index="{{2}}"
           data-value="{{3}}"
+          hoverClass="weui-active"
           bind:tap="buttonTap"
         >
           
@@ -66,6 +69,7 @@ exports[`actionsheet basic actionsheet 1`] = `
         <wx-view
           class="weui-actionsheet__cell"
           data-type="close"
+          hoverClass="weui-active"
           id="iosActionsheetCancel"
           bind:tap="closeActionSheet"
         >
@@ -108,6 +112,7 @@ exports[`actionsheet no cancel 1`] = `
           data-groupindex="{{0}}"
           data-index="{{0}}"
           data-value="{{1}}"
+          hoverClass="weui-active"
           bind:tap="buttonTap"
         >
           
@@ -119,6 +124,7 @@ exports[`actionsheet no cancel 1`] = `
           data-groupindex="{{0}}"
           data-index="{{1}}"
           data-value="{{2}}"
+          hoverClass="weui-active"
           bind:tap="buttonTap"
         >
           
@@ -130,6 +136,7 @@ exports[`actionsheet no cancel 1`] = `
           data-groupindex="{{0}}"
           data-index="{{2}}"
           data-value="{{3}}"
+          hoverClass="weui-active"
           bind:tap="buttonTap"
         >
           

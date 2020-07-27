@@ -29,7 +29,8 @@
     >
         <block wx:if="{{utils.isNotSlot(actionItem)}}">
             <view
-                class="weui-actionsheet__cell {{item.type === 'warn' ? 'weui-actionsheet__cell_warn' : '' }}" 
+                class="weui-actionsheet__cell {{item.type === 'warn' ? 'weui-actionsheet__cell_warn' : '' }}"
+                hover-class="weui-active"
                 wx:key="actionIndex" 
                 wx:for="{{actionItem}}"
                 wx:for-index="actionIndex"
@@ -45,6 +46,6 @@
     </view>
     <!-- 取消按钮 -->
     <view class="weui-actionsheet__action" wx:if="{{showCancel}}">
-        <view class="weui-actionsheet__cell" data-type="close" id="iosActionsheetCancel" bindtap="closeActionSheet">{{cancelText}}</view>
+        <view class="weui-actionsheet__cell" hover-class="weui-active" data-type="close" id="iosActionsheetCancel" bindtap="closeActionSheet">{{cancelText}}</view>
     </view>
 </view>

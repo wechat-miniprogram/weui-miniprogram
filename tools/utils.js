@@ -201,7 +201,12 @@ function getId() {
  */
 function dealWithWeuiWxss() {
   return through.obj(function (file, enc, cb) {
-    if (path.extname(file.path) === '.wxss') {}
+    if (path.extname(file.path) === '.wxss') {
+      // 修改 wxss 文件，移除 :active 相关代码
+      const result = file.contents.toString().replace(/:active/g, '.weui-active')
+      file.contents = Buffer.from(result)
+    }
+
     const action = 'copy'
     const type = path.extname(file.path).slice(1).toLowerCase()
 

@@ -139,6 +139,7 @@ exports[`searchbar basic 3`] = `
         />
         <wx-text
           class="weui-icon-clear"
+          hoverClass="weui-active"
           bind:tap="clearInput"
         />
       </wx-view>
@@ -179,7 +180,7 @@ exports[`searchbar basic 3`] = `
         >
           <wx-view
             class="weui-cell    "
-            hoverClass="weui-cell_active"
+            hoverClass="weui-cell_active weui-active"
             bind:tap="navigateTo"
           >
             <wx-view
@@ -234,6 +235,7 @@ exports[`searchbar basic 4`] = `
         />
         <wx-text
           class="weui-icon-clear"
+          hoverClass="weui-active"
           bind:tap="clearInput"
         />
       </wx-view>
@@ -274,7 +276,7 @@ exports[`searchbar basic 4`] = `
         >
           <wx-view
             class="weui-cell    "
-            hoverClass="weui-cell_active"
+            hoverClass="weui-cell_active weui-active"
             bind:tap="navigateTo"
           >
             <wx-view
@@ -329,6 +331,7 @@ exports[`searchbar basic 5`] = `
         />
         <wx-text
           class="weui-icon-clear"
+          hoverClass="weui-active"
           bind:tap="clearInput"
         />
       </wx-view>

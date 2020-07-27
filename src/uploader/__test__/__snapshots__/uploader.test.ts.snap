@@ -39,6 +39,7 @@ exports[`uploader basic 1`] = `
         />
         <wx-view
           class="weui-uploader__input-box"
+          hoverClass="weui-active"
         >
           <wx-view
             class="weui-uploader__input"
@@ -118,6 +119,7 @@ exports[`uploader basic 2`] = `
         </wx-view>
         <wx-view
           class="weui-uploader__input-box"
+          hoverClass="weui-active"
         >
           <wx-view
             class="weui-uploader__input"
@@ -187,6 +189,7 @@ exports[`uploader preview 1`] = `
       </wx-view>
       <wx-view
         class="weui-uploader__input-box"
+        hoverClass="weui-active"
       >
         <wx-view
           class="weui-uploader__input"
@@ -255,6 +258,7 @@ exports[`uploader preview 2`] = `
       </wx-view>
       <wx-view
         class="weui-uploader__input-box"
+        hoverClass="weui-active"
       >
         <wx-view
           class="weui-uploader__input"
@@ -315,6 +319,7 @@ exports[`uploader preview 3`] = `
       />
       <wx-view
         class="weui-uploader__input-box"
+        hoverClass="weui-active"
       >
         <wx-view
           class="weui-uploader__input"
@@ -378,6 +383,7 @@ exports[`uploader upload fail 1`] = `
         />
         <wx-view
           class="weui-uploader__input-box"
+          hoverClass="weui-active"
         >
           <wx-view
             class="weui-uploader__input"
@@ -457,6 +463,7 @@ exports[`uploader upload fail 2`] = `
         </wx-view>
         <wx-view
           class="weui-uploader__input-box"
+          hoverClass="weui-active"
         >
           <wx-view
             class="weui-uploader__input"
