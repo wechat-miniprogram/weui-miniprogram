@@ -83,7 +83,7 @@ class FormValidator {
     _innerValidateField(name, value, cb) {
         const rules = this.rules[name]
         if (!rules) {
-            console.warn(`[form-validtor] rule name ${name} not exists.`)
+            console.warn(`[form-validator] rule name ${name} not exists.`)
             cb(true)
             return
         }
