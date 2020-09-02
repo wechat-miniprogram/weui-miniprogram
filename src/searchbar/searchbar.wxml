@@ -3,7 +3,7 @@
         <view class="weui-search-bar__box">
             <icon class="weui-icon-search" type="search" size="12"></icon>
             <input type="text" class="weui-search-bar__input" placeholder="{{placeholder}}" value="{{value}}" focus="{{focus}}" bindblur="inputBlur" bindfocus="inputFocus" bindinput="inputChange" />
-            <text class="weui-icon-clear" wx:if="{{value.length > 0}}" bindtap="clearInput"></text>
+            <text class="weui-icon-clear" hover-class="weui-active" wx:if="{{value.length > 0}}" bindtap="clearInput"></text>
         </view>
         <label class="weui-search-bar__label" bindtap="showInput">
             <icon class="weui-icon-search" type="search" size="12"></icon>

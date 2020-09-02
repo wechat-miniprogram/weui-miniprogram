@@ -14,7 +14,7 @@
                     <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
                         <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
                             <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*this">
-                                <navigator url="{{page}}/{{page}}" class="weui-cell weui-cell_access">
+                                <navigator url="{{page}}/{{page}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active weui-active">
                                     <view class="weui-cell__bd">{{page}}</view>
                                     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
                                 </navigator>
@@ -26,6 +26,8 @@
         </view>
     </view>
     <view class="page__ft">
-        <image bindtap="themeToggle" src="images/icon_footer.png" style="width: 84px; height: 19px;"></image>
+        <view class="ft-img-cnt" bindtap="themeToggle">
+            <image src="images/icon_footer.png" style="width: 84px; height: 19px;"></image>
+        </view>
     </view>
 </view>

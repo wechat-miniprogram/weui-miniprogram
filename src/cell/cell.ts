@@ -75,6 +75,11 @@ Component({
         hasBody: {
             type: Boolean,
             value: true
+        },
+        extHoverClass: {
+            // 提供给需要定制 hover-class 的场景，要求 hover 为 false
+            type: String,
+            value: ''
         }
     },
     relations: {

@@ -38,6 +38,7 @@ exports[`dialog basic dialog 1`] = `
           <wx-view
             class="weui-dialog__btn weui-dialog__btn_default "
             data-index="{{0}}"
+            hoverClass="weui-active"
             bind:tap="buttonTap"
           >
             取消
@@ -45,6 +46,7 @@ exports[`dialog basic dialog 1`] = `
           <wx-view
             class="weui-dialog__btn weui-dialog__btn_primary "
             data-index="{{1}}"
+            hoverClass="weui-active"
             bind:tap="buttonTap"
           >
             确定

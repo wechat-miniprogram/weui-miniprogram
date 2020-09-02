@@ -28,7 +28,7 @@
                 </view>
             </block>
         </view>
-        <view wx:if="{{currentFiles.length < maxCount}}" class="weui-uploader__input-box">
+        <view wx:if="{{currentFiles.length < maxCount}}" class="weui-uploader__input-box" hover-class="weui-active">
             <view class="weui-uploader__input" bindtap="chooseImage"></view>
         </view>
     </view>

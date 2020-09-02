@@ -196,6 +196,28 @@ function getId() {
   return ++seed
 }
 
+/**
+ * weui-wxss 处理插件
+ */
+function dealWithWeuiWxss() {
+  return through.obj(function (file, enc, cb) {
+    if (path.extname(file.path) === '.wxss') {
+      // 修改 wxss 文件，移除 :active 相关代码
+      const result = file.contents.toString().replace(/:active/g, '.weui-active')
+      file.contents = Buffer.from(result)
+    }
+
+    const action = 'copy'
+    const type = path.extname(file.path).slice(1).toLowerCase()
+
+    // eslint-disable-next-line no-console
+    console.log(`[${format(new Date(), 'yyyy-MM-dd HH:mm:ss').grey}] [${action.green} ${type.green}] ${'=>'.cyan} ${file.path}`)
+
+    this.push(file)
+    cb()
+  })
+}
+
 module.exports = {
   wrap,
   transformPath,
@@ -210,4 +232,5 @@ module.exports = {
   compareArray,
   merge,
   getId,
+  dealWithWeuiWxss,
 }

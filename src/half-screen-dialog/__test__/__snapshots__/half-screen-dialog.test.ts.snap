@@ -28,6 +28,7 @@ exports[`grids basic 1`] = `
         >
           <wx-view
             class="weui-icon-btn weui-icon-btn_close"
+            hoverClass="weui-active"
           >
             关闭
           </wx-view>
@@ -50,6 +51,7 @@ exports[`grids basic 1`] = `
         >
           <wx-view
             class="weui-icon-btn weui-icon-btn_more"
+            hoverClass="weui-active"
           >
             更多
           </wx-view>
@@ -117,6 +119,7 @@ exports[`grids basic 2`] = `
         >
           <wx-view
             class="weui-icon-btn weui-icon-btn_close"
+            hoverClass="weui-active"
           >
             关闭
           </wx-view>
@@ -139,6 +142,7 @@ exports[`grids basic 2`] = `
         >
           <wx-view
             class="weui-icon-btn weui-icon-btn_more"
+            hoverClass="weui-active"
           >
             更多
           </wx-view>

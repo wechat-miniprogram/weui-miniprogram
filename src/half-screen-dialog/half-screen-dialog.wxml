@@ -3,7 +3,7 @@
   <view class="weui-half-screen-dialog {{extClass}}">
     <view class="weui-half-screen-dialog__hd">
       <view wx:if="{{closabled}}" class="weui-half-screen-dialog__hd__side" bindtap="close" data-type="close">
-        <view class="weui-icon-btn weui-icon-btn_close">关闭</view>
+        <view class="weui-icon-btn weui-icon-btn_close" hover-class="weui-active">关闭</view>
       </view>
       <view class="weui-half-screen-dialog__hd__main">
         <block wx:if="{{title}}">
@@ -15,7 +15,7 @@
         </block>
       </view>
       <view class="weui-half-screen-dialog__hd__side">
-        <view class="weui-icon-btn weui-icon-btn_more">更多</view>
+        <view class="weui-icon-btn weui-icon-btn_more" hover-class="weui-active">更多</view>
       </view>
     </view>
     <view class="weui-half-screen-dialog__bd">

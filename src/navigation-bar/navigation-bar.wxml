@@ -5,7 +5,7 @@
     <view class='weui-navigation-bar__left' style="{{leftWidth}}">
       <block wx:if="{{back}}">
         <view class="weui-navigation-bar__buttons">
-          <view bindtap="back" class="weui-navigation-bar__button weui-navigation-bar__btn_goback"></view>
+          <view bindtap="back" class="weui-navigation-bar__button weui-navigation-bar__btn_goback" hover-class="weui-active"></view>
         </view>
       </block>
       <block wx:else>
