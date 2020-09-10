@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/components/grids/grids.less","webpack:///grids.less"],"names":[],"mappings":"AAAA;EACE;EACA;ACCF","file":"components/grids/grids.wxss","sourcesContent":[".weui-grid .weui-grid__icon_img {\n  width: 100%;\n  height: 100%;\n}",".weui-grid .weui-grid__icon_img {\n  width: 100%;\n  height: 100%;\n}\n"],"sourceRoot":""}
