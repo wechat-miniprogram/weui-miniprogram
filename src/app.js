@@ -31,6 +31,6 @@ App({
         hasLogin: false,
         theme: 'light',
         GRID_DEMO_URL: '/example/index',
-        iconTabbar: '/example/images/icon_tabbar.png'
+        iconTabbar: require('/example/images/icon_tabbar.png').default
     }
 })

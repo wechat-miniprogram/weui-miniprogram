@@ -41,9 +41,10 @@ Component({
     data: {
         result: [] // 搜索结果
     },
-    /* @ts-ignore */
-    lastSearch: Date.now(),
     lifetimes: {
+        created() {
+            this.lastSearch = Date.now()
+        },
         // @ts-ignore
         attached() {
             // @ts-ignore
