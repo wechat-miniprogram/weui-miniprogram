@@ -1,5 +1,5 @@
 import FormValidator from './form-validator'
-import {diffObject} from '../utils/object'
+import { diffObject } from '../utils/object'
 
 function linked(target) {
     if (target.data.prop) {
@@ -10,9 +10,6 @@ function linked(target) {
     }
     if (!this.data.firstItem) {
         this.data.firstItem = target
-    }
-    if (target !== this.data.firstItem) {
-        // target.setOuterClass('weui-cell_wxss')
     }
 }
 function unlinked(target) {
@@ -28,7 +25,8 @@ Component({
             value: {},
             observer: '_modelChange'
         },
-        rules: { // 格式是[{name, rules: {}}]
+        rules: {
+            // 格式是[{name, rules: {}}]
             type: Array,
             value: [],
             observer: '_rulesChange'
@@ -46,12 +44,12 @@ Component({
     relations: {
         '../cell/cell': {
             type: 'descendant',
-            linked: linked,
+            linked,
             unlinked
         },
         '../checkbox-group/checkbox-group': {
             type: 'descendant',
-            linked: linked,
+            linked,
             unlinked
         }
     },
@@ -61,39 +59,40 @@ Component({
     },
     methods: {
         initRules(rules) {
-            const newRules = {};
-            (rules || this.data.rules).forEach(rule => {
+            const newRules = {}
+            ;(rules || this.data.rules).forEach((rule) => {
                 if (rule.name && rule.rules) {
                     newRules[rule.name] = rule.rules || []
                 }
             })
-            this.setData({newRules})
+            this.setData({ newRules })
             return newRules
         },
-        _modelChange(newVal, oldVal, path) {
-            if (!this.isInit) {
-                this.isInit = true
+        _modelChange(newVal, oldVal) {
+            if (!this.formValidator) {
                 return newVal
             }
             // 这个必须在前面
             this.formValidator.setModel(newVal)
-            this.isInit = true
             const diffObj: any = diffObject(oldVal, newVal)
             if (diffObj) {
                 let isValid = true
                 const errors = []
                 const errorMap = {}
-                for (const k in diffObj) {
-                    this.formValidator.validateField(k, diffObj[k], function(isValided, error) {
+                Object.keys(diffObj).forEach((k) => {
+                    this.formValidator.validateField(k, diffObj[k], function (isValided, error) {
                         if (error && error[k]) {
                             errors.push(error[k])
                             errorMap[k] = error[k]
                         }
                         isValid = isValided
                     })
-                }
+                })
                 this._showErrors(diffObj, errorMap)
-                this.triggerEvent(isValid ? 'success' : 'fail', isValid ? {trigger: 'change'} : {errors, trigger: 'change'})
+                this.triggerEvent(
+                    isValid ? 'success' : 'fail',
+                    isValid ? { trigger: 'change' } : { errors, trigger: 'change' }
+                )
             }
             return newVal
         },
@@ -105,15 +104,14 @@ Component({
             return newVal
         },
         _showAllErrors(errors) {
-            for (const k in this.data.newRules) {
+            Object.keys(this.data.newRules).forEach((k) => {
                 this._showError(k, errors && errors[k])
-            }
+            })
         },
         _showErrors(objs, errors) {
-            for (const k in objs) {
+            Object.keys(objs).forEach((k) => {
                 this._showError(k, errors && errors[k])
-            }
-
+            })
         },
         _showError(prop, error) {
             const formItem = this.data.formItems[prop]
@@ -125,22 +123,29 @@ Component({
             return this.formValidator.validate((isValid, errors) => {
                 this._showAllErrors(errors)
                 const handleError = this.handleErrors(errors)
-                this.triggerEvent(isValid ? 'success' : 'fail', isValid ? {trigger: 'validate'} : {errors: handleError, trigger: 'validate'})
+                this.triggerEvent(
+                    isValid ? 'success' : 'fail',
+                    isValid ? { trigger: 'validate' } : { errors: handleError, trigger: 'validate' }
+                )
                 cb && cb(isValid, handleError)
             })
         },
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         validateField(name, value, cb = (v, error = null) => {}) {
             return this.formValidator.validateField(name, value, (isValid, errors) => {
                 this._showError(name, errors)
                 const handleError = this.handleErrors(errors)
-                this.triggerEvent(isValid ? 'success' : 'fail', isValid ? {trigger: 'validate'} : {errors: handleError, trigger: 'validate'})
+                this.triggerEvent(
+                    isValid ? 'success' : 'fail',
+                    isValid ? { trigger: 'validate' } : { errors: handleError, trigger: 'validate' }
+                )
                 cb && cb(isValid, handleError)
             })
         },
         handleErrors(errors) {
             if (errors) {
                 const newErrors = []
-                this.data.rules.forEach(rule => {
+                this.data.rules.forEach((rule) => {
                     if (errors[rule.name]) {
                         errors[rule.name].name = rule.name
                         newErrors.push(errors[rule.name])

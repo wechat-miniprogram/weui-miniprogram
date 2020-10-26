@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`form-page basic 1`] = `
+<main>
+  <mp-form-page>
+    <wx-view
+      class="weui-form"
+    >
+      <wx-view
+        class="weui-form__text-area"
+      >
+        <wx-view
+          class="weui-form__title"
+        >
+          表单结构
+        </wx-view>
+        <wx-view
+          class="weui-form__desc"
+        >
+          展示表单页面的信息结构样式, 分别由头部区域/控件区域/提示区域/操作区域和底部信息区域组成。
+        </wx-view>
+      </wx-view>
+      <wx-view
+        class="weui-form__control-area"
+      >
+        <wx-view>
+          <mp-cells>
+            <wx-view
+              class=" weui-cells__group weui-cells__group weui-cells__group_form weui-cells_form "
+            >
+              <wx-view
+                class="weui-cells__title"
+              >
+                单选列表项
+              </wx-view>
+              <wx-view
+                class="weui-cells weui-cells_after-title "
+              />
+            </wx-view>
+          </mp-cells>
+        </wx-view>
+      </wx-view>
+      <wx-view
+        class="weui-form__tips-area"
+      />
+      <wx-view
+        class="weui-form__opr-area"
+      >
+        <wx-view
+          slot="button"
+        >
+          <wx-button
+            class="weui-btn"
+            type="primary"
+            bind:tap="submitForm"
+          >
+            确定
+          </wx-button>
+        </wx-view>
+      </wx-view>
+      <wx-view
+        class="weui-form__tips-area"
+      />
+      <wx-view
+        class="weui-form__extra-area"
+      >
+        <wx-view
+          class="weui-footer"
+        />
+      </wx-view>
+    </wx-view>
+  </mp-form-page>
+</main>
+`;

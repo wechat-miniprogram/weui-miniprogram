@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`msg basic 1`] = `
+<main>
+  <mp-msg>
+    <wx-view
+      class="weui-msg "
+    >
+      <wx-view
+        class="weui-msg__icon-area"
+      >
+        <wx-icon
+          size="{{64}}"
+          type="success"
+        />
+      </wx-view>
+      <wx-view
+        class="weui-msg__text-area"
+      >
+        <wx-view
+          class="weui-msg__title"
+        >
+          操作成功
+        </wx-view>
+        <wx-view
+          class="weui-msg__desc"
+        >
+          
+      
+      
+          <wx-view
+            slot="desc"
+          >
+            内容详情，可根据实际需要安排，如果换行则不超过规定长度，居中展现
+            <wx-navigator
+              class="weui-msg__link"
+              url=""
+            >
+              文字链接
+            </wx-navigator>
+          </wx-view>
+        </wx-view>
+        <wx-view
+          slot="extend"
+        >
+          <wx-view>
+            1. 说明1
+          </wx-view>
+          <wx-view>
+            2. 说明2
+          </wx-view>
+        </wx-view>
+      </wx-view>
+      <wx-view
+        class="weui-msg__opr-area"
+      >
+        <wx-view
+          class="weui-btn-area"
+        >
+          <wx-view
+            slot="handle"
+          >
+            <wx-button
+              class="weui-btn"
+              type="primary"
+            >
+              主要操作
+            </wx-button>
+            <wx-button
+              class="weui-btn"
+              type="default"
+            >
+              辅助操作
+            </wx-button>
+          </wx-view>
+        </wx-view>
+      </wx-view>
+      <wx-view
+        class="weui-msg__tips-area"
+      >
+        <wx-view
+          class="weui-msg__tips"
+        />
+      </wx-view>
+      <wx-view
+        class="weui-msg__extra-area"
+      >
+        <wx-view
+          class="weui-footer"
+        >
+          <wx-view
+            slot="footer"
+          >
+            <wx-view
+              class="weui-footer__links"
+            >
+              <wx-navigator
+                class="weui-footer__link"
+                url=""
+              >
+                底部链接文本
+              </wx-navigator>
+            </wx-view>
+            <wx-view
+              class="weui-footer__text"
+            >
+              Copyright © 2008-2016 weui.io
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </wx-view>
+    </wx-view>
+  </mp-msg>
+</main>
+`;

@@ -168,6 +168,16 @@ function copy(copyFileList) {
 }
 
 /**
+ * 拷贝 weui-wxss 中的样式文件
+ */
+function copyWeuiWxss() {
+  return gulp.src(config.copyWeuiWxss, {cwd: srcPath, base: srcPath})
+    .pipe(_.dealWithWeuiWxss())
+    .pipe(_.logger())
+    .pipe(gulp.dest(distPath))
+}
+
+/**
  * 安装依赖包
  */
 function install() {
@@ -271,7 +281,8 @@ class BuildTask {
       const jsonFileList = this.componentListMap.jsonFileList
 
       if (jsonFileList && jsonFileList.length) {
-        return copy(this.componentListMap.jsonFileList)
+        // 去掉 index.json
+        return copy(this.componentListMap.jsonFileList.filter(file => (file !== 'index.json')))
       }
 
       return done()
@@ -371,6 +382,14 @@ class BuildTask {
     }))
 
     /**
+     * 拷贝 weui-wxss 到目标目录
+     */
+    gulp.task(`${id}-copy-weui-wxss`, done => {
+      if (config.copyWeuiWxss && Array.isArray(config.copyWeuiWxss)) return copyWeuiWxss()
+      return done ()
+    })
+
+    /**
      * 监听 json 变化
      */
     gulp.task(`${id}-watch-json`, () => gulp.watch(this.componentListMap.jsonFileList, {cwd: srcPath, base: srcPath}, gulp.series(`${id}-component-check`, gulp.parallel(`${id}-component-wxml`, `${id}-component-wxss`, `${id}-component-js`, `${id}-component-json`))))
@@ -424,6 +443,19 @@ class BuildTask {
     })
 
     /**
+     * 监听 weui-wxss 变化
+     */
+    gulp.task(`${id}-watch-copy-weui-wxss`, () => {
+      const copyWeuiWxssList = config.copyWeuiWxss || []
+      const watchCallback = filePath => copyWeuiWxss([filePath])
+
+      return gulp.watch(copyWeuiWxssList, {cwd: srcPath, base: srcPath})
+        .on('change', watchCallback)
+        .on('add', watchCallback)
+        .on('unlink', watchCallback)
+    })
+
+    /**
      * 监听 demo 变化
      */
     gulp.task(`${id}-watch-demo`, () => {
@@ -447,9 +479,9 @@ class BuildTask {
      * 构建相关任务
      */
     // gulp.task(`${id}-build`, gulp.series(`${id}-clean-dist`, `${id}-component-check`, gulp.parallel(`${id}-component-less`)))
-    gulp.task(`${id}-build`, gulp.series(`${id}-clean-dist`, `${id}-component-check`, gulp.parallel(`${id}-component-wxml`, `${id}-component-js`, `${id}-component-less`, `${id}-component-wxss`, `${id}-component-json`, `${id}-copy`, `${id}-package-json`)))
+    gulp.task(`${id}-build`, gulp.series(`${id}-clean-dist`, `${id}-component-check`, gulp.parallel(`${id}-component-wxml`, `${id}-component-js`, `${id}-component-less`, `${id}-component-wxss`, `${id}-component-json`, `${id}-copy`, `${id}-copy-weui-wxss`, `${id}-package-json`)))
 
-    gulp.task(`${id}-watch`, gulp.series(`${id}-build`, `${id}-demo`, `${id}-install`, gulp.parallel(`${id}-watch-wxml`, `${id}-watch-wxss`, `${id}-watch-json`, `${id}-watch-copy`, `${id}-watch-install`, `${id}-watch-demo`, `${id}-watch-less`, `${id}-watch-ts`)))
+    gulp.task(`${id}-watch`, gulp.series(`${id}-build`, `${id}-demo`, `${id}-install`, gulp.parallel(`${id}-watch-wxml`, `${id}-watch-wxss`, `${id}-watch-json`, `${id}-watch-copy`, `${id}-watch-copy-weui-wxss`, `${id}-watch-install`, `${id}-watch-demo`, `${id}-watch-less`, `${id}-watch-ts`)))
 
     gulp.task(`${id}-dev`, gulp.series(`${id}-build`, `${id}-demo`, `${id}-install`))
 

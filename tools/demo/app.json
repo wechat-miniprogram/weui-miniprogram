@@ -32,13 +32,13 @@
     "example/msg/msg_fail",
     "example/picker/picker",
     "example/toast/toast",
+    "example/toptips/toptips",
 
     "example/navbar/navbar",
     "example/navigation/navigation",
     "example/tabbar/tabbar",
 
-    "example/searchbar/searchbar",
-    "example/video-swiper/video-swiper"
+    "example/searchbar/searchbar"
   ],
   "window": {
     "navigationBarTextStyle": "black",

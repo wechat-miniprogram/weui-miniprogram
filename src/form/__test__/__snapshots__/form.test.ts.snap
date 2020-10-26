@@ -1,0 +1,731 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`form basic 1`] = `
+<main>
+  <mp-form
+    id="form"
+  >
+    <wx-view
+      class=""
+    >
+      <mp-cells>
+        <wx-view
+          class=" weui-cells__group  "
+        >
+          <wx-view
+            class="weui-cells__title"
+          >
+            单选列表项
+          </wx-view>
+          <wx-view
+            class="weui-cells weui-cells_after-title "
+          >
+            <mp-checkbox-group
+              bind:change="radioChange"
+            >
+              <radio-group
+                class=""
+                bind:change="checkedChange"
+              >
+                <mp-checkbox>
+                  <mp-cell
+                    bind:tap="checkedChange"
+                  >
+                    <wx-view
+                      class="weui-cell   weui-check__label   ^weui-cell_radio "
+                      hoverClass="weui-active"
+                      bind:tap="navigateTo"
+                    >
+                      <wx-view
+                        class="weui-cell__bd "
+                      >
+                        <wx-view>
+                          cell standard
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="weui-cell__ft "
+                      >
+                        <wx-view
+                          slot="footer"
+                        >
+                          <wx-radio
+                            checked="{{true}}"
+                            class="weui-check"
+                            color=""
+                            disabled=""
+                            value="0"
+                          />
+                          <wx-icon
+                            class="weui-icon-checked"
+                          />
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </mp-cell>
+                </mp-checkbox>
+                <mp-checkbox>
+                  <mp-cell
+                    bind:tap="checkedChange"
+                  >
+                    <wx-view
+                      class="weui-cell   weui-check__label weui-cell_wxss  ^weui-cell_radio "
+                      hoverClass="weui-active"
+                      bind:tap="navigateTo"
+                    >
+                      <wx-view
+                        class="weui-cell__bd "
+                      >
+                        <wx-view>
+                          cell standard
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="weui-cell__ft "
+                      >
+                        <wx-view
+                          slot="footer"
+                        >
+                          <wx-radio
+                            checked=""
+                            class="weui-check"
+                            color=""
+                            disabled=""
+                            value="1"
+                          />
+                          <wx-icon
+                            class="weui-icon-checked"
+                          />
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </mp-cell>
+                </mp-checkbox>
+              </radio-group>
+            </mp-checkbox-group>
+          </wx-view>
+        </wx-view>
+      </mp-cells>
+      <mp-cells>
+        <wx-view
+          class=" weui-cells__group  weui-cells_checkbox"
+        >
+          <wx-view
+            class="weui-cells__title"
+          >
+            复选列表项
+          </wx-view>
+          <wx-view
+            class="weui-cells weui-cells_after-title weui-cells_checkbox"
+          >
+            <mp-checkbox-group
+              bind:change="checkboxChange"
+            >
+              <checkbox-group
+                class=""
+                bind:change="checkedChange"
+              >
+                <mp-checkbox>
+                  <mp-cell
+                    bind:tap="checkedChange"
+                  >
+                    <wx-view
+                      class="weui-cell   weui-check__label   ^weui-cell_checkbox "
+                      hoverClass="weui-active"
+                      bind:tap="navigateTo"
+                    >
+                      <wx-view
+                        class="weui-cell__hd "
+                      >
+                        <wx-view
+                          slot="icon"
+                        >
+                          <wx-checkbox
+                            checked="{{true}}"
+                            class="weui-check"
+                            color=""
+                            disabled=""
+                            value="0"
+                          />
+                          <wx-icon
+                            class="weui-icon-checked"
+                          />
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="weui-cell__bd "
+                      >
+                        <wx-view>
+                          standard is dealt for u.
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </mp-cell>
+                </mp-checkbox>
+                <mp-checkbox>
+                  <mp-cell
+                    bind:tap="checkedChange"
+                  >
+                    <wx-view
+                      class="weui-cell   weui-check__label weui-cell_wxss  ^weui-cell_checkbox "
+                      hoverClass="weui-active"
+                      bind:tap="navigateTo"
+                    >
+                      <wx-view
+                        class="weui-cell__hd "
+                      >
+                        <wx-view
+                          slot="icon"
+                        >
+                          <wx-checkbox
+                            checked=""
+                            class="weui-check"
+                            color=""
+                            disabled=""
+                            value="1"
+                          />
+                          <wx-icon
+                            class="weui-icon-checked"
+                          />
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="weui-cell__bd "
+                      >
+                        <wx-view>
+                          standard is dealicient for u.
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </mp-cell>
+                </mp-checkbox>
+              </checkbox-group>
+              <radio-group
+                class=""
+                bind:change="checkedChange"
+              />
+            </mp-checkbox-group>
+          </wx-view>
+        </wx-view>
+      </mp-cells>
+      <mp-cells>
+        <wx-view
+          class=" weui-cells__group  "
+        >
+          <wx-view
+            class="weui-cells__title"
+          >
+            表单
+          </wx-view>
+          <wx-view
+            class="weui-cells weui-cells_after-title "
+          >
+            <mp-cell>
+              <wx-view
+                class="weui-cell  weui-cell-inform  "
+                hoverClass=""
+                bind:tap="navigateTo"
+              >
+                <wx-view
+                  class="weui-cell__hd "
+                >
+                  <wx-view
+                    class="weui-label"
+                  >
+                    姓名
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="weui-cell__bd "
+                >
+                  <wx-input
+                    class="weui-input"
+                    data-field="name"
+                    placeholder="请输入姓名"
+                    bind:input="formInputChange"
+                  />
+                </wx-view>
+                <wx-view
+                  class="weui-cell__ft "
+                />
+              </wx-view>
+            </mp-cell>
+            <mp-cell>
+              <wx-view
+                class="weui-cell  weui-cell-inform  weui-cell_wxss"
+                hoverClass=""
+                bind:tap="navigateTo"
+              >
+                <wx-view
+                  class="weui-cell__hd "
+                >
+                  <wx-view
+                    class="weui-label"
+                  >
+                    qq
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="weui-cell__bd "
+                >
+                  <wx-input
+                    class="weui-input"
+                    data-field="qq"
+                    placeholder="请输入qq"
+                    bind:input="formInputChange"
+                  />
+                </wx-view>
+                <wx-view
+                  class="weui-cell__ft "
+                />
+              </wx-view>
+            </mp-cell>
+            <mp-cell>
+              <wx-view
+                class="weui-cell  weui-cell-inform  weui-cell_vcode weui-cell_wxss"
+                hoverClass=""
+                bind:tap="navigateTo"
+              >
+                <wx-view
+                  class="weui-cell__hd "
+                >
+                  <wx-view
+                    class="weui-label"
+                  >
+                    手机号
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="weui-cell__bd "
+                >
+                  <wx-input
+                    class="weui-input"
+                    data-field="mobile"
+                    placeholder="请输入手机号"
+                    bind:input="formInputChange"
+                  />
+                </wx-view>
+                <wx-view
+                  class="weui-cell__ft "
+                >
+                  <wx-button
+                    class="weui-vcode-btn"
+                    slot="footer"
+                    type="default"
+                  >
+                    获取验证码
+                  </wx-button>
+                </wx-view>
+              </wx-view>
+            </mp-cell>
+            <mp-cell>
+              <wx-view
+                class="weui-cell  weui-cell-inform  weui-cell_wxss"
+                hoverClass=""
+                bind:tap="navigateTo"
+              >
+                <wx-view
+                  class="weui-cell__hd "
+                >
+                  <wx-view
+                    class="weui-label"
+                  >
+                    日期
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="weui-cell__bd "
+                >
+                  <wx-picker
+                    data-field="date"
+                    end="2017-09-01"
+                    mode="date"
+                    start="2015-09-01"
+                    value="2016-09-01"
+                    bind:change="bindDateChange"
+                  >
+                    <wx-view
+                      class="weui-input"
+                    >
+                      2016-09-01
+                    </wx-view>
+                  </wx-picker>
+                </wx-view>
+                <wx-view
+                  class="weui-cell__ft "
+                />
+              </wx-view>
+            </mp-cell>
+            <mp-cell>
+              <wx-view
+                class="weui-cell  weui-cell-inform  weui-cell_vcode weui-cell_wxss"
+                hoverClass=""
+                bind:tap="navigateTo"
+              >
+                <wx-view
+                  class="weui-cell__hd "
+                >
+                  <wx-view
+                    class="weui-label"
+                  >
+                    验证码
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="weui-cell__bd "
+                >
+                  <wx-input
+                    class="weui-input"
+                    data-field="vcode"
+                    placeholder="请输入验证码"
+                    bind:input="formInputChange"
+                  />
+                </wx-view>
+                <wx-view
+                  class="weui-cell__ft "
+                >
+                  <wx-image
+                    class="weui-vcode-img"
+                    slot="footer"
+                    src="../images/vcode.jpg"
+                    style="width: 108px"
+                  />
+                </wx-view>
+              </wx-view>
+            </mp-cell>
+          </wx-view>
+          <wx-view
+            class="weui-cells__tips"
+          >
+            底部说明文字底部说明文字
+          </wx-view>
+        </wx-view>
+      </mp-cells>
+      <mp-cells>
+        <wx-view
+          class=" weui-cells__group  "
+        >
+          <wx-view
+            class="weui-cells__title"
+          >
+            提交后表单项报错
+          </wx-view>
+          <wx-view
+            class="weui-cells weui-cells_after-title "
+          >
+            <mp-cell>
+              <wx-view
+                class="weui-cell  weui-cell-inform  "
+                hoverClass=""
+                bind:tap="navigateTo"
+              >
+                <wx-view
+                  class="weui-cell__hd "
+                >
+                  <wx-view
+                    class="weui-label"
+                  >
+                    卡号
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="weui-cell__bd "
+                >
+                  <wx-input
+                    class="weui-input"
+                    data-field="idcard"
+                    placeholder="请输入卡号"
+                    bind:input="formInputChange"
+                  />
+                </wx-view>
+                <wx-view
+                  class="weui-cell__ft "
+                />
+              </wx-view>
+            </mp-cell>
+          </wx-view>
+        </wx-view>
+      </mp-cells>
+      <mp-cells>
+        <wx-view
+          class=" weui-cells__group  "
+        >
+          <wx-view
+            class="weui-cells__title"
+          >
+            开关
+          </wx-view>
+          <wx-view
+            class="weui-cells weui-cells_after-title "
+          >
+            <mp-cell>
+              <wx-view
+                class="weui-cell  weui-cell-inform  "
+                hoverClass=""
+                bind:tap="navigateTo"
+              >
+                <wx-view
+                  class="weui-cell__hd "
+                >
+                  <wx-view
+                    class="weui-label"
+                  >
+                    标题文字
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="weui-cell__bd "
+                />
+                <wx-view
+                  class="weui-cell__ft "
+                >
+                  <wx-switch
+                    checked="{{true}}"
+                    slot="footer"
+                  />
+                </wx-view>
+              </wx-view>
+            </mp-cell>
+          </wx-view>
+        </wx-view>
+      </mp-cells>
+      <mp-cells>
+        <wx-view
+          class=" weui-cells__group  "
+        >
+          <wx-view
+            class="weui-cells__title"
+          >
+            文本框
+          </wx-view>
+          <wx-view
+            class="weui-cells weui-cells_after-title "
+          >
+            <mp-cell>
+              <wx-view
+                class="weui-cell  weui-cell-inform  "
+                hoverClass=""
+                bind:tap="navigateTo"
+              >
+                <wx-view
+                  class="weui-cell__hd "
+                >
+                  <wx-view
+                    class="weui-label"
+                  >
+                    标题文字
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="weui-cell__bd "
+                >
+                  <wx-input
+                    class="weui-input"
+                    placeholder="请输入文本"
+                  />
+                </wx-view>
+                <wx-view
+                  class="weui-cell__ft "
+                />
+              </wx-view>
+            </mp-cell>
+          </wx-view>
+        </wx-view>
+      </mp-cells>
+      <mp-cells>
+        <wx-view
+          class=" weui-cells__group  "
+        >
+          <wx-view
+            class="weui-cells__title"
+          >
+            文本域
+          </wx-view>
+          <wx-view
+            class="weui-cells weui-cells_after-title "
+          >
+            <mp-cell>
+              <wx-view
+                class="weui-cell  weui-cell-inform  "
+                hoverClass=""
+                bind:tap="navigateTo"
+              >
+                <wx-view
+                  class="weui-cell__bd "
+                >
+                  <wx-textarea
+                    class="weui-textarea"
+                    placeholder="请输入文本"
+                    style="height: 3.3em"
+                  />
+                  <wx-view
+                    class="weui-textarea-counter"
+                  >
+                    0/200
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </mp-cell>
+          </wx-view>
+        </wx-view>
+      </mp-cells>
+      <mp-cells>
+        <wx-view
+          class=" weui-cells__group  "
+        >
+          <wx-view
+            class="weui-cells__title"
+          >
+            选择
+          </wx-view>
+          <wx-view
+            class="weui-cells weui-cells_after-title "
+          >
+            <mp-cell>
+              <wx-view
+                class="weui-cell  weui-cell-inform weui-cell_select weui-cell_select-before "
+                hoverClass=""
+                bind:tap="navigateTo"
+              >
+                <wx-view
+                  class="weui-cell__hd "
+                >
+                  <wx-view
+                    slot="title"
+                    style="width: 105px"
+                  >
+                    <wx-picker
+                      range="{{
+                        Array [
+                          "+86",
+                          "+80",
+                          "+84",
+                          "+87",
+                        ]
+                      }}"
+                      value="{{0}}"
+                      bind:change="bindCountryCodeChange"
+                    >
+                      <wx-view
+                        class="weui-select"
+                      >
+                        +86
+                      </wx-view>
+                    </wx-picker>
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="weui-cell__bd "
+                >
+                  <wx-input
+                    class="weui-input"
+                    placeholder="请输入号码"
+                  />
+                </wx-view>
+                <wx-view
+                  class="weui-cell__ft "
+                />
+              </wx-view>
+            </mp-cell>
+          </wx-view>
+        </wx-view>
+      </mp-cells>
+      <mp-cells>
+        <wx-view
+          class=" weui-cells__group  "
+        >
+          <wx-view
+            class="weui-cells__title"
+          >
+            选择
+          </wx-view>
+          <wx-view
+            class="weui-cells weui-cells_after-title "
+          >
+            <mp-cell>
+              <wx-view
+                class="weui-cell  weui-cell-inform weui-cell_select "
+                hoverClass=""
+                bind:tap="navigateTo"
+              >
+                <wx-view
+                  class="weui-cell__bd "
+                >
+                  <wx-picker
+                    range="{{
+                      Array [
+                        "微信号",
+                        "QQ",
+                        "Email",
+                      ]
+                    }}"
+                    value="{{0}}"
+                    bind:change="bindAccountChange"
+                  >
+                    <wx-view
+                      class="weui-select"
+                    >
+                      微信号
+                    </wx-view>
+                  </wx-picker>
+                </wx-view>
+                <wx-view
+                  class="weui-cell__ft "
+                />
+              </wx-view>
+            </mp-cell>
+            <mp-cell>
+              <wx-view
+                class="weui-cell  weui-cell-inform weui-cell_select weui-cell_select-after weui-cell_wxss"
+                hoverClass=""
+                bind:tap="navigateTo"
+              >
+                <wx-view
+                  class="weui-cell__hd "
+                >
+                  <wx-view
+                    class="weui-label"
+                    slot="title"
+                  >
+                    国家/地区
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="weui-cell__bd "
+                >
+                  <wx-picker
+                    range="{{
+                      Array [
+                        "中国",
+                        "美国",
+                        "英国",
+                      ]
+                    }}"
+                    value="{{0}}"
+                    bind:change="bindCountryChange"
+                  >
+                    <wx-view
+                      class="weui-select"
+                    >
+                      中国
+                    </wx-view>
+                  </wx-picker>
+                </wx-view>
+                <wx-view
+                  class="weui-cell__ft "
+                />
+              </wx-view>
+            </mp-cell>
+          </wx-view>
+        </wx-view>
+      </mp-cells>
+      <wx-button
+        class="submit"
+        bind:tap="submitForm"
+      >
+        提交
+      </wx-button>
+    </wx-view>
+  </mp-form>
+</main>
+`;

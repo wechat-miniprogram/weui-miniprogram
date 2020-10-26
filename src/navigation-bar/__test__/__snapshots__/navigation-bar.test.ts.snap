@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`navigation-bar basic 1`] = `
+<main>
+  <mp-navigation-bar>
+    <wx-view
+      class="weui-navigation-bar "
+    >
+      <wx-view
+        class="weui-navigation-bar__placeholder ios"
+        style="padding-top: 20px;visibility: hidden;"
+      />
+      <wx-view
+        class="weui-navigation-bar__inner ios"
+        style="padding-top: 20px; color: ;background: ;;;;"
+      >
+        <wx-view
+          class="weui-navigation-bar__left"
+          style=""
+        >
+          <wx-view
+            class="weui-navigation-bar__buttons"
+          >
+            <wx-view
+              class="weui-navigation-bar__button weui-navigation-bar__btn_goback"
+              hoverClass="weui-active"
+              bind:tap="back"
+            />
+          </wx-view>
+        </wx-view>
+        <wx-view
+          class="weui-navigation-bar__center"
+        >
+          <wx-view
+            class="weui-navigation-bar__loading"
+          >
+            <wx-view
+              class="weui-loading"
+              style="width:rpx;height:rpx;"
+            />
+          </wx-view>
+          <wx-text>
+            UI组件库
+          </wx-text>
+        </wx-view>
+        <wx-view
+          class="weui-navigation-bar__right"
+        />
+      </wx-view>
+    </wx-view>
+  </mp-navigation-bar>
+</main>
+`;

@@ -37,18 +37,10 @@ module.exports = {
     externals: [nodeExternals()], // 忽略 node_modules
     module: {
       rules: [{
-        test: /\.js$/i,
+        test: /\.js|\.ts$/i,
         use: [
           'babel-loader',
           'eslint-loader'
-        ],
-        exclude: /node_modules/
-      }, {
-        test: /\.ts$/i,
-        use: [
-          'babel-loader',
-          'ts-loader',
-          'tslint-loader'
         ],
         exclude: /node_modules/
       }],
@@ -70,9 +62,10 @@ module.exports = {
       assetFilter: assetFilename => assetFilename.endsWith('.js')
     }
   },
-  ignore: ['!./weui-wxss/**/*'], // 要忽
-  copyIgnore: ['!./weui-wxss/node_modules/**/*', '!./weui-wxss/src/**/*', '!./weui-wxss/dist/example/**/*', '!./weui-wxss/dist/app.wxss', '!./weui-wxss/dist/style/base/**/*', '!./weui-wxss/dist/style/widget/**/*'], // 要忽略的目录/文件
+  ignore: ['!./weui-wxss/**/*'], // 要忽略的目录/文件
+  copyIgnore: ['!./weui-wxss/**/*'], // 要忽略的目录/文件
   copy: {
-    src: ['./static/**/*', './**/*.wxss', './**/*.wxs', './weui-wxss/dist/style/weui.wxss']
+    src: ['./static/**/*', './**/*.wxss', './**/*.wxs', ]
   }, // 将会复制到目标目录
+  copyWeuiWxss: ['./weui-wxss/dist/style/weui.wxss', './weui-wxss/dist/style/icon/weui-icon.wxss']
 }

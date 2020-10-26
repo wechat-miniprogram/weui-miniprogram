@@ -1,6 +1,6 @@
 Component({
     options: {
-        addGlobalClass: true,
+        addGlobalClass: true
     },
     properties: {
         type: {
@@ -28,16 +28,16 @@ Component({
     },
     data: {
         typeClassMap: {
-            'warn': 'weui-toptips_warn',
-            'info': 'weui-toptips_info',
-            'success': 'weui-toptips_success',
-            'error': 'weui-toptips_error'
-        },
+            warn: 'weui-toptips_warn',
+            info: 'weui-toptips_info',
+            success: 'weui-toptips_success',
+            error: 'weui-toptips_error'
+        }
     },
     attached() {
-        const data:any = this.data
+        const data: any = this.data
         this.setData({
-            className: data.typeClassMap[data.type] || '',
+            className: data.typeClassMap[data.type] || ''
         })
     },
     methods: {
@@ -53,12 +53,15 @@ Component({
         _showToptips(newVal) {
             if (newVal && this.data.delay) {
                 setTimeout(() => {
-                    this.setData({
-                        show: false,
-                    }, () => {
-                        // tooltips 隐藏了，触发 hide 事件 
-                        this.triggerEvent('hide', {}, {})
-                    })
+                    this.setData(
+                        {
+                            show: false
+                        },
+                        () => {
+                            // tooltips 隐藏了，触发 hide 事件
+                            this.triggerEvent('hide', {}, {})
+                        }
+                    )
                 }, this.data.delay)
             }
             this.setData({

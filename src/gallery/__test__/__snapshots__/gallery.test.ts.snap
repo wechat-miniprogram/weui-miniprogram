@@ -1,0 +1,292 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gallery basic 1`] = `
+<mp-gallery
+  delete="{{true}}"
+  id="gallery"
+  bind:change="onChange"
+  bind:delete="onDelete"
+  bind:hide="onHide"
+>
+  <wx-view
+    class="weui-gallery  "
+  >
+    <wx-view
+      class="weui-gallery__info"
+    >
+      1/3
+    </wx-view>
+    <wx-swiper
+      autoplay="{{false}}"
+      class="weui-gallery__img__wrp"
+      current="{{0}}"
+      duration="{{500}}"
+      indicatorDots="{{false}}"
+      bind:change="change"
+      bind:tap="hideGallery"
+    >
+      <swiper-item>
+        <wx-image
+          class="weui-gallery__img"
+          mode="aspectFit"
+          src="http://qq.com/1.jpg"
+        />
+      </swiper-item>
+      <swiper-item>
+        <wx-image
+          class="weui-gallery__img"
+          mode="aspectFit"
+          src="http://qq.com/2.jpg"
+        />
+      </swiper-item>
+      <swiper-item>
+        <wx-image
+          class="weui-gallery__img"
+          mode="aspectFit"
+          src="http://qq.com/3.jpg"
+        />
+      </swiper-item>
+    </wx-swiper>
+    <wx-view
+      class="weui-gallery__opr"
+    >
+      <wx-navigator
+        class="weui-gallery__del"
+        bind:tap="deleteImg"
+      >
+        删除
+      </wx-navigator>
+    </wx-view>
+  </wx-view>
+</mp-gallery>
+`;
+
+exports[`gallery basic 2`] = `
+<mp-gallery
+  delete="{{true}}"
+  id="gallery"
+  bind:change="onChange"
+  bind:delete="onDelete"
+  bind:hide="onHide"
+>
+  <wx-view
+    class="weui-gallery weui-gallery_show "
+  >
+    <wx-view
+      class="weui-gallery__info"
+    >
+      1/3
+    </wx-view>
+    <wx-swiper
+      autoplay="{{false}}"
+      class="weui-gallery__img__wrp"
+      current="{{0}}"
+      duration="{{500}}"
+      indicatorDots="{{false}}"
+      bind:change="change"
+      bind:tap="hideGallery"
+    >
+      <swiper-item>
+        <wx-image
+          class="weui-gallery__img"
+          mode="aspectFit"
+          src="http://qq.com/1.jpg"
+        />
+      </swiper-item>
+      <swiper-item>
+        <wx-image
+          class="weui-gallery__img"
+          mode="aspectFit"
+          src="http://qq.com/2.jpg"
+        />
+      </swiper-item>
+      <swiper-item>
+        <wx-image
+          class="weui-gallery__img"
+          mode="aspectFit"
+          src="http://qq.com/3.jpg"
+        />
+      </swiper-item>
+    </wx-swiper>
+    <wx-view
+      class="weui-gallery__opr"
+    >
+      <wx-navigator
+        class="weui-gallery__del"
+        bind:tap="deleteImg"
+      >
+        删除
+      </wx-navigator>
+    </wx-view>
+  </wx-view>
+</mp-gallery>
+`;
+
+exports[`gallery basic 3`] = `
+<mp-gallery
+  delete="{{true}}"
+  id="gallery"
+  bind:change="onChange"
+  bind:delete="onDelete"
+  bind:hide="onHide"
+>
+  <wx-view
+    class="weui-gallery weui-gallery_show "
+  >
+    <wx-view
+      class="weui-gallery__info"
+    >
+      2/3
+    </wx-view>
+    <wx-swiper
+      autoplay="{{false}}"
+      class="weui-gallery__img__wrp"
+      current="{{1}}"
+      duration="{{500}}"
+      indicatorDots="{{false}}"
+      bind:change="change"
+      bind:tap="hideGallery"
+    >
+      <swiper-item>
+        <wx-image
+          class="weui-gallery__img"
+          mode="aspectFit"
+          src="http://qq.com/1.jpg"
+        />
+      </swiper-item>
+      <swiper-item>
+        <wx-image
+          class="weui-gallery__img"
+          mode="aspectFit"
+          src="http://qq.com/2.jpg"
+        />
+      </swiper-item>
+      <swiper-item>
+        <wx-image
+          class="weui-gallery__img"
+          mode="aspectFit"
+          src="http://qq.com/3.jpg"
+        />
+      </swiper-item>
+    </wx-swiper>
+    <wx-view
+      class="weui-gallery__opr"
+    >
+      <wx-navigator
+        class="weui-gallery__del"
+        bind:tap="deleteImg"
+      >
+        删除
+      </wx-navigator>
+    </wx-view>
+  </wx-view>
+</mp-gallery>
+`;
+
+exports[`gallery basic 4`] = `
+<mp-gallery
+  delete="{{true}}"
+  id="gallery"
+  bind:change="onChange"
+  bind:delete="onDelete"
+  bind:hide="onHide"
+>
+  <wx-view
+    class="weui-gallery weui-gallery_show "
+  >
+    <wx-view
+      class="weui-gallery__info"
+    >
+      1/2
+    </wx-view>
+    <wx-swiper
+      autoplay="{{false}}"
+      class="weui-gallery__img__wrp"
+      current="{{0}}"
+      duration="{{500}}"
+      indicatorDots="{{false}}"
+      bind:change="change"
+      bind:tap="hideGallery"
+    >
+      <swiper-item>
+        <wx-image
+          class="weui-gallery__img"
+          mode="aspectFit"
+          src="http://qq.com/1.jpg"
+        />
+      </swiper-item>
+      <swiper-item>
+        <wx-image
+          class="weui-gallery__img"
+          mode="aspectFit"
+          src="http://qq.com/3.jpg"
+        />
+      </swiper-item>
+    </wx-swiper>
+    <wx-view
+      class="weui-gallery__opr"
+    >
+      <wx-navigator
+        class="weui-gallery__del"
+        bind:tap="deleteImg"
+      >
+        删除
+      </wx-navigator>
+    </wx-view>
+  </wx-view>
+</mp-gallery>
+`;
+
+exports[`gallery basic 5`] = `
+<mp-gallery
+  delete="{{true}}"
+  id="gallery"
+  bind:change="onChange"
+  bind:delete="onDelete"
+  bind:hide="onHide"
+>
+  <wx-view
+    class="weui-gallery  "
+  >
+    <wx-view
+      class="weui-gallery__info"
+    >
+      2/2
+    </wx-view>
+    <wx-swiper
+      autoplay="{{false}}"
+      class="weui-gallery__img__wrp"
+      current="{{1}}"
+      duration="{{500}}"
+      indicatorDots="{{false}}"
+      bind:change="change"
+      bind:tap="hideGallery"
+    >
+      <swiper-item>
+        <wx-image
+          class="weui-gallery__img"
+          mode="aspectFit"
+          src="http://qq.com/1.jpg"
+        />
+      </swiper-item>
+      <swiper-item>
+        <wx-image
+          class="weui-gallery__img"
+          mode="aspectFit"
+          src="http://qq.com/3.jpg"
+        />
+      </swiper-item>
+    </wx-swiper>
+    <wx-view
+      class="weui-gallery__opr"
+    >
+      <wx-navigator
+        class="weui-gallery__del"
+        bind:tap="deleteImg"
+      >
+        删除
+      </wx-navigator>
+    </wx-view>
+  </wx-view>
+</mp-gallery>
+`;

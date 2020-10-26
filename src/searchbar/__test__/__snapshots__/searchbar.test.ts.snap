@@ -1,0 +1,412 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`searchbar basic 1`] = `
+<main>
+  <mp-searchbar
+    id="searchbar"
+    bind:selectresult="onSelectResult"
+  >
+    <wx-view
+      class="weui-search-bar  "
+    >
+      <wx-view
+        class="weui-search-bar__form"
+      >
+        <wx-view
+          class="weui-search-bar__box"
+        >
+          <wx-icon
+            class="weui-icon-search"
+            size="12"
+            type="search"
+          />
+          <wx-input
+            class="weui-search-bar__input"
+            focus="{{false}}"
+            placeholder="搜索"
+            type="text"
+            value=""
+            bind:blur="inputBlur"
+            bind:focus="inputFocus"
+            bind:input="inputChange"
+          />
+        </wx-view>
+        <wx-label
+          class="weui-search-bar__label"
+          bind:tap="showInput"
+        >
+          <wx-icon
+            class="weui-icon-search"
+            size="12"
+            type="search"
+          />
+          <wx-text
+            class="weui-search-bar__text"
+          >
+            搜索
+          </wx-text>
+        </wx-label>
+      </wx-view>
+    </wx-view>
+  </mp-searchbar>
+</main>
+`;
+
+exports[`searchbar basic 2`] = `
+<mp-searchbar
+  id="searchbar"
+  bind:selectresult="onSelectResult"
+>
+  <wx-view
+    class="weui-search-bar weui-search-bar_focusing "
+  >
+    <wx-view
+      class="weui-search-bar__form"
+    >
+      <wx-view
+        class="weui-search-bar__box"
+      >
+        <wx-icon
+          class="weui-icon-search"
+          size="12"
+          type="search"
+        />
+        <wx-input
+          class="weui-search-bar__input"
+          focus="{{true}}"
+          placeholder="搜索"
+          type="text"
+          value=""
+          bind:blur="inputBlur"
+          bind:focus="inputFocus"
+          bind:input="inputChange"
+        />
+      </wx-view>
+      <wx-label
+        class="weui-search-bar__label"
+        bind:tap="showInput"
+      >
+        <wx-icon
+          class="weui-icon-search"
+          size="12"
+          type="search"
+        />
+        <wx-text
+          class="weui-search-bar__text"
+        >
+          搜索
+        </wx-text>
+      </wx-label>
+    </wx-view>
+    <wx-view
+      class="weui-search-bar__cancel-btn"
+      bind:tap="hideInput"
+    >
+      取消
+    </wx-view>
+  </wx-view>
+</mp-searchbar>
+`;
+
+exports[`searchbar basic 3`] = `
+<mp-searchbar
+  id="searchbar"
+  bind:selectresult="onSelectResult"
+>
+  <wx-view
+    class="weui-search-bar weui-search-bar_focusing "
+  >
+    <wx-view
+      class="weui-search-bar__form"
+    >
+      <wx-view
+        class="weui-search-bar__box"
+      >
+        <wx-icon
+          class="weui-icon-search"
+          size="12"
+          type="search"
+        />
+        <wx-input
+          class="weui-search-bar__input"
+          focus="{{true}}"
+          placeholder="搜索"
+          type="text"
+          value="123"
+          bind:blur="inputBlur"
+          bind:focus="inputFocus"
+          bind:input="inputChange"
+        />
+        <wx-text
+          class="weui-icon-clear"
+          hoverClass="weui-active"
+          bind:tap="clearInput"
+        />
+      </wx-view>
+      <wx-label
+        class="weui-search-bar__label"
+        bind:tap="showInput"
+      >
+        <wx-icon
+          class="weui-icon-search"
+          size="12"
+          type="search"
+        />
+        <wx-text
+          class="weui-search-bar__text"
+        >
+          搜索
+        </wx-text>
+      </wx-label>
+    </wx-view>
+    <wx-view
+      class="weui-search-bar__cancel-btn"
+      bind:tap="hideInput"
+    >
+      取消
+    </wx-view>
+  </wx-view>
+  <mp-cells>
+    <wx-view
+      class=" searchbar-result  weui-cells__group  "
+    >
+      <wx-view
+        class="weui-cells weui-cells_after-title "
+      >
+        <mp-cell
+          class="result"
+          data-index="{{0}}"
+          bind:tap="selectResult"
+        >
+          <wx-view
+            class="weui-cell    "
+            hoverClass="weui-cell_active weui-active"
+            bind:tap="navigateTo"
+          >
+            <wx-view
+              class="weui-cell__hd "
+            />
+            <wx-view
+              class="weui-cell__bd weui-cell_primary"
+            >
+              <wx-view>
+                搜索结果123
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="weui-cell__ft "
+            />
+          </wx-view>
+        </mp-cell>
+      </wx-view>
+    </wx-view>
+  </mp-cells>
+</mp-searchbar>
+`;
+
+exports[`searchbar basic 4`] = `
+<mp-searchbar
+  id="searchbar"
+  bind:selectresult="onSelectResult"
+>
+  <wx-view
+    class="weui-search-bar weui-search-bar_focusing "
+  >
+    <wx-view
+      class="weui-search-bar__form"
+    >
+      <wx-view
+        class="weui-search-bar__box"
+      >
+        <wx-icon
+          class="weui-icon-search"
+          size="12"
+          type="search"
+        />
+        <wx-input
+          class="weui-search-bar__input"
+          focus="{{true}}"
+          placeholder="搜索"
+          type="text"
+          value="123"
+          bind:blur="inputBlur"
+          bind:focus="inputFocus"
+          bind:input="inputChange"
+        />
+        <wx-text
+          class="weui-icon-clear"
+          hoverClass="weui-active"
+          bind:tap="clearInput"
+        />
+      </wx-view>
+      <wx-label
+        class="weui-search-bar__label"
+        bind:tap="showInput"
+      >
+        <wx-icon
+          class="weui-icon-search"
+          size="12"
+          type="search"
+        />
+        <wx-text
+          class="weui-search-bar__text"
+        >
+          搜索
+        </wx-text>
+      </wx-label>
+    </wx-view>
+    <wx-view
+      class="weui-search-bar__cancel-btn"
+      bind:tap="hideInput"
+    >
+      取消
+    </wx-view>
+  </wx-view>
+  <mp-cells>
+    <wx-view
+      class=" searchbar-result  weui-cells__group  "
+    >
+      <wx-view
+        class="weui-cells weui-cells_after-title "
+      >
+        <mp-cell
+          class="result"
+          data-index="{{0}}"
+          bind:tap="selectResult"
+        >
+          <wx-view
+            class="weui-cell    "
+            hoverClass="weui-cell_active weui-active"
+            bind:tap="navigateTo"
+          >
+            <wx-view
+              class="weui-cell__hd "
+            />
+            <wx-view
+              class="weui-cell__bd weui-cell_primary"
+            >
+              <wx-view>
+                搜索结果123
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="weui-cell__ft "
+            />
+          </wx-view>
+        </mp-cell>
+      </wx-view>
+    </wx-view>
+  </mp-cells>
+</mp-searchbar>
+`;
+
+exports[`searchbar basic 5`] = `
+<mp-searchbar
+  id="searchbar"
+  bind:selectresult="onSelectResult"
+>
+  <wx-view
+    class="weui-search-bar  "
+  >
+    <wx-view
+      class="weui-search-bar__form"
+    >
+      <wx-view
+        class="weui-search-bar__box"
+      >
+        <wx-icon
+          class="weui-icon-search"
+          size="12"
+          type="search"
+        />
+        <wx-input
+          class="weui-search-bar__input"
+          focus="{{true}}"
+          placeholder="搜索"
+          type="text"
+          value="123"
+          bind:blur="inputBlur"
+          bind:focus="inputFocus"
+          bind:input="inputChange"
+        />
+        <wx-text
+          class="weui-icon-clear"
+          hoverClass="weui-active"
+          bind:tap="clearInput"
+        />
+      </wx-view>
+      <wx-label
+        class="weui-search-bar__label"
+        bind:tap="showInput"
+      >
+        <wx-icon
+          class="weui-icon-search"
+          size="12"
+          type="search"
+        />
+        <wx-text
+          class="weui-search-bar__text"
+        >
+          搜索
+        </wx-text>
+      </wx-label>
+    </wx-view>
+  </wx-view>
+</mp-searchbar>
+`;
+
+exports[`searchbar basic 6`] = `
+<mp-searchbar
+  id="searchbar"
+  bind:selectresult="onSelectResult"
+>
+  <wx-view
+    class="weui-search-bar weui-search-bar_focusing "
+  >
+    <wx-view
+      class="weui-search-bar__form"
+    >
+      <wx-view
+        class="weui-search-bar__box"
+      >
+        <wx-icon
+          class="weui-icon-search"
+          size="12"
+          type="search"
+        />
+        <wx-input
+          class="weui-search-bar__input"
+          focus="{{true}}"
+          placeholder="搜索"
+          type="text"
+          value=""
+          bind:blur="inputBlur"
+          bind:focus="inputFocus"
+          bind:input="inputChange"
+        />
+      </wx-view>
+      <wx-label
+        class="weui-search-bar__label"
+        bind:tap="showInput"
+      >
+        <wx-icon
+          class="weui-icon-search"
+          size="12"
+          type="search"
+        />
+        <wx-text
+          class="weui-search-bar__text"
+        >
+          搜索
+        </wx-text>
+      </wx-label>
+    </wx-view>
+    <wx-view
+      class="weui-search-bar__cancel-btn"
+      bind:tap="hideInput"
+    >
+      取消
+    </wx-view>
+  </wx-view>
+</mp-searchbar>
+`;

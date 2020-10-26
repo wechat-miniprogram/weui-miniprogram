@@ -1,11 +1,11 @@
 Component({
     options: {
-        addGlobalClass: true,
+        addGlobalClass: true
     },
     properties: {
         extClass: {
-          type: String,
-          value: ''
+            type: String,
+            value: ''
         },
         list: {
             type: Array,
@@ -18,14 +18,14 @@ Component({
     },
     methods: {
         tabChange(e) {
-            const {index} = e.currentTarget.dataset
+            const { index } = e.currentTarget.dataset
             if (index === this.data.current) {
                 return
             }
             this.setData({
                 current: index
             })
-            this.triggerEvent('change', {index, item: this.data.list[index]})
+            this.triggerEvent('change', { index, item: this.data.list[index] })
         }
     }
 })

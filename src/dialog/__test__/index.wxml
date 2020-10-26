@@ -1,0 +1,9 @@
+<mp-dialog
+    class="dialog"
+    title="dialog title"
+    show="{{!closed}}"
+    buttons="{{buttons}}"
+    bindbuttontap="buttontap"
+    bindclose="close"
+>
+</mp-dialog>

@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "mp-cells": "../../../cells/cells",
+        "mp-cell": "../../../cell/cell",
+        "mp-checkbox": "../../../checkbox/checkbox",
+        "mp-checkbox-group": "../../../checkbox-group/checkbox-group",
+        "mp-form": "../../../form/form"
+    }
+}

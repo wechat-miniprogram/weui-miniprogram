@@ -1,5 +1,5 @@
 <block wx:if="{{link}}">
-    <view bindtap="navigateTo" class="weui-cell weui-cell_access {{extClass}} {{outerClass}}{{inForm ? ' weui-cell-inform' : ''}}{{inline ? '' : ' .weui-cell_label-block'}}" hover-class="{{hover ? 'weui-cell_active' : ''}}">
+    <view bindtap="navigateTo" class="weui-cell weui-cell_access {{extClass}} {{outerClass}}{{inForm ? ' weui-cell-inform' : ''}}{{inline ? '' : ' .weui-cell_label-block'}}" hover-class="{{hover ? 'weui-cell_active weui-active' : extHoverClass}}">
         <view wx:if="{{hasHeader}}" class="weui-cell__hd {{iconClass}}">
             <block wx:if="{{icon}}">
                 <image src="{{icon}}" class="weui-cell__icon" mode="aspectFit"></image>
@@ -35,7 +35,7 @@
     </view>
 </block>
 <block wx:else>
-    <view bindtap="navigateTo" class="weui-cell {{showError && error ? 'weui-cell_warn' : ''}} {{inForm ? 'weui-cell-inform' : ''}} {{extClass}} {{outerClass}}" hover-class="{{hover ? 'weui-cell_active' : ''}}">
+    <view bindtap="navigateTo" class="weui-cell {{showError && error ? 'weui-cell_warn' : ''}} {{inForm ? 'weui-cell-inform' : ''}} {{extClass}} {{outerClass}}" hover-class="{{hover ? 'weui-cell_active weui-active' : extHoverClass}}">
         <view wx:if="{{hasHeader}}" class="weui-cell__hd {{iconClass}}">
             <block wx:if="{{icon}}">
                 <image src="{{icon}}" class="weui-cell__icon" mode="aspectFit"></image>

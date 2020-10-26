@@ -1,20 +1,20 @@
 Component({
     options: {
         addGlobalClass: true,
-        multipleSlots: true,
+        multipleSlots: true
     },
     properties: {
         title: {
             type: String,
-            value: '',
+            value: ''
         },
         extClass: {
-          type: String,
-          value: ''
+            type: String,
+            value: ''
         },
         footer: {
-          type: String,
-          value: ''
+            type: String,
+            value: ''
         }
     },
     data: {
@@ -22,7 +22,7 @@ Component({
         checkboxCount: 0,
         checkboxIsMulti: false,
         outerClass: '',
-        childClass: '',
+        childClass: ''
     },
     relations: {
         '../cell/cell': {
@@ -34,10 +34,10 @@ Component({
                 if (target !== this.data.firstItem) {
                     target.setOuterClass('weui-cell_wxss')
                 }
-            },
+            }
         },
         '../form-page/form-page': {
-            type: 'ancestor',
+            type: 'ancestor'
         },
         '../checkbox-group/checkbox-group': {
             type: 'descendant',
@@ -70,6 +70,6 @@ Component({
             this.setData({
                 outerClass: className
             })
-        },
+        }
     }
 })

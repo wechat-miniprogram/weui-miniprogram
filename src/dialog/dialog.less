@@ -1,6 +1,3 @@
-@import "../weui-wxss/src/style/widget/weui-tips/weui-mask.wxss";
-@import "../weui-wxss/src/style/widget/weui-tips/weui-dialog.wxss";
-
 .weui-dialog.weui-dialog_hidden {
   opacity: 0;
   transform: scale3d(1, 1, 0);
@@ -8,9 +5,9 @@
 
 .weui-dialog {
   opacity: 1;
-  -webkit-transform: scale3d(1, 1, 1);
-  transform: scale3d(1, 1, 1);
-  transition: all 0.3s ease-in;
+  -webkit-transform: scale3d(1, 1, 1) translateY(-50%);
+  transform: scale3d(1, 1, 1) translateY(-50%);
+  transition: all 0.2s ease-in;
 }
 
 .weui-mask.weui-mask_hidden {
@@ -21,6 +18,6 @@
 .weui-mask{
   opacity: 1;
   transform: scale3d(1, 1, 1);
-  transition: all 0.3s ease-in
+  transition: all 0.2s ease-in
 }
 

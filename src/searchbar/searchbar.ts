@@ -1,15 +1,15 @@
 Component({
     options: {
-      addGlobalClass: true,
+        addGlobalClass: true
     },
     properties: {
         extClass: {
-          type: String,
-          value: ''
+            type: String,
+            value: ''
         },
         focus: {
             type: Boolean,
-            value: false,
+            value: false
         },
         placeholder: {
             type: String,
@@ -19,12 +19,14 @@ Component({
             type: String,
             value: ''
         },
-        search: { // 返回Promise的函数
-        // @ts-ignore
+        search: {
+            // 返回Promise的函数
+            // @ts-ignore
             type: Function,
             value: null
         },
-        throttle: { // 500ms内只会调用一次search函数
+        throttle: {
+            // 500ms内只会调用一次search函数
             type: Number,
             value: 500
         },
@@ -40,25 +42,28 @@ Component({
     data: {
         result: [] // 搜索结果
     },
+    /* @ts-ignore */
     lastSearch: Date.now(),
     lifetimes: {
         // @ts-ignore
         attached() {
-        // @ts-ignore
+            // @ts-ignore
             if (this.data.focus) {
                 this.setData({
-                    searchState: true,
+                    searchState: true
                 })
             }
         }
     },
     methods: {
         clearInput() {
-        // @ts-ignore
+            // @ts-ignore
             this.setData({
                 value: '',
+                focus: true,
+                result: []
             })
-        // @ts-ignore
+            // @ts-ignore
             this.triggerEvent('clear')
         },
         // @ts-ignore
@@ -66,26 +71,27 @@ Component({
             // this.setData({
             //     searchState: true
             // })
-        // @ts-ignore
+            // @ts-ignore
             this.triggerEvent('focus', e.detail)
         },
         // @ts-ignore
         inputBlur(e) {
             this.setData({
-                focus: false,
+                focus: false
             })
             this.triggerEvent('blur', e.detail)
         },
         showInput() {
             this.setData({
                 focus: true,
-                searchState: true,
+                searchState: true
             })
         },
         hideInput() {
             this.setData({
-                searchState: false,
+                searchState: false
             })
+            this.triggerEvent('cancel')
         },
         // @ts-ignore
         inputChange(e) {
@@ -101,21 +107,24 @@ Component({
             }
             this.lastSearch = Date.now()
             this.timerId = setTimeout(() => {
-                this.data.search(this.data.value).then(json => {
-                    this.setData({
-                        result: json
+                this.data
+                    .search(this.data.value)
+                    .then((json) => {
+                        this.setData({
+                            result: json
+                        })
                     })
-                }).catch(err => {
-                    console.log('search error', err)
-                })
-            }, this.data.throttle)
+                    .catch((err) => {
+                        console.error('search error', err)
 
+                    })
+            }, this.data.throttle)
         },
         // @ts-ignore
         selectResult(e) {
-            const {index} = e.currentTarget.dataset
+            const { index } = e.currentTarget.dataset
             const item = this.data.result[index]
-            this.triggerEvent('selectresult', {index, item})
+            this.triggerEvent('selectresult', { index, item })
         }
     }
 })
