@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "submodule": "git submodule init && git submodule update --init",
-    "init": "npm run submodule && npm i && cd src/weui-wxss && npm i && gulp build:style && cd ../../ && npm run dev",
+    "init": "npm run submodule && npm i && npm run dev",
     "dev": "gulp dev --develop",
     "demo": "gulp demo --develop",
     "watch": "gulp watch --develop --watch",
