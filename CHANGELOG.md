@@ -1,5 +1,13 @@
 # 更新日志
 
+## 1.0.6
+
+- feat: `mp-grids` 支持动态修改 grids
+- feat: `mp-searchbar` 点击取消按钮时触发 `cancel` 事件
+- fix: 修复 `mp-half-screen-dialog` 中的 desc 属性判断
+- fix: 修复 `mp-searchbar` 节流搜索没有获取最新数据
+- fix: 修复 `form-validator` 中 bytelength 报错
+
 ## 1.0.5
 
 - updata: 升级 weui-wxss
