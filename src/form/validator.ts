@@ -120,8 +120,8 @@ export default {
     },
     bytelength(r, value, param) {
         param = r.param
-        // eslint-disable-next-line no-control-regex
         value = value || ''
+        // eslint-disable-next-line no-control-regex
         const len = value.replace(/[^\x00-\xff]/g, '**').length
         if (len > param) {
             return sprintf(r.message || defaultMessage.bytelength, param)
