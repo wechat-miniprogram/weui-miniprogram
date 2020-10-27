@@ -129,7 +129,9 @@ Component({
                     const files = res.tempFilePaths.map((item, i) => ({
                         loading: true,
                         // @ts-ignore
-                        url: `data:image/jpg;base64,${wx.arrayBufferToBase64(contents[i])}`
+                        url:
+                            res.tempFilePaths[i] ||
+                            `data:image/jpg;base64,${wx.arrayBufferToBase64(contents[i])}`
                     }))
                     if (!files || !files.length) return
                     if (typeof this.data.upload === 'function') {
