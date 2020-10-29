@@ -32,6 +32,8 @@ module.exports = {
         'prettier/prettier': 'error',
         'no-console': ["error", { allow: ["warn", "error"] } ],
         '@typescript-eslint/ban-ts-ignore': 'off',
-        '@typescript-eslint/no-empty-function': 'off'
+        '@typescript-eslint/no-empty-function': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/no-explicit-any': 'off'
     }
 }

@@ -40,7 +40,7 @@ class FormValidator {
             let failCount = 0
             const errors = this.errors
             const models = this.models
-            let errorChanged = false
+            // let errorChanged = false
             Object.keys(this.rules).forEach((fieldName) => {
                 const oldError = errors[fieldName]
                 this._innerValidateField(fieldName, models[fieldName], (valid, newError) => {
