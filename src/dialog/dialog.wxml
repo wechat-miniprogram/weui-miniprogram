@@ -7,14 +7,12 @@
         </view>
       </view>
       <view class="weui-dialog__bd">
-        <slot></slot>
+        <slot name="content"></slot>
       </view>
-      <view class="weui-dialog__ft">
-        <block wx:if="{{buttons && buttons.length}}">
-          <view wx:for="{{buttons}}" wx:key="index" class="weui-dialog__btn {{item.className}} {{item.extClass}}" hover-class="weui-active" data-index="{{index}}" bindtap="buttonTap">{{item.text}}</view>
-        </block>
-        <slot name="footer" wx:else></slot>
+      <view class="weui-dialog__ft" wx:if="{{buttons && buttons.length}}">
+        <view wx:for="{{buttons}}" wx:key="index" class="weui-dialog__btn {{item.className}} {{item.extClass}}" hover-class="weui-active" data-index="{{index}}" bindtap="buttonTap">{{item.text}}</view>
       </view>
+      <slot name="footer" wx:else></slot>
     </view>
 </view>
 
