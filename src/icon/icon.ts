@@ -44,7 +44,8 @@ Component({
             this._genSrc(iconData[v][getFixedIconType(this.data.type)])
         },
         _genSrcByType(v) {
-            this._genSrc(iconData[this.data.icon][getFixedIconType(v)])
+            const iconDataItem = iconData[this.data.icon]
+            if (iconDataItem) this._genSrc(iconDataItem[getFixedIconType(v)])
         },
         _genSrc(rawData) {
             if (!rawData) return // type 不存在
