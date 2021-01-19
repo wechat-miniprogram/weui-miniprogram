@@ -21,8 +21,7 @@ Component({
         },
         search: {
             // 返回Promise的函数
-            // @ts-ignore
-            type: Function,
+            type: null, // type: Function 等价 null
             value: null
         },
         throttle: {
