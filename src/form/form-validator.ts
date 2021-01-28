@@ -47,7 +47,7 @@ class FormValidator {
                     if (!valid) failCount++
                     if (diff(oldError, newError)) {
                         errors[fieldName] = newError
-                        errorChanged = true
+                        // errorChanged = true
                     }
                 })
             })
