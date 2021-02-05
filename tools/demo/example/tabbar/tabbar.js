@@ -7,6 +7,8 @@ CustomPage({
         list: [
             {
                 text: '微信',
+                slotIcon: "wx",
+                selectSlotIcon: "selwx",
                 iconPath: app.globalData.iconTabbar,
                 selectedIconPath: app.globalData.iconTabbar,
                 badge: '8'
