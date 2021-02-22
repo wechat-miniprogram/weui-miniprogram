@@ -3,10 +3,9 @@
 exports[`loading basic 1`] = `
 <main>
   <wx-view
-    animation="{{Object {}}}"
-    class="wx_loading_view "
+    class="wx_loading_view   "
     id="wx_loading_view"
-    style="display:;"
+    style=""
   >
     <wx-view
       class="weui-loadmore"
