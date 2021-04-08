@@ -376,7 +376,7 @@ exports[`searchbar basic 6`] = `
         />
         <wx-input
           class="weui-search-bar__input"
-          focus="{{true}}"
+          focus="{{false}}"
           placeholder="搜索"
           type="text"
           value=""
