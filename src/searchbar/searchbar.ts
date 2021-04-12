@@ -59,7 +59,7 @@ Component({
             // @ts-ignore
             this.setData({
                 value: '',
-                focus: true,
+                focus: false,
                 result: []
             })
             // @ts-ignore
