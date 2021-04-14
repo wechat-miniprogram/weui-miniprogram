@@ -1,6 +1,6 @@
 {
   "name": "weui-miniprogram",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "小程序 WeUI 组件库",
   "main": "miniprogram_dist/index.js",
   "files": [
@@ -26,6 +26,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/wechat-miniprogram/weui-miniprogram.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "homepage": "https://github.com/wechat-miniprogram/weui-miniprogram",
   "author": "xushengni,tomylin,cunjinli,rockhou",

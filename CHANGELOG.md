@@ -1,5 +1,15 @@
 # 更新日志
 
+## 1.0.8
+
+- fix: 修复 #153
+- fix: 修复 `mp-searchbar` 点击取消时错误 focus
+- fix: 修复 `mp-half-screen-dialog` 按钮在部分机型按钮排列出错
+
+## 1.0.7
+
+- fix: 修复 `mp-icon` 在 type 改变时报错
+
 ## 1.0.6
 
 - feat: `mp-grids` 支持动态修改 grids
