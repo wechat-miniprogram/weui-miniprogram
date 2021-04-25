@@ -7,6 +7,8 @@ exports[`grids basic 1`] = `
   bind:close="onClose"
 >
   <wx-view
+    ariaHidden="{{true}}"
+    ariaRole="dialog"
     class="weui-hidden"
   >
     <wx-view
@@ -27,6 +29,7 @@ exports[`grids basic 1`] = `
           bind:tap="close"
         >
           <wx-view
+            ariaRole="button"
             class="weui-icon-btn weui-icon-btn_close"
             hoverClass="weui-active"
           >
@@ -98,6 +101,8 @@ exports[`grids basic 2`] = `
   bind:close="onClose"
 >
   <wx-view
+    ariaHidden="{{false}}"
+    ariaRole="dialog"
     class="weui-show"
   >
     <wx-view
@@ -118,6 +123,7 @@ exports[`grids basic 2`] = `
           bind:tap="close"
         >
           <wx-view
+            ariaRole="button"
             class="weui-icon-btn weui-icon-btn_close"
             hoverClass="weui-active"
           >
