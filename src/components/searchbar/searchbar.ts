@@ -41,10 +41,9 @@ Component({
     data: {
         result: [] // 搜索结果
     },
+    // @ts-ignore
+    lastSearch: Date.now(),
     lifetimes: {
-        created() {
-            this.lastSearch = Date.now()
-        },
         // @ts-ignore
         attached() {
             // @ts-ignore
@@ -95,6 +94,7 @@ Component({
         },
         // @ts-ignore
         inputChange(e) {
+            console.log('inputChange', this.lastSearch)
             this.setData({
                 value: e.detail.value
             })

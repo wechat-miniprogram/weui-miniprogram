@@ -19,6 +19,7 @@ exports[`grids basic 1`] = `
     />
     <wx-view
       class="weui-half-screen-dialog "
+      catch:touchmove="onMaskMouseMove"
     >
       <wx-view
         class="weui-half-screen-dialog__hd"
@@ -113,6 +114,7 @@ exports[`grids basic 2`] = `
     />
     <wx-view
       class="weui-half-screen-dialog "
+      catch:touchmove="onMaskMouseMove"
     >
       <wx-view
         class="weui-half-screen-dialog__hd"

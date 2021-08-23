@@ -1,10 +1,10 @@
 {
     "component": true,
     "usingComponents": {
-        "mp-cells": "../../components/cells/cells",
-        "mp-cell": "../../components/cell/cell",
-        "mp-checkbox": "../../components/checkbox/checkbox",
-        "mp-checkbox-group": "../../components/checkbox-group/checkbox-group",
-        "mp-form": "../../components/form/form"
+        "mp-cells": "../../../cells/cells",
+        "mp-cell": "../../../cell/cell",
+        "mp-checkbox": "../../../checkbox/checkbox",
+        "mp-checkbox-group": "../../../checkbox-group/checkbox-group",
+        "mp-form": "../../../form/form"
     }
 }
