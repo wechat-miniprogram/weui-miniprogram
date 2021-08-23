@@ -1,5 +1,11 @@
 # 更新日志
 
+## 1.1.0
+
+- feat: 升级 `weui-wxss` 至 2.4.4
+- fix: 防止 `mp-half-screen-dialog` 滚动穿透
+- chore: 构建系统迁移至 mpflow
+
 ## 1.0.8
 
 - fix: 修复 #153
