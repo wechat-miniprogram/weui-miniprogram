@@ -11,9 +11,7 @@
 }
 ```
 
-## 示例代码
 
-{% preview('mp_weui',"searchbar/searchbar.json","searchbar/searchbar.wxml", "searchbar/searchbar.js", "page=searchbar/searchbar.html") %}
 
 ## 属性列表
 | 属性 | 类型 | 默认值 | 必填 | 说明 |

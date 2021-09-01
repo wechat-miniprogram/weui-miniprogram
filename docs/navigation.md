@@ -11,9 +11,7 @@ Navigation是小程序的顶部导航组件，当页面配置`navigationStyle`�
 }
 ```
 
-## 示例代码
 
-{% preview('mp_weui',"navigation/navigation.json","navigation/navigation.wxml", "navigation/navigation.js", "page=navigation/navigation.html") %}
 
 ## 属性列表
 | 属性 | 类型 | 默认值 | 必填 | 说明 |

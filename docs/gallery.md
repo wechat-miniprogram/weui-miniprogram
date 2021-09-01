@@ -11,9 +11,7 @@
 }
 ```
 
-## 示例代码
 
-{% preview('mp_weui',"gallery/gallery.json","gallery/gallery.wxml", "gallery/gallery.js", "page=gallery/gallery.html") %}
 
 ## 属性列表
 | 属性 | 类型 | 默认值 | 说明 |

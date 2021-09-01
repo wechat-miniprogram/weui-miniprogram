@@ -11,9 +11,6 @@
 }
 ```
 
-## 示例代码
-
-{% preview('mp_weui',"loading/loading.json","loading/loading.wxml", "loading/loading.js", "page=loading/loading.html") %}
 
 ## 属性列表
 | 属性 | 类型 | 默认值 | 说明 |

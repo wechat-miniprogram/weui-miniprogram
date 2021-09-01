@@ -12,10 +12,6 @@ Cell是列表或者是表单的一项，常用于设置页的展示，或者用�
 }
 ```
 
-## 示例代码
-
-{% preview('mp_weui',"cell/cell.json","cell/cell.wxml", "cell/cell.js", "page=cell/cell.html") %}
-
 ## 属性列表
 | 属性 | 类型 | 默认值 | 必填 | 说明 |
 | ---- | ---- | ------ | -------- | ---- |

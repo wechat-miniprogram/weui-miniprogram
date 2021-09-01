@@ -11,9 +11,6 @@ Dialog弹窗组件。
 }
 ```
 
-## 示例代码
-
-{% preview('mp_weui',"dialog/dialog.json","dialog/dialog.wxml", "dialog/dialog.js", "page=dialog/dialog.html") %}
 
 ## 属性列表
 | 属性 | 类型 | 默认值 | 必填 | 说明 |

@@ -11,9 +11,6 @@
 }
 ```
 
-## 示例代码
-
-{% preview('mp_weui',"slideview/slideview.json","slideview/slideview.wxml", "slideview/slideview.js", "page=slideview/slideview.html") %}
 
 ## 属性列表
 | 属性 | 类型 | 默认值 | 必填 | 说明 |

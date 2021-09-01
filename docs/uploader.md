@@ -11,9 +11,6 @@
 }
 ```
 
-## 示例代码
-
-{% preview('mp_weui',"uploader/uploader.json","uploader/uploader.wxml", "uploader/uploader.js", "page=uploader/uploader.html") %}
 
 ## 属性列表
 | 属性 | 类型 | 默认值 | 必填 | 说明 |

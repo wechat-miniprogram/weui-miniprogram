@@ -11,9 +11,6 @@ Tabbar组件，也可以用来作为小程序的[自定义Tabbar](https://develo
 }
 ```
 
-## 示例代码
-
-{% preview('mp_weui',"tabbar/tabbar.json","tabbar/tabbar.wxml", "tabbar/tabbar.js", "page=tabbar/tabbar.html") %}
 
 ## 属性列表
 | 属性 | 类型 | 默认值 | 必填 | 说明 |
