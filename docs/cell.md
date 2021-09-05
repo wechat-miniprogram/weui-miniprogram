@@ -25,6 +25,12 @@ Cell是列表或者是表单的一项，常用于设置页的展示，或者用�
 | prop | string |  | 否 | 用在[Form](./form.md)表单组件里面，需要校验的表单的字段名 |
 | footer | string |  | 否 | Cell右侧区域的内容，和名为footer的slot互斥 |
 | inline | boolean |  | 否 | 用在[Form](./form.md)表单组件里面，表示表单项是左右显示还是上下显示 |
+| url | string | | 否 | 在link为true的时候有效，表示navigator的跳转url |
+| footerClass | string | | 否 | 底部的class |
+| hasHeader | boolean | true | 否 | 是否包含头部 |
+| hasFooter | boolean | true | 否 | 是否包含底部 |
+| hasBody | boolean | true | 否 | 是否包含body |
+| extHoverClass | string | | 否 | 提供给需要定制 hover-class 的场景，要求 hover 为 false |
 
 ## Slot
 | 名称 | 描述 |
