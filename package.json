@@ -1,6 +1,6 @@
 {
   "name": "weui-miniprogram",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "小程序 WeUI 组件库",
   "main": "miniprogram_dist/index.js",
   "files": [

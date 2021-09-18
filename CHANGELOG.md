@@ -1,5 +1,10 @@
 # 更新日志
 
+## 1.1.1
+
+- fix: 修复找不到 wxs
+- fix: 修复找不到 weui-wxss
+
 ## 1.1.0
 
 - feat: 升级 `weui-wxss` 至 2.4.4
