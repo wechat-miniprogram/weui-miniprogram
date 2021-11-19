@@ -12,14 +12,18 @@
         <mp-halfScreenDialog show="{{typeF}}">
           <view slot="title">测试标题A</view>
           <view slot="desc">这是自定义描述区</view>
-          <button slot="footer" type="default" class="weui-btn">按钮A</button>
-          <button slot="footer" type="primary" class="weui-btn">按钮B</button>
+          <view class="weui-half-screen-dialog__btn-area" slot="footer">
+            <button slot="footer" type="default" class="weui-btn">按钮A</button>
+            <button slot="footer" type="primary" class="weui-btn">按钮B</button>
+          </view>
         </mp-halfScreenDialog>
         <mp-halfScreenDialog show="{{typeT}}" closabled="{{false}}">
           <view slot="title">测试标题A</view>
           <view slot="desc">这是自定义描述区</view>
-          <button slot="footer" type="default" class="weui-btn">按钮A</button>
-          <button slot="footer" type="primary" class="weui-btn">按钮B</button>
+          <view class="weui-half-screen-dialog__btn-area" slot="footer">
+            <button type="default" class="weui-btn">按钮A</button>
+            <button type="primary" class="weui-btn">按钮B</button>
+          </view>
         </mp-halfScreenDialog>
         <mp-halfScreenDialog
           bindbuttontap="buttontap"

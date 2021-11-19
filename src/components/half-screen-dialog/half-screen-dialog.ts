@@ -52,7 +52,29 @@ Component({
             value: [] // {text, extClass}
         }
     },
+    data: {
+        wrapperShow: false,
+        innerShow: false
+    },
+    lifetimes: {
+        ready() {
+            this._showChange(this.data.show)
+        }
+    },
     methods: {
+        _showChange(show) {
+            if (show) {
+                this.setData({
+                    wrapperShow: true,
+                    innerShow: true
+                })
+            } else {
+                this.setData({ innerShow: false })
+                setTimeout(() => {
+                    this.setData({ wrapperShow: false })
+                }, 300)
+            }
+        },
         close(e) {
             const { type } = e.currentTarget.dataset
             if (this.data.maskClosable || type === 'close') {
