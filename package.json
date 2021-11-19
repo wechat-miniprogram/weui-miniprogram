@@ -72,6 +72,6 @@
     "tslint-loader": "^3.5.4",
     "typescript": "^3.3.3333",
     "vinyl": "^2.2.0",
-    "weui-wxss": "^2.4.4"
+    "weui-wxss": "^2.5.0"
   }
 }
