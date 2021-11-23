@@ -6,6 +6,7 @@ exports[`cells & cell basic cells & cell 1`] = `
     class="cells"
   >
     <wx-view
+      ariaRole=""
       class=" weui-cells__group  "
     >
       <wx-view
@@ -20,6 +21,7 @@ exports[`cells & cell basic cells & cell 1`] = `
           class="cell1"
         >
           <wx-view
+            ariaRole=""
             class="weui-cell    "
             hoverClass=""
             bind:tap="navigateTo"
@@ -34,12 +36,12 @@ exports[`cells & cell basic cells & cell 1`] = `
               />
             </wx-view>
             <wx-view
-              class="weui-cell__bd "
+              class="weui-cell__bd"
             >
               标题文字
             </wx-view>
             <wx-view
-              class="weui-cell__ft "
+              class="weui-cell__ft weui-cell__ft_in-access "
             >
               说明文字
             </wx-view>
@@ -49,7 +51,8 @@ exports[`cells & cell basic cells & cell 1`] = `
           class="cell2"
         >
           <wx-view
-            class="weui-cell    weui-cell_wxss"
+            ariaRole=""
+            class="weui-cell   weui-cell_wxss "
             hoverClass=""
             bind:tap="navigateTo"
           >
@@ -57,12 +60,12 @@ exports[`cells & cell basic cells & cell 1`] = `
               class="weui-cell__hd "
             />
             <wx-view
-              class="weui-cell__bd "
+              class="weui-cell__bd"
             >
               标题文字
             </wx-view>
             <wx-view
-              class="weui-cell__ft "
+              class="weui-cell__ft weui-cell__ft_in-access "
             >
               说明文字
             </wx-view>

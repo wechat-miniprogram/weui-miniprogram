@@ -15,6 +15,10 @@ Component({
         footer: {
             type: String,
             value: ''
+        },
+        ariaRole: {
+            type: String,
+            value: ''
         }
     },
     data: {
