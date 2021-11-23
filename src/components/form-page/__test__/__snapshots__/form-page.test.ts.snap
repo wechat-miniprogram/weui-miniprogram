@@ -26,6 +26,7 @@ exports[`form-page basic 1`] = `
         <wx-view>
           <mp-cells>
             <wx-view
+              ariaRole=""
               class=" weui-cells__group weui-cells__group weui-cells__group_form weui-cells_form "
             >
               <wx-view

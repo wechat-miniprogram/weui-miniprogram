@@ -10,6 +10,7 @@ exports[`form basic 1`] = `
     >
       <mp-cells>
         <wx-view
+          ariaRole=""
           class=" weui-cells__group  "
         >
           <wx-view
@@ -28,78 +29,82 @@ exports[`form basic 1`] = `
                 bind:change="checkedChange"
               >
                 <mp-checkbox>
-                  <mp-cell
-                    bind:tap="checkedChange"
-                  >
-                    <wx-view
-                      class="weui-cell   weui-check__label   ^weui-cell_radio "
-                      hoverClass="weui-active"
-                      bind:tap="navigateTo"
-                    >
+                  <wx-label>
+                    <mp-cell>
                       <wx-view
-                        class="weui-cell__bd "
-                      >
-                        <wx-view>
-                          cell standard
-                        </wx-view>
-                      </wx-view>
-                      <wx-view
-                        class="weui-cell__ft "
+                        ariaRole=""
+                        class="weui-cell  weui-check__label   ^weui-cell_radio  "
+                        hoverClass="weui-active"
+                        bind:tap="navigateTo"
                       >
                         <wx-view
-                          slot="footer"
+                          class="weui-cell__bd"
                         >
-                          <wx-radio
-                            checked="{{true}}"
-                            class="weui-check"
-                            color=""
-                            disabled=""
-                            value="0"
-                          />
-                          <wx-icon
-                            class="weui-icon-checked"
-                          />
+                          <wx-view>
+                            cell standard
+                          </wx-view>
+                        </wx-view>
+                        <wx-view
+                          class="weui-cell__ft weui-cell__ft_in-access "
+                        >
+                          <wx-view
+                            slot="footer"
+                          >
+                            <wx-radio
+                              checked="{{true}}"
+                              class="weui-check"
+                              color=""
+                              disabled=""
+                              value="0"
+                              bind:tap="checkedChange"
+                            />
+                            <wx-icon
+                              class="weui-icon-checked"
+                            />
+                          </wx-view>
                         </wx-view>
                       </wx-view>
-                    </wx-view>
-                  </mp-cell>
+                    </mp-cell>
+                  </wx-label>
                 </mp-checkbox>
                 <mp-checkbox>
-                  <mp-cell
-                    bind:tap="checkedChange"
-                  >
-                    <wx-view
-                      class="weui-cell   weui-check__label weui-cell_wxss  ^weui-cell_radio "
-                      hoverClass="weui-active"
-                      bind:tap="navigateTo"
-                    >
+                  <wx-label>
+                    <mp-cell>
                       <wx-view
-                        class="weui-cell__bd "
-                      >
-                        <wx-view>
-                          cell standard
-                        </wx-view>
-                      </wx-view>
-                      <wx-view
-                        class="weui-cell__ft "
+                        ariaRole=""
+                        class="weui-cell  weui-check__label weui-cell_wxss  ^weui-cell_radio  "
+                        hoverClass="weui-active"
+                        bind:tap="navigateTo"
                       >
                         <wx-view
-                          slot="footer"
+                          class="weui-cell__bd"
                         >
-                          <wx-radio
-                            checked=""
-                            class="weui-check"
-                            color=""
-                            disabled=""
-                            value="1"
-                          />
-                          <wx-icon
-                            class="weui-icon-checked"
-                          />
+                          <wx-view>
+                            cell standard
+                          </wx-view>
+                        </wx-view>
+                        <wx-view
+                          class="weui-cell__ft weui-cell__ft_in-access "
+                        >
+                          <wx-view
+                            slot="footer"
+                          >
+                            <wx-radio
+                              checked=""
+                              class="weui-check"
+                              color=""
+                              disabled=""
+                              value="1"
+                              bind:tap="checkedChange"
+                            />
+                            <wx-icon
+                              class="weui-icon-checked"
+                            />
+                          </wx-view>
                         </wx-view>
                       </wx-view>
-                    </wx-view>
-                  </mp-cell>
+                    </mp-cell>
+                  </wx-label>
                 </mp-checkbox>
               </radio-group>
             </mp-checkbox-group>
@@ -108,6 +113,7 @@ exports[`form basic 1`] = `
       </mp-cells>
       <mp-cells>
         <wx-view
+          ariaRole=""
           class=" weui-cells__group  weui-cells_checkbox"
         >
           <wx-view
@@ -126,78 +132,82 @@ exports[`form basic 1`] = `
                 bind:change="checkedChange"
               >
                 <mp-checkbox>
-                  <mp-cell
-                    bind:tap="checkedChange"
-                  >
-                    <wx-view
-                      class="weui-cell   weui-check__label   ^weui-cell_checkbox "
-                      hoverClass="weui-active"
-                      bind:tap="navigateTo"
-                    >
+                  <wx-label>
+                    <mp-cell>
                       <wx-view
-                        class="weui-cell__hd "
+                        ariaRole=""
+                        class="weui-cell  weui-check__label   ^weui-cell_checkbox  "
+                        hoverClass="weui-active"
+                        bind:tap="navigateTo"
                       >
                         <wx-view
-                          slot="icon"
+                          class="weui-cell__hd "
                         >
-                          <wx-checkbox
-                            checked="{{true}}"
-                            class="weui-check"
-                            color=""
-                            disabled=""
-                            value="0"
-                          />
-                          <wx-icon
-                            class="weui-icon-checked"
-                          />
+                          <wx-view
+                            slot="icon"
+                          >
+                            <wx-checkbox
+                              checked="{{true}}"
+                              class="weui-check"
+                              color=""
+                              disabled=""
+                              value="0"
+                              bind:tap="checkedChange"
+                            />
+                            <wx-icon
+                              class="weui-icon-checked"
+                            />
+                          </wx-view>
+                        </wx-view>
+                        <wx-view
+                          class="weui-cell__bd"
+                        >
+                          <wx-view>
+                            standard is dealt for u.
+                          </wx-view>
                         </wx-view>
                       </wx-view>
-                      <wx-view
-                        class="weui-cell__bd "
-                      >
-                        <wx-view>
-                          standard is dealt for u.
-                        </wx-view>
-                      </wx-view>
-                    </wx-view>
-                  </mp-cell>
+                    </mp-cell>
+                  </wx-label>
                 </mp-checkbox>
                 <mp-checkbox>
-                  <mp-cell
-                    bind:tap="checkedChange"
-                  >
-                    <wx-view
-                      class="weui-cell   weui-check__label weui-cell_wxss  ^weui-cell_checkbox "
-                      hoverClass="weui-active"
-                      bind:tap="navigateTo"
-                    >
+                  <wx-label>
+                    <mp-cell>
                       <wx-view
-                        class="weui-cell__hd "
+                        ariaRole=""
+                        class="weui-cell  weui-check__label weui-cell_wxss  ^weui-cell_checkbox  "
+                        hoverClass="weui-active"
+                        bind:tap="navigateTo"
                       >
                         <wx-view
-                          slot="icon"
+                          class="weui-cell__hd "
                         >
-                          <wx-checkbox
-                            checked=""
-                            class="weui-check"
-                            color=""
-                            disabled=""
-                            value="1"
-                          />
-                          <wx-icon
-                            class="weui-icon-checked"
-                          />
+                          <wx-view
+                            slot="icon"
+                          >
+                            <wx-checkbox
+                              checked=""
+                              class="weui-check"
+                              color=""
+                              disabled=""
+                              value="1"
+                              bind:tap="checkedChange"
+                            />
+                            <wx-icon
+                              class="weui-icon-checked"
+                            />
+                          </wx-view>
+                        </wx-view>
+                        <wx-view
+                          class="weui-cell__bd"
+                        >
+                          <wx-view>
+                            standard is dealicient for u.
+                          </wx-view>
                         </wx-view>
                       </wx-view>
-                      <wx-view
-                        class="weui-cell__bd "
-                      >
-                        <wx-view>
-                          standard is dealicient for u.
-                        </wx-view>
-                      </wx-view>
-                    </wx-view>
-                  </mp-cell>
+                    </mp-cell>
+                  </wx-label>
                 </mp-checkbox>
               </checkbox-group>
               <radio-group
@@ -210,6 +220,7 @@ exports[`form basic 1`] = `
       </mp-cells>
       <mp-cells>
         <wx-view
+          ariaRole=""
           class=" weui-cells__group  "
         >
           <wx-view
@@ -222,7 +233,8 @@ exports[`form basic 1`] = `
           >
             <mp-cell>
               <wx-view
-                class="weui-cell  weui-cell-inform  "
+                ariaRole=""
+                class="weui-cell     weui-cell-inform"
                 hoverClass=""
                 bind:tap="navigateTo"
               >
@@ -236,7 +248,7 @@ exports[`form basic 1`] = `
                   </wx-view>
                 </wx-view>
                 <wx-view
-                  class="weui-cell__bd "
+                  class="weui-cell__bd"
                 >
                   <wx-input
                     class="weui-input"
@@ -246,13 +258,14 @@ exports[`form basic 1`] = `
                   />
                 </wx-view>
                 <wx-view
-                  class="weui-cell__ft "
+                  class="weui-cell__ft weui-cell__ft_in-access "
                 />
               </wx-view>
             </mp-cell>
             <mp-cell>
               <wx-view
-                class="weui-cell  weui-cell-inform  weui-cell_wxss"
+                ariaRole=""
+                class="weui-cell   weui-cell_wxss  weui-cell-inform"
                 hoverClass=""
                 bind:tap="navigateTo"
               >
@@ -266,7 +279,7 @@ exports[`form basic 1`] = `
                   </wx-view>
                 </wx-view>
                 <wx-view
-                  class="weui-cell__bd "
+                  class="weui-cell__bd"
                 >
                   <wx-input
                     class="weui-input"
@@ -276,13 +289,14 @@ exports[`form basic 1`] = `
                   />
                 </wx-view>
                 <wx-view
-                  class="weui-cell__ft "
+                  class="weui-cell__ft weui-cell__ft_in-access "
                 />
               </wx-view>
             </mp-cell>
             <mp-cell>
               <wx-view
-                class="weui-cell  weui-cell-inform  weui-cell_vcode weui-cell_wxss"
+                ariaRole=""
+                class="weui-cell   weui-cell_vcode weui-cell_wxss  weui-cell-inform"
                 hoverClass=""
                 bind:tap="navigateTo"
               >
@@ -296,7 +310,7 @@ exports[`form basic 1`] = `
                   </wx-view>
                 </wx-view>
                 <wx-view
-                  class="weui-cell__bd "
+                  class="weui-cell__bd"
                 >
                   <wx-input
                     class="weui-input"
@@ -306,7 +320,7 @@ exports[`form basic 1`] = `
                   />
                 </wx-view>
                 <wx-view
-                  class="weui-cell__ft "
+                  class="weui-cell__ft weui-cell__ft_in-access "
                 >
                   <wx-button
                     class="weui-vcode-btn"
@@ -320,7 +334,8 @@ exports[`form basic 1`] = `
             </mp-cell>
             <mp-cell>
               <wx-view
-                class="weui-cell  weui-cell-inform  weui-cell_wxss"
+                ariaRole=""
+                class="weui-cell   weui-cell_wxss  weui-cell-inform"
                 hoverClass=""
                 bind:tap="navigateTo"
               >
@@ -334,7 +349,7 @@ exports[`form basic 1`] = `
                   </wx-view>
                 </wx-view>
                 <wx-view
-                  class="weui-cell__bd "
+                  class="weui-cell__bd"
                 >
                   <wx-picker
                     data-field="date"
@@ -352,13 +367,14 @@ exports[`form basic 1`] = `
                   </wx-picker>
                 </wx-view>
                 <wx-view
-                  class="weui-cell__ft "
+                  class="weui-cell__ft weui-cell__ft_in-access "
                 />
               </wx-view>
             </mp-cell>
             <mp-cell>
               <wx-view
-                class="weui-cell  weui-cell-inform  weui-cell_vcode weui-cell_wxss"
+                ariaRole=""
+                class="weui-cell   weui-cell_vcode weui-cell_wxss  weui-cell-inform"
                 hoverClass=""
                 bind:tap="navigateTo"
               >
@@ -372,7 +388,7 @@ exports[`form basic 1`] = `
                   </wx-view>
                 </wx-view>
                 <wx-view
-                  class="weui-cell__bd "
+                  class="weui-cell__bd"
                 >
                   <wx-input
                     class="weui-input"
@@ -382,7 +398,7 @@ exports[`form basic 1`] = `
                   />
                 </wx-view>
                 <wx-view
-                  class="weui-cell__ft "
+                  class="weui-cell__ft weui-cell__ft_in-access "
                 >
                   <wx-image
                     class="weui-vcode-img"
@@ -403,6 +419,7 @@ exports[`form basic 1`] = `
       </mp-cells>
       <mp-cells>
         <wx-view
+          ariaRole=""
           class=" weui-cells__group  "
         >
           <wx-view
@@ -415,7 +432,8 @@ exports[`form basic 1`] = `
           >
             <mp-cell>
               <wx-view
-                class="weui-cell  weui-cell-inform  "
+                ariaRole=""
+                class="weui-cell     weui-cell-inform"
                 hoverClass=""
                 bind:tap="navigateTo"
               >
@@ -429,7 +447,7 @@ exports[`form basic 1`] = `
                   </wx-view>
                 </wx-view>
                 <wx-view
-                  class="weui-cell__bd "
+                  class="weui-cell__bd"
                 >
                   <wx-input
                     class="weui-input"
@@ -439,7 +457,7 @@ exports[`form basic 1`] = `
                   />
                 </wx-view>
                 <wx-view
-                  class="weui-cell__ft "
+                  class="weui-cell__ft weui-cell__ft_in-access "
                 />
               </wx-view>
             </mp-cell>
@@ -448,6 +466,7 @@ exports[`form basic 1`] = `
       </mp-cells>
       <mp-cells>
         <wx-view
+          ariaRole=""
           class=" weui-cells__group  "
         >
           <wx-view
@@ -460,7 +479,8 @@ exports[`form basic 1`] = `
           >
             <mp-cell>
               <wx-view
-                class="weui-cell  weui-cell-inform  "
+                ariaRole=""
+                class="weui-cell     weui-cell-inform"
                 hoverClass=""
                 bind:tap="navigateTo"
               >
@@ -474,10 +494,10 @@ exports[`form basic 1`] = `
                   </wx-view>
                 </wx-view>
                 <wx-view
-                  class="weui-cell__bd "
+                  class="weui-cell__bd"
                 />
                 <wx-view
-                  class="weui-cell__ft "
+                  class="weui-cell__ft weui-cell__ft_in-access "
                 >
                   <wx-switch
                     checked="{{true}}"
@@ -491,6 +511,7 @@ exports[`form basic 1`] = `
       </mp-cells>
       <mp-cells>
         <wx-view
+          ariaRole=""
           class=" weui-cells__group  "
         >
           <wx-view
@@ -503,7 +524,8 @@ exports[`form basic 1`] = `
           >
             <mp-cell>
               <wx-view
-                class="weui-cell  weui-cell-inform  "
+                ariaRole=""
+                class="weui-cell     weui-cell-inform"
                 hoverClass=""
                 bind:tap="navigateTo"
               >
@@ -517,7 +539,7 @@ exports[`form basic 1`] = `
                   </wx-view>
                 </wx-view>
                 <wx-view
-                  class="weui-cell__bd "
+                  class="weui-cell__bd"
                 >
                   <wx-input
                     class="weui-input"
@@ -525,7 +547,7 @@ exports[`form basic 1`] = `
                   />
                 </wx-view>
                 <wx-view
-                  class="weui-cell__ft "
+                  class="weui-cell__ft weui-cell__ft_in-access "
                 />
               </wx-view>
             </mp-cell>
@@ -534,6 +556,7 @@ exports[`form basic 1`] = `
       </mp-cells>
       <mp-cells>
         <wx-view
+          ariaRole=""
           class=" weui-cells__group  "
         >
           <wx-view
@@ -546,12 +569,13 @@ exports[`form basic 1`] = `
           >
             <mp-cell>
               <wx-view
-                class="weui-cell  weui-cell-inform  "
+                ariaRole=""
+                class="weui-cell     weui-cell-inform"
                 hoverClass=""
                 bind:tap="navigateTo"
               >
                 <wx-view
-                  class="weui-cell__bd "
+                  class="weui-cell__bd"
                 >
                   <wx-textarea
                     class="weui-textarea"
@@ -571,6 +595,7 @@ exports[`form basic 1`] = `
       </mp-cells>
       <mp-cells>
         <wx-view
+          ariaRole=""
           class=" weui-cells__group  "
         >
           <wx-view
@@ -583,7 +608,8 @@ exports[`form basic 1`] = `
           >
             <mp-cell>
               <wx-view
-                class="weui-cell  weui-cell-inform weui-cell_select weui-cell_select-before "
+                ariaRole=""
+                class="weui-cell  weui-cell_select weui-cell_select-before   weui-cell-inform"
                 hoverClass=""
                 bind:tap="navigateTo"
               >
@@ -615,7 +641,7 @@ exports[`form basic 1`] = `
                   </wx-view>
                 </wx-view>
                 <wx-view
-                  class="weui-cell__bd "
+                  class="weui-cell__bd"
                 >
                   <wx-input
                     class="weui-input"
@@ -623,7 +649,7 @@ exports[`form basic 1`] = `
                   />
                 </wx-view>
                 <wx-view
-                  class="weui-cell__ft "
+                  class="weui-cell__ft weui-cell__ft_in-access "
                 />
               </wx-view>
             </mp-cell>
@@ -632,6 +658,7 @@ exports[`form basic 1`] = `
       </mp-cells>
       <mp-cells>
         <wx-view
+          ariaRole=""
           class=" weui-cells__group  "
         >
           <wx-view
@@ -644,12 +671,13 @@ exports[`form basic 1`] = `
           >
             <mp-cell>
               <wx-view
-                class="weui-cell  weui-cell-inform weui-cell_select "
+                ariaRole=""
+                class="weui-cell  weui-cell_select   weui-cell-inform"
                 hoverClass=""
                 bind:tap="navigateTo"
               >
                 <wx-view
-                  class="weui-cell__bd "
+                  class="weui-cell__bd"
                 >
                   <wx-picker
                     range="{{
@@ -670,13 +698,14 @@ exports[`form basic 1`] = `
                   </wx-picker>
                 </wx-view>
                 <wx-view
-                  class="weui-cell__ft "
+                  class="weui-cell__ft weui-cell__ft_in-access "
                 />
               </wx-view>
             </mp-cell>
             <mp-cell>
               <wx-view
-                class="weui-cell  weui-cell-inform weui-cell_select weui-cell_select-after weui-cell_wxss"
+                ariaRole=""
+                class="weui-cell  weui-cell_select weui-cell_select-after weui-cell_wxss  weui-cell-inform"
                 hoverClass=""
                 bind:tap="navigateTo"
               >
@@ -691,7 +720,7 @@ exports[`form basic 1`] = `
                   </wx-view>
                 </wx-view>
                 <wx-view
-                  class="weui-cell__bd "
+                  class="weui-cell__bd"
                 >
                   <wx-picker
                     range="{{
@@ -712,7 +741,7 @@ exports[`form basic 1`] = `
                   </wx-picker>
                 </wx-view>
                 <wx-view
-                  class="weui-cell__ft "
+                  class="weui-cell__ft weui-cell__ft_in-access "
                 />
               </wx-view>
             </mp-cell>

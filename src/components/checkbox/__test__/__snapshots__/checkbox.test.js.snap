@@ -131,7 +131,6 @@ exports[`checkbox-group & checkbox basic checkbox 1`] = `
                       class="weui-check"
                       color=""
                       disabled=""
-                      id="checkbox"
                       value="0"
                       bind:tap="checkedChange"
                     />
@@ -173,7 +172,6 @@ exports[`checkbox-group & checkbox basic checkbox 1`] = `
                       class="weui-check"
                       color=""
                       disabled=""
-                      id="checkbox"
                       value="1"
                       bind:tap="checkedChange"
                     />
