@@ -18,7 +18,7 @@ CustomPage({
     },
     changeBgColor() {
         this.setData({
-            background: '#ededed'
+            background: '#adadad'
         })
     },
     toggleShow() {
