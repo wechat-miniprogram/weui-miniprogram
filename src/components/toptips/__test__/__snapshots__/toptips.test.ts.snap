@@ -4,7 +4,8 @@ exports[`toptips auto hide 1`] = `
 <main>
   <mp-toptips>
     <wx-view
-      class="weui-toptips weui-toptips_success  weui-toptips_show"
+      ariaRole="alert"
+      class="weui-toptips weui-toptips_warn weui-toptips_success  fadeIn"
     >
       500ms后关闭
     </wx-view>
@@ -16,7 +17,8 @@ exports[`toptips auto hide 2`] = `
 <main>
   <mp-toptips>
     <wx-view
-      class="weui-toptips weui-toptips_success  "
+      ariaRole="alert"
+      class="weui-toptips weui-toptips_warn weui-toptips_success  fadeOut"
     >
       500ms后关闭
     </wx-view>
@@ -27,7 +29,8 @@ exports[`toptips auto hide 2`] = `
 exports[`toptips basic 1`] = `
 <mp-toptips>
   <wx-view
-    class="weui-toptips weui-toptips_error top100 weui-toptips_show"
+    ariaRole="alert"
+    class="weui-toptips weui-toptips_warn weui-toptips_error top100 fadeIn"
   >
     距离顶部100px
   </wx-view>

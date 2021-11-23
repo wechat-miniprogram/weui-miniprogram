@@ -1,3 +1,10 @@
+const typeClassMap = {
+    warn: 'weui-toptips_warn',
+    info: 'weui-toptips_info',
+    success: 'weui-toptips_success',
+    error: 'weui-toptips_error'
+}
+
 Component({
     options: {
         addGlobalClass: true
@@ -27,32 +34,34 @@ Component({
         }
     },
     data: {
-        typeClassMap: {
-            warn: 'weui-toptips_warn',
-            info: 'weui-toptips_info',
-            success: 'weui-toptips_success',
-            error: 'weui-toptips_error'
+        wrapperShow: false,
+        innerShow: false
+    },
+    lifetimes: {
+        ready() {
+            this._showChange(this.data.show)
+        },
+        attached() {
+            this._typeChange(this.data.type)
         }
     },
-    attached() {
-        const data: any = this.data
-        this.setData({
-            className: data.typeClassMap[data.type] || ''
-        })
-    },
     methods: {
-        _typeChange(newVal) {
+        _typeChange(type) {
             this.setData({
-                className: this.data.typeClassMap[newVal] || ''
+                className: typeClassMap[type] || ''
             })
-            return newVal
         },
-        _showChange(newVal) {
-            this._showToptips(newVal)
+        _showChange(show) {
+            if (show) {
+                this._showToptips()
+            } else {
+                this._hideToptips()
+            }
         },
-        _showToptips(newVal) {
-            if (newVal && this.data.delay) {
+        _showToptips() {
+            if (this.data.delay) {
                 setTimeout(() => {
+                    this._hideToptips()
                     this.setData(
                         {
                             show: false
@@ -65,8 +74,16 @@ Component({
                 }, this.data.delay)
             }
             this.setData({
-                show: newVal
+                wrapperShow: true,
+                innerShow: true
             })
+        },
+        _hideToptips() {
+            if (!this.data.innerShow) return
+            this.setData({ innerShow: false })
+            setTimeout(() => {
+                this.setData({ wrapperShow: false })
+            }, 300)
         }
     }
 })
