@@ -35,6 +35,7 @@ Component({
         }
     },
     data: {
+        wrapperShow: false,
         innerShow: false
     },
     ready() {
@@ -52,8 +53,22 @@ Component({
         this.setData({
             buttons
         })
+        this._showChange(this.data.show)
     },
     methods: {
+        _showChange(show) {
+            if (show) {
+                this.setData({
+                    wrapperShow: true,
+                    innerShow: true
+                })
+            } else {
+                this.setData({ innerShow: false })
+                setTimeout(() => {
+                    this.setData({ wrapperShow: false })
+                }, 300)
+            }
+        },
         buttonTap(e) {
             const { index } = e.currentTarget.dataset
             this.triggerEvent('buttontap', { index, item: this.data.buttons[index] }, {})

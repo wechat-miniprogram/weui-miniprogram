@@ -8,48 +8,59 @@ exports[`dialog basic dialog 1`] = `
     bind:close="close"
   >
     <wx-view
-      class="weui-mask "
-      bind:tap="close"
-    />
-    <wx-view
-      class="weui-dialog__wrp "
-      bind:tap="close"
+      ariaModal="true"
+      ariaRole="dialog"
+      class="fadeIn"
     >
       <wx-view
-        class="weui-dialog"
-        catch:tap="stopEvent"
+        ariaLabel="关闭"
+        ariaRole="button"
+        class="weui-mask"
+        bind:tap="close"
+      />
+      <wx-view
+        class="weui-dialog__wrp "
+        bind:tap="close"
       >
         <wx-view
-          class="weui-dialog__hd"
+          class="weui-dialog"
+          catch:tap="stopEvent"
         >
           <wx-view
-            class="weui-dialog__title"
+            class="weui-dialog__hd"
           >
-            dialog title
+            <wx-view
+              class="weui-dialog__title"
+              tabindex="0"
+            >
+              dialog title
           
-          </wx-view>
-        </wx-view>
-        <wx-view
-          class="weui-dialog__bd"
-        />
-        <wx-view
-          class="weui-dialog__ft"
-        >
-          <wx-view
-            class="weui-dialog__btn weui-dialog__btn_default "
-            data-index="{{0}}"
-            hoverClass="weui-active"
-            bind:tap="buttonTap"
-          >
-            取消
+            </wx-view>
           </wx-view>
           <wx-view
-            class="weui-dialog__btn weui-dialog__btn_primary "
-            data-index="{{1}}"
-            hoverClass="weui-active"
-            bind:tap="buttonTap"
+            class="weui-dialog__bd"
+          />
+          <wx-view
+            class="weui-dialog__ft"
           >
-            确定
+            <wx-view
+              ariaRole="button"
+              class="weui-dialog__btn weui-dialog__btn_default "
+              data-index="{{0}}"
+              hoverClass="weui-active"
+              bind:tap="buttonTap"
+            >
+              取消
+            </wx-view>
+            <wx-view
+              ariaRole="button"
+              class="weui-dialog__btn weui-dialog__btn_primary "
+              data-index="{{1}}"
+              hoverClass="weui-active"
+              bind:tap="buttonTap"
+            >
+              确定
+            </wx-view>
           </wx-view>
         </wx-view>
       </wx-view>
@@ -66,9 +77,63 @@ exports[`dialog close 1`] = `
     bind:close="close"
   >
     <wx-view
-      class="weui-mask weui-mask_hidden"
-      bind:tap="close"
-    />
+      ariaModal="true"
+      ariaRole="dialog"
+      class="fadeOut"
+    >
+      <wx-view
+        ariaLabel="关闭"
+        ariaRole="button"
+        class="weui-mask"
+        bind:tap="close"
+      />
+      <wx-view
+        class="weui-dialog__wrp "
+        bind:tap="close"
+      >
+        <wx-view
+          class="weui-dialog"
+          catch:tap="stopEvent"
+        >
+          <wx-view
+            class="weui-dialog__hd"
+          >
+            <wx-view
+              class="weui-dialog__title"
+              tabindex="0"
+            >
+              dialog title
+          
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="weui-dialog__bd"
+          />
+          <wx-view
+            class="weui-dialog__ft"
+          >
+            <wx-view
+              ariaRole="button"
+              class="weui-dialog__btn  "
+              data-index="{{0}}"
+              hoverClass="weui-active"
+              bind:tap="buttonTap"
+            >
+              取消
+            </wx-view>
+            <wx-view
+              ariaRole="button"
+              class="weui-dialog__btn  "
+              data-index="{{1}}"
+              hoverClass="weui-active"
+              bind:tap="buttonTap"
+            >
+              确定
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </wx-view>
+    </wx-view>
   </mp-dialog>
 </main>
 `;
