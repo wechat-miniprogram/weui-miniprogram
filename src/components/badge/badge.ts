@@ -10,6 +10,10 @@ Component({
         content: {
             type: String,
             value: ''
+        },
+        ariaLabel: {
+            type: String,
+            value: ''
         }
     }
 })

@@ -3,6 +3,7 @@
 exports[`badge badge with content 1`] = `
 <main>
   <wx-view
+    ariaLabel=""
     class="weui-badge  "
   >
     badge content
@@ -13,6 +14,7 @@ exports[`badge badge with content 1`] = `
 exports[`badge badge without content 1`] = `
 <main>
   <wx-view
+    ariaLabel=""
     class="weui-badge  weui-badge_dot"
   >
     

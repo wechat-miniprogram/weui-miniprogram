@@ -18,7 +18,7 @@
             <mp-cell>
                 <view slot="title" style="position: relative;margin-right: 10px;">
                     <image src="../images/pic_160.png" style="width: 50px; height: 50px; display: block"/>
-                    <mp-badge content="99+" style="position: absolute;top: -.4em;right: -.4em;"/>
+                    <mp-badge aria-label="未读" content="99+" style="position: absolute;top: -.4em;right: -.4em;"/>
                 </view>
                 <view>联系人名称</view>
                 <view style="font-size: 13px;color: #888888;">摘要信息</view>
