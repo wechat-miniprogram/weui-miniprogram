@@ -1,15 +1,15 @@
 import CustomPage from '../../base/CustomPage'
 
 CustomPage({
-    open: function(){
+    open: function () {
         wx.showActionSheet({
             itemList: ['A', 'B', 'C'],
-            success: function(res) {
+            success: function (res) {
                 if (!res.cancel) {
                     console.log(res.tapIndex)
                 }
             }
-        });
+        })
     },
     data: {
         showDialog: false,
@@ -33,4 +33,4 @@ CustomPage({
         console.log(e)
         this.closeDialog()
     }
-});
+})

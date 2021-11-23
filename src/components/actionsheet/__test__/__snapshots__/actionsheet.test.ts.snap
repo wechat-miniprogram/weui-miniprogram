@@ -8,72 +8,84 @@ exports[`actionsheet basic actionsheet 1`] = `
     bind:close="close"
   >
     <wx-view
-      class="weui-mask  customer-mask-class"
-      bind:tap="closeActionSheet"
-    />
-    <wx-view
-      class="weui-actionsheet weui-actionsheet_toggle "
+      ariaModal="true"
+      ariaRole="dialog"
     >
       <wx-view
-        class="weui-actionsheet__title"
-      >
-        <wx-view
-          class="weui-actionsheet__title-text"
-        >
-          actionsheet title
-        </wx-view>
-      </wx-view>
+        ariaLabel="关闭"
+        ariaRole="button"
+        class="weui-mask fadeIn customer-mask-class"
+        bind:tap="closeActionSheet"
+      />
       <wx-view
-        class="weui-actionsheet__menu"
+        class="weui-actionsheet weui-animate-slide-up "
       >
         <wx-view
-          class="weui-actionsheet__cell "
-          data-groupindex="{{0}}"
-          data-index="{{0}}"
-          data-value="{{1}}"
-          hoverClass="weui-active"
-          bind:tap="buttonTap"
+          class="weui-actionsheet__title"
+          tabindex="0"
         >
-          
-                item 1
-            
+          <wx-view
+            class="weui-actionsheet__title-text"
+          >
+            actionsheet title
+          </wx-view>
         </wx-view>
         <wx-view
-          class="weui-actionsheet__cell "
-          data-groupindex="{{0}}"
-          data-index="{{1}}"
-          data-value="{{2}}"
-          hoverClass="weui-active"
-          bind:tap="buttonTap"
+          class="weui-actionsheet__menu"
         >
-          
-                item 2
+          <wx-view
+            ariaRole="button"
+            class="weui-actionsheet__cell "
+            data-groupindex="{{0}}"
+            data-index="{{0}}"
+            data-value="{{1}}"
+            hoverClass="weui-active"
+            bind:tap="buttonTap"
+          >
             
+                    item 1
+                
+          </wx-view>
+          <wx-view
+            ariaRole="button"
+            class="weui-actionsheet__cell "
+            data-groupindex="{{0}}"
+            data-index="{{1}}"
+            data-value="{{2}}"
+            hoverClass="weui-active"
+            bind:tap="buttonTap"
+          >
+            
+                    item 2
+                
+          </wx-view>
+          <wx-view
+            ariaRole="button"
+            class="weui-actionsheet__cell weui-actionsheet__cell_warn"
+            data-groupindex="{{0}}"
+            data-index="{{2}}"
+            data-value="{{3}}"
+            hoverClass="weui-active"
+            bind:tap="buttonTap"
+          >
+            
+                    item 3
+                
+          </wx-view>
         </wx-view>
         <wx-view
-          class="weui-actionsheet__cell weui-actionsheet__cell_warn"
-          data-groupindex="{{0}}"
-          data-index="{{2}}"
-          data-value="{{3}}"
-          hoverClass="weui-active"
-          bind:tap="buttonTap"
+          class="weui-actionsheet__action"
         >
-          
-                item 3
-            
-        </wx-view>
-      </wx-view>
-      <wx-view
-        class="weui-actionsheet__action"
-      >
-        <wx-view
-          class="weui-actionsheet__cell"
-          data-type="close"
-          hoverClass="weui-active"
-          id="iosActionsheetCancel"
-          bind:tap="closeActionSheet"
-        >
-          actionsheet cancel text
+          <wx-view
+            ariaRole="button"
+            class="weui-actionsheet__cell weui-actionsheet__cell_cancel"
+            data-type="close"
+            hoverClass="weui-active"
+            id="iosActionsheetCancel"
+            bind:tap="closeActionSheet"
+          >
+            actionsheet cancel text
+          </wx-view>
         </wx-view>
       </wx-view>
     </wx-view>
@@ -89,59 +101,165 @@ exports[`actionsheet no cancel 1`] = `
     bind:close="close"
   >
     <wx-view
-      class="weui-mask  customer-mask-class"
-      bind:tap="closeActionSheet"
-    />
-    <wx-view
-      class="weui-actionsheet weui-actionsheet_toggle "
+      ariaModal="true"
+      ariaRole="dialog"
     >
       <wx-view
-        class="weui-actionsheet__title"
+        ariaLabel="关闭"
+        ariaRole="button"
+        class="weui-mask fadeIn customer-mask-class"
+        bind:tap="closeActionSheet"
+      />
+      <wx-view
+        class="weui-actionsheet weui-animate-slide-up "
       >
         <wx-view
-          class="weui-actionsheet__title-text"
+          class="weui-actionsheet__title"
+          tabindex="0"
         >
-          actionsheet title
+          <wx-view
+            class="weui-actionsheet__title-text"
+          >
+            actionsheet title
+          </wx-view>
+        </wx-view>
+        <wx-view
+          class="weui-actionsheet__action"
+        >
+          <wx-view
+            ariaRole="button"
+            class="weui-actionsheet__cell "
+            data-groupindex="{{0}}"
+            data-index="{{0}}"
+            data-value="{{1}}"
+            hoverClass="weui-active"
+            bind:tap="buttonTap"
+          >
+            
+                    item 1
+                
+          </wx-view>
+          <wx-view
+            ariaRole="button"
+            class="weui-actionsheet__cell "
+            data-groupindex="{{0}}"
+            data-index="{{1}}"
+            data-value="{{2}}"
+            hoverClass="weui-active"
+            bind:tap="buttonTap"
+          >
+            
+                    item 2
+                
+          </wx-view>
+          <wx-view
+            ariaRole="button"
+            class="weui-actionsheet__cell weui-actionsheet__cell_warn"
+            data-groupindex="{{0}}"
+            data-index="{{2}}"
+            data-value="{{3}}"
+            hoverClass="weui-active"
+            bind:tap="buttonTap"
+          >
+            
+                    item 3
+                
+          </wx-view>
         </wx-view>
       </wx-view>
+    </wx-view>
+  </mp-actionsheet>
+</main>
+`;
+
+exports[`actionsheet show on create 1`] = `
+<main
+  show="{{true}}"
+>
+  <mp-actionsheet
+    class="comp"
+    bind:actiontap="actiontap"
+    bind:close="close"
+  >
+    <wx-view
+      ariaModal="true"
+      ariaRole="dialog"
+    >
       <wx-view
-        class="weui-actionsheet__action"
+        ariaLabel="关闭"
+        ariaRole="button"
+        class="weui-mask fadeIn customer-mask-class"
+        bind:tap="closeActionSheet"
+      />
+      <wx-view
+        class="weui-actionsheet weui-animate-slide-up "
       >
         <wx-view
-          class="weui-actionsheet__cell "
-          data-groupindex="{{0}}"
-          data-index="{{0}}"
-          data-value="{{1}}"
-          hoverClass="weui-active"
-          bind:tap="buttonTap"
+          class="weui-actionsheet__title"
+          tabindex="0"
         >
-          
-                item 1
-            
+          <wx-view
+            class="weui-actionsheet__title-text"
+          >
+            actionsheet title
+          </wx-view>
         </wx-view>
         <wx-view
-          class="weui-actionsheet__cell "
-          data-groupindex="{{0}}"
-          data-index="{{1}}"
-          data-value="{{2}}"
-          hoverClass="weui-active"
-          bind:tap="buttonTap"
+          class="weui-actionsheet__menu"
         >
-          
-                item 2
+          <wx-view
+            ariaRole="button"
+            class="weui-actionsheet__cell "
+            data-groupindex="{{0}}"
+            data-index="{{0}}"
+            data-value="{{1}}"
+            hoverClass="weui-active"
+            bind:tap="buttonTap"
+          >
             
+                    item 1
+                
+          </wx-view>
+          <wx-view
+            ariaRole="button"
+            class="weui-actionsheet__cell "
+            data-groupindex="{{0}}"
+            data-index="{{1}}"
+            data-value="{{2}}"
+            hoverClass="weui-active"
+            bind:tap="buttonTap"
+          >
+            
+                    item 2
+                
+          </wx-view>
+          <wx-view
+            ariaRole="button"
+            class="weui-actionsheet__cell weui-actionsheet__cell_warn"
+            data-groupindex="{{0}}"
+            data-index="{{2}}"
+            data-value="{{3}}"
+            hoverClass="weui-active"
+            bind:tap="buttonTap"
+          >
+            
+                    item 3
+                
+          </wx-view>
         </wx-view>
         <wx-view
-          class="weui-actionsheet__cell weui-actionsheet__cell_warn"
-          data-groupindex="{{0}}"
-          data-index="{{2}}"
-          data-value="{{3}}"
-          hoverClass="weui-active"
-          bind:tap="buttonTap"
+          class="weui-actionsheet__action"
         >
-          
-                item 3
-            
+          <wx-view
+            ariaRole="button"
+            class="weui-actionsheet__cell weui-actionsheet__cell_cancel"
+            data-type="close"
+            hoverClass="weui-active"
+            id="iosActionsheetCancel"
+            bind:tap="closeActionSheet"
+          >
+            actionsheet cancel text
+          </wx-view>
         </wx-view>
       </wx-view>
     </wx-view>

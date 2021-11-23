@@ -15,6 +15,13 @@ describe('actionsheet', () => {
         expect(container.toJSON()).toMatchSnapshot()
     })
 
+    test('show on create', async () => {
+        const container = simulate.render(id, { show: true })
+        container.attach(document.createElement('parent-wrapper'))
+
+        expect(container.toJSON()).toMatchSnapshot()
+    })
+
     test('no cancel', async () => {
         const container = simulate.render(id, { showCancel: false })
         container.attach(document.createElement('parent-wrapper'))

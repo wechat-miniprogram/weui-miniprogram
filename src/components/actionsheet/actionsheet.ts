@@ -42,7 +42,8 @@ Component({
         show: {
             // 是否开启 actionsheet
             type: Boolean,
-            value: false
+            value: false,
+            observer: '_showChange'
         },
         actions: {
             // actions 列表
@@ -52,7 +53,33 @@ Component({
         }
     },
 
+    data: {
+        wrapperShow: false,
+        innerShow: false
+    },
+
+    lifetimes: {
+        ready() {
+            this._showChange(this.data.show)
+        }
+    },
+
     methods: {
+        _showChange(show) {
+            if (show) {
+                this.setData({
+                    wrapperShow: true,
+                    innerShow: true
+                })
+            } else {
+                this.setData({
+                    innerShow: false
+                })
+                setTimeout(() => {
+                    this.setData({ wrapperShow: false })
+                }, 300)
+            }
+        },
         _groupChange(e): void {
             // 支持 一维数组 写法
             if (e.length > 0 && typeof e[0] !== 'string' && !(e[0] instanceof Array)) {
