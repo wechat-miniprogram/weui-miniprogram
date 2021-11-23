@@ -1,6 +1,19 @@
-<view class="weui-gallery {{show ? 'weui-gallery_show' : ''}} {{extClass}}">
+<view
+  wx:if="{{wrapperShow}}"
+  class="weui-gallery {{innerShow ? 'fadeIn' : 'fadeOut'}} {{extClass}}"
+  aria-modal="true"
+  tabindex="0"
+>
   <view class="weui-gallery__info">{{current+1}}/{{currentImgs.length}}</view>
-  <swiper class="weui-gallery__img__wrp" bindtap="hideGallery" indicator-dots="{{false}}" bindchange="change" current="{{current}}" autoplay="{{false}}" duration="{{500}}">
+  <swiper
+    class="weui-gallery__img__wrp"
+    bindtap="hideGallery"
+    indicator-dots="{{false}}"
+    bindchange="change"
+    current="{{current}}"
+    autoplay="{{false}}"
+    duration="{{500}}"
+  >
     <block wx:for="{{currentImgs}}" wx:key="index">
       <swiper-item>
         <image mode="aspectFit" class="weui-gallery__img" src="{{item}}"></image>
@@ -8,6 +21,14 @@
     </block>
   </swiper>
   <view class="weui-gallery__opr" wx:if="{{showDelete}}">
-    <navigator bindtap="deleteImg" class="weui-gallery__del">删除</navigator>
+    <view
+      aria-role="button"
+      aria-label="删除"
+      class="weui-gallery__del"
+      bindtap="deleteImg"
+      hover-class="weui-active"
+    >
+        <i class="weui-icon-delete weui-icon_gallery-delete"></i>
+    </view>
   </view>
 </view>

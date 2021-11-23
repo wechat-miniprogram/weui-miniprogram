@@ -17,7 +17,8 @@ Component({
         },
         show: {
             type: Boolean,
-            value: true
+            value: true,
+            observer: '_showChange'
         },
         current: {
             type: Number,
@@ -33,13 +34,29 @@ Component({
         }
     },
     data: {
+        wrapperShow: false,
+        innerShow: false,
         currentImgs: []
     },
     ready() {
+        this._showChange(this.data.show)
         const data: any = this.data
         this.setData({ currentImgs: data.imgUrls })
     },
     methods: {
+        _showChange(show) {
+            if (show) {
+                this.setData({
+                    wrapperShow: true,
+                    innerShow: true
+                })
+            } else {
+                this.setData({ innerShow: false })
+                setTimeout(() => {
+                    this.setData({ wrapperShow: false })
+                }, 300)
+            }
+        },
         change(e) {
             this.setData({
                 current: e.detail.current

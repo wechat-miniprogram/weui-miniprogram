@@ -7,58 +7,7 @@ exports[`gallery basic 1`] = `
   bind:change="onChange"
   bind:delete="onDelete"
   bind:hide="onHide"
->
-  <wx-view
-    class="weui-gallery  "
-  >
-    <wx-view
-      class="weui-gallery__info"
-    >
-      1/3
-    </wx-view>
-    <wx-swiper
-      autoplay="{{false}}"
-      class="weui-gallery__img__wrp"
-      current="{{0}}"
-      duration="{{500}}"
-      indicatorDots="{{false}}"
-      bind:change="change"
-      bind:tap="hideGallery"
-    >
-      <swiper-item>
-        <wx-image
-          class="weui-gallery__img"
-          mode="aspectFit"
-          src="http://qq.com/1.jpg"
-        />
-      </swiper-item>
-      <swiper-item>
-        <wx-image
-          class="weui-gallery__img"
-          mode="aspectFit"
-          src="http://qq.com/2.jpg"
-        />
-      </swiper-item>
-      <swiper-item>
-        <wx-image
-          class="weui-gallery__img"
-          mode="aspectFit"
-          src="http://qq.com/3.jpg"
-        />
-      </swiper-item>
-    </wx-swiper>
-    <wx-view
-      class="weui-gallery__opr"
-    >
-      <wx-navigator
-        class="weui-gallery__del"
-        bind:tap="deleteImg"
-      >
-        删除
-      </wx-navigator>
-    </wx-view>
-  </wx-view>
-</mp-gallery>
+/>
 `;
 
 exports[`gallery basic 2`] = `
@@ -70,7 +19,9 @@ exports[`gallery basic 2`] = `
   bind:hide="onHide"
 >
   <wx-view
-    class="weui-gallery weui-gallery_show "
+    ariaModal="true"
+    class="weui-gallery fadeIn "
+    tabindex="0"
   >
     <wx-view
       class="weui-gallery__info"
@@ -111,12 +62,17 @@ exports[`gallery basic 2`] = `
     <wx-view
       class="weui-gallery__opr"
     >
-      <wx-navigator
+      <wx-view
+        ariaLabel="删除"
+        ariaRole="button"
         class="weui-gallery__del"
+        hoverClass="weui-active"
         bind:tap="deleteImg"
       >
-        删除
-      </wx-navigator>
+        <i
+          class="weui-icon-delete weui-icon_gallery-delete"
+        />
+      </wx-view>
     </wx-view>
   </wx-view>
 </mp-gallery>
@@ -131,7 +87,9 @@ exports[`gallery basic 3`] = `
   bind:hide="onHide"
 >
   <wx-view
-    class="weui-gallery weui-gallery_show "
+    ariaModal="true"
+    class="weui-gallery fadeIn "
+    tabindex="0"
   >
     <wx-view
       class="weui-gallery__info"
@@ -172,12 +130,17 @@ exports[`gallery basic 3`] = `
     <wx-view
       class="weui-gallery__opr"
     >
-      <wx-navigator
+      <wx-view
+        ariaLabel="删除"
+        ariaRole="button"
         class="weui-gallery__del"
+        hoverClass="weui-active"
         bind:tap="deleteImg"
       >
-        删除
-      </wx-navigator>
+        <i
+          class="weui-icon-delete weui-icon_gallery-delete"
+        />
+      </wx-view>
     </wx-view>
   </wx-view>
 </mp-gallery>
@@ -192,7 +155,9 @@ exports[`gallery basic 4`] = `
   bind:hide="onHide"
 >
   <wx-view
-    class="weui-gallery weui-gallery_show "
+    ariaModal="true"
+    class="weui-gallery fadeIn "
+    tabindex="0"
   >
     <wx-view
       class="weui-gallery__info"
@@ -226,12 +191,17 @@ exports[`gallery basic 4`] = `
     <wx-view
       class="weui-gallery__opr"
     >
-      <wx-navigator
+      <wx-view
+        ariaLabel="删除"
+        ariaRole="button"
         class="weui-gallery__del"
+        hoverClass="weui-active"
         bind:tap="deleteImg"
       >
-        删除
-      </wx-navigator>
+        <i
+          class="weui-icon-delete weui-icon_gallery-delete"
+        />
+      </wx-view>
     </wx-view>
   </wx-view>
 </mp-gallery>
@@ -246,7 +216,9 @@ exports[`gallery basic 5`] = `
   bind:hide="onHide"
 >
   <wx-view
-    class="weui-gallery  "
+    ariaModal="true"
+    class="weui-gallery fadeOut "
+    tabindex="0"
   >
     <wx-view
       class="weui-gallery__info"
@@ -280,12 +252,17 @@ exports[`gallery basic 5`] = `
     <wx-view
       class="weui-gallery__opr"
     >
-      <wx-navigator
+      <wx-view
+        ariaLabel="删除"
+        ariaRole="button"
         class="weui-gallery__del"
+        hoverClass="weui-active"
         bind:tap="deleteImg"
       >
-        删除
-      </wx-navigator>
+        <i
+          class="weui-icon-delete weui-icon_gallery-delete"
+        />
+      </wx-view>
     </wx-view>
   </wx-view>
 </mp-gallery>

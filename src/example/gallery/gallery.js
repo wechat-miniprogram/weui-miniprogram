@@ -9,6 +9,9 @@ CustomPage({
         ],
         show: true
     },
+    openGallery() {
+        this.setData({ show: true })
+    },
     change(e) {
         console.log('current index has changed', e.detail)
     },
@@ -17,11 +20,5 @@ CustomPage({
     },
     hide() {
         console.log('component hide')
-        setTimeout(() => {
-            console.log('component show')
-            this.setData({
-                show: true
-            })
-        }, 1000)
     }
 });
