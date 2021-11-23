@@ -95,7 +95,6 @@ Component({
         },
         // @ts-ignore
         inputChange(e) {
-            console.log('inputChange', this.lastSearch)
             this.setData({
                 value: e.detail.value
             })
