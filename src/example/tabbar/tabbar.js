@@ -9,7 +9,8 @@ CustomPage({
                 text: '微信',
                 iconPath: app.globalData.iconTabbar,
                 selectedIconPath: app.globalData.iconTabbar,
-                badge: '8'
+                badge: '8',
+                ariaLabel: '8个新通知'
             },
             {
                 text: '通讯录',
@@ -20,7 +21,8 @@ CustomPage({
                 text: '发现',
                 iconPath: app.globalData.iconTabbar,
                 selectedIconPath: app.globalData.iconTabbar,
-                dot: true
+                dot: true,
+                ariaLabel: '未读'
             },
             {
                 text: '我',
