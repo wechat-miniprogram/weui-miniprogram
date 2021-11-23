@@ -1,7 +1,8 @@
 Component({
     options: {
-        addGlobalClass: true
-    },
+        addGlobalClass: true,
+        writeIdToDOM: true
+    } as any,
     properties: {
         extClass: {
             type: String,

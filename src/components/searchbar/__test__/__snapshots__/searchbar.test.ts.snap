@@ -10,6 +10,10 @@ exports[`searchbar basic 1`] = `
       class="weui-search-bar  "
     >
       <wx-view
+        ariaExpanded=""
+        ariaHaspopup="{{true}}"
+        ariaOwns="searchResult"
+        ariaRole="combobox"
         class="weui-search-bar__form"
       >
         <wx-view
@@ -21,6 +25,7 @@ exports[`searchbar basic 1`] = `
             type="search"
           />
           <wx-input
+            ariaControls="searchResult"
             class="weui-search-bar__input"
             focus="{{false}}"
             placeholder="搜索"
@@ -33,6 +38,7 @@ exports[`searchbar basic 1`] = `
         </wx-view>
         <wx-label
           class="weui-search-bar__label"
+          id="searchText"
           bind:tap="showInput"
         >
           <wx-icon
@@ -41,6 +47,7 @@ exports[`searchbar basic 1`] = `
             type="search"
           />
           <wx-text
+            ariaHidden="{{true}}"
             class="weui-search-bar__text"
           >
             搜索
@@ -61,6 +68,10 @@ exports[`searchbar basic 2`] = `
     class="weui-search-bar weui-search-bar_focusing "
   >
     <wx-view
+      ariaExpanded="{{true}}"
+      ariaHaspopup="{{true}}"
+      ariaOwns="searchResult"
+      ariaRole="combobox"
       class="weui-search-bar__form"
     >
       <wx-view
@@ -72,6 +83,7 @@ exports[`searchbar basic 2`] = `
           type="search"
         />
         <wx-input
+          ariaControls="searchResult"
           class="weui-search-bar__input"
           focus="{{true}}"
           placeholder="搜索"
@@ -84,6 +96,7 @@ exports[`searchbar basic 2`] = `
       </wx-view>
       <wx-label
         class="weui-search-bar__label"
+        id="searchText"
         bind:tap="showInput"
       >
         <wx-icon
@@ -92,6 +105,7 @@ exports[`searchbar basic 2`] = `
           type="search"
         />
         <wx-text
+          ariaHidden="{{true}}"
           class="weui-search-bar__text"
         >
           搜索
@@ -99,6 +113,7 @@ exports[`searchbar basic 2`] = `
       </wx-label>
     </wx-view>
     <wx-view
+      ariaRole="button"
       class="weui-search-bar__cancel-btn"
       bind:tap="hideInput"
     >
@@ -117,6 +132,10 @@ exports[`searchbar basic 3`] = `
     class="weui-search-bar weui-search-bar_focusing "
   >
     <wx-view
+      ariaExpanded="{{true}}"
+      ariaHaspopup="{{true}}"
+      ariaOwns="searchResult"
+      ariaRole="combobox"
       class="weui-search-bar__form"
     >
       <wx-view
@@ -128,6 +147,7 @@ exports[`searchbar basic 3`] = `
           type="search"
         />
         <wx-input
+          ariaControls="searchResult"
           class="weui-search-bar__input"
           focus="{{true}}"
           placeholder="搜索"
@@ -138,6 +158,8 @@ exports[`searchbar basic 3`] = `
           bind:input="inputChange"
         />
         <wx-text
+          ariaLabel="清除"
+          ariaRole="button"
           class="weui-icon-clear"
           hoverClass="weui-active"
           bind:tap="clearInput"
@@ -145,6 +167,7 @@ exports[`searchbar basic 3`] = `
       </wx-view>
       <wx-label
         class="weui-search-bar__label"
+        id="searchText"
         bind:tap="showInput"
       >
         <wx-icon
@@ -153,6 +176,7 @@ exports[`searchbar basic 3`] = `
           type="search"
         />
         <wx-text
+          ariaHidden="{{true}}"
           class="weui-search-bar__text"
         >
           搜索
@@ -160,14 +184,18 @@ exports[`searchbar basic 3`] = `
       </wx-label>
     </wx-view>
     <wx-view
+      ariaRole="button"
       class="weui-search-bar__cancel-btn"
       bind:tap="hideInput"
     >
       取消
     </wx-view>
   </wx-view>
-  <mp-cells>
+  <mp-cells
+    id="searchResult"
+  >
     <wx-view
+      ariaRole="listbox"
       class=" searchbar-result  weui-cells__group  "
     >
       <wx-view
@@ -179,6 +207,7 @@ exports[`searchbar basic 3`] = `
           bind:tap="selectResult"
         >
           <wx-view
+            ariaRole="option"
             class="weui-cell    "
             hoverClass="weui-cell_active weui-active"
             bind:tap="navigateTo"
@@ -187,14 +216,14 @@ exports[`searchbar basic 3`] = `
               class="weui-cell__hd "
             />
             <wx-view
-              class="weui-cell__bd weui-cell_primary"
+              class="weui-cell__bd"
             >
               <wx-view>
                 搜索结果123
               </wx-view>
             </wx-view>
             <wx-view
-              class="weui-cell__ft "
+              class="weui-cell__ft weui-cell__ft_in-access "
             />
           </wx-view>
         </mp-cell>
@@ -213,6 +242,10 @@ exports[`searchbar basic 4`] = `
     class="weui-search-bar weui-search-bar_focusing "
   >
     <wx-view
+      ariaExpanded="{{true}}"
+      ariaHaspopup="{{true}}"
+      ariaOwns="searchResult"
+      ariaRole="combobox"
       class="weui-search-bar__form"
     >
       <wx-view
@@ -224,6 +257,7 @@ exports[`searchbar basic 4`] = `
           type="search"
         />
         <wx-input
+          ariaControls="searchResult"
           class="weui-search-bar__input"
           focus="{{true}}"
           placeholder="搜索"
@@ -234,6 +268,8 @@ exports[`searchbar basic 4`] = `
           bind:input="inputChange"
         />
         <wx-text
+          ariaLabel="清除"
+          ariaRole="button"
           class="weui-icon-clear"
           hoverClass="weui-active"
           bind:tap="clearInput"
@@ -241,6 +277,7 @@ exports[`searchbar basic 4`] = `
       </wx-view>
       <wx-label
         class="weui-search-bar__label"
+        id="searchText"
         bind:tap="showInput"
       >
         <wx-icon
@@ -249,6 +286,7 @@ exports[`searchbar basic 4`] = `
           type="search"
         />
         <wx-text
+          ariaHidden="{{true}}"
           class="weui-search-bar__text"
         >
           搜索
@@ -256,14 +294,18 @@ exports[`searchbar basic 4`] = `
       </wx-label>
     </wx-view>
     <wx-view
+      ariaRole="button"
       class="weui-search-bar__cancel-btn"
       bind:tap="hideInput"
     >
       取消
     </wx-view>
   </wx-view>
-  <mp-cells>
+  <mp-cells
+    id="searchResult"
+  >
     <wx-view
+      ariaRole="listbox"
       class=" searchbar-result  weui-cells__group  "
     >
       <wx-view
@@ -275,6 +317,7 @@ exports[`searchbar basic 4`] = `
           bind:tap="selectResult"
         >
           <wx-view
+            ariaRole="option"
             class="weui-cell    "
             hoverClass="weui-cell_active weui-active"
             bind:tap="navigateTo"
@@ -283,14 +326,14 @@ exports[`searchbar basic 4`] = `
               class="weui-cell__hd "
             />
             <wx-view
-              class="weui-cell__bd weui-cell_primary"
+              class="weui-cell__bd"
             >
               <wx-view>
                 搜索结果123
               </wx-view>
             </wx-view>
             <wx-view
-              class="weui-cell__ft "
+              class="weui-cell__ft weui-cell__ft_in-access "
             />
           </wx-view>
         </mp-cell>
@@ -309,6 +352,10 @@ exports[`searchbar basic 5`] = `
     class="weui-search-bar  "
   >
     <wx-view
+      ariaExpanded="{{false}}"
+      ariaHaspopup="{{true}}"
+      ariaOwns="searchResult"
+      ariaRole="combobox"
       class="weui-search-bar__form"
     >
       <wx-view
@@ -320,6 +367,7 @@ exports[`searchbar basic 5`] = `
           type="search"
         />
         <wx-input
+          ariaControls="searchResult"
           class="weui-search-bar__input"
           focus="{{true}}"
           placeholder="搜索"
@@ -330,6 +378,8 @@ exports[`searchbar basic 5`] = `
           bind:input="inputChange"
         />
         <wx-text
+          ariaLabel="清除"
+          ariaRole="button"
           class="weui-icon-clear"
           hoverClass="weui-active"
           bind:tap="clearInput"
@@ -337,6 +387,7 @@ exports[`searchbar basic 5`] = `
       </wx-view>
       <wx-label
         class="weui-search-bar__label"
+        id="searchText"
         bind:tap="showInput"
       >
         <wx-icon
@@ -345,6 +396,7 @@ exports[`searchbar basic 5`] = `
           type="search"
         />
         <wx-text
+          ariaHidden="{{true}}"
           class="weui-search-bar__text"
         >
           搜索
@@ -364,6 +416,10 @@ exports[`searchbar basic 6`] = `
     class="weui-search-bar weui-search-bar_focusing "
   >
     <wx-view
+      ariaExpanded="{{true}}"
+      ariaHaspopup="{{true}}"
+      ariaOwns="searchResult"
+      ariaRole="combobox"
       class="weui-search-bar__form"
     >
       <wx-view
@@ -375,6 +431,7 @@ exports[`searchbar basic 6`] = `
           type="search"
         />
         <wx-input
+          ariaControls="searchResult"
           class="weui-search-bar__input"
           focus="{{false}}"
           placeholder="搜索"
@@ -387,6 +444,7 @@ exports[`searchbar basic 6`] = `
       </wx-view>
       <wx-label
         class="weui-search-bar__label"
+        id="searchText"
         bind:tap="showInput"
       >
         <wx-icon
@@ -395,6 +453,7 @@ exports[`searchbar basic 6`] = `
           type="search"
         />
         <wx-text
+          ariaHidden="{{true}}"
           class="weui-search-bar__text"
         >
           搜索
@@ -402,6 +461,7 @@ exports[`searchbar basic 6`] = `
       </wx-label>
     </wx-view>
     <wx-view
+      ariaRole="button"
       class="weui-search-bar__cancel-btn"
       bind:tap="hideInput"
     >
