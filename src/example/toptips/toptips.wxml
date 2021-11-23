@@ -3,10 +3,12 @@
         <view class="page__title">Toptips</view>
     </view>
     <view class="page__bd">
-        <button type="primary" disabled="{{disabled}}" bindtap="showToptips">显示Toptips</button>
+        <button class="weui-btn" type="primary" bindtap="showToptips1">显示1</button>
+        <button class="weui-btn" type="primary" bindtap="showToptips2">显示2</button>
+        <button class="weui-btn" type="primary" bindtap="showToptips3">显示3</button>
 
-        <mp-toptips ext-class="top100" msg="距离顶部100px" type="error" show="{{show}}"></mp-toptips>
-        <mp-toptips ext-class="top200" msg="距离顶部200px" type="info" show="{{show}}"></mp-toptips>
-        <mp-toptips ext-class="top300" msg="距离顶部300px" type="success" show="{{show}}"></mp-toptips>
+        <mp-toptips ext-class="top100" msg="距离顶部100px" type="error" show="{{show1}}"></mp-toptips>
+        <mp-toptips ext-class="top200" msg="距离顶部200px" type="info" show="{{show2}}"></mp-toptips>
+        <mp-toptips ext-class="top300" msg="距离顶部300px" type="success" show="{{show3}}"></mp-toptips>
     </view>
 </view>
