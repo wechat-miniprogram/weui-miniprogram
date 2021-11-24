@@ -90,7 +90,7 @@ Component({
             }
         },
         setParentCellsClass() {
-            const className = this.data.multi ? 'weui-cells_checkbox' : ''
+            const className = this.data.multi ? 'weui-cells_checkbox' : 'weui-cells_radio'
             if (this.data.parentCell) {
                 this.data.parentCell.setCellsClass(className)
             }
