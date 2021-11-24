@@ -210,10 +210,6 @@ exports[`form basic 1`] = `
                   </wx-label>
                 </mp-checkbox>
               </checkbox-group>
-              <radio-group
-                class=""
-                bind:change="checkedChange"
-              />
             </mp-checkbox-group>
           </wx-view>
         </wx-view>

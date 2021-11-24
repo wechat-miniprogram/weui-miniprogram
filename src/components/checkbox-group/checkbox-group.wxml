@@ -1,6 +1,6 @@
-<checkbox-group class="{{extClass}}" wx-if="{{multi}}" bindchange="checkedChange">
+<checkbox-group wx:if="{{multi}}" class="{{extClass}}" bindchange="checkedChange">
     <slot></slot>
 </checkbox-group>
-<radio-group class="{{extClass}}" wx-else bindchange="checkedChange">
+<radio-group wx:else class="{{extClass}}" bindchange="checkedChange">
     <slot></slot>
 </radio-group>

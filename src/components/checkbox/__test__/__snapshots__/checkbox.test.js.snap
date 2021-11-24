@@ -192,10 +192,6 @@ exports[`checkbox-group & checkbox basic checkbox 1`] = `
           </wx-label>
         </mp-checkbox>
       </checkbox-group>
-      <radio-group
-        class=""
-        bind:change="checkedChange"
-      />
     </mp-checkbox-group>
   </mp-cells>
 </main>
