@@ -145,6 +145,7 @@ var innerHideButton = function(ownerInstance) {
         'transition': 'transform ' + (duration) + 's'
     })
     st.transformx = 0
+    st.out = false
     for (;i >= 0; i--) {
         btns[i].setStyle({
             'transform': 'translate3d(0px, 0, 0)',
