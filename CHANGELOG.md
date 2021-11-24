@@ -1,5 +1,11 @@
 # 更新日志
 
+## 1.2.0
+
+- feat: 升级 `weui-wxss` 至 2.5.0
+- feat: 无障碍适配
+- fix: 修复 slideview 隐藏按钮后无动画
+- fix: 修复 checkbox-group wx:if 判断不正确
 ## 1.1.1
 
 - fix: 修复找不到 wxs
