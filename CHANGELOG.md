@@ -1,5 +1,10 @@
 # 更新日志
 
+## 1.2.2
+
+- feat: tabbar 添加 reactive 选项
+- fix: 修复 actionsheet 底部 safearea 高度不正确
+- fix: 修复 gallery 底部 safearea 高度不正确
 ## 1.2.1
 
 - fix: 修复 checkbox 无法操作
