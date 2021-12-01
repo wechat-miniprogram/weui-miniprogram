@@ -16,6 +16,7 @@
     "build": "mpflow-service build && npm run build-copy-weui && npm run build-fix-wxs",
     "build-copy-weui": "mkdir -p ./miniprogram_dist/weui-wxss/dist/style/ && cp ./miniprogram_dist/index.wxss ./miniprogram_dist/weui-wxss/dist/style/weui.wxss",
     "build-fix-wxs": "sed -i '' 's/\\/_commons/..\\/_commons/g' ./miniprogram_dist/slideview/slideview.wxml",
+    "prepublishOnly": "npm run build",
     "dist": "npm run build",
     "clean-dev": "gulp clean --develop",
     "clean": "gulp clean",
