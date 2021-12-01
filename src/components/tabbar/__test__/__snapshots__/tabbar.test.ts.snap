@@ -9,7 +9,7 @@ exports[`tabbar basic 1`] = `
   >
     <wx-view
       ariaRole="tablist"
-      class="weui-tabbar "
+      class="weui-tabbar weui-tabbar__reactive "
     >
       <wx-view
         ariaDescribedby="t0_tips"

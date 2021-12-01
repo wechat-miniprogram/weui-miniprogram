@@ -15,6 +15,10 @@ Component({
         current: {
             type: Number,
             value: 0
+        },
+        reactive: {
+            type: Boolean,
+            value: true
         }
     },
     methods: {

@@ -1,7 +1,7 @@
 @import "~weui-wxss/src/style/base/fn.less";
 
 @media only screen and (min-width: 450px) {
-  .weui-tabbar {
+  .weui-tabbar__reactive {
     flex-direction: column;
 
     width: 60px;
@@ -12,9 +12,9 @@
       height: unset;
       .setRightLine(@weuiLineColorLight);
     }
-  }
 
-  .weui-tabbar__item {
-    flex: none;
+    .weui-tabbar__item {
+      flex: none;
+    }
   }
 }
