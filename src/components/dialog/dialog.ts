@@ -32,6 +32,11 @@ Component({
         buttons: {
             type: Array,
             value: [] // {text, extClass}
+        },
+        showFooter: {
+            // 是否显示按钮，默认为true
+            type: Boolean,
+            value: true
         }
     },
     data: {

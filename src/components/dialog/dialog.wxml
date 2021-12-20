@@ -21,7 +21,7 @@
       <view class="weui-dialog__bd">
         <slot></slot>
       </view>
-      <view class="weui-dialog__ft">
+      <view class="weui-dialog__ft" wx:if="{{showFooter}}">
         <block wx:if="{{buttons && buttons.length}}">
           <view
             wx:for="{{buttons}}"
