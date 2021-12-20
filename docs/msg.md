@@ -29,4 +29,5 @@ Msg组件提供操作确认页或操作成功或失败的标准的确认页的�
 | desc | 描述内容slot |
 | extend | desc下面的说明区域的slot |
 | handle | 操作按钮区域slot |
+| tips   | 操作按钮下面，底部区域上面的slot |
 | footer | 底部slot |
