@@ -1,5 +1,9 @@
 # 更新日志
 
+## 1.2.3
+
+- fix: 修复 half-screen-dialog button 样式向前兼容
+
 ## 1.2.2
 
 - feat: tabbar 添加 reactive 选项
