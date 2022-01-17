@@ -1,1 +1,2 @@
 @import '~weui-wxss/dist/style/weui.wxss';
+@import './patch.wxss'

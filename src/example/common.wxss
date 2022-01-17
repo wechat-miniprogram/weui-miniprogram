@@ -1,4 +1,5 @@
 @import '~weui-wxss/dist/app.wxss';
+@import '../components/patch.wxss';
 
 @media (prefers-color-scheme: dark) {
     page {
