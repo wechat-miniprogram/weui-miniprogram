@@ -6,7 +6,7 @@
 
 ## 引入组件
 
-1. 通过 [useExtendedLib 扩展库](../../reference/configuration/app.md#useExtendedLib) 的方式引入，这种方式引入的组件将不会计入代码包大小。
+1. 通过 [useExtendedLib 扩展库](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#useExtendedLib) 的方式引入，这种方式引入的组件将不会计入代码包大小。
 2. 可以通过[npm](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)方式下载构建，npm包名为`weui-miniprogram`
 
 
@@ -14,7 +14,7 @@
 
 首先要在 app.wxss 里面引入 weui.wxss，如果是通过 npm 引入，需要先构建 npm（“工具”菜单 --> “构建 npm”）
 
-**通过 [useExtendedLib 扩展库](../../reference/configuration/app.md#useExtendedLib) 的方式引入，可省略 import 步骤**
+**通过 [useExtendedLib 扩展库](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#useExtendedLib) 的方式引入，可省略 import 步骤**
 
 ```css
 @import 'weui-miniprogram/weui-wxss/dist/style/weui.wxss';
