@@ -14,7 +14,7 @@ var touchstart = function(event, ownerInstance) {
 var touchmove = function(event, ownerInstance) {
     var ins = event.instance
     var st = ins.getState()
-    if (!st.size || !st.isMoving) return
+    if (!st.size || !st.isMoving || st.disable) return
     // console.log('touchmove', JSON.stringify(event))
     var pagex = event.touches[0].pageX - st.startX
     var pagey = event.touches[0].pageY - st.startY
@@ -74,7 +74,7 @@ var touchmove = function(event, ownerInstance) {
 var touchend = function(event, ownerInstance) {
     var ins = event.instance
     var st = ins.getState()
-    if (!st.size || !st.isMoving) return
+    if (!st.size || !st.isMoving || st.disable) return
     // 左侧45度角为界限，大于45度则允许水平滑动
     if (st.firstAngle < 0) {
         return
