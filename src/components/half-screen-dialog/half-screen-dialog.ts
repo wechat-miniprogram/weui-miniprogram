@@ -1,8 +1,9 @@
 Component({
     options: {
+        virtualHost: true,
         multipleSlots: true, // 在组件定义时的选项中启用多slot支持
         addGlobalClass: true
-    },
+    } as any,
     properties: {
         closabled: {
             // 是否具有关闭标签
@@ -50,14 +51,27 @@ Component({
         buttons: {
             type: Array,
             value: [] // {text, extClass}
+        },
+        more: {
+            // 是否展示右上角更多
+            type: Boolean,
+            value: false
         }
     },
     data: {
         wrapperShow: false,
-        innerShow: false
+        innerShow: false,
+        paddingLeft: 0,
+        paddingRight: 0
     },
     lifetimes: {
         ready() {
+            const systemInfo = wx.getSystemInfoSync()
+            this.setData({
+                paddingLeft: systemInfo.safeArea.left,
+                paddingRight: systemInfo.windowWidth - systemInfo.safeArea.right,
+                paddingBottom: systemInfo.windowHeight - systemInfo.safeArea.bottom
+            })
             this._showChange(this.data.show)
         }
     },
@@ -91,6 +105,9 @@ Component({
         },
         onMaskMouseMove() {
             // do nothing
+        },
+        onDialogTouchMove(e) {
+            e.preventDefault()
         }
     }
 })

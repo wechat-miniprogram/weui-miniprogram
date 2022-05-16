@@ -42,10 +42,7 @@
     "example/searchbar/searchbar"
   ],
   "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "小程序UI组件库",
-    "navigationBarBackgroundColor": "#f8f8f8",
-    "backgroundColor": "#f8f8f8"
+    "navigationBarTitleText": "小程序UI组件库"
   },
   "networkTimeout": {
     "request": 10000,
@@ -54,5 +51,7 @@
     "downloadFile": 10000
   },
   "debug": true,
-  "style": "v2"
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents",
+  "renderer": "skyline"
 }

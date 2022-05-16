@@ -1,5 +1,7 @@
 @import '~weui-wxss/dist/app.wxss';
 @import '../components/patch.wxss';
+@import '../components/skyline-patch.wxss';
+@import './skyline-app-patch.wxss';
 
 @media (prefers-color-scheme: dark) {
     page {

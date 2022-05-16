@@ -1,10 +1,10 @@
 <view class="weui-navigation-bar {{extClass}}">
-  <view class="weui-navigation-bar__placeholder {{ios ? 'ios' : 'android'}}" style="padding-top: {{statusBarHeight}}px;visibility: hidden;"></view>
-  <view class="weui-navigation-bar__inner {{ios ? 'ios' : 'android'}}" style="padding-top: {{statusBarHeight}}px; color: {{color}};background: {{background}};{{displayStyle}};{{innerPaddingRight}};{{innerWidth}};">
+  <!-- <view class="weui-navigation-bar__placeholder {{ios ? 'ios' : 'android'}}" style="padding-top: {{statusBarHeight}}px;visibility: hidden;"></view> -->
+  <view class="weui-navigation-bar__inner {{ios ? 'ios' : 'android'}}" style="margin-top: {{statusBarHeight}}px; color: {{color}};background: {{background}};{{displayStyle}};{{innerPaddingRight}};{{innerWidth}};">
 
-    <view class='weui-navigation-bar__left' style="{{leftWidth}}">
+    <view class='weui-navigation-bar__left' style="{{leftWidth}}; flex-direction: row; align-items: flex-start;">
       <block wx:if="{{back}}">
-        <view class="weui-navigation-bar__buttons">
+        <view class="weui-navigation-bar__buttons" style="">
           <view
             bindtap="back"
             class="weui-navigation-bar__btn_goback_wrapper"
@@ -25,7 +25,6 @@
       <view wx:if="{{loading}}" class="weui-navigation-bar__loading" aria-role="alert">
         <view
           class="weui-loading"
-          style="width:{{size.width}}rpx;height:{{size.height}}rpx;"
           aria-role="img"
           aria-label="加载中"
         ></view>

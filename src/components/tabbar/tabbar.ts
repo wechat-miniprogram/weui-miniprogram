@@ -21,6 +21,21 @@ Component({
             value: true
         }
     },
+    data: {
+        paddingLeft: 0,
+        paddingRight: 0,
+        paddingBottom: 0
+    },
+    lifetimes: {
+        ready() {
+            const systemInfo = wx.getSystemInfoSync()
+            this.setData({
+                paddingLeft: systemInfo.safeArea.left,
+                paddingRight: systemInfo.windowWidth - systemInfo.safeArea.right,
+                paddingBottom: systemInfo.windowHeight - systemInfo.safeArea.bottom
+            })
+        }
+    },
     methods: {
         tabChange(e) {
             const { index } = e.currentTarget.dataset

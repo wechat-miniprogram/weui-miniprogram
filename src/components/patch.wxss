@@ -1,3 +1,20 @@
 .weui-half-screen-dialog__ft .weui-btn {
-  display: inline-block;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.weui-half-screen-dialog__attachment-area {
+    margin-top: 24px;
+    margin-bottom: -34px;
+}
+
+.weui-half-screen-dialog {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+.weui-half-screen-dialog__hd, .weui-half-screen-dialog__bd, .weui-half-screen-dialog__ft {
+    padding-left: calc(24px + env(safe-area-inset-left));
+    padding-right: calc(24px + env(safe-area-inset-right));
 }

@@ -1,5 +1,8 @@
 {
   "usingComponents": {
+    "mp-navigation-bar": "../../components/navigation-bar/navigation-bar",
     "mp-tabbar": "../../components/tabbar/tabbar"
-  }
+  },
+  "renderer": "skyline",
+  "disableScroll": true
 }

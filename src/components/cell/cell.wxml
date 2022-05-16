@@ -36,5 +36,6 @@
             <slot name="footer"></slot>
         </block>
         <icon wx:if="{{showError && error}}" type="warn" size="23" color="#E64340"></icon>
+        <view wx:if="{{link}}" class="weui-cell__ft__after"></view>
     </view>
 </view>

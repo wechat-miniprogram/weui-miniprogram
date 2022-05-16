@@ -1,8 +1,9 @@
 Component({
     options: {
+        virtualHost: true,
         multipleSlots: true, // 在组件定义时的选项中启用多slot支持
         addGlobalClass: true
-    },
+    } as any,
     properties: {
         title: {
             // 标题
@@ -60,6 +61,12 @@ Component({
 
     lifetimes: {
         ready() {
+            const systemInfo = wx.getSystemInfoSync()
+            this.setData({
+                paddingLeft: systemInfo.safeArea.left,
+                paddingRight: systemInfo.windowWidth - systemInfo.safeArea.right,
+                paddingBottom: systemInfo.windowHeight - systemInfo.safeArea.bottom
+            })
             this._showChange(this.data.show)
         }
     },

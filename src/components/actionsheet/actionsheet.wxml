@@ -46,6 +46,7 @@
                     data-index="{{actionIndex}}"
                     data-value="{{item.value}}"
                     bindtap="buttonTap"
+                    style="padding-bottom: {{16 + (!showCancel && index === actions.length-1 && actionIndex === actionItem.length-1 ? paddingBottom : 0)}}px;"
                 >
                     {{item.text}}
                 </view>
@@ -61,6 +62,7 @@
                 id="iosActionsheetCancel"
                 bindtap="closeActionSheet"
                 aria-role="button"
+                style="padding-bottom: {{16 + paddingBottom}}px;"
             >{{cancelText}}</view>
         </view>
     </view>

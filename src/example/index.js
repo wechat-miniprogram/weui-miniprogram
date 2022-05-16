@@ -71,5 +71,9 @@ CustomPage({
                 App.themeChanged('light')
             }
         }
+    },
+    navigate(e) {
+        const url = e.currentTarget.dataset.url
+        wx.navigateTo({ url })
     }
 })

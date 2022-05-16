@@ -1,51 +1,57 @@
 <view class="page" data-weui-theme="{{theme}}">
-    <view class="page__hd">
-        <view class="page__title">小程序UI组件库</view>
-        <view class="page__desc">小程序UI组件库是基于WeUI封装的组件库，是一套同微信原生视觉体验一致的组件库，由微信官方设计团队和小程序团队为微信小程序量身设计，令用户的使用感知更加统一。</view>
-    </view>
-    <view class="page__bd page__bd_spacing">
-        <view class="kind-list" role="menubar">
-            <block wx:for="{{list}}" wx:key="id">
-                <view class="kind-list__item">
-                    <view
-                        id="{{item.id}}"
-                        class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}"
-                        bindtap="kindToggle"
-                        aria-role="button"
-                        aria-haspopup
-                        aria-expanded="{{item.open}}"
-                    >
-                        <view class="weui-flex__item">{{item.name}}</view>
-                        <!-- <image class="kind-list__img" src="images/icon_nav_{{item.id}}.png"></image> -->
-                    </view>
-                    <view
-                        class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}"
-                        aria-role="menu"
-                        aria-hidden="{{!item.open}}"
-                    >
-                        <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}" tabindex="0">
-                            <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*this">
-                                <view aria-role="menuitem">
-                                    <navigator
-                                        aria-role="link"
-                                        url="{{page}}/{{page}}"
-                                        class="weui-cell weui-cell_access"
-                                        hover-class="weui-cell_active weui-active"
-                                    >
-                                        <view class="weui-cell__bd">{{page}}</view>
-                                        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-                                    </navigator>
-                                </view>
-                            </block>
+    <mp-navigation-bar title="小程序UI组件库" back="{{false}}" />
+    <scroll-view type="list">
+        <view class="page__hd">
+            <view class="page__title">小程序UI组件库</view>
+            <view class="page__desc">小程序UI组件库是基于WeUI封装的组件库，是一套同微信原生视觉体验一致的组件库，由微信官方设计团队和小程序团队为微信小程序量身设计，令用户的使用感知更加统一。</view>
+        </view>
+        <view class="page__bd page__bd_spacing">
+            <view class="kind-list" role="menubar">
+                <block wx:for="{{list}}" wx:key="id">
+                    <view class="kind-list__item">
+                        <view
+                            id="{{item.id}}"
+                            class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}"
+                            bindtap="kindToggle"
+                            aria-role="button"
+                            aria-haspopup
+                            aria-expanded="{{item.open}}"
+                        >
+                            <view class="weui-flex__item">{{item.name}}</view>
+                            <!-- <image class="kind-list__img" src="images/icon_nav_{{item.id}}.png"></image> -->
+                        </view>
+                        <view
+                            class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}"
+                            aria-role="menu"
+                            aria-hidden="{{!item.open}}"
+                        >
+                            <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}" tabindex="0">
+                                <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*this">
+                                    <view aria-role="menuitem">
+                                        <view
+                                            aria-role="link"
+                                            data-url="{{page}}/{{page}}"
+                                            class="weui-cell weui-cell_access"
+                                            hover-class="weui-cell_active weui-active"
+                                            bind:tap="navigate"
+                                        >
+                                            <view class="weui-cell__bd">{{page}}</view>
+                                            <view class="weui-cell__ft weui-cell__ft_in-access">
+
+                                            </view>
+                                        </view>
+                                    </view>
+                                </block>
+                            </view>
                         </view>
                     </view>
-                </view>
-            </block>
+                </block>
+            </view>
         </view>
-    </view>
-    <view class="page__ft">
-        <view class="ft-img-cnt" bindtap="themeToggle">
-            <image src="images/icon_footer.png" style="width: 84px; height: 19px;"></image>
+        <view class="page__ft">
+            <view class="ft-img-cnt" bindtap="themeToggle">
+                <image src="images/icon_footer.png" style="width: 84px; height: 19px;"></image>
+            </view>
         </view>
-    </view>
+    </scroll-view>
 </view>

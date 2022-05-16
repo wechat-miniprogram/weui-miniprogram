@@ -1,8 +1,9 @@
 Component({
     options: {
+        virtualHost: true,
         multipleSlots: true, // 在组件定义时的选项中启用多slot支持
         addGlobalClass: true
-    },
+    } as any,
     properties: {
         title: {
             // 弹窗标题，也可以通过 slot 自定义

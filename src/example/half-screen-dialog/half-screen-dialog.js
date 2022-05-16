@@ -1,6 +1,9 @@
 import CustomPage from '../../base/CustomPage'
 
 CustomPage({
+    options: {
+        // virtualHost: true,
+    },
     data: {
         typeF: false,
         typeS: false,
