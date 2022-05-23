@@ -11,18 +11,19 @@
     }
 </wxs>
 
-<view wx:if="{{wrapperShow}}" aria-role="dialog" aria-modal="true">
+<view wx:if="{{wrapperShow}}" class="weui-actionsheet__wrapper" aria-role="dialog" aria-modal="true">
     <view
         wx:if="{{mask}}"
-        class="weui-mask {{innerShow ? 'fadeIn' : 'fadeOut'}} {{maskClass}}"
+        class="weui-mask weui-transition {{innerShow ? 'weui-transition_show' : ''}} {{maskClass}}"
         bindtap="closeActionSheet"
         aria-role="button"
         aria-label="关闭"
     ></view>
-    <view class="weui-actionsheet {{innerShow ? 'weui-animate-slide-up' : 'weui-animate-slide-down'}} {{extClass}}">
+    <view class="weui-actionsheet weui-transition {{innerShow ? 'weui-transition_show' : ''}} {{extClass}}">
         <!-- 标题 -->
         <block wx:if="{{title}}">
             <view class="weui-actionsheet__title" tabindex="0">
+                <view class="weui-actionsheet__title__before"></view>
                 <view class="weui-actionsheet__title-text">{{title}}</view>
             </view>
         </block>
@@ -48,6 +49,7 @@
                     bindtap="buttonTap"
                     style="padding-bottom: {{16 + (!showCancel && index === actions.length-1 && actionIndex === actionItem.length-1 ? paddingBottom : 0)}}px;"
                 >
+                    <view wx:if="{{actionIndex !== 0}}" class="weui-actionsheet__cell__before"></view>
                     {{item.text}}
                 </view>
             </block>

@@ -74,10 +74,16 @@ Component({
     methods: {
         _showChange(show) {
             if (show) {
-                this.setData({
-                    wrapperShow: true,
-                    innerShow: true
-                })
+                this.setData(
+                    {
+                        wrapperShow: true
+                    },
+                    () => {
+                        this.setData({
+                            innerShow: true
+                        })
+                    }
+                )
             } else {
                 this.setData({
                     innerShow: false

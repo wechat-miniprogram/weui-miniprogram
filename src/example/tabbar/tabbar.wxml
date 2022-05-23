@@ -1,6 +1,6 @@
 <view class="page" data-weui-theme="{{theme}}">
     <mp-navigation-bar title="Tabbar"></mp-navigation-bar>
-    <scroll-view type="list">
+    <scroll-view type="list" scroll-y>
         <view class="page__hd">
             <view class="page__title">Tabbar</view>
             <view class="page__desc">类似小程序原生tabbar的组件，可用于自定义tabbar</view>

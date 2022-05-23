@@ -8,7 +8,7 @@
     >
         <view class="weui-search-bar__box">
             <icon class="weui-icon-search" type="search" size="12"></icon>
-            <input
+            <view
                 aria-controls="searchResult"
                 type="text"
                 class="weui-search-bar__input"

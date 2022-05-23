@@ -1,6 +1,6 @@
 <view class="page" data-weui-theme="{{theme}}">
     <mp-navigation-bar title="ActionSheet"></mp-navigation-bar>
-    <scroll-view type="list">
+    <scroll-view type="list" scroll-y>
         <view class="page__hd">
             <view class="page__title">ActionSheet</view>
             <view class="page__desc">弹出式菜单</view>

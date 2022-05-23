@@ -1,7 +1,13 @@
 @import '~weui-wxss/dist/app.wxss';
+@import '~weui-wxss/dist/style/weui.wxss';
 @import '../components/patch.wxss';
 @import '../components/skyline-patch.wxss';
 @import './skyline-app-patch.wxss';
+
+.page scroll-view {
+    flex: 1 1 auto;
+    height: 50vh;
+}
 
 @media (prefers-color-scheme: dark) {
     page {

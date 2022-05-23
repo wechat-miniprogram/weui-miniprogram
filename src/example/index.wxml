@@ -1,6 +1,6 @@
 <view class="page" data-weui-theme="{{theme}}">
     <mp-navigation-bar title="小程序UI组件库" back="{{false}}" />
-    <scroll-view type="list">
+    <scroll-view type="list" scroll-y>
         <view class="page__hd">
             <view class="page__title">小程序UI组件库</view>
             <view class="page__desc">小程序UI组件库是基于WeUI封装的组件库，是一套同微信原生视觉体验一致的组件库，由微信官方设计团队和小程序团队为微信小程序量身设计，令用户的使用感知更加统一。</view>
@@ -25,21 +25,11 @@
                             aria-role="menu"
                             aria-hidden="{{!item.open}}"
                         >
+
                             <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}" tabindex="0">
                                 <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*this">
                                     <view aria-role="menuitem">
-                                        <view
-                                            aria-role="link"
-                                            data-url="{{page}}/{{page}}"
-                                            class="weui-cell weui-cell_access"
-                                            hover-class="weui-cell_active weui-active"
-                                            bind:tap="navigate"
-                                        >
-                                            <view class="weui-cell__bd">{{page}}</view>
-                                            <view class="weui-cell__ft weui-cell__ft_in-access">
-
-                                            </view>
-                                        </view>
+                                        <mp-cell link url="{{page}}/{{page}}" value="{{page}}"/>
                                     </view>
                                 </block>
                             </view>

@@ -1,11 +1,11 @@
 @import '../common.wxss';
 
 .weui-slidecells {
-  margin:8px;
+  margin: 8px;
 }
 
 .weui-slidecell {
-  background-color: var(--weui-BG-2);
+  background-color: #fff;
   border-radius: 8px;
   padding: 26px;
   line-height: 1.4;

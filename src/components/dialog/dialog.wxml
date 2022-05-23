@@ -7,11 +7,11 @@
   <view
     wx:if="{{mask}}"
     bindtap="close"
-    class="weui-mask"
+    class="weui-mask weui-transition {{innerShow ? 'weui-transition_show' : ''}}"
     aria-role="button"
     aria-label="关闭"
   ></view>
-  <view class="weui-dialog" catchtap="stopEvent">
+  <view class="weui-dialog weui-transition {{innerShow ? 'weui-transition_show' : ''}}" catchtap="stopEvent">
     <view class="weui-dialog__hd">
       <view class="weui-dialog__title" tabindex="0">{{title}}
         <slot name="title"></slot>
@@ -30,9 +30,13 @@
           data-index="{{index}}"
           bindtap="buttonTap"
           aria-role="button"
-        >{{item.text}}</view>
+        >
+          {{item.text}}
+          <view wx:if="{{index !== 0}}" class="weui-dialog__btn__after"></view>
+        </view>
       </block>
       <slot name="footer" wx:else></slot>
+      <view class="weui-dialog__ft__after"></view>
     </view>
   </view>
 </view>

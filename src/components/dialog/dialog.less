@@ -9,4 +9,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+.weui-transition.weui-dialog {
+    -webkit-transition: opacity 0.3s, visibility 0.3s;
+    transition: opacity 0.3s, visibility 0.3s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.weui-transition_show.weui-dialog {
+    opacity: 1;
+    visibility: visible;
 }

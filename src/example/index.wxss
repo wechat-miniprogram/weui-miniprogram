@@ -11,12 +11,15 @@ page {
     height: 100%;
 }
 
+
 @import './common.wxss';
 @import '~weui-wxss/dist/example/index.wxss';
 @import './skyline-patch.wxss';
 
-
 .ft-img-cnt {
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     height: 20px;
 }

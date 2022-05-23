@@ -72,6 +72,7 @@ Component({
                     btnQuery
                         .selectAll('.btn')
                         .boundingClientRect((rects) => {
+                            console.error('rects',rects)
                             this.setData({
                                 size: {
                                     buttons: rects,
