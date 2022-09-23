@@ -1,6 +1,6 @@
 <view
   wx:if="{{wrapperShow}}"
-  class="weui-gallery {{innerShow ? 'fadeIn' : 'fadeOut'}} {{extClass}}"
+  class="weui-gallery {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out'}} {{extClass}}"
   aria-modal="true"
   tabindex="0"
 >

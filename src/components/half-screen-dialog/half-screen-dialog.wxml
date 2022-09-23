@@ -1,6 +1,6 @@
 <view wx:if="{{wrapperShow}}" aria-role="dialog" aria-modal="true">
   <view
-    class="weui-mask {{innerShow ? 'fadeIn' : 'fadeOut' }}"
+    class="weui-mask {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out' }}"
     wx:if="{{mask}}"
     bindtap="close"
     catch:touchmove="onMaskMouseMove"

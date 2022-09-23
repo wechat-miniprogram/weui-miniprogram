@@ -21,7 +21,7 @@ exports[`grids basic 2`] = `
     <wx-view
       ariaLabel="关闭"
       ariaRole="button"
-      class="weui-mask fadeIn"
+      class="weui-mask weui-animate-fade-in"
       data-type="tap"
       bind:tap="close"
       catch:touchmove="onMaskMouseMove"

@@ -10,7 +10,7 @@ exports[`dialog basic dialog 1`] = `
     <wx-view
       ariaModal="true"
       ariaRole="dialog"
-      class="fadeIn"
+      class="weui-animate-fade-in"
     >
       <wx-view
         ariaLabel="关闭"
@@ -34,7 +34,7 @@ exports[`dialog basic dialog 1`] = `
               tabindex="0"
             >
               dialog title
-          
+
             </wx-view>
           </wx-view>
           <wx-view
@@ -79,7 +79,7 @@ exports[`dialog close 1`] = `
     <wx-view
       ariaModal="true"
       ariaRole="dialog"
-      class="fadeOut"
+      class="weui-animate-fade-out"
     >
       <wx-view
         ariaLabel="关闭"
@@ -103,7 +103,7 @@ exports[`dialog close 1`] = `
               tabindex="0"
             >
               dialog title
-          
+
             </wx-view>
           </wx-view>
           <wx-view

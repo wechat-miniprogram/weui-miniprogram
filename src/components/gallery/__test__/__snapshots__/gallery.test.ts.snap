@@ -20,7 +20,7 @@ exports[`gallery basic 2`] = `
 >
   <wx-view
     ariaModal="true"
-    class="weui-gallery fadeIn "
+    class="weui-gallery weui-animate-fade-in "
     tabindex="0"
   >
     <wx-view
@@ -88,7 +88,7 @@ exports[`gallery basic 3`] = `
 >
   <wx-view
     ariaModal="true"
-    class="weui-gallery fadeIn "
+    class="weui-gallery weui-animate-fade-in "
     tabindex="0"
   >
     <wx-view
@@ -156,7 +156,7 @@ exports[`gallery basic 4`] = `
 >
   <wx-view
     ariaModal="true"
-    class="weui-gallery fadeIn "
+    class="weui-gallery weui-animate-fade-in "
     tabindex="0"
   >
     <wx-view
@@ -217,7 +217,7 @@ exports[`gallery basic 5`] = `
 >
   <wx-view
     ariaModal="true"
-    class="weui-gallery fadeOut "
+    class="weui-gallery weui-animate-fade-out "
     tabindex="0"
   >
     <wx-view
