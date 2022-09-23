@@ -1,5 +1,10 @@
 # 更新日志
 
+## 1.2.4
+
+- feat: 升级 `weui-wxss` 至 2.5.14
+- fix: 修复 fade 动画
+
 ## 1.2.3
 
 - fix: 修复 half-screen-dialog button 样式向前兼容
