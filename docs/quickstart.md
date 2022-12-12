@@ -33,9 +33,17 @@
 2. 然后可以在对应页面的 wxml 中直接使用该组件
 
 ```html
-<mp-dialog title="test" show="{{true}}" bindbuttontap="tapDialogButton" buttons="{{[{text: '取消'}, {text: '确认'}]}}">
+<mp-dialog title="test" show="{{true}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
     <view>test content</view>
 </mp-dialog>
+```
+
+```js
+Page({
+  data: {
+    buttons: [{text: '取消'}, {text: '确认'}]
+  }
+})
 ```
 
 完整的组件的使用文档请参考具体的组件的文档。
