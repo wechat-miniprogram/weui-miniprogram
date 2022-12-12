@@ -70,6 +70,7 @@ Component({
             if (this.data.multi) {
                 const vals = []
                 this.data.targetList.forEach((item) => {
+                    if (item.data.disabled) return
                     if (item.data.checked) {
                         vals.push(item.data.value)
                     }
@@ -78,6 +79,7 @@ Component({
             } else {
                 let val = ''
                 this.data.targetList.forEach((item) => {
+                    if (item.data.disabled) return
                     if (item === target) {
                         val = item.data.value
                     } else {

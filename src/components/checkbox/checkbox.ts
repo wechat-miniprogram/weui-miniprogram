@@ -23,6 +23,10 @@ Component({
         extClass: {
             type: String,
             value: ''
+        },
+        disabled: {
+            type: Boolean,
+            value: false
         }
     },
     data: {},
@@ -49,6 +53,7 @@ Component({
             })
         },
         checkedChange() {
+            if (this.data.disabled) return
             if (this.data.multi) {
                 const checked = !this.data.checked
                 this.setData({

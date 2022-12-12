@@ -43,7 +43,7 @@ exports[`checkbox-group & checkbox basic checkbox 1`] = `
                       checked=""
                       class="weui-check"
                       color=""
-                      disabled=""
+                      disabled="{{false}}"
                       value="0"
                     />
                     <wx-icon
@@ -85,7 +85,7 @@ exports[`checkbox-group & checkbox basic checkbox 1`] = `
                       checked=""
                       class="weui-check"
                       color=""
-                      disabled=""
+                      disabled="{{false}}"
                       value="1"
                     />
                     <wx-icon
@@ -134,7 +134,7 @@ exports[`checkbox-group & checkbox basic checkbox 1`] = `
                       checked=""
                       class="weui-check"
                       color=""
-                      disabled=""
+                      disabled="{{false}}"
                       value="0"
                     />
                     <wx-icon
@@ -176,7 +176,7 @@ exports[`checkbox-group & checkbox basic checkbox 1`] = `
                       checked=""
                       class="weui-check"
                       color=""
-                      disabled=""
+                      disabled="{{false}}"
                       value="1"
                     />
                     <wx-icon

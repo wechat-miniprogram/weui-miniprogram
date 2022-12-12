@@ -56,7 +56,7 @@ exports[`form basic 1`] = `
                               checked="{{true}}"
                               class="weui-check"
                               color=""
-                              disabled=""
+                              disabled="{{false}}"
                               value="0"
                             />
                             <wx-icon
@@ -96,7 +96,7 @@ exports[`form basic 1`] = `
                               checked=""
                               class="weui-check"
                               color=""
-                              disabled=""
+                              disabled="{{false}}"
                               value="1"
                             />
                             <wx-icon
@@ -154,7 +154,7 @@ exports[`form basic 1`] = `
                               checked="{{true}}"
                               class="weui-check"
                               color=""
-                              disabled=""
+                              disabled="{{false}}"
                               value="0"
                             />
                             <wx-icon
@@ -194,7 +194,7 @@ exports[`form basic 1`] = `
                               checked=""
                               class="weui-check"
                               color=""
-                              disabled=""
+                              disabled="{{false}}"
                               value="1"
                             />
                             <wx-icon
