@@ -1,5 +1,13 @@
 # 更新日志
 
+## 1.2.5
+
+- feat: checkbox 添加 disabled 属性
+- fix: tabbar 修复 aria-label 告警 #206
+- fix: slideview 修复 disabled 属性 #203
+- fix: actionsheet 移除多余 wrap
+- fix: dialog 移除多余 wrap
+
 ## 1.2.4
 
 - feat: 升级 `weui-wxss` 至 2.5.14
