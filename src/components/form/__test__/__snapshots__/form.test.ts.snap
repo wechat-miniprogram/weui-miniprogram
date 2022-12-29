@@ -93,7 +93,7 @@ exports[`form basic 1`] = `
                             slot="footer"
                           >
                             <wx-radio
-                              checked=""
+                              checked="{{false}}"
                               class="weui-check"
                               color=""
                               disabled="{{false}}"
@@ -191,7 +191,7 @@ exports[`form basic 1`] = `
                             slot="icon"
                           >
                             <wx-checkbox
-                              checked=""
+                              checked="{{false}}"
                               class="weui-check"
                               color=""
                               disabled="{{false}}"

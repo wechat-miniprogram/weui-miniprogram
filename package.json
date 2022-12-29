@@ -66,7 +66,7 @@
     "jest": "^25.5.4",
     "jsdom": "^16.2.2",
     "miniprogram-api-typings": "^2.6.5",
-    "miniprogram-simulate": "^1.2.7",
+    "miniprogram-simulate": "^1.5.8",
     "prettier": "2.0.1",
     "through2": "^2.0.3",
     "tslint": "^5.13.1",

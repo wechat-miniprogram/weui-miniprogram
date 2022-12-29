@@ -223,7 +223,7 @@ exports[`gallery basic 5`] = `
     <wx-view
       class="weui-gallery__info"
     >
-      2/2
+      2/0
     </wx-view>
     <wx-swiper
       autoplay="{{false}}"
@@ -233,22 +233,7 @@ exports[`gallery basic 5`] = `
       indicatorDots="{{false}}"
       bind:change="change"
       bind:tap="hideGallery"
-    >
-      <swiper-item>
-        <wx-image
-          class="weui-gallery__img"
-          mode="aspectFit"
-          src="http://qq.com/1.jpg"
-        />
-      </swiper-item>
-      <swiper-item>
-        <wx-image
-          class="weui-gallery__img"
-          mode="aspectFit"
-          src="http://qq.com/3.jpg"
-        />
-      </swiper-item>
-    </wx-swiper>
+    />
     <wx-view
       class="weui-gallery__opr"
     >
