@@ -18,8 +18,7 @@ describe('dialog', () => {
         const container = simulate.render(id)
         container.attach(document.createElement('parent-wrapper'))
 
-        const dialog = container.querySelector('.dialog')
-        const [cancelBtn, confirmBtn] = dialog.querySelectorAll('.weui-dialog__btn')
+        const [cancelBtn, confirmBtn] = container.querySelectorAll('.dialog >>> .weui-dialog__btn')
 
         cancelBtn.dispatchEvent('tap')
         await simulate.sleep(10)
@@ -34,9 +33,7 @@ describe('dialog', () => {
         const container = simulate.render(id)
         container.attach(document.createElement('parent-wrapper'))
 
-        const dialog = container.querySelector('.dialog')
-
-        dialog.querySelector('.weui-mask').dispatchEvent('tap')
+        container.querySelector('.dialog >>> .weui-mask').dispatchEvent('tap')
         await simulate.sleep(10)
         expect(container.data.closed).toBe(true)
         expect(container.toJSON()).toMatchSnapshot()
