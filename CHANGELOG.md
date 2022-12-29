@@ -1,5 +1,10 @@
 # 更新日志
 
+## 1.2.6
+
+- feat: dialog 使用 virtualHost
+- feat: 升级 `weui-wxss` 至 2.5.15
+
 ## 1.2.5
 
 - feat: checkbox 添加 disabled 属性
