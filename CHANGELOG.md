@@ -1,5 +1,12 @@
 # 更新日志
 
+## 1.2.7
+
+- fix: dialog 修复自动聚焦 outline #216
+- fix: half-screen-dialog 修复自动聚焦 outline #216
+- fix: actionsheet 修复自动聚焦 outline #216
+- fix: gallery 修复自动聚焦 outline #216
+
 ## 1.2.6
 
 - feat: dialog 使用 virtualHost
