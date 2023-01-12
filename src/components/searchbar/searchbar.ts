@@ -18,7 +18,8 @@ Component({
         },
         value: {
             type: String,
-            value: ''
+            value: '',
+            observer: 'valueChange'
         },
         search: {
             // 返回Promise的函数
@@ -56,6 +57,13 @@ Component({
         }
     },
     methods: {
+        valueChange() {
+            if (this.data.value) {
+                this.setData({
+                    searchState: true
+                })
+            }
+        },
         clearInput() {
             // @ts-ignore
             this.setData({
