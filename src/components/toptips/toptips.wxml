@@ -1,5 +1,6 @@
+<!-- webview： fixed -->
 <view
-    wx:if="{{wrapperShow}}"
+    wx:if="{{wrapperShow && !skyline}}"
     aria-role="alert"
     class="weui-toptips weui-toptips_warn {{className}} {{extClass}} {{innerShow ? 'fadeIn' :  'fadeOut'}}"
 >
@@ -8,3 +9,15 @@
         <slot></slot>
     </block>
 </view>
+<!-- skyline：root-portal，因为不支持 fixed -->
+<root-portal wx:elif="{{wrapperShow && skyline}}">
+    <view
+        aria-role="alert"
+        class="weui-toptips weui-toptips_warn {{className}} {{extClass}} {{innerShow ? 'fadeIn' :  'fadeOut'}}"
+    >
+        <block wx:if="{{msg}}">{{msg}}</block>
+        <block wx:else>
+            <slot></slot>
+        </block>
+    </view>
+</root-portal>

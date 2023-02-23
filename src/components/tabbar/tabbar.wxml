@@ -10,7 +10,7 @@
     aria-labelledby="t{{index}}_title"
     aria-describedby="t{{index}}_tips"
     aria-selected="{{index === current}}"
-    style="padding-bottom: {{8 + paddingBottom}}px; padding-left: {{index === 0 ? paddingLeft : 0}}px; padding-right: {{index === list.length - 1 ? paddingRight : 0}}px;"
+    style="padding-top: 8px;padding-bottom: {{8 + paddingBottom}}px; padding-left: {{index === 0 ? paddingLeft : 0}}px; padding-right: {{index === list.length - 1 ? paddingRight : 0}}px;"
   >
     <view
       id="t{{index}}_tips"

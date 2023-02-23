@@ -7,8 +7,10 @@
         aria-owns="searchResult"
     >
         <view class="weui-search-bar__box">
-            <icon class="weui-icon-search" type="search" size="12"></icon>
-            <view
+            <view class="weui-icon-search" type="search" size="12"></view>
+            <!-- skyline 不支持 icon -->
+            <!-- <icon class="weui-icon-search" type="search" size="12"></icon> -->
+            <input
                 aria-controls="searchResult"
                 type="text"
                 class="weui-search-bar__input"
@@ -29,7 +31,8 @@
             ></text>
         </view>
         <label id="searchText" class="weui-search-bar__label" bindtap="showInput">
-            <icon class="weui-icon-search" type="search" size="12"></icon>
+            <view class="weui-icon-search" type="search" size="12"></view>
+            <!-- <icon class="weui-icon-search" type="search" size="12"></icon> -->
             <text aria-hidden class="weui-search-bar__text">搜索</text>
         </label>
     </view>

@@ -43,6 +43,15 @@ Component({
                     innerGrids: grids.map((grid) => Object.assign({}, defaultGridProps, grid))
                 })
             }
+        },
+        // skyline <navigator> 改为 wx.navigateTo
+        go (item) {
+            wx.navigateTo({
+                url: item.url,
+                success: item.bindsuccess,
+                fail: item.bindfail,
+                complete: item.bindcomplete
+            })
         }
     }
 })

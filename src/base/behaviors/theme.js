@@ -4,6 +4,7 @@ module.exports = Behavior({
     },
     methods: {
         themeChanged(theme) {
+            console.log('---------themeChanged', theme)
             this.setData({
                 theme
             })

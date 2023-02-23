@@ -62,7 +62,8 @@ Component({
         wrapperShow: false,
         innerShow: false,
         paddingLeft: 0,
-        paddingRight: 0
+        paddingRight: 0,
+        skyline: false
     },
     lifetimes: {
         ready() {
@@ -70,7 +71,8 @@ Component({
             this.setData({
                 paddingLeft: systemInfo.safeArea.left,
                 paddingRight: systemInfo.windowWidth - systemInfo.safeArea.right,
-                paddingBottom: systemInfo.windowHeight - systemInfo.safeArea.bottom
+                paddingBottom: systemInfo.windowHeight - systemInfo.safeArea.bottom,
+                skyline: this.renderer == 'skyline' // skyline 兼容
             })
             this._showChange(this.data.show)
         }

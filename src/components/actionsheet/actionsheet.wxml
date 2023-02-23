@@ -19,7 +19,7 @@
         aria-role="button"
         aria-label="关闭"
     ></view>
-    <view class="weui-actionsheet weui-transition {{innerShow ? 'weui-transition_show' : ''}} {{extClass}}">
+    <view class="weui-actionsheet weui-transition {{innerShow ? 'weui-transition_show' : ''}} {{ skyline ? 'weui-actionsheet__skyline' : ''}} {{extClass}}">
         <!-- 标题 -->
         <block wx:if="{{title}}">
             <view class="weui-actionsheet__title" tabindex="0">

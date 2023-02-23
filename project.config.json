@@ -1,26 +1,25 @@
 {
-	"description": "项目配置文件。",
+	"appid": "wxe5f52902cf4de896",
+	"compileType": "miniprogram",
+	"libVersion": "2.29.1",
 	"packOptions": {
 		"ignore": [],
 		"include": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"coverView": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true,
-		"nodeModules": true,
+		"enhance": true,
+		"showShadowRootInWxmlPanel": true,
+		"packNpmRelationList": [],
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
 		}
 	},
-	"compileType": "miniprogram",
-	"libVersion": "2.10.3",
-	"appid": "wxe5f52902cf4de896",
-	"projectname": "小程序自定义组件",
 	"condition": {},
 	"editorSetting": {
 		"tabIndent": "tab",

@@ -49,7 +49,8 @@ Component({
      * 组件的初始数据
      */
     data: {
-        size: null
+        size: null,
+        skyline: false
     },
 
     /**
@@ -59,6 +60,9 @@ Component({
         // @ts-ignore
         this.updateRight()
         this.addClassNameForButton()
+        this.setData({
+            skyline: this.renderer == 'skyline' // skyline 兼容
+        })
     },
     methods: {
         updateRight() {
@@ -113,6 +117,14 @@ Component({
         show() {
             this.triggerEvent('show', {}, {})
         },
-        transitionEnd() {}
+        transitionEnd() {},
+        // worklet 动画
+        handHorizontal(gestureEvt) {
+            "worklet";
+            console.log('worklet 动画', gestureEvt.translateX);
+            // this.setData({
+            //     a: 1
+            // })
+        }
     }
 })

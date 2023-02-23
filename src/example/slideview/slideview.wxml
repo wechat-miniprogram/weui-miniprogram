@@ -1,11 +1,18 @@
-<view class="page" data-weui-theme="{{theme}}">
+<view class="page {{theme=='dark' ? 'weui-theme-dark' : ''}}" data-weui-theme="{{theme}}">
     <mp-navigation-bar title="SlideView"></mp-navigation-bar>
     <scroll-view type="list" scroll-y>
       <view class="page__hd">
           <view class="page__title">Slideview</view>
-          <view class="page__desc">左滑操作</view>
+          <view class="page__desc">左滑操作{{worklet}}</view>
       </view>
       <view class="page__bd">
+      <!-- <tap-gesture-handler
+        onGestureEvent="handHorizontal"
+      >
+        <view style="width: 100px; height: 100px; background-color: black;">
+           {{worklet}}
+        </view>
+      </tap-gesture-handler> -->
         <view class="weui-cells">
             <mp-slideview show="{{true}}" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
                 <mp-cell value="左滑可以删除" footer="说明文字"></mp-cell>

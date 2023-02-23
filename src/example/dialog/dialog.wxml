@@ -1,4 +1,4 @@
-<view class="page" data-weui-theme="{{theme}}">
+<view class="page {{theme=='dark' ? 'weui-theme-dark' : ''}}" data-weui-theme="{{theme}}">
     <mp-navigation-bar title="Dialog"></mp-navigation-bar>
     <scroll-view type="list" scroll-y>
         <view class="page__hd">
@@ -8,14 +8,15 @@
         <view class="page__bd">
             <view class="weui-btn-area">
                 <button class="weui-btn" type="default" bindtap="openConfirm">确认取消按钮</button>
-                <button class="weui-btn" type="default" bindtap="tapOneDialogButton">只有确认按钮</button>
+                <button class="weui-btn mrt16" type="default" bindtap="tapOneDialogButton">只有确认按钮</button>
             </view>
         </view>
     </scroll-view>
+    <mp-dialog title="test" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+        <view>test content</view>
+    </mp-dialog>
+    <mp-dialog title="test1" show="{{showOneButtonDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+        <view>test content1</view>
+    </mp-dialog>
 </view>
-<mp-dialog title="test" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
-    <view>test content</view>
-</mp-dialog>
-<mp-dialog title="test1" show="{{showOneButtonDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
-    <view>test content1</view>
-</mp-dialog>
+

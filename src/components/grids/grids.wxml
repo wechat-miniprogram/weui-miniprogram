@@ -1,6 +1,10 @@
 <view class="weui-grids {{extClass}}">
+  <!-- skyline :before :after 兼容 -->
+  <view class="weui-grids__before"></view>
   <block wx:for="{{innerGrids}}" wx:key="index">
-    <navigator
+    <!-- skyline 不支持 navigator -->
+    <!-- <navigator -->
+    <view
       class="weui-grid"
       target="{{item.target}}"
       url="{{item.url}}"
@@ -16,11 +20,16 @@
       bindsuccess="{{item.bindsuccess}}"
       bindfail="{{item.bindfail}}"
       bindcomplete="{{item.bindcomplete}}"
+      bindtap="{{go(item)}}"
     >
+      <!-- skyline 兼容 :before :after -->
+      <view class="weui-grid__before"></view>
       <view class="weui-grid__icon">
         <image class="weui-grid__icon_img" src="{{item.imgUrl}}" alt></image>
       </view>
       <view class="weui-grid__label">{{item.text}}</view>
-    </navigator>
+      <view class="weui-grid__after"></view>
+    </view>
   </block>
+  <view class="weui-grids__after"></view>
 </view>

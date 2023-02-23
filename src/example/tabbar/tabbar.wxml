@@ -1,4 +1,4 @@
-<view class="page" data-weui-theme="{{theme}}">
+<view class="page {{theme=='dark' ? 'weui-theme-dark' : ''}}" data-weui-theme="{{theme}}">
     <mp-navigation-bar title="Tabbar"></mp-navigation-bar>
     <scroll-view type="list" scroll-y>
         <view class="page__hd">
@@ -6,5 +6,6 @@
             <view class="page__desc">类似小程序原生tabbar的组件，可用于自定义tabbar</view>
         </view>
     </scroll-view>
+    <mp-tabbar class="tabbar" list="{{list}}" bindchange="tabChange"></mp-tabbar>
 </view>
-<mp-tabbar class="tabbar" style="background: blue;" list="{{list}}" bindchange="tabChange"></mp-tabbar>
+<!-- <mp-tabbar class="tabbar" style="background: blue;" list="{{list}}" bindchange="tabChange"></mp-tabbar> -->

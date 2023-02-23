@@ -10,6 +10,11 @@ App({
     onHide: function () {
         console.log('App Hide')
     },
+    // 自动监听 theme 切换
+    onThemeChange(options) {
+        this.themeChanged(options.theme)
+    },
+    // 这个看起来是手动操作
     themeChanged(theme) {
         this.globalData.theme = theme
         themeListeners.forEach((listener) => {
@@ -29,8 +34,10 @@ App({
     },
     globalData: {
         hasLogin: false,
-        theme: 'light',
+        theme: wx.getSystemInfoSync().theme, // 'light',
         GRID_DEMO_URL: '/example/index',
-        iconTabbar: require('/example/images/icon_tabbar.png').default
+        iconTabbar: require('/example/images/icon_tabbar.png').default,
+        // navigatorHeight: wx.getSystemInfoSync().statusBarHeight + 44,
+        navigatorScreenHeight: wx.getSystemInfoSync().screenHeight - wx.getSystemInfoSync().statusBarHeight - 44
     }
 })

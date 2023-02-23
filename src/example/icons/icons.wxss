@@ -39,3 +39,47 @@ icon{
     font-size: 18px;
     margin: 5px 0;
 }
+.weui-grids__before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: hsla(0,0%,100%,.1);
+    right: 0;
+    height: 1px;
+    border-top: 1px solid hsla(0,0%,100%,.1);
+    transform-origin: 0 0;
+    transform: scaleY(.5);
+}
+.weui-grids__after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: hsla(0,0%,100%,.1);
+    width: 1px;
+    bottom: 0;
+    border-left: 1px solid hsla(0,0%,100%,.1);
+    transform-origin: 0 0;
+    transform: scaleX(.5);
+}
+.weui-grid__before {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: hsla(0,0%,100%,.1);
+    top: 0;
+    width: 1px;
+    border-right: 1px solid hsla(0,0%,100%,.1);
+    transform-origin: 100% 0;
+    transform: scaleX(.5);
+}
+.weui-grid__after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: hsla(0,0%,100%,.1);
+    left: 0;
+    height: 1px;
+    border-bottom: 1px solid hsla(0,0%,100%,.1);
+    transform-origin: 0 100%;
+    transform: scaleY(.5);
+}

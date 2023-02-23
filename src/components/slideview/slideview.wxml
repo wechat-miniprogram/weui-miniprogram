@@ -246,7 +246,24 @@ module.exports = {
 }
 </wxs>
 <view class="weui-slideview {{icon ? 'weui-slideview_icon' : ''}} {{extClass}}">
-    <view bindtransitionend="{{handler.transitionEnd}}"
+    <!-- skyline 用 手势 + worklet动画 支持 -->
+    <!-- <view>{{skyline}}</view>
+    <view wx:if="{{skyline}}">
+        <view>xxxx{{skyline}}</view>
+      <tap-gesture-handler
+        onGestureEvent="handHorizontal"
+      >
+        <view style="width: 100px; height: 100px; background-color: red;">
+           worklet1
+           <view class="weui-slideview__left left skyline" style="width:100%;">
+                <slot></slot>
+            </view>
+        </view>
+      </tap-gesture-handler>
+    </view>
+    <view wx:else -->
+    <view
+      bindtransitionend="{{handler.transitionEnd}}"
       show="{{show}}" change:show="{{handler.showChange}}"
       rebounce="{{rebounce}}" change:rebounce="{{handler.rebounceChange}}"
       duration="{{duration}}" change:duration="{{handler.durationChange}}"

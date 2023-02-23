@@ -12,10 +12,10 @@
         <view class="weui-uploader__files">
             <block wx:for="{{currentFiles}}" wx:key="*this">
                 <view wx:if="{{item.error}}" data-index="{{index}}" bindtap="previewImage" class="weui-uploader__file weui-uploader__file_status">
-                    <image class="weui-uploader__img" src="{{item.url}}" mode="aspectFill" />
-                    <view class="weui-uploader__file-content">
+                    <image class="weui-uploader__img" src="{{item.url}}" mode="aspectFill" binderror="error" />
+                    <!-- <view class="weui-uploader__file-content">
                         <icon type="warn" size="23" color="#F43530"></icon>
-                    </view>
+                    </view> -->
                 </view>
                 <view wx:elif="{{item.loading}}" data-index="{{index}}" bindtap="previewImage" class="weui-uploader__file weui-uploader__file_status">
                     <image class="weui-uploader__img" src="{{item.url}}" mode="aspectFill" />
@@ -29,7 +29,10 @@
             </block>
         </view>
         <view wx:if="{{currentFiles.length < maxCount}}" class="weui-uploader__input-box" hover-class="weui-active">
+            <!-- skyline 不支持 :before :after ，用 view 兼容 -->
+            <view class="weui-uploader__input__before"></view>
             <view class="weui-uploader__input" bindtap="chooseImage"></view>
+            <view class="weui-uploader__input__after"></view>
         </view>
     </view>
 </view>

@@ -35,7 +35,8 @@ Component({
     },
     data: {
         wrapperShow: false,
-        innerShow: false
+        innerShow: false,
+        skyline: false //this.renderer == 'skyline'
     },
     lifetimes: {
         ready() {
@@ -43,6 +44,9 @@ Component({
         },
         attached() {
             this._typeChange(this.data.type)
+            this.setData({
+                skyline: true//this.renderer == 'skyline'
+            })
         }
     },
     methods: {
@@ -81,9 +85,9 @@ Component({
         _hideToptips() {
             if (!this.data.innerShow) return
             this.setData({ innerShow: false })
-            setTimeout(() => {
-                this.setData({ wrapperShow: false })
-            }, 300)
+            // setTimeout(() => {
+            //     this.setData({ wrapperShow: false })
+            // }, 30000)
         }
     }
 })

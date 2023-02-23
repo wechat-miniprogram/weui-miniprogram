@@ -1,6 +1,6 @@
 .weui-actionsheet {
     background-color: #f7f7f7;
-    position: absolute;
+    /* position: absolute; */
     width: 100vw;
     right: 0;
 }
@@ -129,6 +129,8 @@
     color: #fa5151;
 }
 .weui-cell {
+    /* line-height: 22px;
+    height: 22px; */
     color: rgba(0, 0, 0, 0.9);
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
@@ -186,7 +188,7 @@
     color: rgba(0, 0, 0, 0.5);
 }
 .weui-cell_link {
-    color: #576b95;
+    color: #576b95 !important;
 }
 .weui-cell_select .weui-cell__bd:after {
     color: rgba(0, 0, 0, 0.3);
@@ -271,6 +273,12 @@
 }
 .weui-cells_checkbox .weui-icon-checked {
     color: rgba(0, 0, 0, 0.3);
+}
+.weui-check__label,
+.weui-check__label__text,
+.weui-cell__bd,
+.weui-cell__ft {
+    flex-shrink: 0;
 }
 .weui-cells_radio .weui-check:checked + .weui-icon-checked,
 .weui-cells_radio .weui-check[aria-checked='true'] + .weui-icon-checked {
@@ -395,6 +403,8 @@
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 .weui-form-preview__bd {
+    display: flex;
+    flex-direction: row;
     color: rgba(0, 0, 0, 0.5);
 }
 .weui-form-preview__btn {
@@ -412,6 +422,10 @@
 }
 .weui-form-preview__btn_primary {
     color: #576b95;
+}
+.weui-form-preview__ft {
+    display: flex;
+    flex-direction: row;
 }
 .weui-form-preview__ft:before {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -431,6 +445,15 @@
 .weui-form-preview__value {
     color: rgba(0, 0, 0, 0.9);
 }
+/* 替代子元素左右浮动 */
+.weui-form-preview__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.weui-form-preview__value_in-hd {
+    color: rgba(0,0,0,.9);
+}
 .weui-form__text-area {
     color: rgba(0, 0, 0, 0.9);
 }
@@ -443,6 +466,9 @@
 }
 .weui-gallery__opr {
     color: #fff;
+}
+.weui-grid {
+    /* flex-direction: row; */
 }
 .weui-grid:active {
     background-color: #ececec;
@@ -843,8 +869,16 @@
 .weui-icon_msg.weui-icon_msg.weui-icon-warn {
     color: #fa5151;
 }
+.weui-input {
+    font-size: 14px;
+    height: 60px;
+}
 .weui-input__placeholder {
     color: rgba(0, 0, 0, 0.3);
+}
+.weui-cell, .weui-cell__hd, .weui-label {
+    display: flex;
+    flex-direction: row;
 }
 .weui-link {
     color: #576b95;
@@ -857,13 +891,21 @@
     color: rgba(0, 0, 0, 0.1);
 }
 .weui-loading {
+    display: flex;
     height: 20px;
     width: 20px;
 }
+.weui-loadmore {
+    flex-direction: row;
+    justify-content: center;
+}
 .weui-loadmore__tips {
+    display: flex;
     color: rgba(0, 0, 0, 0.9);
 }
 .weui-loadmore_dot .weui-loadmore__tips:before {
+    /* skyline 不支持，隐藏掉 */
+    display: none;
     background-color: rgba(0, 0, 0, 0.1);
 }
 .weui-loadmore_line {
@@ -872,6 +914,21 @@
 .weui-loadmore_line .weui-loadmore__tips {
     background-color: #fff;
     color: rgba(0, 0, 0, 0.5);
+}
+/* skyline :before 兼容 */
+.weui-loadmore__tips__before {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    position: relative;
+    vertical-align: 0;
+    top: -.16em;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
 }
 .weui-mask {
     height: 100vh;
@@ -889,13 +946,21 @@
     color: rgba(0, 0, 0, 0.3);
 }
 .weui-media-box__info {
+    display: flex;
+    flex-direction: row;
     color: rgba(0, 0, 0, 0.3);
+}
+.weui-media-box__info__meta {
+    box-sizing: border-box; 
 }
 .weui-media-box__info__meta_extra {
     border-left: 1px solid rgba(0, 0, 0, 0.3);
 }
 .weui-media-box__title {
     color: rgba(0, 0, 0, 0.9);
+}
+.weui-media-box_appmsg {
+    flex-direction: row;
 }
 .weui-msg {
     background-color: #fff;
@@ -953,12 +1018,23 @@
 .weui-navigation-bar__inner .weui-navigation-bar__center {
     -webkit-flex: 1 1 auto;
     flex: 1 1 auto;
+    /* skyline 不支持 inline-flex，所以在父元素 flex-direction: row; 来支持 */
+    flex-direction: row; 
 }
 .weui-navigation-bar__inner .weui-navigation-bar__left .weui-navigation-bar__btn_goback {
     height: 24px;
     width: 12px;
     background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='24' viewBox='0 0 12 24'%3E  %3Cpath fill-opacity='.9' fill-rule='evenodd' d='M10 19.438L8.955 20.5l-7.666-7.79a1.02 1.02 0 0 1 0-1.42L8.955 3.5 10 4.563 2.682 12 10 19.438z'/%3E%3C/svg%3E")
         no-repeat 50% 50%;
+}
+.weui-navigation-bar__inner .weui-navigation-bar__left .weui-navigation-bar__btn_home {
+    height: 24px;
+    width: 24px;
+    background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E  %3Cpath fill-opacity='.9' fill-rule='evenodd' d='m12.707 2.907 8.786 8.586a1 1 0 0 1-.707 1.707H18.2v7.2a1 1 0 0 1-1 1H6.8a1 1 0 0 1-1-1v-7.2H3.214a1 1 0 0 1-.707-1.707l8.786-8.586a1 1 0 0 1 1.414 0Zm-.707.99L3.697 12H7v8.2h4v-2.8h2v2.8h4V12h3.303L12 3.897Z'/%3E%3C/svg%3E")
+        no-repeat 50% 50%;
+}
+.weui-navigation-bar__buttons_goback {
+    margin-right: 12px;
 }
 .weui-navigation-bar__inner .weui-navigation-bar__right {
     margin-right: 0px;
@@ -1241,8 +1317,24 @@ i.weui-tabbar__icon {
 .weui-uploader__info {
     color: rgba(0, 0, 0, 0.3);
 }
+.weui-uploader__overview {
+    width: 100%;
+    flex-direction: row;
+}
 .weui-uploader__tips {
+    width: 100%;
     color: rgba(0, 0, 0, 0.3);
+}
+.weui-uploader__title {
+    font-size: 14px;
+    width: 100%;
+    /* flex: none; */
+}
+.weui-uploader__hd {
+    display: flex;
+}
+.weui-uploader__img {
+    display: flex;
 }
 .weui-vcode-btn {
     color: #576b95;
@@ -1274,4 +1366,7 @@ i.weui-tabbar__icon {
 }
 .weui-slideview__btn-group_default~.weui-slideview__btn-group_default:before {
     display: none;
+}
+.weui-slideview__btn__icon {
+    margin: auto;
 }

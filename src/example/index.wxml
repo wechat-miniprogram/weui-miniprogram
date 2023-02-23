@@ -1,4 +1,4 @@
-<view class="page" data-weui-theme="{{theme}}">
+<view class="page {{theme=='dark' ? 'weui-theme-dark' : ''}}" data-weui-theme="{{theme}}">
     <mp-navigation-bar title="小程序UI组件库" back="{{false}}" />
     <scroll-view type="list" scroll-y>
         <view class="page__hd">

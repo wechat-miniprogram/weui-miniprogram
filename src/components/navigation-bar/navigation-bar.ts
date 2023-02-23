@@ -46,6 +46,11 @@ Component({
         delta: {
             type: Number,
             value: 1
+        },
+        homeButton: {
+            // 显示 homeButton
+            type: Boolean,
+            value: false
         }
     },
     /**
@@ -92,6 +97,7 @@ Component({
                 displayStyle
             })
         },
+        // 返回上一页
         back() {
             const data: any = this.data
             if (data.delta) {
@@ -100,6 +106,19 @@ Component({
                 })
             }
             this.triggerEvent('back', { delta: data.delta }, {})
+        },
+        // 返回首页
+        home() {
+            let entryPagePath = __wxConfig.entryPagePath.replace('.html', '')
+            if (!entryPagePath.startsWith('/')) {
+                entryPagePath = '/' + entryPagePath
+            }
+            wx.reLaunch({
+                url: entryPagePath,
+                complete(res) {
+                    console.log('返回首页：', res)
+                }
+            })
         }
     }
 })

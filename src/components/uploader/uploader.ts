@@ -65,6 +65,9 @@ Component({
     },
     ready() {},
     methods: {
+        error(e) {
+            console.log('image not show', e, e.detail.errMsg)
+        },
         previewImage(e) {
             const { index } = e.currentTarget.dataset
             const previewImageUrls = []

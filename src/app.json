@@ -53,5 +53,7 @@
   "debug": true,
   "style": "v2",
   "lazyCodeLoading": "requiredComponents",
-  "renderer": "skyline"
+  "renderer": "skyline",
+  "darkmode": true,
+  "themeLocation": "theme.json"
 }

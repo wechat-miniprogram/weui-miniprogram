@@ -1,12 +1,20 @@
+// .weui-toptips {
+//     display: block;
+// }
 .weui-toptips {
-    display: block;
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    right: 40px;
+    bottom: 40px;
 }
+// skyline 不支持 var()
 .weui-toptips_success {
-    background-color: var(--weui-BRAND);
+    background-color: #07c160; // var(--weui-BRAND);
 }
 .weui-toptips_error {
-    background-color: var(--weui-RED);
+    background-color: #fa5151; // var(--weui-RED);
 }
 .weui-toptips_info {
-    background-color: var(--weui-BLUE);
+    background-color: #10aeff; // var(--weui-BLUE);
 }

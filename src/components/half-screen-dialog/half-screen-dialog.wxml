@@ -8,7 +8,7 @@
     aria-role="button"
     aria-label="关闭"
   ></view>
-  <view class="weui-half-screen-dialog weui-transition {{innerShow ? 'weui-transition_show' : '' }} {{extClass}}" style="padding-bottom: {{paddingBottom}}px;">
+  <view class="weui-half-screen-dialog weui-transition {{innerShow ? 'weui-transition_show' : '' }} {{ skyline ? 'weui-half-screen-dialog__skyline' : '' }} {{extClass}}" style="padding-bottom: {{paddingBottom}}px;">
     <view class="weui-half-screen-dialog__hd" style="padding-left: {{paddingLeft + 24}}px; padding-right: {{paddingRight + 24}}px;">
       <view wx:if="{{closabled}}" class="weui-half-screen-dialog__hd__side" bindtap="close" data-type="close">
         <view class="weui-icon-btn" aria-role="button" hover-class="weui-active">关闭<i class="weui-icon-close-thin"></i></view>

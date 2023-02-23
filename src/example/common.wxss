@@ -2,11 +2,17 @@
 @import '~weui-wxss/dist/style/weui.wxss';
 @import '../components/patch.wxss';
 @import '../components/skyline-patch.wxss';
+@import '../components/skyline-darkmode-patch.wxss';
 @import './skyline-app-patch.wxss';
 
 .page scroll-view {
     flex: 1 1 auto;
-    height: 50vh;
+    /* height: 100vh; */
+}
+
+/* skyline 兼容写法，一些+选择器支持 */
+.mrt16 {
+    margin-top: 16px
 }
 
 @media (prefers-color-scheme: dark) {
