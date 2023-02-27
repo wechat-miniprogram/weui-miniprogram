@@ -1,51 +1,53 @@
-<view wx:if="{{wrapperShow}}" class="weui-half-screen-dialog__wrapper" aria-role="dialog" aria-modal="true">
-  <view
-    class="weui-mask weui-transition {{innerShow ? 'weui-transition_show' : '' }}"
-    wx:if="{{mask}}"
-    bindtap="close"
-    catch:touchmove="onMaskMouseMove"
-    data-type="tap"
-    aria-role="button"
-    aria-label="关闭"
-  ></view>
-  <view class="weui-half-screen-dialog weui-transition {{innerShow ? 'weui-transition_show' : '' }} {{ skyline ? 'weui-half-screen-dialog__skyline' : '' }} {{extClass}}" style="padding-bottom: {{paddingBottom}}px;">
-    <view class="weui-half-screen-dialog__hd" style="padding-left: {{paddingLeft + 24}}px; padding-right: {{paddingRight + 24}}px;">
-      <view wx:if="{{closabled}}" class="weui-half-screen-dialog__hd__side" bindtap="close" data-type="close">
-        <view class="weui-icon-btn" aria-role="button" hover-class="weui-active">关闭<i class="weui-icon-close-thin"></i></view>
+<root-portal wx:if="{{wrapperShow}}">
+  <view wx:if="{{wrapperShow}}" class="weui-half-screen-dialog__wrapper" aria-role="dialog" aria-modal="true">
+    <view
+      class="weui-mask weui-transition {{innerShow ? 'weui-transition_show' : '' }} {{ skyline ? 'weui-mask__skyline' : ''}}"
+      wx:if="{{mask}}"
+      bindtap="close"
+      catch:touchmove="onMaskMouseMove"
+      data-type="tap"
+      aria-role="button"
+      aria-label="关闭"
+    ></view>
+    <view class="weui-half-screen-dialog weui-transition {{innerShow ? 'weui-transition_show' : '' }} {{ skyline ? 'weui-half-screen-dialog__skyline' : '' }} {{extClass}}" style="padding-bottom: {{paddingBottom}}px;">
+      <view class="weui-half-screen-dialog__hd" style="padding-left: {{paddingLeft + 24}}px; padding-right: {{paddingRight + 24}}px;">
+        <view wx:if="{{closabled}}" class="weui-half-screen-dialog__hd__side" bindtap="close" data-type="close">
+          <view class="weui-icon-btn" aria-role="button" hover-class="weui-active">关闭<i class="weui-icon-close-thin"></i></view>
+        </view>
+        <view class="weui-half-screen-dialog__hd__main" tabindex="0">
+          <block wx:if="{{title}}">
+            <text class="weui-half-screen-dialog__title">{{title}}</text>
+            <text class="weui-half-screen-dialog__subtitle">{{subTitle}}</text>
+          </block>
+          <block wx:else>
+            <view class="weui-half-screen-dialog__title"><slot name="title"></slot></view>
+          </block>
+        </view>
+        <view wx:if="{{more}}" class="weui-half-screen-dialog__hd__side" bindtap="onTapMore">
+          <view class="weui-icon-btn" aria-role="button" hover-class="weui-active">更多<i class="weui-icon-more"></i></view>
+        </view>
       </view>
-      <view class="weui-half-screen-dialog__hd__main" tabindex="0">
-        <block wx:if="{{title}}">
-          <text class="weui-half-screen-dialog__title">{{title}}</text>
-          <text class="weui-half-screen-dialog__subtitle">{{subTitle}}</text>
+      <view class="weui-half-screen-dialog__bd" style="padding-left: {{paddingLeft + 24}}px; padding-right: {{paddingRight + 24}}px;">
+        <block wx:if="{{desc}}">
+          <view class="weui-half-screen-dialog__desc">{{desc}}</view>
+          <view class="weui-half-screen-dialog__tips">{{tips}}</view>
         </block>
-        <block wx:else>
-          <view class="weui-half-screen-dialog__title"><slot name="title"></slot></view>
+        <slot name="desc" wx:else></slot>
+      </view>
+      <view class="weui-half-screen-dialog__ft" style="padding-left: {{paddingLeft + 24}}px; padding-right: {{paddingRight + 24}}px;">
+        <block wx:if="{{buttons && buttons.length}}">
+          <button
+            wx:for="{{buttons}}"
+            wx:key="index"
+            type="{{item.type}}"
+            class="weui-btn {{item.className}}"
+            data-index="{{index}}"
+            bindtap="buttonTap"
+            aria-role="button"
+          >{{item.text}}</button>
         </block>
+        <slot name="footer" wx:else></slot>
       </view>
-      <view wx:if="{{more}}" class="weui-half-screen-dialog__hd__side" bindtap="onTapMore">
-        <view class="weui-icon-btn" aria-role="button" hover-class="weui-active">更多<i class="weui-icon-more"></i></view>
-      </view>
-    </view>
-    <view class="weui-half-screen-dialog__bd" style="padding-left: {{paddingLeft + 24}}px; padding-right: {{paddingRight + 24}}px;">
-      <block wx:if="{{desc}}">
-        <view class="weui-half-screen-dialog__desc">{{desc}}</view>
-        <view class="weui-half-screen-dialog__tips">{{tips}}</view>
-      </block>
-      <slot name="desc" wx:else></slot>
-    </view>
-    <view class="weui-half-screen-dialog__ft" style="padding-left: {{paddingLeft + 24}}px; padding-right: {{paddingRight + 24}}px;">
-      <block wx:if="{{buttons && buttons.length}}">
-        <button
-          wx:for="{{buttons}}"
-          wx:key="index"
-          type="{{item.type}}"
-          class="weui-btn {{item.className}}"
-          data-index="{{index}}"
-          bindtap="buttonTap"
-          aria-role="button"
-        >{{item.text}}</button>
-      </block>
-      <slot name="footer" wx:else></slot>
     </view>
   </view>
-</view>
+</root-portal>

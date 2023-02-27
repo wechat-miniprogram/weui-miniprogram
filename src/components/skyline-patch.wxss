@@ -930,7 +930,7 @@
     border-bottom-right-radius: 50%;
     border-bottom-left-radius: 50%;
 }
-.weui-mask {
+.weui-mask__skyline {
     height: 100vh;
     position: absolute;
     width: 100vw;
