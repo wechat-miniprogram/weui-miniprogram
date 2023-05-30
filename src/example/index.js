@@ -71,5 +71,12 @@ CustomPage({
                 App.themeChanged('light')
             }
         }
+    },
+    // navigator 改成 view，兼容
+    openPage(e) {
+        const page = e.currentTarget.dataset.page
+        wx.navigateTo({
+            url: `${page}/${page}`
+        })
     }
 })

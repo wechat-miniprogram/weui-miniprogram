@@ -1,9 +1,11 @@
 <view class="weui-grids {{extClass}}">
   <block wx:for="{{innerGrids}}" wx:key="index">
-    <navigator
+    <!-- 把 navigator 改成 view，因为这里 navigator 现在的实现是 text，和 webview 在布局上有点不同 -->
+    <view
       class="weui-grid"
       target="{{item.target}}"
       url="{{item.url}}"
+      data-url="{{item.url}}"
       open-type="{{item.openType}}"
       app-id="{{item.appId}}"
       path="{{item.path}}"
@@ -16,11 +18,12 @@
       bindsuccess="{{item.bindsuccess}}"
       bindfail="{{item.bindfail}}"
       bindcomplete="{{item.bindcomplete}}"
+      bindtap="openPage"
     >
       <view class="weui-grid__icon">
         <image class="weui-grid__icon_img" src="{{item.imgUrl}}" alt></image>
       </view>
       <view class="weui-grid__label">{{item.text}}</view>
-    </navigator>
+    </view>
   </block>
 </view>

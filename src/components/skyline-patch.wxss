@@ -1,0 +1,172 @@
+/* weui 用了标签写法，skyline 下部分声明不生效，所以重新声明一次 */
+page {
+    --weui-BG-0:#ededed;
+    --weui-BG-1:#f7f7f7;
+    --weui-BG-2:#fff;
+    --weui-BG-3:#f7f7f7;
+    --weui-BG-4:#4c4c4c;
+    --weui-BG-5:#fff;
+    --weui-FG-0:rgba(0,0,0,.9);
+    --weui-FG-HALF:rgba(0,0,0,.9);
+    --weui-FG-1:rgba(0,0,0,.5);
+    --weui-FG-2:rgba(0,0,0,.3);
+    --weui-FG-3:rgba(0,0,0,.1);
+    --weui-FG-4:rgba(0,0,0,.15);
+    --weui-RED:#fa5151;
+    --weui-ORANGE:#fa9d3b;
+    --weui-YELLOW:#ffc300;
+    --weui-GREEN:#91d300;
+    --weui-LIGHTGREEN:#95ec69;
+    --weui-BRAND:#07c160;
+    --weui-BLUE:#10aeff;
+    --weui-INDIGO:#1485ee;
+    --weui-PURPLE:#6467f0;
+    --weui-WHITE:#fff;
+    --weui-LINK:#576b95;
+    --weui-TEXTGREEN:#06ae56;
+    --weui-FG:#000;
+    --weui-BG:#fff;
+    --weui-TAG-TEXT-ORANGE:#fa9d3b;
+    --weui-TAG-BACKGROUND-ORANGE:rgba(250,157,59,.1);
+    --weui-TAG-TEXT-GREEN:#06ae56;
+    --weui-TAG-BACKGROUND-GREEN:rgba(6,174,86,.1);
+    --weui-TAG-TEXT-BLUE:#10aeff;
+    --weui-TAG-BACKGROUND-BLUE:rgba(16,174,255,.1);
+    --weui-TAG-TEXT-BLACK:rgba(0,0,0,.5);
+    --weui-TAG-BACKGROUND-BLACK:rgba(0,0,0,.05);
+}
+
+/* skyline 兼容写法，一些+选择器支持 */
+.mrt16 {
+    margin-top: 16px
+}
+
+/* weui-flex */
+.weui-flex {
+    flex-direction: row;
+}
+.weui-flex__item {
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+/* 表单 */
+
+/* weui-cell */
+.weui-cell {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+/* 伪元素只支持::，不支持:，所以重写了一波 */
+.weui-cell_access .weui-cell__ft::after {
+    content: " ";
+    width: 12px;
+    height: 24px;
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    /* 不支持 currentColor */
+    /* background-color: var(--weui-FG-2); */
+    background-color: #000;
+    color: var(--weui-FG-2);
+    -webkit-mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M2.454%206.58l1.06-1.06%205.78%205.779a.996.996%200%20010%201.413l-5.78%205.779-1.06-1.061%205.425-5.425-5.425-5.424z%22%20fill%3D%22%23B2B2B2%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);
+    mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M2.454%206.58l1.06-1.06%205.78%205.779a.996.996%200%20010%201.413l-5.78%205.779-1.06-1.061%205.425-5.425-5.425-5.424z%22%20fill%3D%22%23B2B2B2%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -12px;
+}
+
+/* weui-navigation-bar */
+.weui-navigation-bar {
+    -webkit-box-flex: 0;
+    -webkit-flex: none;
+    flex: none;
+}
+.weui-navigation-bar__inner {
+    height: 44px;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    box-sizing: border-box;
+    flex-direction: row;
+    position: relative;
+}
+.weui-navigation-bar__inner .weui-navigation-bar__center {
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+    /* skyline 不支持 inline-flex，所以在父元素 flex-direction: row; 来支持 */
+    flex-direction: row; 
+}
+.weui-navigation-bar__inner .weui-navigation-bar__left .weui-navigation-bar__btn_goback {
+    width: 1rem;
+    height: 1rem;
+    /* background-color: var(--weui-FG-0); */
+    background-color: #000;
+}
+
+
+/* weui-slideview */
+.weui-slideview__btn {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+}
+.weui-slideview_icon .weui-slideview__btn {
+    flex: none;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.weui-slideview_icon .weui-slideview__btn wx-image {
+    align-self: center;
+}
+.weui-slideview__btn__icon {
+    margin: auto;
+}
+.weui-slideview__btn__wrp {
+    justify-content: center;
+}
+
+/* weui-uploader */
+.weui-uploader__bd, 
+.weui-uploader__files {
+    display: flex;
+    flex-direction: row; 
+}
+
+/* weui-grid */
+.weui-grids {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+/* weui-search-bar */
+.weui-search-bar {
+    flex-direction: row;
+    height: 100%;
+}
+.weui-search-bar__box {
+    flex-direction: row;
+    flex: 1 1 auto;
+    height: 100%;
+}
+.weui-search-bar__form {
+    flex: 1 1 auto;
+    height: 100%;
+}
+.weui-search-bar__label {
+    flex-direction: row;
+    background: #fff;
+}

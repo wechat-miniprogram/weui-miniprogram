@@ -10,3 +10,16 @@
     display: inline-block;
     height: 20px;
 }
+
+/* skyline */
+.ft-img-cnt {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+}
+
+.page {
+    background-color: #ededed;
+}

@@ -1,4 +1,5 @@
 <view class="page" data-weui-theme="{{theme}}">
+    <mp-navigation-bar title="Msg"></mp-navigation-bar>
     <view class="page__hd">
         <view class="page__title">Msg</view>
         <view class="page__desc">提示页</view>

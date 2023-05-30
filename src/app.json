@@ -54,5 +54,7 @@
     "downloadFile": 10000
   },
   "debug": true,
-  "style": "v2"
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents",
+  "renderer": "skyline"
 }

@@ -1,5 +1,5 @@
 module.exports = {
-    appId: 'wx69718f08e51eebf9',
+    appId: 'wxa1ffed530ccba79d',
     projectName: '小程序自定义组件',
     app: (mode) => (mode !== 'production' ? 'src/app' : undefined),
     pages: (mode) => (mode !== 'production' ? undefined : ['src/components/index']),
