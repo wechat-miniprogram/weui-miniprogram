@@ -76,6 +76,7 @@ Component({
             }
         },
         close(e) {
+            console.log('1111', e)
             const { type } = e.currentTarget.dataset
             if (this.data.maskClosable || type === 'close') {
                 this.setData({
@@ -90,6 +91,7 @@ Component({
             this.triggerEvent('buttontap', { index, item: this.data.buttons[index] }, {})
         },
         onMaskMouseMove() {
+            console.log('onMaskMouseMove')
             // do nothing
         }
     }

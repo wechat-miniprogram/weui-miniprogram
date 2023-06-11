@@ -1,4 +1,5 @@
 {
+    "componentFramework": "glass-easel",
   "usingComponents": {
     "mp-gallery": "../../components/gallery/gallery"
   }

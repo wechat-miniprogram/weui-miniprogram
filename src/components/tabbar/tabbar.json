@@ -1,5 +1,6 @@
 {
     "component": true,
+  "componentFramework": "glass-easel",
     "usingComponents": {
         "mp-badge": "../badge/badge"
     }

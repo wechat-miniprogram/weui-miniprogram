@@ -18,14 +18,14 @@
                         <view class="weui-form-preview__label">商品</view>
                         <view class="weui-form-preview__value">电动打蛋机</view>
                     </view>
-                    <view class="weui-form-preview__item">
+                    <!-- <view class="weui-form-preview__item">
                         <view class="weui-form-preview__label">标题标题</view>
                         <view class="weui-form-preview__value">名字名字名字</view>
                     </view>
                     <view class="weui-form-preview__item">
                         <view class="weui-form-preview__label">标题标题</view>
                         <view class="weui-form-preview__value">很长很长的名字很长很长的名字很长很长的名字很长很长的名字很长很长的名字</view>
-                    </view>
+                    </view> -->
                 </view>
                 <view class="weui-form-preview__ft">
                     <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">操作</navigator>

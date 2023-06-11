@@ -50,6 +50,7 @@ var touchmove = function(event, ownerInstance) {
         return false
     }
     if (movex > 0) movex = 0
+    console.log('--------', ins)
     ins.setStyle({
         'transform': 'translateX(' + movex + 'px)',
         'transition': ''
@@ -160,6 +161,7 @@ var hideButton = function(event, ownerInstance) {
     return false
 }
 var sizeReady = function(newVal, oldVal, ownerInstance, ins) {
+    console.log('----------------sizeReady', newVal, oldVal)
     var st = ins.getState()
     // st.disable = newVal && newVal.disable
     if (newVal && newVal.button && newVal.buttons) {

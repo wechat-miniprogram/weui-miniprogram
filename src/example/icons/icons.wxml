@@ -10,10 +10,10 @@
                 <view class="icon-box__title">描边型</view>
                 <view class="weui-grids">
                     <block wx:for="{{iconList}}" wx:key="*this">
-                        <navigator url="" class="weui-grid">
+                        <view class="weui-grid">
                             <mp-icon icon="{{item.icon}}" color="{{item.color}}" size="{{item.size}}"></mp-icon>
                             <view class="weui-grid__label">{{item.icon}}</view>
-                        </navigator>
+                        </view>
                     </block>
                 </view>
             </view>
@@ -21,10 +21,10 @@
                 <view class="icon-box__title">填充型</view>
                 <view class="weui-grids">
                     <block wx:for="{{iconList}}" wx:key="*this">
-                        <navigator url="" class="weui-grid">
+                        <view class="weui-grid">
                             <mp-icon type="filled" icon="{{item.icon}}" color="{{item.color}}" size="{{item.size}}"></mp-icon>
                             <view class="weui-grid__label">{{item.icon}}</view>
-                        </navigator>
+                        </view>
                     </block>
                 </view>
             </view>

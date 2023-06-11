@@ -5,7 +5,7 @@
     </view>
     <view class="page__bd">
         <button class="weui-btn" type="primary" bindtap="showToptips1">显示1</button>
-        <button class="weui-btn" type="primary" bindtap="showToptips2">显示2</button>
+        <button class="weui-btn mrt16" type="primary" bindtap="showToptips2">显示2</button>
         <button class="weui-btn mrt16" type="primary" bindtap="showToptips3">显示3</button>
 
         <mp-toptips ext-class="top100" msg="距离顶部100px" type="error" show="{{show1}}"></mp-toptips>

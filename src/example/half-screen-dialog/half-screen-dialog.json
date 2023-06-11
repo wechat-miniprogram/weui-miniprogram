@@ -1,4 +1,5 @@
 {
+    "componentFramework": "glass-easel",
   "usingComponents": {
     "mp-navigation-bar": "../../components/navigation-bar/navigation-bar",
     "mp-halfScreenDialog": "../../components/half-screen-dialog/half-screen-dialog"

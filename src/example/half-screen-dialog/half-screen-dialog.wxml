@@ -8,15 +8,15 @@
     <view class="page__bd">
         <view class="weui-btn-area">
             <button class="weui-btn" type="primary" bindtap="openTypeF">样式一</button>
-            <button class="weui-btn" type="primary" bindtap="openTypeS">样式二</button>
-            <button class="weui-btn" type="primary" bindtap="openTypeT">样式三</button>
+            <button class="weui-btn mrt16" type="primary" bindtap="openTypeS">样式二</button>
+            <button class="weui-btn mrt16" type="primary" bindtap="openTypeT">样式三</button>
         </view>
         <mp-halfScreenDialog show="{{typeF}}">
           <view slot="title">测试标题A</view>
           <view slot="desc">这是自定义描述区</view>
           <view slot="footer">
-            <button slot="footer" type="default" class="weui-btn">按钮A</button>
-            <button slot="footer" type="primary" class="weui-btn">按钮B</button>
+            <button type="default" class="weui-btn">按钮A</button>
+            <button type="primary" class="weui-btn">按钮B</button>
           </view>
         </mp-halfScreenDialog>
         <mp-halfScreenDialog show="{{typeT}}" closabled="{{false}}">

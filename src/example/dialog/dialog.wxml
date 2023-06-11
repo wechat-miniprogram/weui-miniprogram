@@ -8,7 +8,7 @@
         <view class="page__bd">
             <view class="weui-btn-area">
                 <button class="weui-btn" type="default" bindtap="openConfirm">确认取消按钮</button>
-                <button class="weui-btn" type="default" bindtap="tapOneDialogButton">只有确认按钮</button>
+                <button class="weui-btn mrt16" type="default" bindtap="tapOneDialogButton">只有确认按钮</button>
             </view>
         </view>
         <mp-dialog title="test" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
