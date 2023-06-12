@@ -50,11 +50,12 @@
                         <input bindinput="formInputChange" data-field="idcard" class="weui-input" placeholder="请输入卡号"/>
                     </mp-cell>
                 </mp-cells>
-                <mp-cells title="开关">
+                <!-- 开关 skyline 不支持 -->
+                <!-- <mp-cells title="开关">
                     <mp-cell title="标题文字" ext-class="">
                         <switch slot="footer" checked />
                     </mp-cell>
-                </mp-cells>
+                </mp-cells> -->
                 <mp-cells title="文本框">
                     <mp-cell title="标题文字" ext-class="">
                         <input class="weui-input" placeholder="请输入文本" />
