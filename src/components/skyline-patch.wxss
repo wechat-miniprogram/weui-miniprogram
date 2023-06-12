@@ -35,6 +35,8 @@ page {
     --weui-TAG-TEXT-BLACK:rgba(0,0,0,.5);
     --weui-TAG-BACKGROUND-BLACK:rgba(0,0,0,.05);
     --weui-DIALOG-LINE-COLOR: rgba(0,0,0,.1);
+    --weui-BTN-DEFAULT-COLOR:#06ae56;
+    --weui-BTN-DEFAULT-BG:#f2f2f2;
     --weui-cellMarginLR: 16px;
     --weui-cellPaddingLR: 16px;
 }
@@ -392,6 +394,12 @@ page {
     justify-content: center;
 }
 
+/* weui-gallery */
+.weui-gallery__img__wrp,
+.weui-gallery__opr {
+    pointer-events: auto;
+}
+
 /* weui-loadmore */
 .weui-loading {
     display: flex;
@@ -432,6 +440,66 @@ page {
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
     border-bottom-left-radius: 50%;
+}
+
+/* weui-loading */
+.wx_dot_loading, .wx_dot_loading::after, .wx_dot_loading::before {
+    display: flex;
+    vertical-align: middle;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.3);
+    font-size: 0;
+    -webkit-animation: dot2 1.6s step-start infinite;
+    animation: dot2 1.6s step-start infinite;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    animation-duration: 1.6s;
+    animation-timing-function: step-start;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: dot2;
+    animation-timeline: auto;
+}
+.wx_dot_loading::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    background-color: rgba(0,0,0,.1);
+    -webkit-animation: dot1 1.6s step-start infinite;
+    animation: dot1 1.6s step-start infinite;
+    animation-duration: 1.6s;
+    animation-timing-function: step-start;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: dot1;
+    animation-timeline: auto;
+}
+.wx_dot_loading::after {
+    content: "";
+    position: absolute;
+    right: -12px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-animation: dot3 1.6s step-start infinite;
+    animation: dot3 1.6s step-start infinite;
+    animation-duration: 1.6s;
+    animation-timing-function: step-start;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: dot3;
+    animation-timeline: auto;
 }
 
 /* panel */
