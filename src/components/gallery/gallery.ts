@@ -79,7 +79,6 @@ Component({
             })
         },
         hideGallery() {
-            console.log('hideGallery')
             const data: any = this.data
             if (data.hideOnClick) {
                 this.setData({

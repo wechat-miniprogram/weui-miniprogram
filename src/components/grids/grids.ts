@@ -50,7 +50,7 @@ Component({
             wx.navigateTo({
                 url: url,
                 complete(res) {
-                    console.log(res)
+                    
                 }
             })
         }

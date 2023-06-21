@@ -165,7 +165,7 @@ Component({
                 this.st.transformTotal.value = transformTotal
                 this.st.size.buttons.value = buttons
                 this.st.max.value = total
-                console.log('this.st', this.st.size.buttons.value)
+                
                 for (let index = rects.length - 1; index >= 0; index--) {
                     this.applyAnimatedStyle(`.btn-${index}`, () => {
                         'worklet';
@@ -197,18 +197,15 @@ Component({
                 }
             }).exec()
         },
-        touchstart(event, ownerInstance) {
+        touchstart(event) {
             'worklet';
-            console.log('touchstart')
             
             if (this.st.disable.value) return // disable的逻辑
-            // if (!this.st.size.value) return
-            // this.st.isMoving.value = true
             this.st.startX.value = event.touches[0].pageX
             this.st.startY.value = event.touches[0].pageY
             this.st.firstAngle.value = 0
         },
-        touchmove(event, ownerInstance) {
+        touchmove(event) {
             'worklet';
         
             var pagex = event.touches[0].pageX - this.st.startX.value
