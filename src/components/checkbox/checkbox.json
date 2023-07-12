@@ -1,5 +1,6 @@
 {
     "component": true,
+    "addGlobalClass": true,
     "usingComponents": {
         "mp-cell": "../cell/cell",
         "mp-checkbox-group": "../checkbox-group/checkbox-group"

@@ -3,7 +3,6 @@ Component({
      * 组件的属性列表
      */
     options: {
-        addGlobalClass: true,
         multipleSlots: true
     },
     properties: {
@@ -81,11 +80,11 @@ Component({
         updateRight() {
             // 获取右侧滑动显示区域的宽度
             const data: any = this.data
-            const query = wx.createSelectorQuery().in(this)
+            const query = this.createSelectorQuery()
             query
                 .select('.left')
                 .boundingClientRect((res) => {
-                    const btnQuery = wx.createSelectorQuery().in(this)
+                    const btnQuery = this.createSelectorQuery()
                     btnQuery
                         .selectAll('.btn')
                         .boundingClientRect((rects) => {

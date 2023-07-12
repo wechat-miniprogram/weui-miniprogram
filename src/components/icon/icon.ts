@@ -8,7 +8,7 @@ const getFixedIconType = function (type: string): string {
 
 Component({
     options: {
-        addGlobalClass: true
+        
     },
     properties: {
         extClass: {

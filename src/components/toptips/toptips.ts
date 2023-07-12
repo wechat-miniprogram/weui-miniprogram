@@ -7,7 +7,7 @@ const typeClassMap = {
 
 Component({
     options: {
-        addGlobalClass: true
+        
     },
     properties: {
         type: {

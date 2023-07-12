@@ -1,5 +1,6 @@
 {
     "component": true,
+    "addGlobalClass": true,
     "usingComponents": {
         "mp-cells": "../cells/cells"
     }

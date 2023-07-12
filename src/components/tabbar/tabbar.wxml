@@ -16,7 +16,6 @@
         <view
           id="t{{index}}_tips"
           aria-hidden="true"
-          style="position: relative;display:inline-block;"
         >
           <image src="{{current === index ? item.selectedIconPath : item.iconPath}}" class="weui-tabbar__icon"></image>
           <mp-badge wx:if="{{item.badge || item.dot}}" content="{{item.badge}}" aria-label="{{item.ariaLabel || ''}}" style="position: absolute;top:-2px;left:calc(100% - 3px)"></mp-badge>

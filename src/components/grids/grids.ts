@@ -18,7 +18,6 @@ const defaultGridProps = {
 
 Component({
     options: {
-        addGlobalClass: true,
         pureDataPattern: /^_/
     },
     properties: {

@@ -21,7 +21,7 @@
             aria-label="关闭"
         ></view>
         <view
-            class="weui-actionsheet {{innerShow ? 'weui-animate-slide-up' : 'weui-animate-slide-down'}} {{extClass}}"
+            class="weui-actionsheet {{extClass}}"
             aria-role="dialog"
             aria-modal="true"
         >

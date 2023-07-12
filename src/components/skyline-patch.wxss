@@ -41,6 +41,8 @@ page {
     --weui-cellPaddingLR: 16px;
 }
 
+root-portal-content { position: absolute; }
+
 /* skyline 兼容写法，一些+选择器支持 */
 .mrt16 {
     margin-top: 16px
@@ -83,7 +85,8 @@ page {
     flex: none;
 }
 .weui-navigation-bar__inner {
-    height: 44px;
+    height: calc(44px + env(safe-area-inset-top));
+    padding-top: env(safe-area-inset-top);
     box-sizing: border-box;
     flex-direction: row;
     position: relative;
@@ -676,7 +679,8 @@ page {
     width: 24px;
 }
 .weui-icon-close-thin {
-    background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M12.25%2010.693L6.057%204.5%205%205.557l6.193%206.193L5%2017.943%206.057%2019l6.193-6.193L18.443%2019l1.057-1.057-6.193-6.193L19.5%205.557%2018.443%204.5z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);
+    /* background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M12.25%2010.693L6.057%204.5%205%205.557l6.193%206.193L5%2017.943%206.057%2019l6.193-6.193L18.443%2019l1.057-1.057-6.193-6.193L19.5%205.557%2018.443%204.5z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E); */
+    mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M12.25%2010.693L6.057%204.5%205%205.557l6.193%206.193L5%2017.943%206.057%2019l6.193-6.193L18.443%2019l1.057-1.057-6.193-6.193L19.5%205.557%2018.443%204.5z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);
 }
 .weui-half-screen-dialog__hd .weui-icon-btn::after {
     content: "";
@@ -710,6 +714,9 @@ page {
 }
 
 /* 导航相关 */
+root-portal {
+    position: absolute;
+}
 .root-portal-box {
     width: 100vw;
     height: 100vh;
@@ -729,12 +736,13 @@ page {
     display: flex;
     flex: 1 1 auto;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 .weui-tabbar__icon {
     display: flex;
     height: 28px;
     width: 28px;
-    flex: none;
 }
 
 /* 搜索相关 */

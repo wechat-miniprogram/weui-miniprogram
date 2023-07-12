@@ -1,6 +1,5 @@
 Component({
     options: {
-        addGlobalClass: true,
         writeIdToDOM: true
     } as any,
     properties: {

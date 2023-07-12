@@ -56,5 +56,10 @@
   "debug": true,
   "style": "v2",
   "lazyCodeLoading": "requiredComponents",
-  "renderer": "skyline"
+  "renderer": "skyline",
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true
+    }
+  }
 }

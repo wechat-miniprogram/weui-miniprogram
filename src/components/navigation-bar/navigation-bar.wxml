@@ -1,6 +1,5 @@
 <view class="weui-navigation-bar {{extClass}}">
-  <!-- <view class="weui-navigation-bar__placeholder {{ios ? 'ios' : 'android'}}" style="padding-top: {{statusBarHeight}}px;visibility: hidden;"></view> -->
-  <view class="weui-navigation-bar__inner {{ios ? 'ios' : 'android'}}" style="padding-top: {{statusBarHeight}}px; height: {{statusBarHeight + 44}}px; color: {{color}};background: {{background}};{{displayStyle}};{{innerPaddingRight}};{{innerWidth}};">
+  <view class="weui-navigation-bar__inner {{ios ? 'ios' : 'android'}}" style="color: {{color}};background: {{background}};{{displayStyle}};{{innerPaddingRight}};{{innerWidth}};">
 
     <!-- 左侧按钮 -->
     <view class='weui-navigation-bar__left' style="{{leftWidth}}; flex-direction: row; align-items: flex-start;">
