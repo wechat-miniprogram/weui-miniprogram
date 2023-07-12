@@ -322,6 +322,7 @@ root-portal-content { position: absolute; }
 .weui-grid {
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
 
 /* weui-badge */
@@ -330,6 +331,8 @@ root-portal-content { position: absolute; }
     padding: 1.8px 4.8px;
 }
 .weui-badge_dot {
+    display: flex;
+    box-sizing: border-box;
     padding: 4.8px;
     flex: none;
     height: 0;
@@ -361,6 +364,7 @@ root-portal-content { position: absolute; }
     width: 20px;
 }
 .weui-loadmore {
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -370,6 +374,7 @@ root-portal-content { position: absolute; }
     color: rgba(0, 0, 0, 0.9);
 }
 .weui-loadmore_line {
+    display: flex;
     /* border-top: 1px solid var(--weui-FG-3); */
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -596,6 +601,21 @@ root-portal-content { position: absolute; }
     display: flex;
     flex-direction: row;
 }
+.weui-form-preview__hd::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid var(--weui-FG-3);
+    color: var(--weui-FG-3);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    left: 16px;
+}
 
 /* 操作反馈 */
 
@@ -663,12 +683,10 @@ root-portal-content { position: absolute; }
 .weui-half-screen-dialog__btn-area {
     flex-direction: row;
 }
-.weui-icon-close {
-    background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M12%2010.586l5.657-5.657%201.414%201.414L13.414%2012l5.657%205.657-1.414%201.414L12%2013.414l-5.657%205.657-1.414-1.414L10.586%2012%204.929%206.343%206.343%204.93%2012%2010.586z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);
-}
 .weui-icon-close,
 .weui-icon-close-thin {
-    background-color: transparent;
+    /* 兼容 currentColor */
+    background-color: var(--weui-FG-0);
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: 24px 24px;
@@ -677,10 +695,6 @@ root-portal-content { position: absolute; }
     height: 24px;
     vertical-align: middle;
     width: 24px;
-}
-.weui-icon-close-thin {
-    /* background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M12.25%2010.693L6.057%204.5%205%205.557l6.193%206.193L5%2017.943%206.057%2019l6.193-6.193L18.443%2019l1.057-1.057-6.193-6.193L19.5%205.557%2018.443%204.5z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E); */
-    mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M12.25%2010.693L6.057%204.5%205%205.557l6.193%206.193L5%2017.943%206.057%2019l6.193-6.193L18.443%2019l1.057-1.057-6.193-6.193L19.5%205.557%2018.443%204.5z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);
 }
 .weui-half-screen-dialog__hd .weui-icon-btn::after {
     content: "";
@@ -738,6 +752,13 @@ root-portal {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+.weui-tabbar__item view {
+    position: relative;
+}
+.weui-badge {
+    /* background-color: var(--weui-RED); */
+    background-color: #fa5151;
 }
 .weui-tabbar__icon {
     display: flex;
