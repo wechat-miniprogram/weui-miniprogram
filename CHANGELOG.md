@@ -1,5 +1,9 @@
 # 更新日志
 
+## 1.2.8
+- feat: skyline 兼容
+- feat: 升级 `weui-wxss` 至 2.6.6
+
 ## 1.2.7
 
 - fix: dialog 修复自动聚焦 outline #216

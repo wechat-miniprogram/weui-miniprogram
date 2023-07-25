@@ -62,22 +62,9 @@ root-portal-content { position: absolute; }
 .weui-cell {
     flex-direction: row;
 }
-/* 伪元素只支持::，不支持:，所以重写了一波 */
 .weui-cell_access .weui-cell__ft::after {
-    content: " ";
-    width: 12px;
-    height: 24px;
-    mask-position: 0 0;
-    mask-repeat: no-repeat;
-    mask-size: 100%;
     /* 不支持 currentColor */
     background-color: var(--weui-FG-2);
-    color: var(--weui-FG-2);
-    mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M2.454%206.58l1.06-1.06%205.78%205.779a.996.996%200%20010%201.413l-5.78%205.779-1.06-1.061%205.425-5.425-5.425-5.424z%22%20fill%3D%22%23B2B2B2%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);
-    position: absolute;
-    top: 50%;
-    right: 0;
-    margin-top: -12px;
 }
 
 /* weui-navigation-bar */
@@ -140,53 +127,9 @@ root-portal-content { position: absolute; }
     /* padding: var(--weui-cellPaddingLR); */
     padding: 16px;
 }
-.weui-cells__group_form .weui-cells::before {
-    top: 0;
-    border-top: 1px solid rgba(0,0,0,.1);
-    transform-origin: 0 0;
-    transform: scaleY(.5);
-}
-.weui-cells__group_form .weui-cells::after {
-    bottom: 0;
-    border-bottom: 1px solid rgba(0,0,0,.1);
-    transform-origin: 0 100%;
-    transform: scaleY(.5);
-}
-.weui-cells__group_form .weui-cells::after,
-.weui-cells__group_form .weui-cells::before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 1px;
-    color: rgba(0,0,0,.1);
-    z-index: 2;
-}
-.weui-cells__group_form .weui-cells::after, .weui-cells__group_form .weui-cells::before {
-    left: var(--weui-cellPaddingLR);
-    right: var(--weui-cellPaddingLR);
-}
 .weui-cells__group_form .weui-cells {
     margin-left: 16px;
     margin-right: 16px;
-}
-.weui-cells__group_form .weui-cell::before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    height: 1px;
-    border-top: 1px solid rgba(0,0,0,.1);
-    color: rgba(0,0,0,.1);
-    transform-origin: 0 0;
-    transform: scaleY(.5);
-    left: 16px;
-    z-index: 2;
-}
-.weui-cells__group_form .weui-cell::before {
-    left: var(--weui-cellPaddingLR);
-    right: var(--weui-cellPaddingLR);
 }
 .weui-cells_checkbox .weui-icon-checked {
     background-color: rgba(0,0,0,.3);
@@ -244,76 +187,11 @@ root-portal-content { position: absolute; }
     display: flex;
     flex-direction: row; 
 }
-.weui-uploader__input-box::before {
-    width: 2px;
-    height: 33.33%;
-}
-.weui-uploader__input-box::after {
-    width: 33.33%;
-    height: 2px;
-}
-.weui-uploader__input-box::after, .weui-uploader__input-box::before {
-    content: " ";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background-color: #a3a3a3;
-}
 
 
 /* 基础组件 */
 
 /* weui-grid */
-/* 伪元素只支持::，不支持:，所以重写了一波 */
-.weui-grids::before {
-    right: 0;
-    height: 1px;
-    /* 还没有效果 */
-    /* border-top: 1px solid var(--weui-FG-3); */
-    border-top: 1px solid rgba(0,0,0,.1);
-    transform-origin: 0 0;
-    transform: scaleY(.5);
-}
-.weui-grids::after {
-    width: 1px;
-    bottom: 0;
-    /* border-left: 1px solid var(--weui-FG-3); */
-    border-left: 1px solid rgba(0,0,0,.1);
-    transform-origin: 0 0;
-    transform: scaleX(.5);
-}
-.weui-grids::after, .weui-grids::before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: var(--weui-FG-3);
-}
-.weui-grid::before {
-    top: 0;
-    width: 1px;
-    /* border-right: 1px solid var(--weui-FG-3); */
-    border-right: 1px solid rgba(0,0,0,.1);
-    transform-origin: 100% 0;
-    transform: scaleX(.5);
-}
-.weui-grid::after {
-    left: 0;
-    height: 1px;
-    /* border-bottom: 1px solid var(--weui-FG-3); */
-    border-bottom: 1px solid rgba(0,0,0,.1);
-    transform-origin: 0 100%;
-    transform: scaleY(.5);
-}
-.weui-grid::after, .weui-grid::before {
-    content: " ";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    color: var(--weui-FG-3);
-}
-
 .weui-grids {
     display: flex;
     flex-direction: row;
@@ -384,77 +262,8 @@ root-portal-content { position: absolute; }
 .weui-loadmore_line .weui-loadmore__tips_in-dot{
     top: -2px; 
 }
-.weui-loadmore_dot .weui-loadmore__tips::before {
-    content: " ";
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: var(--weui-FG-3);
-    display: inline-block;
-    position: relative;
-    vertical-align: 0;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-}
 
 /* weui-loading */
-.wx_dot_loading, .wx_dot_loading::after, .wx_dot_loading::before {
-    display: flex;
-    vertical-align: middle;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: rgba(0,0,0,.3);
-    font-size: 0;
-    animation: dot2 1.6s step-start infinite;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    animation-duration: 1.6s;
-    animation-timing-function: step-start;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    animation-fill-mode: none;
-    animation-play-state: running;
-    animation-name: dot2;
-    animation-timeline: auto;
-}
-.wx_dot_loading::before {
-    content: "";
-    position: absolute;
-    left: -12px;
-    background-color: rgba(0,0,0,.1);
-    animation: dot1 1.6s step-start infinite;
-    animation-duration: 1.6s;
-    animation-timing-function: step-start;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    animation-fill-mode: none;
-    animation-play-state: running;
-    animation-name: dot1;
-    animation-timeline: auto;
-}
-.wx_dot_loading::after {
-    content: "";
-    position: absolute;
-    right: -12px;
-    background-color: rgba(0,0,0,.5);
-    animation: dot3 1.6s step-start infinite;
-    animation-duration: 1.6s;
-    animation-timing-function: step-start;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    animation-fill-mode: none;
-    animation-play-state: running;
-    animation-name: dot3;
-    animation-timeline: auto;
-}
 
 /* panel */
 .weui-media-box_appmsg {
@@ -466,71 +275,6 @@ root-portal-content { position: absolute; }
 }
 .weui-media-box__info__meta {
     box-sizing: border-box; 
-}
-.weui-panel::before {
-    top: 0;
-    /* border-top: 1px solid var(--weui-FG-3); */
-    border-top: 1px solid rgba(0,0,0,.1);
-    transform-origin: 0 0;
-    transform: scaleY(.5);
-}
-.weui-panel::after {
-    bottom: 0;
-    /* border-bottom: 1px solid var(--weui-FG-3); */
-    border-bottom: 1px solid rgba(0,0,0,.1);
-    transform-origin: 0 100%;
-    transform: scaleY(.5);
-}
-.weui-panel::after, .weui-panel::before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 1px;
-    color: var(--weui-FG-3);
-}
-.weui-panel__hd::after {
-    content: " ";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 1px;
-    /* border-bottom: 1px solid var(--weui-FG-3); */
-    border-bottom: 1px solid rgba(0,0,0,.1);
-    color: var(--weui-FG-3);
-    transform-origin: 0 100%;
-    transform: scaleY(.5);
-    left: 15px;
-}
-.weui-media-box::before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    height: 1px;
-    /* border-top: 1px solid var(--weui-FG-3); */
-    border-top: 1px solid rgba(0,0,0,.1);
-    color: var(--weui-FG-3);
-    transform-origin: 0 0;
-    transform: scaleY(.5);
-    left: 16px;
-}
-.weui-panel__bd .weui-cell::before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    height: 1px;
-    /* border-top: 1px solid var(--weui-FG-3); */
-    border-top: 1px solid rgba(0,0,0,.1);
-    color: var(--weui-FG-3);
-    transform-origin: 0 0;
-    transform: scaleY(.5);
-    left: 16px;
-    z-index: 2;
 }
 .weui-media-box__info__meta {
     padding-right: 1rem;
@@ -552,41 +296,6 @@ root-portal-content { position: absolute; }
     flex-direction: row;
     justify-content: space-between;
 }
-.weui-form-preview::before {
-    top: 0;
-    /* border-top: 1px solid var(--weui-FG-3); */
-    border-top: 1px solid rgba(0,0,0,.1);
-    transform-origin: 0 0;
-    transform: scaleY(.5);
-}
-.weui-form-preview::after {
-    bottom: 0;
-    /* border-bottom: 1px solid var(--weui-FG-3); */
-    border-bottom: 1px solid rgba(0,0,0,.1);
-    transform-origin: 0 100%;
-    transform: scaleY(.5);
-}
-.weui-form-preview::after, .weui-form-preview::before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 1px;
-    color: var(--weui-FG-3);
-}
-.weui-form-preview__ft::before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    height: 1px;
-    /* border-top: 1px solid var(--weui-DIALOG-LINE-COLOR); */
-    border-top: 1px solid rgba(0,0,0,.1);
-    color: var(--weui-DIALOG-LINE-COLOR);
-    transform-origin: 0 0;
-    transform: scaleY(.5);
-}
 .weui-form-preview__label {
     display: flex;
     float: none;
@@ -600,21 +309,6 @@ root-portal-content { position: absolute; }
 .weui-form-preview__ft {
     display: flex;
     flex-direction: row;
-}
-.weui-form-preview__hd::after {
-    content: " ";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 1px;
-    border-bottom: 1px solid var(--weui-FG-3);
-    color: var(--weui-FG-3);
-    -webkit-transform-origin: 0 100%;
-    transform-origin: 0 100%;
-    -webkit-transform: scaleY(.5);
-    transform: scaleY(.5);
-    left: 16px;
 }
 
 /* 操作反馈 */
@@ -695,17 +389,6 @@ root-portal-content { position: absolute; }
     height: 24px;
     vertical-align: middle;
     width: 24px;
-}
-.weui-half-screen-dialog__hd .weui-icon-btn::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    min-width: 44px;
-    min-height: 44px;
-    width: 100%;
-    height: 100%;
 }
 
 /* weui-actionsheet */

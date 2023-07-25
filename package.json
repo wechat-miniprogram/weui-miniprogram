@@ -73,6 +73,10 @@
     "tslint-loader": "^3.5.4",
     "typescript": "^3.3.3333",
     "vinyl": "^2.2.0",
-    "weui-wxss": "^2.5.15"
+    "weui-wxss": "^2.6.6"
+  },
+  "dependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9"
   }
 }
