@@ -1,5 +1,9 @@
 # 更新日志
 
+## 1.2.9
+
+- fix: dialog 修复 z-index 层级
+
 ## 1.2.8
 
 - fix: searchbar 修复聚焦状态
