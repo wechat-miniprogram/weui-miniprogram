@@ -1,5 +1,9 @@
 # 更新日志
 
+## 1.2.8
+
+- fix: searchbar 修复聚焦状态
+
 ## 1.2.7
 
 - fix: dialog 修复自动聚焦 outline #216
