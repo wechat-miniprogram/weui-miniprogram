@@ -1,5 +1,9 @@
 # 更新日志
 
+## 1.2.10
+
+- fix: half-screen-dialog 恢复滚动
+
 ## 1.2.9
 
 - fix: dialog 修复 z-index 层级
