@@ -50,6 +50,7 @@ CustomPage({
     kindToggle: function (e) {
         const id = e.currentTarget.id,
             list = this.data.list
+        console.log('kindToggle', id)
         for (let i = 0, len = list.length; i < len; ++i) {
             if (list[i].id == id) {
                 list[i].open = !list[i].open

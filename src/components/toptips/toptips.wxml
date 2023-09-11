@@ -2,7 +2,7 @@
     <view
     wx:if="{{wrapperShow}}"
         aria-role="alert"
-        class="weui-toptips weui-toptips_warn {{className}} {{extClass}} {{innerShow ? 'weui-animate-fade-in' :  'weui-animate-fade-out'}}"
+        class="weui-toptips weui-toptips_warn {{className}} {{extClass}}"
     >
         
         <block wx:if="{{msg}}">{{msg}}</block>

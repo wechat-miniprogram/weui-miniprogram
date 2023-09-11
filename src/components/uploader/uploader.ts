@@ -84,7 +84,7 @@ Component({
                 sizeType: this.data.sizeType,
                 sourceType: this.data.sourceType,
                 success: (res) => {
-                    // console.log('chooseImage resp', res)
+                    console.log('chooseImage resp', res)
                     // 首先检查文件大小
                     let invalidIndex = -1
                     // @ts-ignore
@@ -145,6 +145,7 @@ Component({
                         this.data
                             .upload(obj)
                             .then((json) => {
+                                console.log('------', json)
                                 this.loading = false
                                 if (json.urls) {
                                     const oldFiles = this.data.files
@@ -169,6 +170,7 @@ Component({
                                 }
                             })
                             .catch((err) => {
+                                console.log('------catch', err)
                                 this.loading = false
                                 const oldFiles = this.data.files
                                 res.tempFilePaths.forEach((item, index) => {

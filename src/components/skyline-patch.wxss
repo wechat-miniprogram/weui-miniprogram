@@ -1,5 +1,6 @@
 /* weui 用了标签写法，skyline 下部分声明不生效，所以重新声明一次 */
-page {
+/* root-portal-content 匹配不到 page 的声明，所以再声明一次 */
+page, root-portal-content {
     --weui-BG-0:#ededed;
     --weui-BG-1:#f7f7f7;
     --weui-BG-2:#fff;
@@ -12,6 +13,7 @@ page {
     --weui-FG-2:rgba(0,0,0,.3);
     --weui-FG-3:rgba(0,0,0,.1);
     --weui-FG-4:rgba(0,0,0,.15);
+    --weui-FG-5: rgba(0,0,0,.05);
     --weui-RED:#fa5151;
     --weui-ORANGE:#fa9d3b;
     --weui-YELLOW:#ffc300;
@@ -47,6 +49,9 @@ root-portal-content { position: absolute; }
 .mrt16 {
     margin-top: 16px
 }
+.page-height {
+    height: calc(100vh - 44px - env(safe-area-inset-top));
+}
 
 /* weui-flex */
 .weui-flex {
@@ -65,6 +70,10 @@ root-portal-content { position: absolute; }
 .weui-cell_access .weui-cell__ft::after {
     /* 不支持 currentColor */
     background-color: var(--weui-FG-2);
+}
+.weui-cell::before {
+    /* border-top: 1px solid var(--weui-FG-3); */
+    border-top: 1px solid rgba(0,0,0,.1);
 }
 
 /* weui-navigation-bar */
@@ -123,6 +132,9 @@ root-portal-content { position: absolute; }
 }
 
 /* weui-form */
+.weui-label {
+    display: flex;
+}
 .weui-cells__group_form .weui-cell {
     /* padding: var(--weui-cellPaddingLR); */
     padding: 16px;
@@ -179,6 +191,12 @@ root-portal-content { position: absolute; }
     display: flex !important;
     flex-direction: row; 
 }
+.weui-input {
+    height: 1.41176471rem;
+}
+.weui-cells__group_form .weui-label {
+ max-width: 5rem;
+}
 
 
 /* weui-uploader */
@@ -190,6 +208,12 @@ root-portal-content { position: absolute; }
 
 
 /* 基础组件 */
+
+/* weui-icon  */
+.weui-icon {
+    /* 因为 inline-block 有问题 */
+    display: block !important;
+}
 
 /* weui-grid */
 .weui-grids {
@@ -224,6 +248,9 @@ root-portal-content { position: absolute; }
     flex-wrap: wrap;
     justify-content: center;
 }
+.weui-footer_fixed-bottom {
+    position: absolute;
+}
 
 /* weui-gallery */
 .weui-gallery__img__wrp,
@@ -246,6 +273,9 @@ root-portal-content { position: absolute; }
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+.weui-loadmore .weui-loading {
+    margin-right: .3rem;
 }
 .weui-loadmore__tips {
     display: flex;
@@ -328,6 +358,12 @@ root-portal-content { position: absolute; }
     flex-direction: row;
 }
 
+/* weui-msg */
+.weui-msg {
+    /* 因为 100% 在skyline 有bug，用 100vh 来兼容 */
+    min-height: calc(100vh - 44px - env(safe-area-inset-top));
+}
+
 /* weui-half-screen */
 
 .weui-half-screen-dialog {
@@ -403,8 +439,10 @@ root-portal-content { position: absolute; }
 
 /* weui-toptips */
 .weui-toptips {
+    box-sizing: border-box;
     width: 96vw;
     align-items: center;
+    justify-content: center;
     position: absolute;
     left: 0px;
     margin: 0 2vw;
@@ -454,18 +492,22 @@ root-portal {
 /* weui-search-bar */
 .weui-search-bar {
     flex-direction: row;
-    height: 100%;
+    /* height: 100%; */
 }
 .weui-search-bar__box {
     flex-direction: row;
     flex: 1 1 auto;
-    height: 100%;
+    /* height: 100%; */
 }
 .weui-search-bar__form {
     flex: 1 1 auto;
-    height: 100%;
+    /* height: 100%; */
 }
 .weui-search-bar__label {
     flex-direction: row;
     background: #fff;
+}
+.weui-search-bar__box .weui-search-bar__input {
+    height: 1.14rem;
+    line-height: 1.14rem;
 }

@@ -23,3 +23,14 @@
 .page {
     background-color: #ededed;
 }
+
+
+/* 兼容 block 布局点击无效的问题 */
+.kind-list__item-bd {
+    display: none;
+}
+.kind-list__item-bd_show {
+    display: initial;
+}
+
+

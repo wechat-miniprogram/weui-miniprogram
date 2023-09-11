@@ -1,6 +1,6 @@
 <view class="page" data-weui-theme="{{theme}}">
     <mp-navigation-bar title="小程序UI组件库" back="{{false}}" />
-    <scroll-view type="list" scroll-y style="height: 86vh">
+    <scroll-view type="list" scroll-y class="page-height">
         <view class="page__hd">
             <view class="page__title">小程序UI组件库</view>
             <view class="page__desc">小程序UI组件库是基于WeUI封装的组件库，是一套同微信原生视觉体验一致的组件库，由微信官方设计团队和小程序团队为微信小程序量身设计，令用户的使用感知更加统一。</view>
