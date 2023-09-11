@@ -59,7 +59,7 @@
   "renderer": "skyline",
   "rendererOptions": {
     "skyline": {
-      "defaultDisplayBlock": true
+      "defaultDisplayBlock": false
     }
   }
 }
