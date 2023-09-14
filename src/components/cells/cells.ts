@@ -1,6 +1,6 @@
-import checkboxGroup from "../checkbox-group/checkbox-group"
+// import checkboxGroup from "../checkbox-group/checkbox-group"
 
-export default Component({
+Component({
     options: {
         multipleSlots: true
     },
@@ -46,7 +46,7 @@ export default Component({
         },
         '../checkbox-group/checkbox-group': {
             type: 'descendant',
-            target: checkboxGroup,
+            // target: checkboxGroup,
             linked(target) {
                 this.setData({
                     checkboxCount: this.data.checkboxCount + 1,

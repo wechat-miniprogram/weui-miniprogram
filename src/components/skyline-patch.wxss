@@ -492,16 +492,16 @@ root-portal {
 /* weui-search-bar */
 .weui-search-bar {
     flex-direction: row;
-    /* height: 100%; */
+    /* height: 1.14285714rem; */
 }
 .weui-search-bar__box {
     flex-direction: row;
     flex: 1 1 auto;
-    /* height: 100%; */
+    height: 100%;
 }
 .weui-search-bar__form {
     flex: 1 1 auto;
-    /* height: 100%; */
+    height: 100%;
 }
 .weui-search-bar__label {
     flex-direction: row;

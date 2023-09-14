@@ -34,15 +34,13 @@ Component({
                 })
             }
         },
-        select: {
-            // 过滤某个文件
-            type: null,
-            value: () => {}
-        },
-        upload: {
-            // 返回Promise的一个文件上传的函数
-            type: null,
-            value: null
+        handler: { 
+            // properties 第一层不能放 function
+            type: Object,
+            value: {
+                select: null, // 过滤某个文件
+                upload: null // 返回Promise的一个文件上传的函数
+            }
         },
         tips: {
             type: String,
@@ -93,8 +91,8 @@ Component({
                             invalidIndex = index
                         }
                     })
-                    if (typeof this.data.select === 'function') {
-                        const ret = this.data.select(res)
+                    if (typeof this.data.handler.select === 'function') {
+                        const ret = this.data.handler.select(res)
                         if (ret === false) {
                             return
                         }
@@ -134,7 +132,7 @@ Component({
                             `data:image/jpg;base64,${wx.arrayBufferToBase64(contents[i])}`
                     }))
                     if (!files || !files.length) return
-                    if (typeof this.data.upload === 'function') {
+                    if (typeof this.data.handler.upload === 'function') {
                         const len = this.data.files.length
                         const newFiles = this.data.files.concat(files)
                         this.setData({
@@ -142,7 +140,7 @@ Component({
                             currentFiles: newFiles
                         })
                         this.loading = true
-                        this.data
+                        this.data.handler
                             .upload(obj)
                             .then((json) => {
                                 console.log('------', json)

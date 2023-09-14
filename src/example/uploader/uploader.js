@@ -8,8 +8,10 @@ CustomPage({
     },
     onLoad() {
         this.setData({
-            selectFile: this.selectFile.bind(this),
-            uplaodFile: this.uplaodFile.bind(this)
+            handler: {
+                select: this.selectFile.bind(this),
+                upload: this.uplaodFile.bind(this),
+            }
         })
     },
     chooseImage: function (e) {

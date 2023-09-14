@@ -1,6 +1,6 @@
-import cells from "../cells/cells"
+// import cells from "../cells/cells"
 
-export default Component({
+Component({
     options: {
         multipleSlots: true
     },
@@ -55,7 +55,7 @@ export default Component({
         },
         '../cells/cells': {
             type: 'ancestor',
-            target: cells,
+            // target: cells,
             linked(target) {
                 if (!this.data.parentCell) {
                     this.data.parentCell = target
