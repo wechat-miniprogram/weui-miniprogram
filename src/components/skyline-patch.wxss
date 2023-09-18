@@ -229,6 +229,7 @@ root-portal-content { position: absolute; }
 
 /* weui-badge */
 .weui-badge {
+    display: flex;
     min-width: 8px;
     padding: 1.8px 4.8px;
 }
@@ -512,6 +513,25 @@ root-portal {
     line-height: 1.14rem;
     display: block;
 }
-.weui-icon-clear {
+.weui-search-bar .weui-search-bar__box .weui-icon-clear {
+    display: flex;
+}
+.weui-search-bar__box .weui-icon-clear {
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: var(--weui-FG-2);
+    margin-left: 16px;
+    mask-repeat: no-repeat;
+    mask-size: 18px;
     mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M13.06%2012l3.006-3.005-1.06-1.06L12%2010.938%208.995%207.934l-1.06%201.06L10.938%2012l-3.005%203.005%201.06%201.06L12%2013.062l3.005%203.005%201.06-1.06L13.062%2012zM12%2022C6.477%2022%202%2017.523%202%2012S6.477%202%2012%202s10%204.477%2010%2010-4.477%2010-10%2010z%22%2F%3E%3C%2Fsvg%3E);
+}
+.weui-search-bar__box .weui-icon-clear::after {
+    width: 30px;
+}
+.weui-search-bar .weui-icon-search, .weui-search-bar__label .weui-icon-search{
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: var(--weui-FG-2);
+    mask-repeat: no-repeat;
+    mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M16.31%2015.561l4.114%204.115-.848.848-4.123-4.123a7%207%200%2011.857-.84zM16.8%2011a5.8%205.8%200%2010-11.6%200%205.8%205.8%200%200011.6%200z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);
 }

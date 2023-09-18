@@ -6,7 +6,7 @@
             <view class="page__desc">搜索栏</view>
         </view>
         <view class="page__bd">
-            <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+            <mp-searchbar bindselectresult="selectResult" handler="{{handler}}"></mp-searchbar>
         </view>
     </scroll-view>
 </view>

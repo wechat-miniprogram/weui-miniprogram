@@ -8,7 +8,9 @@ CustomPage({
     },
     onLoad() {
         this.setData({
-            search: this.search.bind(this)
+            handler: {
+                search: this.search.bind(this)
+            }
         })
     },
     search: function (value) {
