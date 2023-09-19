@@ -197,6 +197,9 @@ root-portal-content { position: absolute; }
 .weui-cells__group_form .weui-label {
  max-width: 5rem;
 }
+.weui-vcode-btn {
+    display: flex;
+}
 
 
 /* weui-uploader */
