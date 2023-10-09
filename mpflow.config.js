@@ -1,3 +1,5 @@
+const TerserWebpackPlugin = require("terser-webpack-plugin");
+
 module.exports = {
     appId: 'wxe5f52902cf4de896', 
     projectName: '小程序自定义组件',
@@ -7,6 +9,16 @@ module.exports = {
     compileType: 'miniprogram',
     outputDir: 'miniprogram_dist',
     plugins: ['@mpflow/plugin-babel', '@mpflow/plugin-typescript', '@mpflow/plugin-css'],
+    minimize: false,
+    configureWebpackChain: config => {
+        config.plugin('terser').use(TerserWebpackPlugin, [{
+            terserOptions: {
+                compress: {
+                    directives: false
+                }
+            }
+        }])
+    },
     settings: {
         urlCheck: true,
         es6: false,
