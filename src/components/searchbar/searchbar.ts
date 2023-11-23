@@ -20,12 +20,11 @@ Component({
             value: '',
             observer: 'valueChange'
         },
-        handler: { 
-            // properties 第一层不能放 function
-            type: Object,
-            value: {
-                search: null, // 返回Promise的函数
-            }
+        // 修复了 properties 第一层不能放 function
+        search: {
+            // 返回Promise的函数
+            type: null, // type: Function 等价 null
+            value: null
         },
         throttle: {
             // 500ms内只会调用一次search函数
@@ -111,12 +110,12 @@ Component({
             if (Date.now() - this.lastSearch < this.data.throttle) {
                 return
             }
-            if (typeof this.data.handler.search !== 'function') {
+            if (typeof this.data.search !== 'function') {
                 return
             }
             this.lastSearch = Date.now()
             this.timerId = setTimeout(() => {
-                this.data.handler
+                this.data
                     .search(this.data.value)
                     .then((json) => {
                         this.setData({

@@ -34,13 +34,16 @@ Component({
                 })
             }
         },
-        handler: { 
-            // properties 第一层不能放 function
-            type: Object,
-            value: {
-                select: null, // 过滤某个文件
-                upload: null // 返回Promise的一个文件上传的函数
-            }
+        // 修复了 properties 第一层不能放 function
+        select: {
+            // 过滤某个文件
+            type: null,
+            value: () => {}
+        },
+        upload: {
+            // 返回Promise的一个文件上传的函数
+            type: null,
+            value: null
         },
         tips: {
             type: String,
@@ -91,8 +94,9 @@ Component({
                             invalidIndex = index
                         }
                     })
-                    if (typeof this.data.handler.select === 'function') {
-                        const ret = this.data.handler.select(res)
+                    console.log(`this.data.select: ${this.data.select}`)
+                    if (typeof this.data.select === 'function') {
+                        const ret = this.data.select(res)
                         if (ret === false) {
                             return
                         }
@@ -132,7 +136,7 @@ Component({
                             `data:image/jpg;base64,${wx.arrayBufferToBase64(contents[i])}`
                     }))
                     if (!files || !files.length) return
-                    if (typeof this.data.handler.upload === 'function') {
+                    if (typeof this.data.upload === 'function') {
                         const len = this.data.files.length
                         const newFiles = this.data.files.concat(files)
                         this.setData({
@@ -140,7 +144,7 @@ Component({
                             currentFiles: newFiles
                         })
                         this.loading = true
-                        this.data.handler
+                        this.data
                             .upload(obj)
                             .then((json) => {
                                 console.log('------', json)
