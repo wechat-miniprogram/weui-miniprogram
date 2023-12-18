@@ -19,6 +19,9 @@ function unlinked(target) {
 }
 
 Component({
+    options: {
+        addGlobalClass: true
+    },
     properties: {
         models: {
             type: Object,
