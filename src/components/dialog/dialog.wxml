@@ -3,7 +3,7 @@
     wx:if="{{wrapperShow}}"
     aria-role="dialog"
     aria-modal="true"
-    class="root-portal-box {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out'}}"
+    class="root-portal-box weui-dialog__root {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out'}}"
   >
       <view
         wx:if="{{mask}}"

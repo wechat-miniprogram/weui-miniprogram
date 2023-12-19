@@ -8,7 +8,7 @@
     aria-role="button"
     aria-label="关闭"
   ></view>
-  <view class="weui-half-screen-dialog {{extClass}}" catch:touchmove="onMaskMouseMove">
+  <view class="weui-half-screen-dialog {{extClass}}">
     <view class="weui-half-screen-dialog__hd">
       <view wx:if="{{closabled}}" class="weui-half-screen-dialog__hd__side" bindtap="close" data-type="close">
         <view class="weui-icon-btn" aria-role="button" hover-class="weui-active">关闭<view class="weui-icon-close-thin"></view></view>

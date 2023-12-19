@@ -1,8 +1,21 @@
 # 更新日志
 
-## 1.2.8
+## 1.2.11
+
 - feat: skyline 兼容
 - feat: 升级 `weui-wxss` 至 2.6.6
+
+## 1.2.10
+
+- fix: half-screen-dialog 恢复滚动
+
+## 1.2.9
+
+- fix: dialog 修复 z-index 层级
+
+## 1.2.8
+
+- fix: searchbar 修复聚焦状态
 
 ## 1.2.7
 
