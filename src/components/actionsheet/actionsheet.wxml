@@ -11,61 +11,63 @@
     }
 </wxs>
 
-<block wx:if="{{wrapperShow}}">
-    <view
-        wx:if="{{mask}}"
-        class="weui-mask {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out'}} {{maskClass}}"
-        bindtap="closeActionSheet"
-        aria-role="button"
-        aria-label="关闭"
-    ></view>
-    <view
-        class="weui-actionsheet {{innerShow ? 'weui-animate-slide-up' : 'weui-animate-slide-down'}} {{extClass}}"
-        aria-role="dialog"
-        aria-modal="true"
-    >
-        <!-- 标题 -->
-        <block wx:if="{{title}}">
-            <view class="weui-actionsheet__title" tabindex="0">
-                <view class="weui-actionsheet__title-text">{{title}}</view>
-            </view>
-        </block>
-        <slot name="title" wx:else></slot>
+<root-portal enable="{{true}}" wx:if="{{wrapperShow}}">
+    <view wx:if="{{wrapperShow}}" class="root-portal-box">
         <view
-            class="{{ !showCancel && index === actions.length-1 ? 'weui-actionsheet__action' : 'weui-actionsheet__menu' }}"
-            wx:key="index"
-            wx:for-item="actionItem"
-            wx:for-index="index"
-            wx:for="{{actions}}"
+            wx:if="{{mask}}"
+            class="weui-mask {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out'}} {{maskClass}}"
+            bindtap="closeActionSheet"
+            aria-role="button"
+            aria-label="关闭"
+        ></view>
+        <view
+            class="weui-actionsheet {{extClass}}"
+            aria-role="dialog"
+            aria-modal="true"
         >
-            <block wx:if="{{utils.isNotSlot(actionItem)}}">
-                <view
-                    class="weui-actionsheet__cell {{item.type === 'warn' ? 'weui-actionsheet__cell_warn' : '' }}"
-                    aria-role="button"
-                    hover-class="weui-active"
-                    wx:key="actionIndex"
-                    wx:for="{{actionItem}}"
-                    wx:for-index="actionIndex"
-                    data-groupindex="{{index}}"
-                    data-index="{{actionIndex}}"
-                    data-value="{{item.value}}"
-                    bindtap="buttonTap"
-                >
-                    {{item.text}}
+            <!-- 标题 -->
+            <block wx:if="{{title}}">
+                <view class="weui-actionsheet__title" tabindex="0">
+                    <view class="weui-actionsheet__title-text">{{title}}</view>
                 </view>
             </block>
-            <slot name="{{actionItem}}" wx:else></slot>
-        </view>
-        <!-- 取消按钮 -->
-        <view class="weui-actionsheet__action" wx:if="{{showCancel}}">
+            <slot name="title" wx:else></slot>
             <view
-                class="weui-actionsheet__cell weui-actionsheet__cell_cancel"
-                hover-class="weui-active"
-                data-type="close"
-                id="iosActionsheetCancel"
-                bindtap="closeActionSheet"
-                aria-role="button"
-            >{{cancelText}}</view>
+                class="{{ !showCancel && index === actions.length-1 ? 'weui-actionsheet__action' : 'weui-actionsheet__menu' }}"
+                wx:key="index"
+                wx:for-item="actionItem"
+                wx:for-index="index"
+                wx:for="{{actions}}"
+            >
+                <block wx:if="{{utils.isNotSlot(actionItem)}}">
+                    <view
+                        class="weui-actionsheet__cell {{item.type === 'warn' ? 'weui-actionsheet__cell_warn' : '' }}"
+                        aria-role="button"
+                        hover-class="weui-active"
+                        wx:key="actionIndex"
+                        wx:for="{{actionItem}}"
+                        wx:for-index="actionIndex"
+                        data-groupindex="{{index}}"
+                        data-index="{{actionIndex}}"
+                        data-value="{{item.value}}"
+                        bindtap="buttonTap"
+                    >
+                        {{item.text}}
+                    </view>
+                </block>
+                <slot name="{{actionItem}}" wx:else></slot>
+            </view>
+            <!-- 取消按钮 -->
+            <view class="weui-actionsheet__action" wx:if="{{showCancel}}">
+                <view
+                    class="weui-actionsheet__cell weui-actionsheet__cell_cancel"
+                    hover-class="weui-active"
+                    data-type="close"
+                    id="iosActionsheetCancel"
+                    bindtap="closeActionSheet"
+                    aria-role="button"
+                >{{cancelText}}</view>
+            </view>
         </view>
     </view>
-</block>
+</root-portal>

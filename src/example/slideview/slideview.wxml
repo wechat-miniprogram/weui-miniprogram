@@ -1,4 +1,6 @@
 <view class="page" data-weui-theme="{{theme}}">
+  <mp-navigation-bar title="SlideView"></mp-navigation-bar>
+  <scroll-view type="list" scroll-y class="page-scroll-view">
     <view class="page__hd">
         <view class="page__title">Slideview</view>
         <view class="page__desc">左滑操作</view>
@@ -18,4 +20,5 @@
         </mp-slideview>
       </view>
     </view>
+  </scroll-view>
 </view>

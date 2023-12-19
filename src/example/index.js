@@ -50,6 +50,7 @@ CustomPage({
     kindToggle: function (e) {
         const id = e.currentTarget.id,
             list = this.data.list
+        console.log('kindToggle', id)
         for (let i = 0, len = list.length; i < len; ++i) {
             if (list[i].id == id) {
                 list[i].open = !list[i].open
@@ -71,5 +72,12 @@ CustomPage({
                 App.themeChanged('light')
             }
         }
+    },
+    // navigator 改成 view，兼容
+    openPage(e) {
+        const page = e.currentTarget.dataset.page
+        wx.navigateTo({
+            url: `${page}/${page}`
+        })
     }
 })

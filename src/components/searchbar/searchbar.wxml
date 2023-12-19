@@ -29,7 +29,8 @@
             ></text>
         </view>
         <label id="searchText" class="weui-search-bar__label" bindtap="showInput">
-            <icon class="weui-icon-search" type="search" size="12"></icon>
+            <!-- <icon class="weui-icon-search" type="search" size="12"></icon> -->
+            <view class="weui-icon-search"></view>
             <text aria-hidden class="weui-search-bar__text">{{placeholder}}</text>
         </label>
     </view>

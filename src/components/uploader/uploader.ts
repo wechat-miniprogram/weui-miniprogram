@@ -1,6 +1,6 @@
 Component({
     options: {
-        addGlobalClass: true
+        
     },
     properties: {
         title: {
@@ -34,6 +34,7 @@ Component({
                 })
             }
         },
+        // 修复了 properties 第一层不能放 function
         select: {
             // 过滤某个文件
             type: null,
@@ -84,7 +85,7 @@ Component({
                 sizeType: this.data.sizeType,
                 sourceType: this.data.sourceType,
                 success: (res) => {
-                    // console.log('chooseImage resp', res)
+                    console.log('chooseImage resp', res)
                     // 首先检查文件大小
                     let invalidIndex = -1
                     // @ts-ignore
@@ -93,6 +94,7 @@ Component({
                             invalidIndex = index
                         }
                     })
+                    console.log(`this.data.select: ${this.data.select}`)
                     if (typeof this.data.select === 'function') {
                         const ret = this.data.select(res)
                         if (ret === false) {
@@ -145,6 +147,7 @@ Component({
                         this.data
                             .upload(obj)
                             .then((json) => {
+                                console.log('------', json)
                                 this.loading = false
                                 if (json.urls) {
                                     const oldFiles = this.data.files
@@ -169,6 +172,7 @@ Component({
                                 }
                             })
                             .catch((err) => {
+                                console.log('------catch', err)
                                 this.loading = false
                                 const oldFiles = this.data.files
                                 res.tempFilePaths.forEach((item, index) => {

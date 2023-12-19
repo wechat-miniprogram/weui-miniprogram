@@ -1,5 +1,10 @@
 # 更新日志
 
+## 1.2.11
+
+- feat: skyline 兼容
+- feat: 升级 `weui-wxss` 至 2.6.6
+
 ## 1.2.10
 
 - fix: half-screen-dialog 恢复滚动

@@ -18,7 +18,6 @@ const defaultGridProps = {
 
 Component({
     options: {
-        addGlobalClass: true,
         pureDataPattern: /^_/
     },
     properties: {
@@ -43,6 +42,16 @@ Component({
                     innerGrids: grids.map((grid) => Object.assign({}, defaultGridProps, grid))
                 })
             }
+        },
+        // navigator 改成 view，兼容
+        openPage(e) {
+            const url = e.currentTarget.dataset.url
+            wx.navigateTo({
+                url: url,
+                complete(res) {
+                    
+                }
+            })
         }
     }
 })

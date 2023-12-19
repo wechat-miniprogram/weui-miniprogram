@@ -9,7 +9,7 @@ CustomPage({
     onLoad() {
         this.setData({
             selectFile: this.selectFile.bind(this),
-            uplaodFile: this.uplaodFile.bind(this)
+            uploadFile: this.uploadFile.bind(this),
         })
     },
     chooseImage: function (e) {
@@ -35,7 +35,7 @@ CustomPage({
         console.log('files', files)
         // 返回false可以阻止某次文件上传
     },
-    uplaodFile(files) {
+    uploadFile(files) {
         console.log('upload files', files)
         // 文件上传的函数，返回一个promise
         return new Promise((resolve, reject) => {

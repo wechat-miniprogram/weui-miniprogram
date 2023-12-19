@@ -1,0 +1,22 @@
+page {
+  height: 100%;
+}
+
+navigator text,
+text text,
+text navigator {
+  display: inline;
+}
+
+image {
+  align-self: flex-start;
+}
+
+.wx-scroll-view-flex:is(div):not(.wx-scroll-view-flex) {
+  width: auto !important;
+}
+
+/* scroll-view 设置个高度 */
+.page-scroll-view {
+  height: 90vh;
+}

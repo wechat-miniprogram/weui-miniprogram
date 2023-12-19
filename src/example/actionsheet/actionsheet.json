@@ -1,5 +1,7 @@
 {
+    "componentFramework": "glass-easel",
   "usingComponents": {
+    "mp-navigation-bar": "../../components/navigation-bar/navigation-bar",
     "mp-actionSheet": "../../components/actionsheet/actionsheet",
     "mp-icon": "../../components/icon/icon"
   }

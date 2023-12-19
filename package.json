@@ -41,7 +41,7 @@
     "@mpflow/plugin-babel": "^0.0.31",
     "@mpflow/plugin-css": "^0.0.27",
     "@mpflow/plugin-typescript": "^0.0.27",
-    "@mpflow/service": "^0.0.27",
+    "@mpflow/service": "^0.0.34",
     "@types/jest": "^25.2.2",
     "@typescript-eslint/eslint-plugin": "^2.23.0",
     "@typescript-eslint/parser": "^2.23.0",
@@ -73,6 +73,10 @@
     "tslint-loader": "^3.5.4",
     "typescript": "^3.3.3333",
     "vinyl": "^2.2.0",
-    "weui-wxss": "^2.5.15"
+    "weui-wxss": "^2.6.6"
+  },
+  "dependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9"
   }
 }

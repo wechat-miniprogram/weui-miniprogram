@@ -1,10 +1,13 @@
-<view
+<root-portal enable="{{true}}" wx:if="{{wrapperShow}}">
+    <view
     wx:if="{{wrapperShow}}"
-    aria-role="alert"
-    class="weui-toptips weui-toptips_warn {{className}} {{extClass}} {{innerShow ? 'weui-animate-fade-in' :  'weui-animate-fade-out'}}"
->
-    <block wx:if="{{msg}}">{{msg}}</block>
-    <block wx:else>
-        <slot></slot>
-    </block>
-</view>
+        aria-role="alert"
+        class="weui-toptips weui-toptips_warn {{className}} {{extClass}}"
+    >
+        
+        <block wx:if="{{msg}}">{{msg}}</block>
+        <block wx:else>
+            <slot></slot>
+        </block>
+    </view>
+</root-portal>

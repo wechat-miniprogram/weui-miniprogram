@@ -1,31 +1,48 @@
 <view class="weui-navigation-bar {{extClass}}">
-  <view class="weui-navigation-bar__placeholder {{ios ? 'ios' : 'android'}}" style="padding-top: {{statusBarHeight}}px;visibility: hidden;"></view>
-  <view class="weui-navigation-bar__inner {{ios ? 'ios' : 'android'}}" style="padding-top: {{statusBarHeight}}px; color: {{color}};background: {{background}};{{displayStyle}};{{innerPaddingRight}};{{innerWidth}};">
+  <view class="weui-navigation-bar__inner {{ios ? 'ios' : 'android'}}" style="color: {{color}};background: {{background}};{{displayStyle}};{{innerPaddingRight}};{{innerWidth}};">
 
-    <view class='weui-navigation-bar__left' style="{{leftWidth}}">
-      <block wx:if="{{back}}">
-        <view class="weui-navigation-bar__buttons">
-          <view
-            bindtap="back"
-            class="weui-navigation-bar__btn_goback_wrapper"
-            hover-class="weui-active"
-            aria-role="button"
-            aria-label="返回"
-          >
-            <view class="weui-navigation-bar__button weui-navigation-bar__btn_goback"></view>
+    <!-- 左侧按钮 -->
+    <view class='weui-navigation-bar__left' style="{{leftWidth}}; flex-direction: row; align-items: flex-start;">
+      <block wx:if="{{back || homeButton}}">
+        <!-- 返回上一页 -->
+        <block wx:if="{{back}}">
+          <view class="weui-navigation-bar__buttons weui-navigation-bar__buttons_goback" style="">
+            <view
+              bindtap="back"
+              class="weui-navigation-bar__btn_goback_wrapper"
+              hover-class="weui-active"
+              aria-role="button"
+              aria-label="返回"
+            >
+              <view class="weui-navigation-bar__button weui-navigation-bar__btn_goback"></view>
+            </view>
           </view>
-        </view>
+        </block>
+        <!-- 返回首页 -->
+        <block wx:if="{{homeButton}}">
+          <view class="weui-navigation-bar__buttons" style="">
+            <view
+              bindtap="home"
+              class="weui-navigation-bar__btn_goback_wrapper"
+              hover-class="weui-active"
+              aria-role="button"
+              aria-label="首页"
+            >
+              <view class="weui-navigation-bar__button weui-navigation-bar__btn_home"></view>
+            </view>
+          </view>
+        </block>
       </block>
       <block wx:else>
         <slot name="left"></slot>
       </block>
     </view>
 
+    <!-- 标题 -->
     <view class='weui-navigation-bar__center'>
       <view wx:if="{{loading}}" class="weui-navigation-bar__loading" aria-role="alert">
         <view
           class="weui-loading"
-          style="width:{{size.width}}rpx;height:{{size.height}}rpx;"
           aria-role="img"
           aria-label="加载中"
         ></view>
@@ -37,7 +54,8 @@
         <slot name="center"></slot>
       </block>
     </view>
-
+    
+    <!-- 右侧留空 -->
     <view class='weui-navigation-bar__right'>
       <slot name="right"></slot>
     </view>

@@ -1,6 +1,7 @@
+// import cells from "../cells/cells"
+
 Component({
     options: {
-        addGlobalClass: true,
         multipleSlots: true
     },
     properties: {
@@ -54,6 +55,7 @@ Component({
         },
         '../cells/cells': {
             type: 'ancestor',
+            // target: cells,
             linked(target) {
                 if (!this.data.parentCell) {
                     this.data.parentCell = target

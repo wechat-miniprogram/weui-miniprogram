@@ -1,6 +1,5 @@
 Component({
     options: {
-        addGlobalClass: true,
         writeIdToDOM: true
     } as any,
     properties: {
@@ -21,6 +20,7 @@ Component({
             value: '',
             observer: 'valueChange'
         },
+        // 修复了 properties 第一层不能放 function
         search: {
             // 返回Promise的函数
             type: null, // type: Function 等价 null
