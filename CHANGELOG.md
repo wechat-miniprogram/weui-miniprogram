@@ -1,6 +1,6 @@
 # 更新日志
 
-## 1.2.11
+## 1.3.0
 
 - feat: skyline 兼容
 - feat: 升级 `weui-wxss` 至 2.6.6
