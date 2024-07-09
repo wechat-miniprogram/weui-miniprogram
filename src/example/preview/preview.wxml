@@ -28,7 +28,7 @@
                     </view> -->
                 </view>
                 <view class="weui-form-preview__ft">
-                    <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">操作</navigator>
+                    <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-hover-active">操作</navigator>
                 </view>
             </view>
             <view class="weui-form-preview">
@@ -51,8 +51,8 @@
                     </view>
                 </view>
                 <view class="weui-form-preview__ft">
-                    <navigator class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active">辅助操作</navigator>
-                    <navigator class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">操作</navigator>
+                    <navigator class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-hover-active">辅助操作</navigator>
+                    <navigator class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-hover-active">操作</navigator>
                 </view>
             </view>
         </view>

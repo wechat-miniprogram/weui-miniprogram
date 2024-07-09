@@ -1,14 +1,6 @@
 <root-portal enable="{{true}}" wx:if="{{wrapperShow}}">
-<view wx:if="{{wrapperShow}}" aria-role="dialog" aria-modal="true" class="root-portal-box">
-  <view
-    class="weui-mask {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out' }}"
-    wx:if="{{mask}}"
-    bindtap="close"
-    data-type="close"
-    aria-role="button"
-    aria-label="关闭"
-  ></view>
-  <view class="weui-half-screen-dialog {{extClass}}">
+<view wx:if="{{wrapperShow}}" aria-role="dialog" aria-modal="true" class="root-portal-box" style="z-index:901">
+  <view class="weui-half-screen-dialog {{extClass}}" >
     <view class="weui-half-screen-dialog__hd">
       <view wx:if="{{closabled}}" class="weui-half-screen-dialog__hd__side" bindtap="close" data-type="close">
         <view class="weui-icon-btn" aria-role="button" hover-class="weui-active">关闭<view class="weui-icon-close-thin"></view></view>
@@ -49,4 +41,5 @@
     </view>
   </view>
 </view>
+<view wx:if="{{wrapperShow && mask}}" class="weui-mask {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out' }}" style="z-index:900" bindtap="close" data-type="close" aria-role="button" aria-label="关闭"></view>
 </root-portal>

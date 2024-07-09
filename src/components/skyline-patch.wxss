@@ -1,53 +1,56 @@
 /* weui 用了标签写法，skyline 下部分声明不生效，所以重新声明一次 */
 /* root-portal-content 匹配不到 page 的声明，所以再声明一次 */
-page, root-portal-content {
-    --weui-BG-0:#ededed;
-    --weui-BG-1:#f7f7f7;
-    --weui-BG-2:#fff;
-    --weui-BG-3:#f7f7f7;
-    --weui-BG-4:#4c4c4c;
-    --weui-BG-5:#fff;
-    --weui-FG-0:rgba(0,0,0,.9);
-    --weui-FG-HALF:rgba(0,0,0,.9);
-    --weui-FG-1:rgba(0,0,0,.5);
-    --weui-FG-2:rgba(0,0,0,.3);
-    --weui-FG-3:rgba(0,0,0,.1);
-    --weui-FG-4:rgba(0,0,0,.15);
-    --weui-FG-5: rgba(0,0,0,.05);
-    --weui-RED:#fa5151;
-    --weui-ORANGE:#fa9d3b;
-    --weui-YELLOW:#ffc300;
-    --weui-GREEN:#91d300;
-    --weui-LIGHTGREEN:#95ec69;
-    --weui-BRAND:#07c160;
-    --weui-BLUE:#10aeff;
-    --weui-INDIGO:#1485ee;
-    --weui-PURPLE:#6467f0;
-    --weui-WHITE:#fff;
-    --weui-LINK:#576b95;
-    --weui-TEXTGREEN:#06ae56;
-    --weui-FG:#000;
-    --weui-BG:#fff;
-    --weui-TAG-TEXT-ORANGE:#fa9d3b;
-    --weui-TAG-BACKGROUND-ORANGE:rgba(250,157,59,.1);
-    --weui-TAG-TEXT-GREEN:#06ae56;
-    --weui-TAG-BACKGROUND-GREEN:rgba(6,174,86,.1);
-    --weui-TAG-TEXT-BLUE:#10aeff;
-    --weui-TAG-BACKGROUND-BLUE:rgba(16,174,255,.1);
-    --weui-TAG-TEXT-BLACK:rgba(0,0,0,.5);
-    --weui-TAG-BACKGROUND-BLACK:rgba(0,0,0,.05);
-    --weui-DIALOG-LINE-COLOR: rgba(0,0,0,.1);
-    --weui-BTN-DEFAULT-COLOR:#06ae56;
-    --weui-BTN-DEFAULT-BG:#f2f2f2;
+page,
+root-portal-content {
+    --weui-BG-0: #ededed;
+    --weui-BG-1: #f7f7f7;
+    --weui-BG-2: #fff;
+    --weui-BG-3: #f7f7f7;
+    --weui-BG-4: #4c4c4c;
+    --weui-BG-5: #fff;
+    --weui-FG-0: rgba(0, 0, 0, 0.9);
+    --weui-FG-HALF: rgba(0, 0, 0, 0.9);
+    --weui-FG-1: rgba(0, 0, 0, 0.5);
+    --weui-FG-2: rgba(0, 0, 0, 0.3);
+    --weui-FG-3: rgba(0, 0, 0, 0.1);
+    --weui-FG-4: rgba(0, 0, 0, 0.15);
+    --weui-FG-5: rgba(0, 0, 0, 0.05);
+    --weui-RED: #fa5151;
+    --weui-ORANGE: #fa9d3b;
+    --weui-YELLOW: #ffc300;
+    --weui-GREEN: #91d300;
+    --weui-LIGHTGREEN: #95ec69;
+    --weui-BRAND: #07c160;
+    --weui-BLUE: #10aeff;
+    --weui-INDIGO: #1485ee;
+    --weui-PURPLE: #6467f0;
+    --weui-WHITE: #fff;
+    --weui-LINK: #576b95;
+    --weui-TEXTGREEN: #06ae56;
+    --weui-FG: #000;
+    --weui-BG: #fff;
+    --weui-TAG-TEXT-ORANGE: #fa9d3b;
+    --weui-TAG-BACKGROUND-ORANGE: rgba(250, 157, 59, 0.1);
+    --weui-TAG-TEXT-GREEN: #06ae56;
+    --weui-TAG-BACKGROUND-GREEN: rgba(6, 174, 86, 0.1);
+    --weui-TAG-TEXT-BLUE: #10aeff;
+    --weui-TAG-BACKGROUND-BLUE: rgba(16, 174, 255, 0.1);
+    --weui-TAG-TEXT-BLACK: rgba(0, 0, 0, 0.5);
+    --weui-TAG-BACKGROUND-BLACK: rgba(0, 0, 0, 0.05);
+    --weui-DIALOG-LINE-COLOR: rgba(0, 0, 0, 0.1);
+    --weui-BTN-DEFAULT-COLOR: #06ae56;
+    --weui-BTN-DEFAULT-BG: #f2f2f2;
     --weui-cellMarginLR: 16px;
     --weui-cellPaddingLR: 16px;
 }
 
-root-portal-content { position: absolute; }
+root-portal-content {
+    position: absolute;
+}
 
 /* skyline 兼容写法，一些+选择器支持 */
 .mrt16 {
-    margin-top: 16px
+    margin-top: 16px;
 }
 .page-height {
     height: calc(100vh - 44px - env(safe-area-inset-top));
@@ -73,7 +76,10 @@ root-portal-content { position: absolute; }
 }
 .weui-cell::before {
     /* border-top: 1px solid var(--weui-FG-3); */
-    border-top: 1px solid rgba(0,0,0,.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.weui-hover-active {
+    background-color: var(--weui-FG-3);
 }
 
 /* weui-navigation-bar */
@@ -90,7 +96,7 @@ root-portal-content { position: absolute; }
 .weui-navigation-bar__inner .weui-navigation-bar__center {
     flex: 1 1 auto;
     /* skyline 不支持 inline-flex，所以在父元素 flex-direction: row; 来支持 */
-    flex-direction: row; 
+    flex-direction: row;
 }
 .weui-navigation-bar__inner .weui-navigation-bar__left .weui-navigation-bar__btn_goback {
     width: 1rem;
@@ -98,10 +104,9 @@ root-portal-content { position: absolute; }
     background-color: var(--weui-FG-0);
 }
 
-
 /* weui-slideview */
 .weui-slideview {
-    flex-direction: row; 
+    flex-direction: row;
 }
 .weui-slideview__btn {
     flex: 1 1 auto;
@@ -144,7 +149,7 @@ root-portal-content { position: absolute; }
     margin-right: 16px;
 }
 .weui-cells_checkbox .weui-icon-checked {
-    background-color: rgba(0,0,0,.3);
+    background-color: rgba(0, 0, 0, 0.3);
     mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%221000%22%20height%3D%221000%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M500%20916.667C269.881%20916.667%2083.333%20730.119%2083.333%20500%2083.333%20269.881%20269.881%2083.333%20500%2083.333c230.119%200%20416.667%20186.548%20416.667%20416.667%200%20230.119-186.548%20416.667-416.667%20416.667zm0-50c202.504%200%20366.667-164.163%20366.667-366.667%200-202.504-164.163-366.667-366.667-366.667-202.504%200-366.667%20164.163-366.667%20366.667%200%20202.504%20164.163%20366.667%20366.667%20366.667z%22%20fill-rule%3D%22evenodd%22%20fill-opacity%3D%22.9%22%2F%3E%3C%2Fsvg%3E);
 }
 .weui-cells_checkbox .weui-icon-multi-is-checked {
@@ -173,42 +178,40 @@ root-portal-content { position: absolute; }
     border: 0;
     outline: 0;
     vertical-align: middle;
-    background-color: rgba(0,0,0,.3);
+    background-color: rgba(0, 0, 0, 0.3);
     mask-position: 0 0;
     mask-repeat: no-repeat;
     mask-size: 100%;
     mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%221000%22%20height%3D%221000%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M500%20916.667C269.881%20916.667%2083.333%20730.119%2083.333%20500%2083.333%20269.881%20269.881%2083.333%20500%2083.333c230.119%200%20416.667%20186.548%20416.667%20416.667%200%20230.119-186.548%20416.667-416.667%20416.667zm0-50c202.504%200%20366.667-164.163%20366.667-366.667%200-202.504-164.163-366.667-366.667-366.667-202.504%200-366.667%20164.163-366.667%20366.667%200%20202.504%20164.163%20366.667%20366.667%20366.667z%22%20fill-rule%3D%22evenodd%22%20fill-opacity%3D%22.9%22%2F%3E%3C%2Fsvg%3E);
-    color: rgba(0,0,0,.3);
+    color: rgba(0, 0, 0, 0.3);
     width: 1rem;
     height: 1rem;
     font-size: 1rem;
-    margin-top: -.2rem;
+    margin-top: -0.2rem;
 }
 .weui-agree {
-    flex-direction: row; 
+    flex-direction: row;
 }
 .weui-agree .weui-agree__text {
     display: flex !important;
-    flex-direction: row; 
+    flex-direction: row;
 }
 .weui-input {
     height: 1.41176471rem;
 }
 .weui-cells__group_form .weui-label {
- max-width: 5rem;
+    max-width: 5rem;
 }
 .weui-vcode-btn {
     display: flex;
 }
 
-
 /* weui-uploader */
-.weui-uploader__bd, 
+.weui-uploader__bd,
 .weui-uploader__files {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
 }
-
 
 /* 基础组件 */
 
@@ -265,7 +268,6 @@ root-portal-content { position: absolute; }
     color: var(--weui-BTN-DEFAULT-COLOR);
 }
 
-
 /* weui-loadmore */
 .weui-loading {
     display: flex;
@@ -279,7 +281,7 @@ root-portal-content { position: absolute; }
     align-items: center;
 }
 .weui-loadmore .weui-loading {
-    margin-right: .3rem;
+    margin-right: 0.3rem;
 }
 .weui-loadmore__tips {
     display: flex;
@@ -293,8 +295,8 @@ root-portal-content { position: absolute; }
 .weui-loadmore_line .weui-loadmore__tips {
     top: -0.9rem;
 }
-.weui-loadmore_line .weui-loadmore__tips_in-dot{
-    top: -2px; 
+.weui-loadmore_line .weui-loadmore__tips_in-dot {
+    top: -2px;
 }
 
 /* weui-loading */
@@ -308,7 +310,7 @@ root-portal-content { position: absolute; }
     flex-direction: row;
 }
 .weui-media-box__info__meta {
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 .weui-media-box__info__meta {
     padding-right: 1rem;
@@ -321,7 +323,7 @@ root-portal-content { position: absolute; }
 /* preview */
 .weui-form-preview__bd {
     line-height: 2rem;
-    font-size: .9rem;
+    font-size: 0.9rem;
 }
 /* 替代子元素左右浮动 */
 .weui-form-preview__item {
@@ -348,7 +350,8 @@ root-portal-content { position: absolute; }
 /* 操作反馈 */
 
 /* dialog */
-.weui-mask, .weui-mask_transparent {
+.weui-mask,
+.weui-mask_transparent {
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -464,7 +467,7 @@ root-portal {
 .weui-tabbar {
     pointer-events: auto;
     position: absolute;
-    bottom: 0; 
+    bottom: 0;
     width: 100vw;
     background-color: #f7f7f7;
     flex: 1 0 auto;
@@ -496,28 +499,28 @@ root-portal {
 /* weui-search-bar */
 .weui-search-bar {
     flex-direction: row;
-    /* height: 1.14285714rem; */
-}
-.weui-search-bar__box {
-    flex-direction: row;
-    flex: 1 1 auto;
-    height: 100%;
+    height: 2.4rem;
 }
 .weui-search-bar__form {
-    flex: 1 1 auto;
-    height: 100%;
+    height: 2.4rem;
 }
-.weui-search-bar__label {
+
+.weui-search-bar__box {
+    display: flex;
     flex-direction: row;
-    background: #fff;
+    /* flex: 1 1 auto; */
+    align-items: center;
+    height: 2.4rem;
 }
 .weui-search-bar__box .weui-search-bar__input {
-    height: 1.14rem !important;
-    line-height: 1.14rem;
-    display: block;
+    height: 2.4rem;
 }
-.weui-search-bar .weui-search-bar__box .weui-icon-clear {
+.weui-search-bar__label {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background: #fff;
 }
 .weui-search-bar__box .weui-icon-clear {
     width: 1.6rem;
@@ -531,10 +534,15 @@ root-portal {
 .weui-search-bar__box .weui-icon-clear::after {
     width: 30px;
 }
-.weui-search-bar .weui-icon-search, .weui-search-bar__label .weui-icon-search{
+.weui-search-bar .weui-icon-search,
+.weui-search-bar__label .weui-icon-search {
     width: 1.6rem;
     height: 1.6rem;
     background-color: var(--weui-FG-2);
     mask-repeat: no-repeat;
     mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M16.31%2015.561l4.114%204.115-.848.848-4.123-4.123a7%207%200%2011.857-.84zM16.8%2011a5.8%205.8%200%2010-11.6%200%205.8%205.8%200%200011.6%200z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);
+}
+
+.weui-cell_select .weui-cell__bd::after {
+    background-color: var(--weui-FG-2);
 }
