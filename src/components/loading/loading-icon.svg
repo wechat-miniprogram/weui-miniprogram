@@ -1,0 +1,25 @@
+<svg width='80px' height='80px' viewBox='0 0 80 80' version='1.1' xmlns='http://www.w3.org/2000/svg'
+  xmlns:xlink='http://www.w3.org/1999/xlink'>
+  <title>loading</title>
+  <defs>
+    <linearGradient x1='94.0869141%' y1='0%' x2='94.0869141%' y2='90.559082%' id='linearGradient-1'>
+      <stop stop-color='#606060' stop-opacity='0' offset='0%'></stop>
+      <stop stop-color='#606060' stop-opacity='0.3' offset='100%'></stop>
+    </linearGradient>
+    <linearGradient x1='100%' y1='8.67370605%' x2='100%' y2='90.6286621%' id='linearGradient-2'>
+      <stop stop-color='#606060' offset='0%'></stop>
+      <stop stop-color='#606060' stop-opacity='0.3' offset='100%'></stop>
+    </linearGradient>
+  </defs>
+  <g stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' opacity='0.9'>
+    <g>
+      <path
+        d='M40,0 C62.09139,0 80,17.90861 80,40 C80,62.09139 62.09139,80 40,80 L40,73 C58.2253967,73 73,58.2253967 73,40 C73,21.7746033 58.2253967,7 40,7 L40,0 Z'
+        fill='url(#linearGradient-1)'></path>
+      <path
+        d='M40,0 L40,7 C21.7746033,7 7,21.7746033 7,40 C7,58.2253967 21.7746033,73 40,73 L40,80 C17.90861,80 0,62.09139 0,40 C0,17.90861 17.90861,0 40,0 Z'
+        fill='url(#linearGradient-2)'></path>
+      <circle id='Oval' fill='#606060' cx='40.5' cy='3.5' r='3.5'></circle>
+    </g>
+  </g>
+</svg>

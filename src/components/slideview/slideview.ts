@@ -137,6 +137,7 @@ Component({
             this.applyAnimatedStyle('.weui-slideview__left', () => {
                 'worklet';
                 if (this.st.movex.value >= 0) {
+                    console.log(this.st.movex.value)
                     // 往回滑
                     this.st.transformx.value = this.st.movex.value - this.st.max.value
                     if (!this.st.isMoving.value) this.st.transformx.value = 0
@@ -206,9 +207,8 @@ Component({
         },
         touchmove(event) {
             'worklet';
-        
-            var pagex = event.touches[0].pageX - this.st.startX.value
-            var pagey = event.touches[0].pageY - this.st.startY.value
+            const pagex = event.touches[0].pageX - this.st.startX.value
+            const pagey = event.touches[0].pageY - this.st.startY.value
             // 左侧45度角为界限，大于45度则允许水平滑动
             if (this.st.firstAngle.value === 0) {
                 this.st.firstAngle.value = Math.abs(pagex) - Math.abs(pagey)
