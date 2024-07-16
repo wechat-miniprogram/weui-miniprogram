@@ -136,12 +136,11 @@ Component({
             // 左侧动画
             this.applyAnimatedStyle('.weui-slideview__left', () => {
                 'worklet';
-                if (this.st.movex.value >= 0) {
-                    console.log(this.st.movex.value)
+                if (this.st.movex.value > 0) {
                     // 往回滑
                     this.st.transformx.value = this.st.movex.value - this.st.max.value
                     if (!this.st.isMoving.value) this.st.transformx.value = 0
-                } else {
+                } else if(this.st.movex.value < 0) {
                     this.st.transformx.value = this.st.movex.value
                     if (!this.st.isMoving.value) this.st.transformx.value = -this.st.max.value
                 }
@@ -175,11 +174,11 @@ Component({
 
                         var transformx
                         
-                        if (this.st.movex.value >= 0) {
+                        if (this.st.movex.value > 0) {
                             // 往回滑
                             transformx = -(this.st.size.buttons.value[index] - Math.min(this.st.size.buttons.value[index], transform + transformt))
                             if (!this.st.isMoving.value) transformx = 0
-                        } else {
+                        } else if(this.st.movex.value < 0) {
                             transformx = Math.max(-this.st.size.buttons.value[index], transform + transformt)
                             if (!this.st.isMoving.value) transformx = -this.st.size.buttons.value[index]
                         }
