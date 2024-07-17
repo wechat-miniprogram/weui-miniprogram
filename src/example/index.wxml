@@ -33,7 +33,7 @@
                                             aria-role="link"
                                             url="{{page}}/{{page}}"
                                             class="weui-cell weui-cell_access"
-                                            hover-class="weui-cell-active"
+                                            hover-class="weui-hover-active"
                                             data-page="{{page}}"
                                             bindtap="openPage"
                                         >
