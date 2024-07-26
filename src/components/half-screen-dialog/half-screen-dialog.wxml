@@ -41,5 +41,5 @@
     </view>
   </view>
 </view>
-<view wx:if="{{wrapperShow && mask}}" class="weui-mask {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out' }}" style="z-index:900" bindtap="close" data-type="close" aria-role="button" aria-label="关闭"></view>
+<view wx:if="{{wrapperShow && mask}}" class="weui-mask {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out' }}" style="z-index:900" bindtap="close" data-type="close" aria-role="mask" aria-label="蒙层"></view>
 </root-portal>
