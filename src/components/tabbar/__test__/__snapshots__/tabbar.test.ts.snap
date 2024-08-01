@@ -7,139 +7,143 @@ exports[`tabbar basic 1`] = `
     style="position:fixed;bottom:0;width:100%;left:0;right:0;"
     bind:change="tabChange"
   >
-    <wx-view
-      ariaRole="tablist"
-      class="weui-tabbar weui-tabbar__reactive "
+    <wx-root-portal
+      enable="{{true}}"
     >
       <wx-view
-        ariaDescribedby="t0_tips"
-        ariaLabelledby="t0_title"
-        ariaRole="tab"
-        ariaSelected="{{true}}"
-        class="weui-tabbar__item weui-bar__item_on"
-        data-index="{{0}}"
-        bind:tap="tabChange"
+        class="root-portal-box"
       >
         <wx-view
-          ariaHidden="true"
-          id="t0_tips"
-          style="position: relative;display:inline-block;"
+          ariaRole="tablist"
+          class="weui-tabbar weui-tabbar__reactive "
         >
-          <wx-image
-            class="weui-tabbar__icon"
-            src="/icon.selected"
-          />
-          <mp-badge
-            style="position: absolute;top:-2px;left:calc(100% - 3px)"
+          <wx-view
+            ariaDescribedby="t0_tips"
+            ariaLabelledby="t0_title"
+            ariaRole="tab"
+            ariaSelected="{{true}}"
+            class="weui-tabbar__item weui-bar__item_on"
+            data-index="{{0}}"
+            bind:tap="tabChange"
           >
             <wx-view
-              ariaLabel=""
-              class="weui-badge  "
+              ariaHidden="true"
+              id="t0_tips"
             >
-              8
+              <wx-image
+                class="weui-tabbar__icon"
+                src="/icon.selected"
+              />
+              <mp-badge
+                style="position: absolute;top:-2px;left:calc(100% - 3px)"
+              >
+                <wx-view
+                  ariaLabel=""
+                  class="weui-badge  "
+                >
+                  8
+                </wx-view>
+              </mp-badge>
             </wx-view>
-          </mp-badge>
-        </wx-view>
-        <wx-view
-          ariaHidden="true"
-          class="weui-tabbar__label"
-          id="t0_title"
-        >
-          微信
-        </wx-view>
-      </wx-view>
-      <wx-view
-        ariaDescribedby="t1_tips"
-        ariaLabelledby="t1_title"
-        ariaRole="tab"
-        ariaSelected="{{false}}"
-        class="weui-tabbar__item "
-        data-index="{{1}}"
-        bind:tap="tabChange"
-      >
-        <wx-view
-          ariaHidden="true"
-          id="t1_tips"
-          style="position: relative;display:inline-block;"
-        >
-          <wx-image
-            class="weui-tabbar__icon"
-            src="/icon"
-          />
-        </wx-view>
-        <wx-view
-          ariaHidden="true"
-          class="weui-tabbar__label"
-          id="t1_title"
-        >
-          通讯录
-        </wx-view>
-      </wx-view>
-      <wx-view
-        ariaDescribedby="t2_tips"
-        ariaLabelledby="t2_title"
-        ariaRole="tab"
-        ariaSelected="{{false}}"
-        class="weui-tabbar__item "
-        data-index="{{2}}"
-        bind:tap="tabChange"
-      >
-        <wx-view
-          ariaHidden="true"
-          id="t2_tips"
-          style="position: relative;display:inline-block;"
-        >
-          <wx-image
-            class="weui-tabbar__icon"
-            src="/icon"
-          />
-          <mp-badge
-            style="position: absolute;top:-2px;left:calc(100% - 3px)"
+            <wx-view
+              ariaHidden="true"
+              class="weui-tabbar__label"
+              id="t0_title"
+            >
+              微信
+            </wx-view>
+          </wx-view>
+          <wx-view
+            ariaDescribedby="t1_tips"
+            ariaLabelledby="t1_title"
+            ariaRole="tab"
+            ariaSelected="{{false}}"
+            class="weui-tabbar__item "
+            data-index="{{1}}"
+            bind:tap="tabChange"
           >
             <wx-view
-              ariaLabel=""
-              class="weui-badge  weui-badge_dot"
+              ariaHidden="true"
+              id="t1_tips"
             >
-              
+              <wx-image
+                class="weui-tabbar__icon"
+                src="/icon"
+              />
             </wx-view>
-          </mp-badge>
-        </wx-view>
-        <wx-view
-          ariaHidden="true"
-          class="weui-tabbar__label"
-          id="t2_title"
-        >
-          发现
+            <wx-view
+              ariaHidden="true"
+              class="weui-tabbar__label"
+              id="t1_title"
+            >
+              通讯录
+            </wx-view>
+          </wx-view>
+          <wx-view
+            ariaDescribedby="t2_tips"
+            ariaLabelledby="t2_title"
+            ariaRole="tab"
+            ariaSelected="{{false}}"
+            class="weui-tabbar__item "
+            data-index="{{2}}"
+            bind:tap="tabChange"
+          >
+            <wx-view
+              ariaHidden="true"
+              id="t2_tips"
+            >
+              <wx-image
+                class="weui-tabbar__icon"
+                src="/icon"
+              />
+              <mp-badge
+                style="position: absolute;top:-2px;left:calc(100% - 3px)"
+              >
+                <wx-view
+                  ariaLabel=""
+                  class="weui-badge  weui-badge_dot"
+                >
+                  
+                </wx-view>
+              </mp-badge>
+            </wx-view>
+            <wx-view
+              ariaHidden="true"
+              class="weui-tabbar__label"
+              id="t2_title"
+            >
+              发现
+            </wx-view>
+          </wx-view>
+          <wx-view
+            ariaDescribedby="t3_tips"
+            ariaLabelledby="t3_title"
+            ariaRole="tab"
+            ariaSelected="{{false}}"
+            class="weui-tabbar__item "
+            data-index="{{3}}"
+            bind:tap="tabChange"
+          >
+            <wx-view
+              ariaHidden="true"
+              id="t3_tips"
+            >
+              <wx-image
+                class="weui-tabbar__icon"
+                src="/icon"
+              />
+            </wx-view>
+            <wx-view
+              ariaHidden="true"
+              class="weui-tabbar__label"
+              id="t3_title"
+            >
+              我
+            </wx-view>
+          </wx-view>
         </wx-view>
       </wx-view>
-      <wx-view
-        ariaDescribedby="t3_tips"
-        ariaLabelledby="t3_title"
-        ariaRole="tab"
-        ariaSelected="{{false}}"
-        class="weui-tabbar__item "
-        data-index="{{3}}"
-        bind:tap="tabChange"
-      >
-        <wx-view
-          ariaHidden="true"
-          id="t3_tips"
-          style="position: relative;display:inline-block;"
-        >
-          <wx-image
-            class="weui-tabbar__icon"
-            src="/icon"
-          />
-        </wx-view>
-        <wx-view
-          ariaHidden="true"
-          class="weui-tabbar__label"
-          id="t3_title"
-        >
-          我
-        </wx-view>
-      </wx-view>
-    </wx-view>
+    </wx-root-portal>
   </mp-tabbar>
 </main>
 `;

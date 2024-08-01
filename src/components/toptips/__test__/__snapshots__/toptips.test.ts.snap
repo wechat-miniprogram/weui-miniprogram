@@ -3,12 +3,16 @@
 exports[`toptips auto hide 1`] = `
 <main>
   <mp-toptips>
-    <wx-view
-      ariaRole="alert"
-      class="weui-toptips weui-toptips_warn weui-toptips_success  weui-animate-fade-in"
+    <wx-root-portal
+      enable="{{true}}"
     >
-      500ms后关闭
-    </wx-view>
+      <wx-view
+        ariaRole="alert"
+        class="weui-toptips weui-toptips_warn weui-toptips_success "
+      >
+        500ms后关闭
+      </wx-view>
+    </wx-root-portal>
   </mp-toptips>
 </main>
 `;
@@ -16,23 +20,31 @@ exports[`toptips auto hide 1`] = `
 exports[`toptips auto hide 2`] = `
 <main>
   <mp-toptips>
-    <wx-view
-      ariaRole="alert"
-      class="weui-toptips weui-toptips_warn weui-toptips_success  weui-animate-fade-out"
+    <wx-root-portal
+      enable="{{true}}"
     >
-      500ms后关闭
-    </wx-view>
+      <wx-view
+        ariaRole="alert"
+        class="weui-toptips weui-toptips_warn weui-toptips_success "
+      >
+        500ms后关闭
+      </wx-view>
+    </wx-root-portal>
   </mp-toptips>
 </main>
 `;
 
 exports[`toptips basic 1`] = `
 <mp-toptips>
-  <wx-view
-    ariaRole="alert"
-    class="weui-toptips weui-toptips_warn weui-toptips_error top100 weui-animate-fade-in"
+  <wx-root-portal
+    enable="{{true}}"
   >
-    距离顶部100px
-  </wx-view>
+    <wx-view
+      ariaRole="alert"
+      class="weui-toptips weui-toptips_warn weui-toptips_error top100"
+    >
+      距离顶部100px
+    </wx-view>
+  </wx-root-portal>
 </mp-toptips>
 `;

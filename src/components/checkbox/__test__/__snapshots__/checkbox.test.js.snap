@@ -9,7 +9,7 @@ exports[`checkbox-group & checkbox basic checkbox 1`] = `
       class="radio-group"
       bind:change="radioChange"
     >
-      <radio-group
+      <wx-radio-group
         class=""
         bind:change="checkedChange"
       >
@@ -46,8 +46,8 @@ exports[`checkbox-group & checkbox basic checkbox 1`] = `
                       disabled="{{false}}"
                       value="0"
                     />
-                    <wx-icon
-                      class="weui-icon-checked"
+                    <wx-view
+                      class="weui-icon-checked checkbox--weui-icon-checked "
                     />
                   </wx-view>
                 </wx-view>
@@ -88,8 +88,8 @@ exports[`checkbox-group & checkbox basic checkbox 1`] = `
                       disabled="{{false}}"
                       value="1"
                     />
-                    <wx-icon
-                      class="weui-icon-checked"
+                    <wx-view
+                      class="weui-icon-checked checkbox--weui-icon-checked "
                     />
                   </wx-view>
                 </wx-view>
@@ -97,7 +97,7 @@ exports[`checkbox-group & checkbox basic checkbox 1`] = `
             </mp-cell>
           </wx-label>
         </mp-checkbox>
-      </radio-group>
+      </wx-radio-group>
     </mp-checkbox-group>
   </mp-cells>
   <mp-cells
@@ -107,7 +107,7 @@ exports[`checkbox-group & checkbox basic checkbox 1`] = `
       class="checkbox-group"
       bind:change="checkboxChange"
     >
-      <checkbox-group
+      <wx-checkbox-group
         class=""
         bind:change="checkedChange"
       >
@@ -137,8 +137,8 @@ exports[`checkbox-group & checkbox basic checkbox 1`] = `
                       disabled="{{false}}"
                       value="0"
                     />
-                    <wx-icon
-                      class="weui-icon-checked"
+                    <wx-view
+                      class="weui-icon-checked checkbox--weui-icon-checked "
                     />
                   </wx-view>
                 </wx-view>
@@ -179,8 +179,8 @@ exports[`checkbox-group & checkbox basic checkbox 1`] = `
                       disabled="{{false}}"
                       value="1"
                     />
-                    <wx-icon
-                      class="weui-icon-checked"
+                    <wx-view
+                      class="weui-icon-checked checkbox--weui-icon-checked "
                     />
                   </wx-view>
                 </wx-view>
@@ -195,7 +195,7 @@ exports[`checkbox-group & checkbox basic checkbox 1`] = `
             </mp-cell>
           </wx-label>
         </mp-checkbox>
-      </checkbox-group>
+      </wx-checkbox-group>
     </mp-checkbox-group>
   </mp-cells>
 </main>

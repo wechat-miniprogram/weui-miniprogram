@@ -7,19 +7,16 @@ exports[`navigation-bar basic 1`] = `
       class="weui-navigation-bar "
     >
       <wx-view
-        class="weui-navigation-bar__placeholder ios"
-        style="padding-top: 20px;visibility: hidden;"
-      />
-      <wx-view
         class="weui-navigation-bar__inner ios"
-        style="padding-top: 20px; color: ;background: ;;;;"
+        style="color: ;background: ;;padding-right:94px;width:428px;;"
       >
         <wx-view
           class="weui-navigation-bar__left"
-          style=""
+          style="width:94px; flex-direction: row; align-items: flex-start;"
         >
           <wx-view
-            class="weui-navigation-bar__buttons"
+            class="weui-navigation-bar__buttons weui-navigation-bar__buttons_goback"
+            style=""
           >
             <wx-view
               ariaLabel="返回"
@@ -45,7 +42,6 @@ exports[`navigation-bar basic 1`] = `
               ariaLabel="加载中"
               ariaRole="img"
               class="weui-loading"
-              style="width:rpx;height:rpx;"
             />
           </wx-view>
           <wx-text>
