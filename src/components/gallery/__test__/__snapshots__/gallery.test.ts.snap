@@ -18,63 +18,67 @@ exports[`gallery basic 2`] = `
   bind:delete="onDelete"
   bind:hide="onHide"
 >
-  <wx-view
-    ariaModal="true"
-    class="weui-gallery weui-animate-fade-in "
-    tabindex="0"
+  <wx-root-portal
+    enable="{{true}}"
   >
     <wx-view
-      class="weui-gallery__info"
-    >
-      1/3
-    </wx-view>
-    <wx-swiper
-      autoplay="{{false}}"
-      class="weui-gallery__img__wrp"
-      current="{{0}}"
-      duration="{{500}}"
-      indicatorDots="{{false}}"
-      bind:change="change"
-      bind:tap="hideGallery"
-    >
-      <swiper-item>
-        <wx-image
-          class="weui-gallery__img"
-          mode="aspectFit"
-          src="http://qq.com/1.jpg"
-        />
-      </swiper-item>
-      <swiper-item>
-        <wx-image
-          class="weui-gallery__img"
-          mode="aspectFit"
-          src="http://qq.com/2.jpg"
-        />
-      </swiper-item>
-      <swiper-item>
-        <wx-image
-          class="weui-gallery__img"
-          mode="aspectFit"
-          src="http://qq.com/3.jpg"
-        />
-      </swiper-item>
-    </wx-swiper>
-    <wx-view
-      class="weui-gallery__opr"
+      ariaModal="true"
+      class="root-portal-box weui-gallery weui-animate-fade-in "
+      tabindex="0"
     >
       <wx-view
-        ariaLabel="删除"
-        ariaRole="button"
-        class="weui-gallery__del"
-        hoverClass="weui-active"
-        bind:tap="deleteImg"
+        class="weui-gallery__info"
       >
-        <i
-          class="weui-icon-delete weui-icon_gallery-delete"
-        />
+        1/3
+      </wx-view>
+      <wx-swiper
+        autoplay="{{false}}"
+        class="weui-gallery__img__wrp"
+        current="{{0}}"
+        duration="{{500}}"
+        indicatorDots="{{false}}"
+        bind:change="change"
+        bind:tap="hideGallery"
+      >
+        <wx-swiper-item>
+          <wx-image
+            class="weui-gallery__img"
+            mode="aspectFit"
+            src="http://qq.com/1.jpg"
+          />
+        </wx-swiper-item>
+        <wx-swiper-item>
+          <wx-image
+            class="weui-gallery__img"
+            mode="aspectFit"
+            src="http://qq.com/2.jpg"
+          />
+        </wx-swiper-item>
+        <wx-swiper-item>
+          <wx-image
+            class="weui-gallery__img"
+            mode="aspectFit"
+            src="http://qq.com/3.jpg"
+          />
+        </wx-swiper-item>
+      </wx-swiper>
+      <wx-view
+        class="weui-gallery__opr"
+      >
+        <wx-view
+          ariaLabel="删除"
+          ariaRole="button"
+          class="weui-gallery__del"
+          hoverClass="weui-active"
+          bind:tap="deleteImg"
+        >
+          <i
+            class="weui-icon-delete weui-icon_gallery-delete"
+          />
+        </wx-view>
       </wx-view>
     </wx-view>
-  </wx-view>
+  </wx-root-portal>
 </mp-gallery>
 `;
 
@@ -86,63 +90,67 @@ exports[`gallery basic 3`] = `
   bind:delete="onDelete"
   bind:hide="onHide"
 >
-  <wx-view
-    ariaModal="true"
-    class="weui-gallery weui-animate-fade-in "
-    tabindex="0"
+  <wx-root-portal
+    enable="{{true}}"
   >
     <wx-view
-      class="weui-gallery__info"
-    >
-      2/3
-    </wx-view>
-    <wx-swiper
-      autoplay="{{false}}"
-      class="weui-gallery__img__wrp"
-      current="{{1}}"
-      duration="{{500}}"
-      indicatorDots="{{false}}"
-      bind:change="change"
-      bind:tap="hideGallery"
-    >
-      <swiper-item>
-        <wx-image
-          class="weui-gallery__img"
-          mode="aspectFit"
-          src="http://qq.com/1.jpg"
-        />
-      </swiper-item>
-      <swiper-item>
-        <wx-image
-          class="weui-gallery__img"
-          mode="aspectFit"
-          src="http://qq.com/2.jpg"
-        />
-      </swiper-item>
-      <swiper-item>
-        <wx-image
-          class="weui-gallery__img"
-          mode="aspectFit"
-          src="http://qq.com/3.jpg"
-        />
-      </swiper-item>
-    </wx-swiper>
-    <wx-view
-      class="weui-gallery__opr"
+      ariaModal="true"
+      class="root-portal-box weui-gallery weui-animate-fade-in "
+      tabindex="0"
     >
       <wx-view
-        ariaLabel="删除"
-        ariaRole="button"
-        class="weui-gallery__del"
-        hoverClass="weui-active"
-        bind:tap="deleteImg"
+        class="weui-gallery__info"
       >
-        <i
-          class="weui-icon-delete weui-icon_gallery-delete"
-        />
+        2/3
+      </wx-view>
+      <wx-swiper
+        autoplay="{{false}}"
+        class="weui-gallery__img__wrp"
+        current="{{1}}"
+        duration="{{500}}"
+        indicatorDots="{{false}}"
+        bind:change="change"
+        bind:tap="hideGallery"
+      >
+        <wx-swiper-item>
+          <wx-image
+            class="weui-gallery__img"
+            mode="aspectFit"
+            src="http://qq.com/1.jpg"
+          />
+        </wx-swiper-item>
+        <wx-swiper-item>
+          <wx-image
+            class="weui-gallery__img"
+            mode="aspectFit"
+            src="http://qq.com/2.jpg"
+          />
+        </wx-swiper-item>
+        <wx-swiper-item>
+          <wx-image
+            class="weui-gallery__img"
+            mode="aspectFit"
+            src="http://qq.com/3.jpg"
+          />
+        </wx-swiper-item>
+      </wx-swiper>
+      <wx-view
+        class="weui-gallery__opr"
+      >
+        <wx-view
+          ariaLabel="删除"
+          ariaRole="button"
+          class="weui-gallery__del"
+          hoverClass="weui-active"
+          bind:tap="deleteImg"
+        >
+          <i
+            class="weui-icon-delete weui-icon_gallery-delete"
+          />
+        </wx-view>
       </wx-view>
     </wx-view>
-  </wx-view>
+  </wx-root-portal>
 </mp-gallery>
 `;
 
@@ -154,56 +162,60 @@ exports[`gallery basic 4`] = `
   bind:delete="onDelete"
   bind:hide="onHide"
 >
-  <wx-view
-    ariaModal="true"
-    class="weui-gallery weui-animate-fade-in "
-    tabindex="0"
+  <wx-root-portal
+    enable="{{true}}"
   >
     <wx-view
-      class="weui-gallery__info"
-    >
-      1/2
-    </wx-view>
-    <wx-swiper
-      autoplay="{{false}}"
-      class="weui-gallery__img__wrp"
-      current="{{0}}"
-      duration="{{500}}"
-      indicatorDots="{{false}}"
-      bind:change="change"
-      bind:tap="hideGallery"
-    >
-      <swiper-item>
-        <wx-image
-          class="weui-gallery__img"
-          mode="aspectFit"
-          src="http://qq.com/1.jpg"
-        />
-      </swiper-item>
-      <swiper-item>
-        <wx-image
-          class="weui-gallery__img"
-          mode="aspectFit"
-          src="http://qq.com/3.jpg"
-        />
-      </swiper-item>
-    </wx-swiper>
-    <wx-view
-      class="weui-gallery__opr"
+      ariaModal="true"
+      class="root-portal-box weui-gallery weui-animate-fade-in "
+      tabindex="0"
     >
       <wx-view
-        ariaLabel="删除"
-        ariaRole="button"
-        class="weui-gallery__del"
-        hoverClass="weui-active"
-        bind:tap="deleteImg"
+        class="weui-gallery__info"
       >
-        <i
-          class="weui-icon-delete weui-icon_gallery-delete"
-        />
+        1/2
+      </wx-view>
+      <wx-swiper
+        autoplay="{{false}}"
+        class="weui-gallery__img__wrp"
+        current="{{0}}"
+        duration="{{500}}"
+        indicatorDots="{{false}}"
+        bind:change="change"
+        bind:tap="hideGallery"
+      >
+        <wx-swiper-item>
+          <wx-image
+            class="weui-gallery__img"
+            mode="aspectFit"
+            src="http://qq.com/1.jpg"
+          />
+        </wx-swiper-item>
+        <wx-swiper-item>
+          <wx-image
+            class="weui-gallery__img"
+            mode="aspectFit"
+            src="http://qq.com/3.jpg"
+          />
+        </wx-swiper-item>
+      </wx-swiper>
+      <wx-view
+        class="weui-gallery__opr"
+      >
+        <wx-view
+          ariaLabel="删除"
+          ariaRole="button"
+          class="weui-gallery__del"
+          hoverClass="weui-active"
+          bind:tap="deleteImg"
+        >
+          <i
+            class="weui-icon-delete weui-icon_gallery-delete"
+          />
+        </wx-view>
       </wx-view>
     </wx-view>
-  </wx-view>
+  </wx-root-portal>
 </mp-gallery>
 `;
 
@@ -215,40 +227,44 @@ exports[`gallery basic 5`] = `
   bind:delete="onDelete"
   bind:hide="onHide"
 >
-  <wx-view
-    ariaModal="true"
-    class="weui-gallery weui-animate-fade-out "
-    tabindex="0"
+  <wx-root-portal
+    enable="{{true}}"
   >
     <wx-view
-      class="weui-gallery__info"
-    >
-      2/0
-    </wx-view>
-    <wx-swiper
-      autoplay="{{false}}"
-      class="weui-gallery__img__wrp"
-      current="{{1}}"
-      duration="{{500}}"
-      indicatorDots="{{false}}"
-      bind:change="change"
-      bind:tap="hideGallery"
-    />
-    <wx-view
-      class="weui-gallery__opr"
+      ariaModal="true"
+      class="root-portal-box weui-gallery weui-animate-fade-out "
+      tabindex="0"
     >
       <wx-view
-        ariaLabel="删除"
-        ariaRole="button"
-        class="weui-gallery__del"
-        hoverClass="weui-active"
-        bind:tap="deleteImg"
+        class="weui-gallery__info"
       >
-        <i
-          class="weui-icon-delete weui-icon_gallery-delete"
-        />
+        2/0
+      </wx-view>
+      <wx-swiper
+        autoplay="{{false}}"
+        class="weui-gallery__img__wrp"
+        current="{{1}}"
+        duration="{{500}}"
+        indicatorDots="{{false}}"
+        bind:change="change"
+        bind:tap="hideGallery"
+      />
+      <wx-view
+        class="weui-gallery__opr"
+      >
+        <wx-view
+          ariaLabel="删除"
+          ariaRole="button"
+          class="weui-gallery__del"
+          hoverClass="weui-active"
+          bind:tap="deleteImg"
+        >
+          <i
+            class="weui-icon-delete weui-icon_gallery-delete"
+          />
+        </wx-view>
       </wx-view>
     </wx-view>
-  </wx-view>
+  </wx-root-portal>
 </mp-gallery>
 `;

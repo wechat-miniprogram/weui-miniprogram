@@ -161,7 +161,7 @@ exports[`searchbar basic 3`] = `
           ariaLabel="清除"
           ariaRole="button"
           class="weui-icon-clear"
-          hoverClass="weui-active"
+          hoverClass="weui-hover-active"
           bind:tap="clearInput"
         />
       </wx-view>
@@ -209,7 +209,7 @@ exports[`searchbar basic 3`] = `
           <wx-view
             ariaRole="option"
             class="weui-cell    "
-            hoverClass="weui-cell_active weui-active"
+            hoverClass="weui-hover-active"
             bind:tap="navigateTo"
           >
             <wx-view
@@ -271,7 +271,7 @@ exports[`searchbar basic 4`] = `
           ariaLabel="清除"
           ariaRole="button"
           class="weui-icon-clear"
-          hoverClass="weui-active"
+          hoverClass="weui-hover-active"
           bind:tap="clearInput"
         />
       </wx-view>
@@ -319,7 +319,7 @@ exports[`searchbar basic 4`] = `
           <wx-view
             ariaRole="option"
             class="weui-cell    "
-            hoverClass="weui-cell_active weui-active"
+            hoverClass="weui-hover-active"
             bind:tap="navigateTo"
           >
             <wx-view
@@ -381,7 +381,7 @@ exports[`searchbar basic 5`] = `
           ariaLabel="清除"
           ariaRole="button"
           class="weui-icon-clear"
-          hoverClass="weui-active"
+          hoverClass="weui-hover-active"
           bind:tap="clearInput"
         />
       </wx-view>

@@ -14,102 +14,107 @@ exports[`grids basic 2`] = `
   bind:buttontap="onButtonTap"
   bind:close="onClose"
 >
-  <wx-view
-    ariaModal="true"
-    ariaRole="dialog"
+  <wx-root-portal
+    enable="{{true}}"
   >
     <wx-view
-      ariaLabel="关闭"
-      ariaRole="button"
-      class="weui-mask weui-animate-fade-in"
-      data-type="tap"
-      bind:tap="close"
-      catch:touchmove="onMaskMouseMove"
-    />
-    <wx-view
-      class="weui-half-screen-dialog weui-animate-slide-up "
-      catch:touchmove="onMaskMouseMove"
+      ariaModal="true"
+      ariaRole="dialog"
+      class="root-portal-box"
+      style="z-index:901"
     >
       <wx-view
-        class="weui-half-screen-dialog__hd"
+        class="weui-half-screen-dialog "
       >
         <wx-view
-          class="weui-half-screen-dialog__hd__side"
-          data-type="close"
-          bind:tap="close"
+          class="weui-half-screen-dialog__hd"
         >
           <wx-view
-            ariaRole="button"
-            class="weui-icon-btn"
-            hoverClass="weui-active"
-          >
-            关闭
-            <i
-              class="weui-icon-close-thin"
-            />
-          </wx-view>
-        </wx-view>
-        <wx-view
-          class="weui-half-screen-dialog__hd__main"
-          tabindex="0"
-        >
-          <wx-view
-            class="weui-half-screen-dialog__title"
+            class="weui-half-screen-dialog__hd__side"
+            data-type="close"
+            bind:tap="close"
           >
             <wx-view
-              slot="title"
+              ariaRole="button"
+              class="weui-icon-btn"
+              hoverClass="weui-active"
             >
-              测试标题A
+              关闭
+              <wx-view
+                class="weui-icon-close-thin"
+              />
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="weui-half-screen-dialog__hd__main"
+            tabindex="0"
+          >
+            <wx-view
+              class="weui-half-screen-dialog__title"
+            >
+              <wx-view
+                slot="title"
+              >
+                测试标题A
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="weui-half-screen-dialog__hd__side"
+          >
+            <wx-view
+              class="weui-icon-btn weui-icon-btn_more"
+              hoverClass="weui-active"
+            >
+              更多
             </wx-view>
           </wx-view>
         </wx-view>
         <wx-view
-          class="weui-half-screen-dialog__hd__side"
+          class="weui-half-screen-dialog__bd"
         >
           <wx-view
-            class="weui-icon-btn weui-icon-btn_more"
-            hoverClass="weui-active"
+            slot="desc"
           >
-            更多
+            这是自定义描述区
+          </wx-view>
+        </wx-view>
+        <wx-view
+          class="weui-half-screen-dialog__ft"
+        >
+          <wx-view
+            class="weui-half-screen-dialog__btn-area"
+          >
+            <wx-button
+              ariaRole="button"
+              class="weui-btn "
+              data-index="{{0}}"
+              type="default"
+              bind:tap="buttonTap"
+            >
+              按钮A
+            </wx-button>
+            <wx-button
+              ariaRole="button"
+              class="weui-btn "
+              data-index="{{1}}"
+              type="primary"
+              bind:tap="buttonTap"
+            >
+              按钮B
+            </wx-button>
           </wx-view>
         </wx-view>
       </wx-view>
-      <wx-view
-        class="weui-half-screen-dialog__bd"
-      >
-        <wx-view
-          slot="desc"
-        >
-          这是自定义描述区
-        </wx-view>
-      </wx-view>
-      <wx-view
-        class="weui-half-screen-dialog__ft"
-      >
-        <wx-view
-          class="weui-half-screen-dialog__btn-area"
-        >
-          <wx-button
-            ariaRole="button"
-            class="weui-btn "
-            data-index="{{0}}"
-            type="default"
-            bind:tap="buttonTap"
-          >
-            按钮A
-          </wx-button>
-          <wx-button
-            ariaRole="button"
-            class="weui-btn "
-            data-index="{{1}}"
-            type="primary"
-            bind:tap="buttonTap"
-          >
-            按钮B
-          </wx-button>
-        </wx-view>
-      </wx-view>
     </wx-view>
-  </wx-view>
+    <wx-view
+      ariaLabel="蒙层"
+      ariaRole="mask"
+      class="weui-mask weui-animate-fade-in"
+      data-type="close"
+      style="z-index:900"
+      bind:tap="close"
+    />
+  </wx-root-portal>
 </mp-half-screen-dialog>
 `;

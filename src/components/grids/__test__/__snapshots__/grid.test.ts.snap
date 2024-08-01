@@ -6,9 +6,10 @@ exports[`grids basic 1`] = `
     <wx-view
       class="weui-grids "
     >
-      <wx-navigator
+      <wx-view
         appId=""
         class="weui-grid"
+        data-url="/0"
         extraData=""
         hoverClass="navigator-hover"
         hoverStartTime="{{50}}"
@@ -22,6 +23,7 @@ exports[`grids basic 1`] = `
         bind:complete=""
         bind:fail=""
         bind:success=""
+        bind:tap="openPage"
       >
         <wx-view
           class="weui-grid__icon"
@@ -37,10 +39,11 @@ exports[`grids basic 1`] = `
         >
           Grid0
         </wx-view>
-      </wx-navigator>
-      <wx-navigator
+      </wx-view>
+      <wx-view
         appId=""
         class="weui-grid"
+        data-url="/1"
         extraData=""
         hoverClass="navigator-hover"
         hoverStartTime="{{50}}"
@@ -54,6 +57,7 @@ exports[`grids basic 1`] = `
         bind:complete=""
         bind:fail=""
         bind:success=""
+        bind:tap="openPage"
       >
         <wx-view
           class="weui-grid__icon"
@@ -69,10 +73,11 @@ exports[`grids basic 1`] = `
         >
           Grid1
         </wx-view>
-      </wx-navigator>
-      <wx-navigator
+      </wx-view>
+      <wx-view
         appId=""
         class="weui-grid"
+        data-url="/2"
         extraData=""
         hoverClass="navigator-hover"
         hoverStartTime="{{50}}"
@@ -86,6 +91,7 @@ exports[`grids basic 1`] = `
         bind:complete=""
         bind:fail=""
         bind:success=""
+        bind:tap="openPage"
       >
         <wx-view
           class="weui-grid__icon"
@@ -101,10 +107,11 @@ exports[`grids basic 1`] = `
         >
           Grid2
         </wx-view>
-      </wx-navigator>
-      <wx-navigator
+      </wx-view>
+      <wx-view
         appId=""
         class="weui-grid"
+        data-url="/3"
         extraData=""
         hoverClass="navigator-hover"
         hoverStartTime="{{50}}"
@@ -118,6 +125,7 @@ exports[`grids basic 1`] = `
         bind:complete=""
         bind:fail=""
         bind:success=""
+        bind:tap="openPage"
       >
         <wx-view
           class="weui-grid__icon"
@@ -133,10 +141,11 @@ exports[`grids basic 1`] = `
         >
           Grid3
         </wx-view>
-      </wx-navigator>
-      <wx-navigator
+      </wx-view>
+      <wx-view
         appId=""
         class="weui-grid"
+        data-url="/4"
         extraData=""
         hoverClass="navigator-hover"
         hoverStartTime="{{50}}"
@@ -150,6 +159,7 @@ exports[`grids basic 1`] = `
         bind:complete=""
         bind:fail=""
         bind:success=""
+        bind:tap="openPage"
       >
         <wx-view
           class="weui-grid__icon"
@@ -165,10 +175,11 @@ exports[`grids basic 1`] = `
         >
           Grid4
         </wx-view>
-      </wx-navigator>
-      <wx-navigator
+      </wx-view>
+      <wx-view
         appId=""
         class="weui-grid"
+        data-url="/5"
         extraData=""
         hoverClass="navigator-hover"
         hoverStartTime="{{50}}"
@@ -182,6 +193,7 @@ exports[`grids basic 1`] = `
         bind:complete=""
         bind:fail=""
         bind:success=""
+        bind:tap="openPage"
       >
         <wx-view
           class="weui-grid__icon"
@@ -197,10 +209,11 @@ exports[`grids basic 1`] = `
         >
           Grid5
         </wx-view>
-      </wx-navigator>
-      <wx-navigator
+      </wx-view>
+      <wx-view
         appId=""
         class="weui-grid"
+        data-url="/6"
         extraData=""
         hoverClass="navigator-hover"
         hoverStartTime="{{50}}"
@@ -214,6 +227,7 @@ exports[`grids basic 1`] = `
         bind:complete=""
         bind:fail=""
         bind:success=""
+        bind:tap="openPage"
       >
         <wx-view
           class="weui-grid__icon"
@@ -229,10 +243,11 @@ exports[`grids basic 1`] = `
         >
           Grid6
         </wx-view>
-      </wx-navigator>
-      <wx-navigator
+      </wx-view>
+      <wx-view
         appId=""
         class="weui-grid"
+        data-url="/7"
         extraData=""
         hoverClass="navigator-hover"
         hoverStartTime="{{50}}"
@@ -246,6 +261,7 @@ exports[`grids basic 1`] = `
         bind:complete=""
         bind:fail=""
         bind:success=""
+        bind:tap="openPage"
       >
         <wx-view
           class="weui-grid__icon"
@@ -261,10 +277,11 @@ exports[`grids basic 1`] = `
         >
           Grid7
         </wx-view>
-      </wx-navigator>
-      <wx-navigator
+      </wx-view>
+      <wx-view
         appId=""
         class="weui-grid"
+        data-url="/8"
         extraData=""
         hoverClass="navigator-hover"
         hoverStartTime="{{50}}"
@@ -278,6 +295,7 @@ exports[`grids basic 1`] = `
         bind:complete=""
         bind:fail=""
         bind:success=""
+        bind:tap="openPage"
       >
         <wx-view
           class="weui-grid__icon"
@@ -293,7 +311,7 @@ exports[`grids basic 1`] = `
         >
           Grid8
         </wx-view>
-      </wx-navigator>
+      </wx-view>
     </wx-view>
   </mp-grids>
 </main>
