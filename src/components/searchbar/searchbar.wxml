@@ -21,7 +21,7 @@
             />
             <text
                 class="weui-icon-clear"
-                hover-class="weui-active"
+                hover-class="weui-hover-active"
                 wx:if="{{value.length > 0}}"
                 bindtap="clearInput"
                 aria-role="button"
@@ -29,8 +29,7 @@
             ></text>
         </view>
         <label id="searchText" class="weui-search-bar__label" bindtap="showInput">
-            <!-- <icon class="weui-icon-search" type="search" size="12"></icon> -->
-            <view class="weui-icon-search"></view>
+            <icon class="weui-icon-search" type="search" size="12"></icon>
             <text aria-hidden class="weui-search-bar__text">{{placeholder}}</text>
         </label>
     </view>

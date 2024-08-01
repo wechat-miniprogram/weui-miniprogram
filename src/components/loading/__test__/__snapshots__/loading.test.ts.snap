@@ -10,8 +10,9 @@ exports[`loading basic 1`] = `
     <wx-view
       class="weui-loadmore"
     >
-      <wx-view
-        class="weui-loading"
+      <wx-image
+        class="weui-loading-animation"
+        src="./loading-icon.svg"
       />
       <wx-view
         class="weui-loadmore__tips"

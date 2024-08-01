@@ -1,7 +1,7 @@
 <view
     bindtap="navigateTo"
     class="weui-cell {{link ? 'weui-cell_access' : ''}} {{extClass}} {{outerClass}} {{inForm ? ' weui-cell-inform' : ''}}{{inline ? '' : 'weui-cell_label-block'}}"
-    hover-class="{{hover ? 'weui-cell_active weui-active' : extHoverClass}}"
+    hover-class="{{hover ? 'weui-hover-active' : extHoverClass}}"
     aria-role="{{ariaRole}}"
 >
     <view wx:if="{{hasHeader}}" class="weui-cell__hd {{iconClass}}">

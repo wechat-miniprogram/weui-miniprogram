@@ -63,7 +63,7 @@
                 </mp-cells>
                 <mp-cells title="文本域">
                     <mp-cell has-header="{{false}}" has-footer="{{false}}" title="" ext-class="">
-                        <textarea class="weui-textarea" placeholder="请输入文本" style="height: 3.3em" />
+                        <textarea placeholder="请输入文本" style="height: 80px"/>
                         <view class="weui-textarea-counter">0/200</view>
                     </mp-cell>
                 </mp-cells>
@@ -98,9 +98,7 @@
 
             <checkbox-group slot="tips" bindchange="bindAgreeChange">
                 <label class="weui-agree">
-                    <checkbox class="weui-agree__checkbox-check" />
-
-                    <text class="weui-agree__checkbox"></text>
+                    <checkbox />
                     <view class="weui-agree__text">阅读并同意<navigator>《相关条款》</navigator></view>
                 </label>
             </checkbox-group>
