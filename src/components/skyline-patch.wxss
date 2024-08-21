@@ -278,7 +278,7 @@ root-portal-content {
 
 
 
-/* 
+/*
 animation 的 scope 有 bug 需要写到组件内部
 .weui-loading-animation {
     height: 20px;
@@ -396,7 +396,6 @@ animation 的 scope 有 bug 需要写到组件内部
 
 .weui-half-screen-dialog {
     pointer-events: auto;
-    position: absolute;
     width: 100vw;
     background-color: #fff;
     overflow: unset;
@@ -458,7 +457,7 @@ animation 的 scope 有 bug 需要写到组件内部
 /* weui-actionsheet */
 .weui-actionsheet {
     pointer-events: auto;
-    position: absolute;
+    position: fixed;
     background-color: #f7f7f7;
     bottom: 0;
     margin-top: 0;
@@ -481,6 +480,9 @@ root-portal {
     position: absolute;
 }
 .root-portal-box {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     pointer-events: none;
