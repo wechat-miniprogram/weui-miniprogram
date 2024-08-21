@@ -1,5 +1,9 @@
 # 更新日志
 
+## 1.4.1
+
+- fix: 修复 half-screen-dialog skyline 动画
+
 ## 1.4.0
 
 - feat: 正式支持 skyline
