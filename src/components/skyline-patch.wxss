@@ -85,18 +85,27 @@ root-portal-content {
 /* weui-navigation-bar */
 .weui-navigation-bar {
     flex: none;
+    box-sizing: content-box;
 }
 .weui-navigation-bar__inner {
-    height: calc(44px + env(safe-area-inset-top));
-    padding-top: env(safe-area-inset-top);
-    box-sizing: border-box;
+    height: 44px;
+    width: 100vw;
+    box-sizing: content-box;
     flex-direction: row;
     position: relative;
+}
+.weui-navigation-bar__inner .weui-navigation-bar__left {
+    box-sizing: content-box;
+    flex-direction: row;
 }
 .weui-navigation-bar__inner .weui-navigation-bar__center {
     flex: 1 1 auto;
     /* skyline 不支持 inline-flex，所以在父元素 flex-direction: row; 来支持 */
     flex-direction: row;
+    box-sizing: content-box;
+}
+.weui-navigation-bar__inner .weui-navigation-bar__right {
+    box-sizing: content-box;
 }
 .weui-navigation-bar__inner .weui-navigation-bar__left .weui-navigation-bar__btn_goback {
     width: 1rem;

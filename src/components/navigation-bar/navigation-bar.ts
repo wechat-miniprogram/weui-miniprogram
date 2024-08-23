@@ -55,20 +55,14 @@ Component({
     },
     attached() {
         const isSupport = !!wx.getMenuButtonBoundingClientRect
-        const rect = wx.getMenuButtonBoundingClientRect
-            ? wx.getMenuButtonBoundingClientRect()
-            : null
+        const rect = wx.getMenuButtonBoundingClientRect?.()
         wx.getSystemInfo({
             success: (res) => {
                 const ios = !!(res.system.toLowerCase().search('ios') + 1)
                 this.setData({
                     ios,
                     statusBarHeight: res.statusBarHeight,
-                    innerWidth: isSupport ? `width:${res.windowWidth}px;` : '',
-                    innerPaddingRight: isSupport
-                        ? `padding-right:${res.windowWidth - rect.left}px`
-                        : '',
-                    leftWidth: isSupport ? `width:${res.windowWidth - rect.left}px` : ''
+                    menuButtonWidth: rect?.width
                 })
             }
         })
