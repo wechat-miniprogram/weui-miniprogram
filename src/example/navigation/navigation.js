@@ -4,11 +4,17 @@ CustomPage({
     data: {
         loading: false,
         show: true,
-        animated: false
+        animated: false,
+        title: 'UI组件库'
     },
     toggleLoading() {
         this.setData({
             loading: !this.data.loading
+        })
+    },
+    changeTitle() {
+        this.setData({
+            title: '修改标题内容之后的标题长这个样子'
         })
     },
     changeColor() {

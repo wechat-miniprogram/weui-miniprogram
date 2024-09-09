@@ -6,7 +6,7 @@
       <block wx:if="{{back || homeButton}}">
         <!-- 返回上一页 -->
         <block wx:if="{{back}}">
-          <view class="weui-navigation-bar__buttons weui-navigation-bar__buttons_goback" style="">
+          <view class="weui-navigation-bar__buttons weui-navigation-bar__buttons_goback">
             <view
               bindtap="back"
               class="weui-navigation-bar__btn_goback_wrapper"
@@ -20,7 +20,7 @@
         </block>
         <!-- 返回首页 -->
         <block wx:if="{{homeButton}}">
-          <view class="weui-navigation-bar__buttons" style="">
+          <view class="weui-navigation-bar__buttons">
             <view
               bindtap="home"
               class="weui-navigation-bar__btn_goback_wrapper"
@@ -54,7 +54,6 @@
         <slot name="center"></slot>
       </block>
     </view>
-    
     <!-- 右侧留空 -->
     <view class='weui-navigation-bar__right'>
       <slot name="right"></slot>
