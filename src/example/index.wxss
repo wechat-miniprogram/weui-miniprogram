@@ -33,4 +33,8 @@
     display: initial;
 }
 
+/* 兼容首页 webview 下 margin 重叠问题*/
+.kind-list__item {
+    margin: 10px 0 0 0;
+}
 
