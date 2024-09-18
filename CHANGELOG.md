@@ -1,5 +1,10 @@
 # 更新日志
 
+## 1.4.2
+
+- fix: 修复 half-screen-dialog skyline 动画
+- fix: 修复 navigation-bar 样式
+
 ## 1.4.1
 
 - fix: 修复 half-screen-dialog skyline 动画
