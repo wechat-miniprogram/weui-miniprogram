@@ -29,7 +29,7 @@
         bindtap="deleteImg"
         hover-class="weui-active"
       >
-          <i class="weui-icon-delete weui-icon_gallery-delete"></i>
+          <view class="weui-icon-delete weui-icon_gallery-delete"></view>
       </view>
     </view>
   </view>

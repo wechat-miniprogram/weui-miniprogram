@@ -1,0 +1,184 @@
+/* weui 用了标签写法，skyline 下部分声明不生效，所以重新声明一次 */
+/* root-portal-content 匹配不到 page 的声明，所以再声明一次 */
+page,
+root-portal-content {
+    --weui-BG-0: #ededed;
+    --weui-BG-1: #f7f7f7;
+    --weui-BG-2: #fff;
+    --weui-BG-3: #f7f7f7;
+    --weui-BG-4: #4c4c4c;
+    --weui-BG-5: #fff;
+    --weui-FG-0: rgba(0, 0, 0, 0.9);
+    --weui-FG-HALF: rgba(0, 0, 0, 0.9);
+    --weui-FG-1: rgba(0, 0, 0, 0.5);
+    --weui-FG-2: rgba(0, 0, 0, 0.3);
+    --weui-FG-3: rgba(0, 0, 0, 0.1);
+    --weui-FG-4: rgba(0, 0, 0, 0.15);
+    --weui-FG-5: rgba(0, 0, 0, 0.05);
+    --weui-RED: #fa5151;
+    --weui-ORANGE: #fa9d3b;
+    --weui-YELLOW: #ffc300;
+    --weui-GREEN: #91d300;
+    --weui-LIGHTGREEN: #95ec69;
+    --weui-BRAND: #07c160;
+    --weui-BLUE: #10aeff;
+    --weui-INDIGO: #1485ee;
+    --weui-PURPLE: #6467f0;
+    --weui-WHITE: #fff;
+    --weui-LINK: #576b95;
+    --weui-TEXTGREEN: #06ae56;
+    --weui-FG: #000;
+    --weui-BG: #fff;
+    --weui-TAG-TEXT-ORANGE: #fa9d3b;
+    --weui-TAG-BACKGROUND-ORANGE: rgba(250, 157, 59, 0.1);
+    --weui-TAG-TEXT-GREEN: #06ae56;
+    --weui-TAG-BACKGROUND-GREEN: rgba(6, 174, 86, 0.1);
+    --weui-TAG-TEXT-BLUE: #10aeff;
+    --weui-TAG-BACKGROUND-BLUE: rgba(16, 174, 255, 0.1);
+    --weui-TAG-TEXT-BLACK: rgba(0, 0, 0, 0.5);
+    --weui-TAG-BACKGROUND-BLACK: rgba(0, 0, 0, 0.05);
+    --weui-DIALOG-LINE-COLOR: rgba(0, 0, 0, 0.1);
+    --weui-BTN-DEFAULT-COLOR: #06ae56;
+    --weui-BTN-DEFAULT-BG: #f2f2f2;
+    --weui-cellMarginLR: 16px;
+    --weui-cellPaddingLR: 16px;
+}
+
+root-portal-content {
+    position: absolute;
+}
+
+/** skyline 不支持 :nth-last-child */
+.weui-half-screen-dialog__ft .weui-btn {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 8px;
+    width: 120px;
+}
+
+/** skyline 不支持 em */
+.weui-navigation-bar__inner .weui-navigation-bar__left .weui-navigation-bar__btn_goback {
+    width: 12px;
+    height: 23px;
+}
+
+/** skyline 不支持 em */
+.weui-loading {
+    width: 15.0469px;
+    height: 15.0469px;
+}
+
+/** skyline 不支持 em */
+.weui-tabbar__icon {
+    width: 26.344px;
+    height: 26.344px;
+}
+
+/** skyline 不支持 em */
+.weui-badge {
+    padding: 1.694px 4.518px;
+    line-height: 13.5529px; /** skyline 不支持不带单位 */
+}
+
+/** skyline 不支持 em */
+.weui-badge_dot {
+    padding: 4.518px;
+}
+
+/** skyline 不支持 attribute selector */
+.weui-icon-circle,
+.weui-icon-download,
+.weui-icon-info,
+.weui-icon-safe-success,
+.weui-icon-safe-warn,
+.weui-icon-success,
+.weui-icon-success-circle,
+.weui-icon-success-no-circle,
+.weui-icon-waiting,
+.weui-icon-waiting-circle,
+.weui-icon-warn,
+.weui-icon-outlined-warn,
+.weui-icon-info-circle,
+.weui-icon-cancel,
+.weui-icon-search,
+.weui-icon-clear,
+.weui-icon-back,
+.weui-icon-delete,
+.weui-icon-success-no-circle-thin,
+.weui-icon-arrow,
+.weui-icon-arrow-bold,
+.weui-icon-back-arrow,
+.weui-icon-back-arrow-thin,
+.weui-icon-close,
+.weui-icon-close-thin,
+.weui-icon-back-circle,
+.weui-icon-camera,
+.weui-icon-success,
+.weui-icon-waiting,
+.weui-icon-warn,
+.weui-icon-info,
+.weui-icon-success-circle,
+.weui-icon-success-no-circle,
+.weui-icon-success-no-circle-thin,
+.weui-icon-waiting-circle,
+.weui-icon-circle,
+.weui-icon-download,
+.weui-icon-info-circle,
+.weui-icon-safe-success,
+.weui-icon-safe-warn,
+.weui-icon-cancel,
+.weui-icon-search,
+.weui-icon-clear,
+.weui-icon-delete .weui-icon_gallery-delete,
+.weui-icon_msg,
+.weui-icon_msg-primary,
+.weui-icon-checked,
+.weui-icon-btn,
+.weui-icon-arrow,
+.weui-icon-more,
+.weui-icon-slide-down,
+.weui-icon-btn_goback,
+.weui-icon-btn_close,
+.weui-icon_toast,
+.weui-search-bar .weui-search-bar__box .weui-icon-clear,
+.weui-search-bar .weui-icon-search {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.5882352941176471rem;
+    -webkit-mask-position: 50% 50%;
+    mask-position: 50% 50%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    background-color: currentColor;
+    width: 22.578px;
+    height: 22.578px;
+}
+
+
+/** skyline 不支持 em */
+.weui-agree__checkbox {
+    width: 16px;
+    height: 18.438px;
+}
+
+/** skyline 不支持 em */
+.weui-search-bar__box .weui-icon-clear::before {
+    width: 18.813px;
+    height: 18.813px;
+}
+/** skyline 不支持 em */
+.weui-search-bar__box .weui-icon-clear::after {
+    height: 25.281px;
+}
+
+.weui-search-bar__box .weui-search-bar__input {
+    height: 33.3906px; /** skyline 不支持不带单位 */
+    line-height: 25.6px;
+}
+
+/** skyline 不支持不带单位 */
+.weui-cell {
+    line-height: 22.5882px;
+}

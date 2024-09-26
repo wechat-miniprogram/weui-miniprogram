@@ -1,5 +1,3 @@
-@import '../common.wxss';
-
 page{background-color:#EDEDED;}
 .button-sp-area{
     margin: 0 auto;

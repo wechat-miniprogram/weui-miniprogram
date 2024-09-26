@@ -1,5 +1,5 @@
 /* example/tabbar/tabbar.wxss */
-@import '../common.wxss';
+
 
 /* @media only screen and (min-width: 450px) {
   .page__hd {
@@ -17,12 +17,22 @@
   }
 } */
 
-/* .tabbar {
-  display: flex;
+.tabbar-container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.tabbar {
+  display: fixed;
   position: absolute;
   bottom: 0;
   width: 100vw;
-  height: 100px;
   left: 0;
   right: 0;
-} */
+}

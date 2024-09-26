@@ -1,6 +1,6 @@
 <view class="page" data-weui-theme="{{theme}}">
     <mp-navigation-bar title="Badge"></mp-navigation-bar>
-    <scroll-view type="list" scroll-y class="page-scroll-view">
+    <scroll-view type="list" scroll-y class="page-height">
         <view class="page__hd">
             <view class="page__title">Badge</view>
             <view class="page__desc">徽章</view>

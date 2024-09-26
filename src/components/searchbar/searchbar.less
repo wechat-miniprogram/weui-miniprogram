@@ -3,3 +3,13 @@
   font-size: 14px;
   vertical-align: middle;
 }
+
+.weui-search-bar .weui-icon-search,
+.weui-search-bar__box .weui-icon-search,
+.weui-search-bar .weui-search-bar__box .weui-icon-clear {
+  background-color: var(--weui-FG-2); /* skyline 不支持 currentColor */
+}
+
+.weui-search-bar__box .weui-icon-clear::before {
+  background-color: var(--weui-FG-2); /* skyline 不支持 currentColor */
+}

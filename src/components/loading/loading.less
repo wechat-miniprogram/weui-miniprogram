@@ -26,8 +26,8 @@
 
 // FIXME: skyline animation 暂有 scope 的 bug
 .weui-loading-animation {
-  height: 20px;
-  width: 20px;
+  height: 15.047px;
+  width: 15.047px;
   animation: loading 1s linear infinite;
 }
 
@@ -157,4 +157,14 @@
   100% { background-color: rgba(255, 255, 255, 0.1); }
   30% { background-color: rgba(255, 255, 255, 0.3); }
   60% { background-color: rgba(255, 255, 255, 0.5); }
+}
+
+.weui-loadmore {
+  display: flex; /* skyline 不支持 inline */
+  justify-content: center;
+  align-items: center;
+}
+
+.weui-loadmore .weui-loading-animation {
+  margin-right: 4.518px; /* skyline 不支持 em */
 }

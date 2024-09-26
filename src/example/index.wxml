@@ -27,19 +27,8 @@
                         >
                             <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}" tabindex="0">
                                 <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*this">
-                                    <view aria-role="menuitem">
-                                        <!-- 把 navigator 改成 view，因为这里 navigator 现在的实现是 text，和 webview 在布局上有点不同 -->
-                                        <view
-                                            aria-role="link"
-                                            url="{{page}}/{{page}}"
-                                            class="weui-cell weui-cell_access"
-                                            hover-class="weui-hover-active"
-                                            data-page="{{page}}"
-                                            bindtap="openPage"
-                                        >
-                                            <view class="weui-cell__bd">{{page}}</view>
-                                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-                                        </view>
+                                    <view aria-role="menuitem" bindtap="openPage" data-page="{{page}}">
+                                        <mp-cell link aria-role="link">{{page}}</mp-cell>
                                     </view>
                                 </block>
                             </view>

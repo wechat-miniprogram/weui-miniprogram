@@ -54,7 +54,6 @@ Component({
         displayStyle: ''
     },
     attached() {
-        const isSupport = !!wx.getMenuButtonBoundingClientRect
         const rect = wx.getMenuButtonBoundingClientRect?.()
         wx.getSystemInfo({
             success: (res) => {

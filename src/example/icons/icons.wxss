@@ -1,4 +1,4 @@
-@import '../common.wxss';
+
 
 icon{
     margin-right: 13px;
@@ -33,9 +33,21 @@ icon{
     font-size: 24rpx;
     overflow: hidden;
     white-space:nowrap;
-    text-overflow:ellipsis; 
+    text-overflow:ellipsis;
 }
 .icon-box__title{
     font-size: 18px;
     margin: 5px 0;
+}
+
+/** skyline 不支持 float: left */
+.weui-grids {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/** skyline 不支持 float: left */
+.weui-grid {
+    float: none;
 }

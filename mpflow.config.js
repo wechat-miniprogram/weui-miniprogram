@@ -1,7 +1,7 @@
-const TerserWebpackPlugin = require("terser-webpack-plugin");
+const TerserWebpackPlugin = require('terser-webpack-plugin')
 
 module.exports = {
-    appId: 'wxe5f52902cf4de896', 
+    appId: 'wxe5f52902cf4de896',
     projectName: '小程序自定义组件',
     app: (mode) => (mode !== 'production' ? 'src/app' : undefined),
     pages: (mode) => (mode !== 'production' ? undefined : ['src/components/index']),
@@ -10,14 +10,16 @@ module.exports = {
     outputDir: 'miniprogram_dist',
     plugins: ['@mpflow/plugin-babel', '@mpflow/plugin-typescript', '@mpflow/plugin-css'],
     minimize: false,
-    configureWebpackChain: config => {
-        config.plugin('terser').use(TerserWebpackPlugin, [{
-            terserOptions: {
-                compress: {
-                    directives: false
+    configureWebpackChain: (config) => {
+        config.plugin('terser').use(TerserWebpackPlugin, [
+            {
+                terserOptions: {
+                    compress: {
+                        directives: false
+                    }
                 }
             }
-        }])
+        ])
     },
     settings: {
         urlCheck: true,
@@ -42,6 +44,7 @@ module.exports = {
         },
         useIsolateContext: true,
         useCompilerModule: false,
-        userConfirmedUseCompilerModuleSwitch: false
+        userConfirmedUseCompilerModuleSwitch: false,
+        compileWorklet: true
     }
 }

@@ -2,6 +2,7 @@ Component({
     options: {
         multipleSlots: true
     },
+    externalClasses: ['ext-class'],
     properties: {
         hover: {
             type: Boolean,
@@ -10,10 +11,6 @@ Component({
         link: {
             type: Boolean,
             value: false
-        },
-        extClass: {
-            type: String,
-            value: ''
         },
         iconClass: {
             type: String,

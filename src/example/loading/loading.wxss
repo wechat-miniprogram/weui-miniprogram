@@ -1,4 +1,4 @@
-@import '../common.wxss';
+
 
 .page .demo0 {
   height: 60px;

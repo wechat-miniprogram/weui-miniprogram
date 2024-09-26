@@ -2,13 +2,13 @@
   <mp-cell
     has-footer="{{!multi}}"
     has-header="{{multi}}"
-    ext-class="weui-check__label {{outerClass}} {{extClass}} {{!multi ? '^weui-cell_radio' : '^weui-cell_checkbox'}}"
+    ext-class="weui-check__label {{outerClass}} {{extClass}} {{!multi ? 'weui-cell_radio' : 'weui-cell_checkbox'}}"
     ext-hover-class="weui-active">
 
     <view slot="icon" wx:if="{{multi}}">
       <checkbox value="{{value}}" checked="{{checked}}" disabled="{{disabled}}" color="{{color}}" class="weui-check">
       </checkbox>
-      <view class="weui-icon-checked checkbox--weui-icon-checked {{checked ? 'weui-icon-multi-is-checked' : ''}}"></view>
+      <view class="weui-icon-checked checkbox--weui-icon-checked {{checked ? 'weui-icon-is-checked' : ''}}"></view>
     </view>
     <view>{{label}}</view>
     <view slot="footer" wx:if="{{!multi}}">

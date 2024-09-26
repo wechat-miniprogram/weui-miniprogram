@@ -1,6 +1,6 @@
 <view class="page" data-weui-theme="{{theme}}">
     <mp-navigation-bar title="Footer"></mp-navigation-bar>
-    <scroll-view type="list" scroll-y class="page-scroll-view">
+    <scroll-view type="list" scroll-y class="page-height">
         <view class="page__hd">
             <view class="page__title">Footer</view>
             <view class="page__desc">页脚</view>
@@ -26,7 +26,7 @@
                 </view>
                 <view class="weui-footer__text">Copyright © 2008-2016 weui.io</view>
             </view>
-            
+
             <!-- 因为 skyline 不支持 fix，所以要使用 root-portal + position: absolute; 来处理 -->
             <root-portal>
                 <view class="root-portal-box">
@@ -38,7 +38,7 @@
                     </view>
                 </view>
             </root-portal>
-            
+
         </view>
     </scroll-view>
 </view>

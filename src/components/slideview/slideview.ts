@@ -28,7 +28,15 @@ Component({
         },
         show: {
             type: Boolean,
-            value: false
+            value: false,
+            observer() {
+                if (!this.st) return
+                if (this.data.show) {
+                    this.showButtons()
+                } else {
+                    this.hideButtons()
+                }
+            }
         },
         duration: {
             type: Number,
@@ -47,16 +55,12 @@ Component({
     /**
      * 组件的初始数据
      */
-    data: {
-        size: null
-    },
+    data: {},
 
     /**
      * 组件的方法列表
      */
     ready() {
-        // @ts-ignore
-        this.updateRight()
         this.addClassNameForButton()
         // 共享元素 this.st
         this.st = {
@@ -64,45 +68,14 @@ Component({
             max: wx.worklet.shared(0),
             startX: wx.worklet.shared(0),
             startY: wx.worklet.shared(0),
-            out: wx.worklet.shared(false), 
-            isMoving: wx.worklet.shared(false), 
-            disable: wx.worklet.shared(false), 
+            out: wx.worklet.shared(this.data.show),
+            isMoving: wx.worklet.shared(false),
             firstAngle: wx.worklet.shared(0),
-            size: {
-                buttons: wx.worklet.shared([]),
-            },
-            transformx: wx.worklet.shared(0),
-            transformTotal: wx.worklet.shared([])
+            buttons: wx.worklet.shared([])
         }
         this.initAnimate()
     },
     methods: {
-        updateRight() {
-            // 获取右侧滑动显示区域的宽度
-            const data: any = this.data
-            const query = this.createSelectorQuery()
-            query
-                .select('.left')
-                .boundingClientRect((res) => {
-                    const btnQuery = this.createSelectorQuery()
-                    btnQuery
-                        .selectAll('.btn')
-                        .boundingClientRect((rects) => {
-                            this.setData({
-                                size: {
-                                    buttons: rects,
-                                    button: res,
-                                    show: data.show,
-                                    disable: data.disable,
-                                    throttle: data.throttle,
-                                    rebounce: data.rebounce
-                                }
-                            })
-                        })
-                        .exec()
-                })
-                .exec()
-        },
         addClassNameForButton() {
             // @ts-ignore
             const { buttons, icon } = this.data
@@ -119,110 +92,131 @@ Component({
                 buttons
             })
         },
-        buttonTapByWxs(data) {
-            this.triggerEvent('buttontap', data, {})
-        },
-        hide() {
-            this.triggerEvent('hide', {}, {})
-        },
-        show() {
-            this.triggerEvent('show', {}, {})
+        buttonTap(event) {
+            this.hideButtons()
+            const index = event.currentTarget.dataset.index
+            this.triggerEvent(
+                'buttontap',
+                {
+                    index,
+                    data: this.data.buttons[index].data
+                },
+                {}
+            )
         },
         transitionEnd() {},
-        
+
+        showButtons() {
+            if (this.data.disable) return
+            const { movex, max, out } = this.st
+            if (out.value) return
+            out.value = true
+            movex.value = this.data.duration
+                ? wx.worklet.timing(max.value, { duration: this.data.duration }, () => {})
+                : max.value
+            this.triggerEvent('show', {}, {})
+        },
+
+        hideButtons() {
+            if (this.data.disable) return
+            const { movex, out } = this.st
+            if (!out.value) return
+            out.value = false
+            movex.value = this.data.duration
+                ? wx.worklet.timing(0, { duration: this.data.duration }, () => {})
+                : 0
+            this.triggerEvent('hide', {}, {})
+        },
+
         // 动画，从 wxs 迁移过来
         // 用 this.st 来存滑动状态
         initAnimate() {
             // 左侧动画
             this.applyAnimatedStyle('.weui-slideview__left', () => {
-                'worklet';
-                if (this.st.movex.value > 0) {
-                    // 往回滑
-                    this.st.transformx.value = this.st.movex.value - this.st.max.value
-                    if (!this.st.isMoving.value) this.st.transformx.value = 0
-                } else if(this.st.movex.value < 0) {
-                    this.st.transformx.value = this.st.movex.value
-                    if (!this.st.isMoving.value) this.st.transformx.value = -this.st.max.value
-                }
+                'worklet'
+                const { movex } = this.st
                 return {
-                    'transform': 'translateX(' + this.st.transformx.value + 'px)',
-                    'transition': ''
-                }   
+                    transform: `translateX(${-movex.value}px)`
+                }
             })
 
             // 按钮动画
-            let transformTotal = 0
-            this.createSelectorQuery().selectAll('.btn').boundingClientRect((rects) => {
-                // 记录单个按钮最大值，总的最大值为所有按钮宽度的和
-                var total = 0
-                var buttons = []
-                for (let i = rects.length - 1; i >= 0; i--) {
-                    total += rects[i].width
-                    buttons[i] = total
-                    this.st[`transformTotal-${i}`] = wx.worklet.shared(0)
-                }
-                this.st.transformTotal.value = transformTotal
-                this.st.size.buttons.value = buttons
-                this.st.max.value = total
-                
-                for (let index = rects.length - 1; index >= 0; index--) {
-                    this.applyAnimatedStyle(`.btn-${index}`, () => {
-                        'worklet';
-                        var transform = rects[index].width / this.st.max.value * this.st.movex.value
-                        // 0 固定就是 0
-                        var transformt = this.st[`transformTotal-${index}`].value
+            this.createSelectorQuery()
+                .selectAll('.btn')
+                .boundingClientRect((rects) => {
+                    // 记录单个按钮最大值，总的最大值为所有按钮宽度的和
+                    let total = 0
+                    const buttons = []
+                    for (let i = rects.length - 1; i >= 0; i--) {
+                        total += rects[i].width
+                        buttons[i] = total
+                    }
+                    this.st.buttons.value = buttons
+                    this.st.max.value = total
+                    if (this.data.show) this.st.movex.value = total
 
-                        var transformx
-                        
-                        if (this.st.movex.value > 0) {
-                            // 往回滑
-                            transformx = -(this.st.size.buttons.value[index] - Math.min(this.st.size.buttons.value[index], transform + transformt))
-                            if (!this.st.isMoving.value) transformx = 0
-                        } else if(this.st.movex.value < 0) {
-                            transformx = Math.max(-this.st.size.buttons.value[index], transform + transformt)
-                            if (!this.st.isMoving.value) transformx = -this.st.size.buttons.value[index]
-                        }
+                    for (let index = rects.length - 1; index >= 0; index--) {
+                        this.applyAnimatedStyle(`.btn-${index}`, () => {
+                            'worklet'
+                            const { movex, max, buttons } = this.st
+                            const leftWidth = buttons.value[index]
+                            const transformx = (movex.value * leftWidth) / max.value
 
-                        // 计算下一个的值
-                        if (index > 0) this.st[`transformTotal-${index - 1}`].value = this.st[`transformTotal-${index}`].value + transform
-
-                        return {
-                            'transform': `translateX(${transformx}px)`,
-                            'transition': ''
-                        }   
-
-                    }) 
-                    
-                }
-            }).exec()
+                            return {
+                                transform: `translateX(${-transformx}px)`
+                            }
+                        })
+                    }
+                })
+                .exec()
         },
         touchstart(event) {
-            'worklet';
-            
-            if (this.st.disable.value) return // disable的逻辑
-            this.st.startX.value = event.touches[0].pageX
-            this.st.startY.value = event.touches[0].pageY
-            this.st.firstAngle.value = 0
+            'worklet'
+
+            if (this.data.disable) return // disable的逻辑
+            const { startX, startY, firstAngle } = this.st
+            startX.value = event.touches[0].pageX
+            startY.value = event.touches[0].pageY
+            firstAngle.value = 0
         },
         touchmove(event) {
-            'worklet';
-            const pagex = event.touches[0].pageX - this.st.startX.value
-            const pagey = event.touches[0].pageY - this.st.startY.value
+            'worklet'
+            if (this.data.disable) return // disable的逻辑
+            const { startX, startY, firstAngle, isMoving, movex, max, out } = this.st
+            const pagex = event.touches[0].pageX - startX.value
+            const pagey = event.touches[0].pageY - startY.value
             // 左侧45度角为界限，大于45度则允许水平滑动
-            if (this.st.firstAngle.value === 0) {
-                this.st.firstAngle.value = Math.abs(pagex) - Math.abs(pagey)
+            if (firstAngle.value === 0) {
+                firstAngle.value = Math.abs(pagex) - Math.abs(pagey)
             }
-            if (this.st.firstAngle.value < 0) {
+            if (firstAngle.value < 0) {
                 return
             }
 
-            this.st.isMoving.value = true
-            this.st.movex.value = pagex > 0 ? Math.min(this.st.max.value, pagex) : Math.max(-this.st.max.value, pagex)
-            
+            isMoving.value = true
+            if (out.value) {
+                movex.value = Math.max(0, Math.min(max.value - pagex, max.value))
+            } else {
+                movex.value = Math.max(0, Math.min(-pagex, max.value))
+            }
+
             return false // 禁止垂直方向的滑动
         },
         touchend(event) {
-            this.st.isMoving.value = false
+            'worklet'
+            if (this.data.disable) return // disable的逻辑
+            const { throttle } = this.data
+            const { startX, isMoving } = this.st
+            if (!isMoving.value) return
+
+            const pagex = event.changedTouches[0].pageX - startX.value
+
+            isMoving.value = false
+            if (Math.abs(pagex) < throttle || pagex > 0) {
+                this.hideButtons()
+            } else {
+                this.showButtons()
+            }
         }
     }
 })

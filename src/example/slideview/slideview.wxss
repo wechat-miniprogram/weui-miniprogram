@@ -1,4 +1,4 @@
-@import '../common.wxss';
+
 
 .weui-slidecells {
   margin:8px;

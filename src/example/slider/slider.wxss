@@ -1,4 +1,4 @@
-@import '../common.wxss';
+
 
 slider{
     margin-bottom: 30px;
