@@ -1,6 +1,4 @@
-import CustomPage from '../../base/CustomPage'
-
-CustomPage({
+Page({
   data: {
     tips: '请稍后',
     show: true,

@@ -1,4 +1,4 @@
-<view class="page" data-weui-theme="{{theme}}">
+<view class="page">
     <mp-navigation-bar title="小程序UI组件库" back="{{false}}" />
     <scroll-view type="list" scroll-y class="page-height">
         <view class="page__hd">
@@ -38,7 +38,7 @@
             </view>
         </view>
         <view class="page__ft">
-            <view class="ft-img-cnt" bindtap="themeToggle">
+            <view class="ft-img-cnt">
                 <image src="images/icon_footer.png" style="width: 84px; height: 19px;"></image>
             </view>
         </view>

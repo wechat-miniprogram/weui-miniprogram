@@ -1,6 +1,4 @@
-import CustomPage from '../../base/CustomPage'
-
-CustomPage({
+Page({
     open: function () {
         wx.showActionSheet({
             itemList: ['A', 'B', 'C'],

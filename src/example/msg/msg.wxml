@@ -1,4 +1,4 @@
-<view class="page" data-weui-theme="{{theme}}">
+<view class="page">
     <mp-navigation-bar title="Msg"></mp-navigation-bar>
     <view class="page__hd">
         <view class="page__title">Msg</view>

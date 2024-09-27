@@ -1,7 +1,5 @@
 import base64 from '../images/base64'
-import CustomPage from '../../base/CustomPage'
-
-CustomPage({
+Page({
     onLoad: function () {
         this.setData({
             icon: base64.icon20,

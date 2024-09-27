@@ -1,6 +1,4 @@
-import CustomPage from '../../base/CustomPage'
-
-CustomPage({
+Page({
     data: {
         imgUrls: [
             'https://res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png',
