@@ -27,18 +27,12 @@
                 <view class="weui-footer__text">Copyright © 2008-2016 weui.io</view>
             </view>
 
-            <!-- 因为 skyline 不支持 fix，所以要使用 root-portal + position: absolute; 来处理 -->
-            <root-portal>
-                <view class="root-portal-box">
-                    <view class="weui-footer weui-footer_fixed-bottom">
-                        <view class="weui-footer__links">
-                            <navigator url="" class="weui-footer__link">WeUI首页</navigator>
-                        </view>
-                        <view class="weui-footer__text">Copyright © 2008-2016 weui.io</view>
-                    </view>
+            <view class="weui-footer weui-footer_fixed-bottom">
+                <view class="weui-footer__links">
+                    <navigator url="" class="weui-footer__link">WeUI首页</navigator>
                 </view>
-            </root-portal>
-
+                <view class="weui-footer__text">Copyright © 2008-2016 weui.io</view>
+            </view>
         </view>
     </scroll-view>
 </view>

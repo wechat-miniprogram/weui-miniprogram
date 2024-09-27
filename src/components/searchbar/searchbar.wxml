@@ -19,14 +19,14 @@
                 bindfocus="inputFocus"
                 bindinput="inputChange"
             />
-            <text
+            <view
                 class="weui-icon-clear"
                 hover-class="weui-hover-active"
                 wx:if="{{value.length > 0}}"
                 bindtap="clearInput"
                 aria-role="button"
                 aria-label="清除"
-            ></text>
+            ></view>
         </view>
         <label id="searchText" class="weui-search-bar__label" bindtap="showInput">
             <icon class="weui-icon-search" type="search" size="12"></icon>
