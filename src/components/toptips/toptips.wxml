@@ -1,10 +1,10 @@
 <root-portal enable="{{true}}" wx:if="{{wrapperShow}}">
     <view
-    wx:if="{{wrapperShow}}"
+        wx:if="{{wrapperShow}}"
         aria-role="alert"
-        class="weui-toptips weui-toptips_warn {{className}} {{extClass}}"
+        class="weui-toptips weui-toptips_warn {{className}} ext-class"
     >
-        
+
         <block wx:if="{{msg}}">{{msg}}</block>
         <block wx:else>
             <slot></slot>

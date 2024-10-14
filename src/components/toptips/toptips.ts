@@ -6,9 +6,7 @@ const typeClassMap = {
 }
 
 Component({
-    options: {
-        
-    },
+    externalClasses: ['ext-class'],
     properties: {
         type: {
             type: String,
@@ -27,10 +25,6 @@ Component({
         delay: {
             type: Number,
             value: 2000
-        },
-        extClass: {
-            type: String,
-            value: ''
         }
     },
     data: {

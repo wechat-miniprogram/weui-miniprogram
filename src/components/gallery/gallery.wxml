@@ -1,7 +1,7 @@
 <root-portal enable="{{true}}" wx:if="{{wrapperShow}}">
   <view
     wx:if="{{wrapperShow}}"
-    class="root-portal-box weui-gallery {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out'}} {{extClass}}"
+    class="root-portal-box weui-gallery {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out'}} ext-class"
     aria-modal="true"
     tabindex="0"
   >

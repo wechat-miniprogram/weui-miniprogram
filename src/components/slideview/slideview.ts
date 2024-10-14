@@ -5,11 +5,8 @@ Component({
     options: {
         multipleSlots: true
     },
+    externalClasses: ['ext-class'],
     properties: {
-        extClass: {
-            type: String,
-            value: ''
-        },
         buttons: {
             type: Array,
             value: [], // type, data, text, src, extClass

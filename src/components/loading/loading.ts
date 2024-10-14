@@ -1,12 +1,6 @@
 Component({
-    options: {
-        
-    },
+    externalClasses: ['ext-class'],
     properties: {
-        extClass: {
-            type: String,
-            value: ''
-        },
         show: {
             // 默认显示出来
             type: Boolean,

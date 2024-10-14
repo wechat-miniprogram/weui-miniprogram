@@ -1,12 +1,6 @@
 Component({
-    options: {
-        
-    },
+    externalClasses: ['ext-class'],
     properties: {
-        extClass: {
-            type: String,
-            value: ''
-        },
         content: {
             type: String,
             value: ''

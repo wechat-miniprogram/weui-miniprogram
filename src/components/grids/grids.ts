@@ -20,11 +20,8 @@ Component({
     options: {
         pureDataPattern: /^_/
     },
+    externalClasses: ['ext-class'],
     properties: {
-        extClass: {
-            type: String,
-            value: ''
-        },
         grids: {
             type: Array,
             value: [],
@@ -49,7 +46,7 @@ Component({
             wx.navigateTo({
                 url: url,
                 complete(res) {
-                    
+
                 }
             })
         }

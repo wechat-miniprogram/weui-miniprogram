@@ -1,5 +1,5 @@
 <!-- slide-view/slide-view.wxml -->
-<view class="weui-slideview weui-movable-view {{icon ? 'weui-slideview_icon' : ''}} {{extClass}}" style="width: 100%;height: 100%;">
+<view class="weui-slideview weui-movable-view {{icon ? 'weui-slideview_icon' : ''}} ext-class" style="width: 100%;height: 100%;">
     <view bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend" class="weui-slideview__left left" style="width:100%;">
       <slot></slot>
     </view>

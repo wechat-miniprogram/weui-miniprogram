@@ -15,13 +15,13 @@
     <view class="root-portal-box">
         <view
             wx:if="{{mask}}"
-            class="weui-mask {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out'}} {{maskClass}}"
+            class="weui-mask {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out'}} mask-class"
             bindtap="closeActionSheet"
             aria-role="button"
             aria-label="关闭"
         ></view>
         <view
-            class="weui-actionsheet {{innerShow ? 'weui-animate-slide-up' : 'weui-animate-slide-down'}} {{extClass}}"
+            class="weui-actionsheet {{innerShow ? 'weui-animate-slide-up' : 'weui-animate-slide-down'}} ext-class"
             aria-role="dialog"
             aria-modal="true"
         >

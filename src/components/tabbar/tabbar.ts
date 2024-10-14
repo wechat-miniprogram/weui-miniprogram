@@ -1,12 +1,6 @@
 Component({
-    options: {
-        writeIdToDOM: true
-    } as any,
+    externalClasses: ['ext-class'],
     properties: {
-        extClass: {
-            type: String,
-            value: ''
-        },
         list: {
             type: Array,
             value: []

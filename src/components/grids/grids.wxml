@@ -1,4 +1,4 @@
-<view class="weui-grids {{extClass}}">
+<view class="weui-grids ext-class">
   <block wx:for="{{innerGrids}}" wx:key="index">
     <!-- 把 navigator 改成 view，因为这里 navigator 现在的实现是 text，和 webview 在布局上有点不同 -->
     <view

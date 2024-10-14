@@ -7,14 +7,8 @@ const getFixedIconType = function (type: string): string {
 }
 
 Component({
-    options: {
-        
-    },
+    externalClasses: ['ext-class'],
     properties: {
-        extClass: {
-            type: String,
-            value: ''
-        },
         type: {
             type: String,
             value: 'outline',

@@ -2,6 +2,7 @@ Component({
     options: {
         multipleSlots: true // 在组件定义时的选项中启用多slot支持
     },
+    externalClasses: ['mask-class', 'ext-class'],
     properties: {
         closabled: {
             // 是否具有关闭标签
@@ -15,11 +16,6 @@ Component({
         },
         subTitle: {
             // 副标题，也可以通过 slot 自定义
-            type: String,
-            value: ''
-        },
-        extClass: {
-            // 弹窗 class
             type: String,
             value: ''
         },

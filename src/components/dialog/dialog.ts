@@ -2,15 +2,11 @@ Component({
     options: {
         virtualHost: true,
         multipleSlots: true // 在组件定义时的选项中启用多slot支持
-    } as any,
+    },
+    externalClasses: ['mask-class', 'ext-class'],
     properties: {
         title: {
             // 弹窗标题，也可以通过 slot 自定义
-            type: String,
-            value: ''
-        },
-        extClass: {
-            // 弹窗 class
             type: String,
             value: ''
         },

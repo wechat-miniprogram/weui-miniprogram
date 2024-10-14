@@ -1,4 +1,4 @@
-<view class="weui-search-bar {{searchState ? 'weui-search-bar_focusing' : ''}} {{extClass}}">
+<view class="weui-search-bar {{searchState ? 'weui-search-bar_focusing' : ''}} ext-class">
     <view
         class="weui-search-bar__form"
         aria-role="combobox"
@@ -43,7 +43,7 @@
 <mp-cells
     id="searchResult"
     aria-role="listbox"
-    ext-class=" {{'searchbar-result ' + extClass}}"
+    ext-class="searchbar-result ext-class"
     wx:if="{{searchState && result.length > 0}}"
 >
     <mp-cell
