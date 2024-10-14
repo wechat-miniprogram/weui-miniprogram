@@ -3,6 +3,9 @@ const themeListeners = []
 App({
     onLaunch: function () {
         console.log('App Launch')
+        wx.onThemeChange(({ theme }) => {
+            this.themeChanged(theme)
+        })
     },
     onShow: function () {
         console.log('App Show')
@@ -29,7 +32,7 @@ App({
     },
     globalData: {
         hasLogin: false,
-        theme: 'light',
+        theme: wx.getAppBaseInfo().theme,
         GRID_DEMO_URL: '/example/index',
         iconTabbar: require('/example/images/icon_tabbar.png').default
     }

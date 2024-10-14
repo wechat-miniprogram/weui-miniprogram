@@ -45,6 +45,7 @@ module.exports = {
         useIsolateContext: true,
         useCompilerModule: false,
         userConfirmedUseCompilerModuleSwitch: false,
-        compileWorklet: true
+        compileWorklet: true,
+        minifyWXSS: false
     }
 }
