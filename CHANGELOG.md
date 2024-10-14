@@ -1,5 +1,11 @@
 # 更新日志
 
+## 1.5.0
+
+- feat: 重构 skyline-patch
+- feat: 重构 dark-mode 实现
+- feat: 修改 ext-class 实现
+
 ## 1.4.2
 
 - fix: 修复 half-screen-dialog skyline 动画
