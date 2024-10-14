@@ -1,5 +1,7 @@
 var base64 = require("../images/base64");
-Page({
+import CustomPage from '../../base/CustomPage'
+
+CustomPage({
     onLoad: function(){
         this.setData({
             icon20: base64.icon20,

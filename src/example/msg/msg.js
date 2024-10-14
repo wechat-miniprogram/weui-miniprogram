@@ -1,4 +1,6 @@
-Page({
+import CustomPage from '../../base/CustomPage'
+
+CustomPage({
     openSuccess: function () {
         wx.navigateTo({
             url: 'msg_success'

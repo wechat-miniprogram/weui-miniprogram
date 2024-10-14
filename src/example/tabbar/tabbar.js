@@ -1,8 +1,8 @@
-
+import CustomPage from '../../base/CustomPage'
 
 const app = getApp()
 
-Page({
+CustomPage({
     data: {
         list: [
             {

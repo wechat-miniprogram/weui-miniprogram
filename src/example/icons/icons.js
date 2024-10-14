@@ -1,9 +1,9 @@
-
+import CustomPage from '../../base/CustomPage'
 
 const colorLight = 'rgba(0, 0, 0, .9)'
 const colorDark = 'rgba(255, 255, 255, .8)'
 
-Page({
+CustomPage({
     data: {
         iconList: [
             {

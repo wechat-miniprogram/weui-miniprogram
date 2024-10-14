@@ -1,4 +1,6 @@
-Page({
+import CustomPage from '../../base/CustomPage'
+
+CustomPage({
     data: {
         show1: false,
         show2: false,

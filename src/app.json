@@ -55,7 +55,6 @@
   },
   "debug": true,
   "style": "v2",
-  "darkmode": true,
   "lazyCodeLoading": "requiredComponents",
   "renderer": "skyline",
   "rendererOptions": {

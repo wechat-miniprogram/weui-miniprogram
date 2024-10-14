@@ -1,4 +1,6 @@
-Page({
+import CustomPage from '../base/CustomPage'
+
+CustomPage({
     data: {
         list: [
             {
@@ -48,6 +50,7 @@ Page({
     kindToggle: function (e) {
         const id = e.currentTarget.id,
             list = this.data.list
+        console.log('kindToggle', id)
         for (let i = 0, len = list.length; i < len; ++i) {
             if (list[i].id == id) {
                 list[i].open = !list[i].open
@@ -58,6 +61,17 @@ Page({
         this.setData({
             list: list
         })
+    },
+    themeToggle() {
+        const App = getApp()
+
+        if (App.themeChanged) {
+            if (App.globalData.theme === 'light') {
+                App.themeChanged('dark')
+            } else {
+                App.themeChanged('light')
+            }
+        }
     },
     // navigator 改成 view，兼容
     openPage(e) {

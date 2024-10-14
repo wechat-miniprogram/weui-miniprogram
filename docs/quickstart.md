@@ -51,3 +51,15 @@ Page({
 ## 修改组件内部样式
 每个组件可以设置`ext-class`这个属性，该属性提供设置在组件WXML顶部元素的class，组件的[addGlobalClass](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/wxml-wxss.html#%E7%BB%84%E4%BB%B6%E6%A0%B7%E5%BC%8F%E9%9A%94%E7%A6%BB)的options都设置为true，所以可以在页面设置wxss样式来覆盖组件的内部样式。需要注意的是，如果要覆盖组件内部样式，必须wxss的样式选择器的优先级比组件内部样式优先级高。
 `addGlobalClass`在基础库2.2.3开始支持。
+
+## 适配 DarkMode
+
+在根结点（或组件的外层结点）增加属性 `data-weui-theme="dark"`，即可把 WeUI 组件切换到 DarkMode 的表现，如:
+
+```html
+<view data-weui-theme="dark">
+    ...
+</view>
+```
+
+也可以参考库中提供的 [Demo](https://github.com/wechat-miniprogram/weui-miniprogram/tree/master/tools/demo)。
