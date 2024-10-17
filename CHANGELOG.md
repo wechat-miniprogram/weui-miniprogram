@@ -1,5 +1,10 @@
 # 更新日志
 
+## 1.5.2
+
+- feat: 升级 `weui-wxss` 至 2.6.17
+- feat: slideview 拆分 skyline 实现
+
 ## 1.5.1
 
 - feat: 修复 dark-mode 实现
