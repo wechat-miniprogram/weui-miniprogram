@@ -105,7 +105,7 @@ Component({
             if (out.value) return
             out.value = true
             movex.value = this.data.duration
-                ? wx.worklet.timing(max.value, { duration: this.data.duration })
+                ? wx.worklet.timing(max.value, { duration: this.data.duration }, () => {})
                 : max.value
             this.triggerEvent('show', {}, {})
         },
@@ -116,7 +116,7 @@ Component({
             if (!out.value) return
             out.value = false
             movex.value = this.data.duration
-                ? wx.worklet.timing(0, { duration: this.data.duration })
+                ? wx.worklet.timing(0, { duration: this.data.duration }, () => {})
                 : 0
             this.triggerEvent('hide', {}, {})
         },
