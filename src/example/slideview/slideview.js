@@ -24,6 +24,12 @@ CustomPage({
             ]
         })
     },
+    show() {
+        console.log('show')
+    },
+    hide() {
+        console.log('hide')
+    },
     slideButtonTap(e) {
         console.log('slide button tap', e.detail)
     }
