@@ -1,5 +1,9 @@
 # 更新日志
 
+## 1.5.3
+
+- fix: 修复 slideview 拆分 skyline 实现
+
 ## 1.5.2
 
 - feat: 升级 `weui-wxss` 至 2.6.17
