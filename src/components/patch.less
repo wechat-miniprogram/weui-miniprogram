@@ -5,15 +5,6 @@
 page,
 root-portal-content {
     .varsLight();
-    @media (prefers-color-scheme: dark) {
-        & {
-            .varsLight(); // weui 组件库不应该根据 media 查询设置暗色颜色，强制覆盖掉
-            --weui-BG-COLOR-ACTIVE: #ececec;
-            --weui-BTN-ACTIVE-MASK: rgba(0,0,0,0.2);
-            --weui-BTN-DEFAULT-ACTIVE-BG: overlay(rgba(0, 0, 0, 0.05), #f2f2f2);
-            --weui-DIALOG-LINE-COLOR: rgba(0, 0, 0, 0.1);
-        }
-    }
 }
 
 root-portal-content {
