@@ -2,6 +2,6 @@
   "component": true,
   "styleIsolation": "apply-shared",
   "usingComponents": {
-    "slideview-skyline": "/components/slideview/slideviewSkyline"
+    "slideview-skyline": "./slideview-skyline"
   }
 }
