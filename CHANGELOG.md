@@ -1,5 +1,10 @@
 # 更新日志
 
+## 1.5.4
+
+- feat: half-screen-dialog, dialog, actionsheet, gallery, toptips 添加 rootPortal 参数
+- fix: 修复 half-screen-dialog, dialog, actionsheet, gallery, toptips 默认不使用 root-portal
+
 ## 1.5.3
 
 - fix: 修复 slideview 拆分 skyline 实现
