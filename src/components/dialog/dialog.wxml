@@ -1,35 +1,50 @@
-<root-portal enable="{{true}}" wx:if="{{wrapperShow}}">
+<template name="body">
+  <view class="weui-dialog ext-class {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out'}}" catchtap="stopEvent">
+    <view class="weui-dialog__hd">
+      <view class="weui-dialog__title" tabindex="0">{{title}}
+        <slot name="title"></slot>
+      </view>
+    </view>
+    <view class="weui-dialog__bd">
+      <slot></slot>
+    </view>
+    <view class="weui-dialog__ft">
+      <block wx:if="{{buttons && buttons.length}}">
+        <view
+          wx:for="{{buttons}}"
+          wx:key="index"
+          class="weui-dialog__btn {{item.className}} {{item.extClass}}"
+          hover-class="weui-active"
+          data-index="{{index}}"
+          bindtap="buttonTap"
+          aria-role="button"
+        >{{item.text}}</view>
+      </block>
+      <slot name="footer" wx:else></slot>
+    </view>
+  </view>
   <view
-    wx:if="{{wrapperShow}}"
+    wx:if="{{mask}}"
+    bindtap="close"
+    class="weui-mask mask-class {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out'}}"
+    aria-role="button"
+    aria-label="关闭"
+  ></view>
+</template>
+
+<root-portal enable="{{true}}" wx:if="{{rootPortal && wrapperShow}}">
+  <view
     aria-role="dialog"
     aria-modal="true"
-    class="root-portal-box weui-dialog__root ext-class {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out'}}"
-    style="z-index:901"
+    class="root-portal-box weui-dialog__root"
   >
-      <view class="weui-dialog" catchtap="stopEvent">
-        <view class="weui-dialog__hd">
-          <view class="weui-dialog__title" tabindex="0">{{title}}
-            <slot name="title"></slot>
-          </view>
-        </view>
-        <view class="weui-dialog__bd">
-          <slot></slot>
-        </view>
-        <view class="weui-dialog__ft">
-          <block wx:if="{{buttons && buttons.length}}">
-            <view
-              wx:for="{{buttons}}"
-              wx:key="index"
-              class="weui-dialog__btn {{item.className}} {{item.extClass}}"
-              hover-class="weui-active"
-              data-index="{{index}}"
-              bindtap="buttonTap"
-              aria-role="button"
-            >{{item.text}}</view>
-          </block>
-          <slot name="footer" wx:else></slot>
-        </view>
-      </view>
+    <template is="body" data="{{title, maskClosable, mask, buttons, innerShow}}" />
   </view>
-  <view wx:if="{{wrapperShow && mask}}" bindtap="close" class="weui-mask mask-class {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out'}}" aria-role="button" aria-label="关闭" style="z-index:900"></view>
 </root-portal>
+<view
+  wx:elif="{{!rootPortal && wrapperShow}}"
+  aria-role="dialog"
+  aria-modal="true"
+>
+  <template is="body" data="{{title, maskClosable, mask, buttons, innerShow}}" />
+</view>

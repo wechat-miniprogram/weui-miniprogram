@@ -25,6 +25,11 @@ Component({
         delay: {
             type: Number,
             value: 2000
+        },
+        rootPortal: {
+            // 是否使用 root-portal
+            type: Boolean,
+            value: false
         }
     },
     data: {

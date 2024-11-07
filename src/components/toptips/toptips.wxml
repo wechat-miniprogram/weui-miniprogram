@@ -1,13 +1,18 @@
-<root-portal enable="{{true}}" wx:if="{{wrapperShow}}">
+<template name="body">
     <view
-        wx:if="{{wrapperShow}}"
         aria-role="alert"
-        class="weui-toptips weui-toptips_warn {{className}} ext-class"
+        class="weui-toptips weui-toptips_warn {{className}} ext-class {{innerShow ? 'weui-animate-fade-in' :  'weui-animate-fade-out'}}"
     >
-
         <block wx:if="{{msg}}">{{msg}}</block>
         <block wx:else>
             <slot></slot>
         </block>
     </view>
+</template>
+
+<root-portal enable="{{true}}" wx:if="{{rootPortal && wrapperShow}}">
+    <template is="body" data="{{className, innerShow, msg}}" />
 </root-portal>
+<block wx:elif="{{!rootPortal && wrapperShow}}">
+    <template is="body" data="{{className, innerShow, msg}}" />
+</block>

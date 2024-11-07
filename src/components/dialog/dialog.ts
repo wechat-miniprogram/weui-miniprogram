@@ -28,6 +28,11 @@ Component({
         buttons: {
             type: Array,
             value: [] // {text, extClass}
+        },
+        rootPortal: {
+            // 是否使用 root-portal
+            type: Boolean,
+            value: false
         }
     },
     data: {

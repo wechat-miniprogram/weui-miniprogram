@@ -1,44 +1,59 @@
-<root-portal enable="{{true}}" wx:if="{{wrapperShow}}">
-  <view aria-role="dialog" aria-modal="true" class="root-portal-box weui-dialog__root">
-    <view class="weui-half-screen-dialog {{innerShow ? 'weui-animate-slide-up' : 'weui-animate-slide-down' }} ext-class">
-      <view class="weui-half-screen-dialog__hd">
-        <view wx:if="{{closabled}}" class="weui-half-screen-dialog__hd__side" bindtap="close" data-type="close">
-          <view class="weui-icon-btn" aria-role="button" hover-class="weui-active">
-            关闭
-            <view class="weui-icon-close-thin"></view>
-          </view>
-        </view>
-        <view class="weui-half-screen-dialog__hd__main" tabindex="0">
-          <block wx:if="{{title}}">
-            <text class="weui-half-screen-dialog__title">{{title}}</text>
-            <text class="weui-half-screen-dialog__subtitle">{{subTitle}}</text>
-          </block>
-          <block wx:else>
-            <view class="weui-half-screen-dialog__title">
-              <slot name="title"></slot>
-            </view>
-          </block>
-        </view>
-        <view class="weui-half-screen-dialog__hd__side">
-          <view class="weui-icon-btn weui-icon-btn_more" hover-class="weui-active">更多</view>
+<template name="body">
+  <view class="weui-half-screen-dialog {{innerShow ? 'weui-animate-slide-up' : 'weui-animate-slide-down' }} ext-class" catch:touchmove="onMaskMouseMove">
+    <view class="weui-half-screen-dialog__hd">
+      <view wx:if="{{closabled}}" class="weui-half-screen-dialog__hd__side" bindtap="close" data-type="close">
+        <view class="weui-icon-btn" aria-role="button" hover-class="weui-active">
+          关闭
+          <view class="weui-icon-close-thin"></view>
         </view>
       </view>
-      <view class="weui-half-screen-dialog__bd">
-        <block wx:if="{{desc}}">
-          <view class="weui-half-screen-dialog__desc">{{desc}}</view>
-          <view class="weui-half-screen-dialog__tips">{{tips}}</view>
+      <view class="weui-half-screen-dialog__hd__main" tabindex="0">
+        <block wx:if="{{title}}">
+          <text class="weui-half-screen-dialog__title">{{title}}</text>
+          <text class="weui-half-screen-dialog__subtitle">{{subTitle}}</text>
         </block>
-        <slot name="desc" wx:else></slot>
+        <block wx:else>
+          <view class="weui-half-screen-dialog__title">
+            <slot name="title"></slot>
+          </view>
+        </block>
       </view>
-      <view class="weui-half-screen-dialog__ft">
-        <view class="weui-half-screen-dialog__btn-area" wx:if="{{buttons && buttons.length}}">
-          <button wx:for="{{buttons}}" wx:key="index" type="{{item.type}}" class="weui-btn {{item.className}}" data-index="{{index}}" bindtap="buttonTap" aria-role="button">
-            {{item.text}}
-          </button>
-        </view>
-        <slot name="footer" wx:else></slot>
+      <view class="weui-half-screen-dialog__hd__side">
+        <view class="weui-icon-btn weui-icon-btn_more" hover-class="weui-active">更多</view>
       </view>
     </view>
+    <view class="weui-half-screen-dialog__bd">
+      <block wx:if="{{desc}}">
+        <view class="weui-half-screen-dialog__desc">{{desc}}</view>
+        <view class="weui-half-screen-dialog__tips">{{tips}}</view>
+      </block>
+      <slot name="desc" wx:else></slot>
+    </view>
+    <view class="weui-half-screen-dialog__ft">
+      <view class="weui-half-screen-dialog__btn-area" wx:if="{{buttons && buttons.length}}">
+        <button wx:for="{{buttons}}" wx:key="index" type="{{item.type}}" class="weui-btn {{item.className}}" data-index="{{index}}" bindtap="buttonTap" aria-role="button">
+          {{item.text}}
+        </button>
+      </view>
+      <slot name="footer" wx:else></slot>
+    </view>
   </view>
-  <view wx:if="{{mask}}" class="weui-mask mask-class {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out' }}" style="z-index:900" bindtap="close" data-type="close" aria-role="mask" aria-label="蒙层"></view>
+  <view
+    wx:if="{{mask}}"
+    class="weui-mask mask-class {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out' }}"
+    bindtap="close"
+    data-type="mask"
+    catch:touchmove="onMaskMouseMove"
+    aria-role="button"
+    aria-label="关闭"
+  ></view>
+</template>
+
+<root-portal enable="{{true}}" wx:if="{{rootPortal && wrapperShow}}">
+  <view aria-role="dialog" aria-modal="true" class="root-portal-box weui-dialog__root">
+    <template is="body" data="{{closabled, title, subTitle, desc, tips, mask, show, buttons, innerShow}}"></template>
+  </view>
 </root-portal>
+<view wx:elif="{{!rootPortal && wrapperShow}}" aria-role="dialog" aria-modal="true">
+  <template is="body" data="{{closabled, title, subTitle, desc, tips, mask, show, buttons, innerShow}}"></template>
+</view>

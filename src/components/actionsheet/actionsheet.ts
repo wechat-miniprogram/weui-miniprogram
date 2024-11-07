@@ -40,6 +40,11 @@ Component({
             type: Array,
             value: [], // {text, extClass}
             observer: '_groupChange'
+        },
+        rootPortal: {
+            // 是否使用 root-portal
+            type: Boolean,
+            value: false
         }
     },
 

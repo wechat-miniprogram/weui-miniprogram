@@ -25,6 +25,11 @@ Component({
         hideOnClick: {
             type: Boolean,
             value: true
+        },
+        rootPortal: {
+            // 是否使用 root-portal
+            type: Boolean,
+            value: false
         }
     },
     data: {
