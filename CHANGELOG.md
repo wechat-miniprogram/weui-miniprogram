@@ -1,5 +1,11 @@
 # 更新日志
 
+## 1.5.5
+
+- fix: 修复 cell 丢失边缘线样式
+- fix: 修复 checkbox 样式错误
+- fix: 修复 navigation-bar background 没生效
+
 ## 1.5.4
 
 - feat: half-screen-dialog, dialog, actionsheet, gallery, toptips 添加 rootPortal 参数
