@@ -1,6 +1,6 @@
 <view class="weui-navigation-bar ext-class">
   <view class="weui-navigation-bar__placeholder {{ios ? 'ios' : 'android'}}" style="padding-top:{{statusBarHeight}}px;visibility: hidden;"></view>
-  <view class="weui-navigation-bar__inner {{ios ? 'ios' : 'android'}}" style="color:{{color}};{{displayStyle}};padding-top:{{statusBarHeight}}px;">
+  <view class="weui-navigation-bar__inner {{ios ? 'ios' : 'android'}}" style="color:{{color}};background:{{background}};{{displayStyle}};padding-top:{{statusBarHeight}}px;">
 
     <!-- 左侧按钮 -->
     <view class='weui-navigation-bar__left'>
