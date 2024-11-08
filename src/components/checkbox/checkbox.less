@@ -1,6 +1,10 @@
 @import (reference) '~weui-wxss/src/style/widget/weui-cell/weui-check/weui-radio.less';
 @import (reference) '~weui-wxss/src/style/widget/weui-cell/weui-check/weui-checkbox.less';
 
+.weui-cell_wxss.weui-cell_wxss::before{
+  display: flex;
+}
+
 .weui-cell_radio .weui-check+.weui-icon-checked {
   color: transparent;
 }
@@ -24,8 +28,6 @@
   &.weui-icon-is-checked {
     /* skyline 不支持 attribute selector */
     &:extend(.weui-cells_checkbox .weui-check:checked + .weui-icon-checked);
-    background-color: @weuiColorPrimary;
   }
   &:extend(.weui-cells_checkbox .weui-icon-checked);
-  background-color: @weuiTextColorTips;
 }

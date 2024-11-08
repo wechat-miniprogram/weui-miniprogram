@@ -11,10 +11,6 @@
   flex-direction: row;
 }
 
-.weui-agree__checkbox {
-  background-color: var(--weui-FG-2); /* skyline 不支持 currentColor */
-}
-
 /* skyline 不支持 currentColor */
 .weui-cell_select .weui-cell__bd::after {
   background-color: var(--weui-FG-2);
