@@ -2,7 +2,7 @@
   <mp-cell
     has-footer="{{!multi}}"
     has-header="{{multi}}"
-    ext-class="weui-check__label {{outerClass}} ext-class {{!multi ? 'weui-cell_radio' : 'weui-cell_checkbox'}}"
+    ext-class="weui-check__label {{outerClass}} {{extClass}} {{!multi ? 'weui-cell_radio' : 'weui-cell_checkbox'}}"
     ext-hover-class="weui-active">
 
     <view slot="icon" wx:if="{{multi}}">

@@ -1,6 +1,6 @@
 <template name="body">
   <view
-    class="weui-gallery {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out'}} ext-class"
+    class="weui-gallery {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out'}} {{extClass}}"
     aria-modal="true"
     tabindex="0"
   >
@@ -36,9 +36,9 @@
 
 <root-portal enable="{{true}}" wx:if="{{rootPortal && wrapperShow}}">
   <view class="root-portal-box">
-    <template is="body" data="{{showDelete, current, innerShow, currentImgs}}" />
+    <template is="body" data="{{showDelete, extClass, current, innerShow, currentImgs}}" />
   </view>
 </root-portal>
 <view wx:elif="{{!rootPortal && wrapperShow}}">
-  <template is="body" data="{{showDelete, current, innerShow, currentImgs}}" />
+  <template is="body" data="{{showDelete, extClass, current, innerShow, currentImgs}}" />
 </view>

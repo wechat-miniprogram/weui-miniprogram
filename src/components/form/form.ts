@@ -19,7 +19,6 @@ function unlinked(target) {
 }
 
 Component({
-    externalClasses: ['ext-class'],
     properties: {
         models: {
             type: Object,
@@ -31,6 +30,10 @@ Component({
             type: Array,
             value: [],
             observer: '_rulesChange'
+        },
+        extClass: {
+            type: String,
+            value: ''
         }
     },
     data: {

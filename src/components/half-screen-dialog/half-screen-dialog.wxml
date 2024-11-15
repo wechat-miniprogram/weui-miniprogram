@@ -1,5 +1,5 @@
 <template name="body">
-  <view class="weui-half-screen-dialog {{innerShow ? 'weui-animate-slide-up' : 'weui-animate-slide-down' }} ext-class" catch:touchmove="onMaskMouseMove">
+  <view class="weui-half-screen-dialog {{innerShow ? 'weui-animate-slide-up' : 'weui-animate-slide-down' }} {{extClass}}" catch:touchmove="onMaskMouseMove">
     <view class="weui-half-screen-dialog__hd">
       <view wx:if="{{closabled}}" class="weui-half-screen-dialog__hd__side" bindtap="close" data-type="close">
         <view class="weui-icon-btn" aria-role="button" hover-class="weui-active">
@@ -40,7 +40,7 @@
   </view>
   <view
     wx:if="{{mask}}"
-    class="weui-mask mask-class {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out' }}"
+    class="weui-mask {{maskClass}} {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out' }}"
     bindtap="close"
     data-type="mask"
     catch:touchmove="onMaskMouseMove"
@@ -51,9 +51,9 @@
 
 <root-portal enable="{{true}}" wx:if="{{rootPortal && wrapperShow}}">
   <view aria-role="dialog" aria-modal="true" class="root-portal-box weui-dialog__root">
-    <template is="body" data="{{closabled, title, subTitle, desc, tips, mask, show, buttons, innerShow}}"></template>
+    <template is="body" data="{{closabled, maskClass, extClass, title, subTitle, desc, tips, mask, show, buttons, innerShow}}"></template>
   </view>
 </root-portal>
 <view wx:elif="{{!rootPortal && wrapperShow}}" aria-role="dialog" aria-modal="true">
-  <template is="body" data="{{closabled, title, subTitle, desc, tips, mask, show, buttons, innerShow}}"></template>
+  <template is="body" data="{{closabled, maskClass, extClass, title, subTitle, desc, tips, mask, show, buttons, innerShow}}"></template>
 </view>

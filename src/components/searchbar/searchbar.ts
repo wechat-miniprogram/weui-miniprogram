@@ -1,6 +1,9 @@
 Component({
-    externalClasses: ['ext-class'],
     properties: {
+        extClass: {
+            type: String,
+            value: ''
+        },
         focus: {
             type: Boolean,
             value: false

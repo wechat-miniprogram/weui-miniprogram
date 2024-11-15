@@ -1,6 +1,6 @@
 <!-- slide-view/slide-view.wxml -->
 <wxs module="handler" src="./slideview.wxs"></wxs>
-<view wx:if="{{renderer === 'webview'}}" class="weui-slideview weui-movable-view {{icon ? 'weui-slideview_icon' : ''}} ext-class" style="width: 100%;height: 100%;">
+<view wx:if="{{renderer === 'webview'}}" class="weui-slideview weui-movable-view {{icon ? 'weui-slideview_icon' : ''}} {{extClass}}" style="width: 100%;height: 100%;">
     <view bindtransitionend="{{handler.transitionEnd}}"
       show="{{show}}" change:show="{{handler.showChange}}"
       rebounce="{{rebounce}}" change:rebounce="{{handler.rebounceChange}}"
@@ -29,7 +29,7 @@
 </view>
 <slideview-skyline
   wx:elif="{{renderer === 'skyline'}}"
-  ext-class="ext-class"
+  ext-class="{{extClass}}"
   buttons="{{buttons}}"
   disable="{{disable}}"
   duration="{{duration}}"

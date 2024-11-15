@@ -2,7 +2,6 @@ Component({
     options: {
         multipleSlots: true // 在组件定义时的选项中启用多slot支持
     },
-    externalClasses: ['mask-class', 'ext-class'],
     properties: {
         title: {
             // 标题
@@ -18,6 +17,16 @@ Component({
             // 取消按钮文案
             type: String,
             value: '取消'
+        },
+        maskClass: {
+            // 遮罩层class
+            type: String,
+            value: ''
+        },
+        extClass: {
+            // 弹出窗 class
+            type: String,
+            value: ''
         },
         maskClosable: {
             // 点击遮罩 关闭 actionsheet

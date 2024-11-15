@@ -1,4 +1,4 @@
-<view class="ext-class weui-cells__group {{outerClass}} {{childClass}}" aria-role="{{ariaRole}}">
+<view class="{{extClass}} weui-cells__group {{outerClass}} {{childClass}}" aria-role="{{ariaRole}}">
     <view wx:if="{{title}}" class="weui-cells__title">{{title}}</view>
     <view class="weui-cells weui-cells_after-title {{checkboxCount > 0 && checkboxIsMulti ? 'weui-cells_checkbox' : ''}}">
         <slot></slot>

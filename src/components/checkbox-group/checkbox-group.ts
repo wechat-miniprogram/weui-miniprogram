@@ -4,12 +4,15 @@ Component({
     options: {
         multipleSlots: true
     },
-    externalClasses: ['ext-class'],
     properties: {
         multi: {
             type: Boolean,
             value: true,
             observer: '_multiChange'
+        },
+        extClass: {
+            type: String,
+            value: ''
         },
         prop: {
             type: String,

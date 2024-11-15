@@ -1,5 +1,7 @@
 Component({
-    externalClasses: ['ext-class'],
+    options: {
+        
+    },
     properties: {
         title: {
             type: String,
@@ -44,6 +46,10 @@ Component({
             value: null
         },
         tips: {
+            type: String,
+            value: ''
+        },
+        extClass: {
             type: String,
             value: ''
         },

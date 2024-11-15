@@ -1,6 +1,6 @@
 <view
     bindtap="navigateTo"
-    class="weui-cell {{link ? 'weui-cell_access' : ''}} ext-class {{outerClass}} {{inForm ? ' weui-cell-inform' : ''}}{{inline ? '' : 'weui-cell_label-block'}}"
+    class="weui-cell {{link ? 'weui-cell_access' : ''}} {{extClass}} {{outerClass}} {{inForm ? ' weui-cell-inform' : ''}}{{inline ? '' : 'weui-cell_label-block'}}"
     hover-class="{{hover ? 'weui-hover-active' : extHoverClass}}"
     aria-role="{{ariaRole}}"
 >

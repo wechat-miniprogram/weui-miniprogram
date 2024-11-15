@@ -1,4 +1,4 @@
-<view class="weui-msg ext-class">
+<view class="weui-msg {{extClass}}">
   <view class="weui-msg__icon-area">
     <icon type="{{type}}" size="{{size}}" wx:if="{{type}}"></icon>
     <image class="weui-msg__icon-img" src="{{icon}}" mode="aspectFit" wx:elif="{{icon}}" />

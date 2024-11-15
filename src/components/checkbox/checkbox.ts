@@ -2,7 +2,6 @@ Component({
     options: {
         multipleSlots: true
     },
-    externalClasses: ['ext-class'],
     properties: {
         multi: {
             type: Boolean,
@@ -19,6 +18,10 @@ Component({
         label: {
             type: String,
             value: 'label'
+        },
+        extClass: {
+            type: String,
+            value: ''
         },
         disabled: {
             type: Boolean,

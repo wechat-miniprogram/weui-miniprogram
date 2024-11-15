@@ -2,7 +2,6 @@ Component({
     options: {
         multipleSlots: true
     },
-    externalClasses: ['ext-class'],
     properties: {
         title: {
             // Msg 标题
@@ -21,6 +20,10 @@ Component({
         },
         desc: {
             // 描述
+            type: String,
+            value: ''
+        },
+        extClass: {
             type: String,
             value: ''
         },

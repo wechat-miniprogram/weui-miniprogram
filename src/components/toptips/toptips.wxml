@@ -1,7 +1,7 @@
 <template name="body">
     <view
         aria-role="alert"
-        class="weui-toptips weui-toptips_warn {{className}} ext-class {{innerShow ? 'weui-animate-fade-in' :  'weui-animate-fade-out'}}"
+        class="weui-toptips weui-toptips_warn {{className}} {{extClass}} {{innerShow ? 'weui-animate-fade-in' :  'weui-animate-fade-out'}}"
     >
         <block wx:if="{{msg}}">{{msg}}</block>
         <block wx:else>
@@ -11,8 +11,8 @@
 </template>
 
 <root-portal enable="{{true}}" wx:if="{{rootPortal && wrapperShow}}">
-    <template is="body" data="{{className, innerShow, msg}}" />
+    <template is="body" data="{{className, extClass, innerShow, msg}}" />
 </root-portal>
 <block wx:elif="{{!rootPortal && wrapperShow}}">
-    <template is="body" data="{{className, innerShow, msg}}" />
+    <template is="body" data="{{className, extClass, innerShow, msg}}" />
 </block>

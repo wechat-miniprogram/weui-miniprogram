@@ -1,5 +1,4 @@
 Component({
-    externalClasses: ['ext-class'],
     properties: {
         imgUrls: {
             type: Array,
@@ -25,6 +24,10 @@ Component({
         hideOnClick: {
             type: Boolean,
             value: true
+        },
+        extClass: {
+            type: String,
+            value: ''
         },
         rootPortal: {
             // 是否使用 root-portal

@@ -6,7 +6,9 @@ const typeClassMap = {
 }
 
 Component({
-    externalClasses: ['ext-class'],
+    options: {
+
+    },
     properties: {
         type: {
             type: String,
@@ -25,6 +27,10 @@ Component({
         delay: {
             type: Number,
             value: 2000
+        },
+        extClass: {
+            type: String,
+            value: ''
         },
         rootPortal: {
             // 是否使用 root-portal

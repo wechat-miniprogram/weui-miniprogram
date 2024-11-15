@@ -1,4 +1,4 @@
-<view class="weui-navigation-bar ext-class">
+<view class="weui-navigation-bar {{extClass}}">
   <view class="weui-navigation-bar__placeholder {{ios ? 'ios' : 'android'}}" style="padding-top:{{statusBarHeight}}px;visibility: hidden;"></view>
   <view class="weui-navigation-bar__inner {{ios ? 'ios' : 'android'}}" style="color:{{color}};background:{{background}};{{displayStyle}};padding-top:{{statusBarHeight}}px;">
 

@@ -4,9 +4,12 @@ Component({
     options: {
         multipleSlots: true
     },
-    externalClasses: ['ext-class'],
     properties: {
         title: {
+            type: String,
+            value: ''
+        },
+        extClass: {
             type: String,
             value: ''
         },
