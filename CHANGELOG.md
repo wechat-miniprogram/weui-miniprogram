@@ -1,5 +1,10 @@
 # 更新日志
 
+## 1.5.6
+
+- fix: 修改 ext-class 实现
+- fix: 修复 checkbox 样式错误
+
 ## 1.5.5
 
 - fix: 修复 cell 丢失边缘线样式
