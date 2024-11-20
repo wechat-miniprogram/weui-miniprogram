@@ -38,7 +38,7 @@ Component({
     },
     methods: {
         _genSrcByIcon(v) {
-            this._genSrc(iconData[v][getFixedIconType(this.data.type)])
+            this._genSrc(/<svg .*>.*<\/svg>/.test(v) ? v : iconData[v][getFixedIconType(this.data.type)])
         },
         _genSrcByType(v) {
             const iconDataItem = iconData[this.data.icon]
