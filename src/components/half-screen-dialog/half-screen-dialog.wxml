@@ -1,5 +1,5 @@
 <template name="body">
-  <view class="weui-half-screen-dialog {{innerShow ? 'weui-animate-slide-up' : 'weui-animate-slide-down' }} {{extClass}}" catch:touchmove="onMaskMouseMove">
+  <view class="weui-half-screen-dialog {{innerShow ? 'weui-animate-slide-up' : 'weui-animate-slide-down' }} {{extClass}}">
     <view class="weui-half-screen-dialog__hd">
       <view wx:if="{{closabled}}" class="weui-half-screen-dialog__hd__side" bindtap="close" data-type="close">
         <view class="weui-icon-btn" aria-role="button" hover-class="weui-active">
