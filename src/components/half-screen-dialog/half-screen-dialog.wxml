@@ -1,5 +1,13 @@
 <template name="body">
-  <view class="weui-half-screen-dialog {{innerShow ? 'weui-animate-slide-up' : 'weui-animate-slide-down' }} {{extClass}}">
+  <wxs module="wxs">
+    function onMaskTouchmove () {
+      return false
+    }
+    module.exports = {
+      onMaskTouchmove: onMaskTouchmove,
+    }
+  </wxs>
+  <view class="weui-half-screen-dialog {{innerShow ? 'weui-animate-slide-up' : 'weui-animate-slide-down' }} {{extClass}}" mut-bind:touchmove="{{wxs.onMaskTouchmove}}">
     <view class="weui-half-screen-dialog__hd">
       <view wx:if="{{closabled}}" class="weui-half-screen-dialog__hd__side" bindtap="close" data-type="close">
         <view class="weui-icon-btn" aria-role="button" hover-class="weui-active">
