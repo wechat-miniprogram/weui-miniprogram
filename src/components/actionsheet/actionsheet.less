@@ -10,6 +10,10 @@
   outline: none;
 }
 
+.weui-actionsheet__cell.weui-active {
+  background-color: var(--weui-BG-COLOR-ACTIVE);
+}
+
 .weui-actionsheet {
     transform: none;
     -webkit-transform: none;
@@ -66,4 +70,19 @@
     to {
         transform: translate3d(0, 100%, 0);
     }
+}
+
+// 使用 keyframes 做进出场时，避免被 weui-wxss 默认 transform/transition 覆盖导致“闪退/回弹”
+.weui-actionsheet.weui-animate-slide-up {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    transition: none;
+    -webkit-transition: none;
+}
+
+.weui-actionsheet.weui-animate-slide-down {
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transition: none;
+    -webkit-transition: none;
 }
