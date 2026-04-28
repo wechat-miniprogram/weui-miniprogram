@@ -1,6 +1,6 @@
 <template name="body">
   <view class="weui-dialog {{extClass}} {{innerShow ? 'weui-animate-fade-in' : 'weui-animate-fade-out'}}" catchtap="stopEvent">
-    <view class="weui-dialog__hd">
+    <view wx:if="{{title}}" class="weui-dialog__hd">
       <view class="weui-dialog__title" tabindex="0">{{title}}
         <slot name="title"></slot>
       </view>
